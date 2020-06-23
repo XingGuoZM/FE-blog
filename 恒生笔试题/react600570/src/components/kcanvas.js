@@ -13,9 +13,15 @@ class KCanvas extends React.Component{
         const{ctx,canvas}=this.state
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }  
+    drawRect(){
+        const {ctx}=this.state
+        ctx.rect(20,20,150,100);
+        ctx.fillStyle="green";
+        ctx.stroke();
+    }
     drawLine(left,top){
-        // const context=document.getElementById("myCanvas").getContext("2d"); 
         const{ctx,canvas}=this.state
+        // 纵轴
         ctx.beginPath();
         ctx.lineWidth = 1;
         ctx.setLineDash([1, 1]);
@@ -23,7 +29,7 @@ class KCanvas extends React.Component{
         ctx.lineTo(left, 400);
         ctx.stroke();
         ctx.closePath();
-
+        // 横轴
         ctx.beginPath();
         ctx.lineWidth = 1;
         ctx.setLineDash([0.5, 1]);
