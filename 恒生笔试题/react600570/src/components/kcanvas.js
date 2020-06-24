@@ -13,7 +13,7 @@ class KCanvas extends React.Component{
         const {ctx}=this.state
         ctx.beginPath();
         ctx.strokeStyle = linecolor;
-        ctx.setLineDash([1, 1]);
+        ctx.setLineDash([3, 1]);
         ctx.moveTo(arr[0][0],arr[0][1]);
         for (let i=1; i<arr.length; i++) {
             ctx.lineTo(arr[i][0],arr[i][1]);

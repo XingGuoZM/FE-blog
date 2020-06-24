@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import './App.css';
 // 表格瀑布流组件
-import WaterFall from './components/waterfall'
+// import WaterFall from './components/waterfall'
 // canvas画k线图
 import KCanvas from './components/kcanvas'
 
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <header className="head">
         <div className='nav' style={flag===waterfall?activeStyle:null} onClick={()=>setFlag(waterfall)}>无限滚动加载</div>
-        <div className='nav' style={flag===kcanvas?activeStyle:null} onClick={()=>setFlag(kcanvas)}>K线图</div>
+        <div className='nav' style={flag===kcanvas?activeStyle:null} onClick={()=>setFlag(kcanvas)}>canvas K线图</div>
       </header>
       {flag===kcanvas?<KCanvas></KCanvas>:<ScrollList></ScrollList>}
     </div>
