@@ -6,7 +6,9 @@ class ScrollList extends React.Component{
         this.state={
             listData:[],
             listHeight:1000,
-            currPage:1
+            currPage:1,
+            preDistance:0
+            // ratio:1
         }
     }
     componentWillMount(){
@@ -18,18 +20,27 @@ class ScrollList extends React.Component{
         document.getElementById('list').addEventListener('scroll',this.handleScroll)
     }
     handleScroll=(e)=>{
-        // console.log(e.target.scrollTop)
         const distance=e.target.scrollTop
-        let listHeight=this.state.listHeight+1000
-        let currPage=this.state.currPage+1
-        console.log(distance,this.state.currPage*700)
-        if(distance>700*this.state.currPage){
+        // 滚动方向
+        const scrollDirection = distance-this.state.preDistance
+        this.setState({preDistance:distance})
+        // 
+        // console.log(distance,this.state.currPage*700,scrollDirection)
+        // 向下滑动
+        if(distance>=700*this.state.currPage && scrollDirection>0){
+            let currPage=this.state.currPage+1
+            let listHeight=this.state.listHeight+1000
             this.setState({listHeight,currPage})
         }
+        // 向上滑动
+       if (distance<=700*(this.state.currPage-1)&&scrollDirection<0){
+            let currPage=(this.state.currPage-1<1)?1:(this.state.currPage-1)
+            this.setState({currPage})
+       }
     }
     render(){
-        let {listHeight}=this.state
-        let rows=this.state.listData.map(item=><div className='cell' style={{top:item*60+10+'px'}} key={item}>{item}</div>)
+        let {listHeight,currPage}=this.state
+        let rows=this.state.listData.map(item=><div className='cell' style={{top:item*60+10+(currPage-1)*700+'px'}} key={item}>{item}</div>)
         return(<div className="listWrapper" id='list'>
             <div className='list' style={{height:listHeight+'px'}}>
                 {rows}

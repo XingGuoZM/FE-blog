@@ -6,13 +6,13 @@ import WaterFall from './components/waterfall'
 import KCanvas from './components/kcanvas'
 
 //无限加载演示
-// import ScrollList from './components/scrollList/index'
+import ScrollList from './components/scrollList/index'
 function App() {
   return (
     <div className="App">
-      {/* <ScrollList></ScrollList> */}
-      <WaterFall></WaterFall>
-      <KCanvas></KCanvas>
+      <ScrollList></ScrollList>
+      {/* <WaterFall></WaterFall> */}
+      {/* <KCanvas></KCanvas> */}
     </div>
   );
 }
