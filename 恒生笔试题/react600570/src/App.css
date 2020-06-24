@@ -11,5 +11,25 @@ html,body,#root{
   justify-content: space-around; */
   background-color: #282c34;
 }
+.head{
+  width:100%;
+  height:50px;
+  background-color:#ff6f00;
+  color:rgba(255,255,255,.8);
+  display: flex;
+  justify-content: center;
+}
+.nav{
+  width:100px;
+  height:100%;
+  padding-left:10px;
+  padding-right:10px;
+  line-height:50px;
+}
+.nav:hover{
+  cursor: pointer;
+  background-color:#ff7d1a;
+  color:#fff;
+}
 
 

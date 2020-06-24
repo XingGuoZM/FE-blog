@@ -34,7 +34,7 @@ class WaterFall extends React.Component{
         document.getElementById('list').addEventListener('scroll',throttle(this.handleScroll,300))
         window.addEventListener('keyup',(e)=>{
             let row=this.state.currRow
-            if(e.keyCode===38){                
+            if(e.keyCode===38){
                 let currRow=--row;
                 this.setState({currRow})
             }else if(e.keyCode===40){

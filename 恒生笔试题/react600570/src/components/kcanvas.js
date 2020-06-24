@@ -1,5 +1,5 @@
 import React from 'react'
-import throttle from '../util/throttle'
+// import throttle from '../util/throttle'
 class KCanvas extends React.Component{
 
     constructor(props){
@@ -9,49 +9,49 @@ class KCanvas extends React.Component{
             ctx:null
         }
     }
-    clearCanvas() {  
-        const{ctx,canvas}=this.state
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }  
-    drawRect(){
+    drawLine(arr,linecolor) {
         const {ctx}=this.state
-        ctx.rect(20,20,150,100);
-        ctx.fillStyle="green";
-        ctx.stroke();
-    }
-    drawLine(left,top){
-        const{ctx,canvas}=this.state
-        // 纵轴
         ctx.beginPath();
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = linecolor;
         ctx.setLineDash([1, 1]);
-        ctx.moveTo(left, 0);
-        ctx.lineTo(left, 400);
+        ctx.moveTo(arr[0][0],arr[0][1]);
+        for (let i=1; i<arr.length; i++) {
+            ctx.lineTo(arr[i][0],arr[i][1]);
+        }
         ctx.stroke();
         ctx.closePath();
-        // 横轴
-        ctx.beginPath();
-        ctx.lineWidth = 1;
-        ctx.setLineDash([0.5, 1]);
-        ctx.moveTo(0,top)
-        ctx.lineTo(400,top);
-        ctx.stroke();
-        ctx.closePath();
+    }
+    drawTab(width) {
+        for(let i=0; i<90; i++) {
+            for (let j=1; j<6; j++) {
+                this.drawLine([ [7*i,100*j], [7*i+5,100*j] ], "#efefef");
+                this.drawLine([ [100*j,7*i], [100*j,7*i+5] ], "#efefef");
+            }
+        }
+    }
+    moveEvent() {
+        const {ctx,canvas}=this.state
+        window.onmousemove = (e)=> {
+            if (e.target.id === "myCanvas") {
+                const rect = canvas.getBoundingClientRect()
+                const x = (e.clientX - rect.left) * canvas.width / rect.width
+                const y = (e.clientY - rect.top) * canvas.height / rect.height
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                this.drawTab(600);
+                this.drawLine([ [0,y], [600,y] ], "#ccc");
+                this.drawLine([ [x,0], [x,600] ], "#ccc");
+            }
+        };
     }
     componentDidMount(){
         const ctx = document.getElementById('myCanvas').getContext('2d');
         const canvas=document.getElementById('myCanvas')
-        this.setState({ctx,canvas})
-        document.getElementById('myCanvas').addEventListener('mousemove',(e)=>{
-            const rect = canvas.getBoundingClientRect()
-            const x = (e.clientX - rect.left) * canvas.width / rect.width
-            const y = (e.clientY - rect.top) * canvas.height / rect.height
-            this.clearCanvas()
-            this.drawLine(x,y)
+        this.setState({ctx,canvas},()=>{
+            this.moveEvent()
         })
     }
     render(){
-        return<canvas id='myCanvas' style={{width:'400px',height:'400px',backgroundColor:'#fff',marginTop:'50px',marginBottom:'50px'}}></canvas>
+        return<canvas id='myCanvas' style={{width:'100%',height:'500px',backgroundColor:'#fff',marginTop:'50px',marginBottom:'50px'}}></canvas>
     }
 }
 
