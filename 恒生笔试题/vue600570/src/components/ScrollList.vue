@@ -1,7 +1,7 @@
 <template>
   <div class="listWrapper" id='list'>
     <div class="list" :style="{height:listHeight+'px'}">
-      <div class="cell" :style="handleCellStyle(item)" v-for="item in listDom" :key="item">{{item}}</div>
+      <div class="cell" :style="handleCellStyle(item)" v-for="item in listDom" :key="item">{{transformData(item)}}</div>
     </div>
   </div>
 </template>
@@ -46,6 +46,9 @@ export default {
       all.push(data)
       this.currData = data
       this.listData = all
+    },
+    transformData (index) {
+      return this.currData[index]
     },
     handleCellStyle (item) {
       return ({ top: item * (50 + 10) + 10 + (this.currPage - 1) * this.fetchHeight + 'px' })
