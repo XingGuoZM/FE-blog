@@ -63,8 +63,6 @@ class ScrollList extends React.Component{
         })
     }
     handleSelect=(currSelected)=>{
-        // console.log(currSelected,currSelected+(this.state.currPage-1)*20)
-        // console.log(currSelected)
         if(this.state.currSelected===currSelected){
             this.setState({currSelected:-1})
         }else{

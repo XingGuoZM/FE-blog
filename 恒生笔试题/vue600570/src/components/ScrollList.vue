@@ -1,25 +1,76 @@
 <template>
-  <div class="listWrapper">
-    <div class="list">
-      <div class="cell" :style="cellStyle(item)" v-for="item in listDom" :key="item">{{item}}</div>
+  <div class="listWrapper" id='list'>
+    <div class="list" :style="{height:listHeight+'px'}">
+      <div class="cell" :style="handleCellStyle(item)" v-for="item in listDom" :key="item">{{item}}</div>
     </div>
   </div>
 </template>
 <script >
-import data from '../mock/scrollList'
 export default {
   name: 'ScrollList',
   data () {
     return {
-      cellStyle: item => ({ top: item * (50 + 10) + 10 + 'px' }),
-      listData: data,
-      listDom: [1, 2, 3, 4, 5]
+      listData: [],
+      listDom: [],
+      fetchHeight: 580,
+      listHeight: 500,
+      currPage: 1,
+      pageSize: 20,
+      currData: [],
+      preDistance: 0,
+
+      currSelected: -1
     }
   },
   created () {
-    console.log(this.listData)
+    this.getDom()
+    this.getData()
   },
-  methods: {}
+  mounted () {
+    document.getElementById('list').addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    getDom () {
+      let arr = []
+      for (let i = 0; i < this.pageSize; i++) { arr.push(i) }
+      this.listDom = arr
+    },
+    getData () {
+      let data = []
+      let all = JSON.parse(JSON.stringify(this.listData))
+      for (let i = 0; i < this.pageSize; i++) {
+        let count = i + (this.currPage - 1) * this.pageSize
+        let item = '第 ' + count + ' 条数据'
+        data.push(item)
+      }
+      all.push(data)
+      this.currData = data
+      this.listData = all
+    },
+    handleCellStyle (item) {
+      return ({ top: item * (50 + 10) + 10 + (this.currPage - 1) * this.fetchHeight + 'px' })
+    },
+    handleScroll (e) {
+      const distance = e.target.scrollTop
+      // 滚动方向
+      const scrollDirection = distance - this.preDistance
+      this.preDistance = distance
+      if (distance >= this.fetchHeight * this.currPage && scrollDirection > 0) {
+        this.currPage += 1
+        let listHeight = this.listHeight + 1000
+        let currData = this.listData[this.currPage - 2]
+        this.listHeight = listHeight
+        this.currData = currData
+        this.getData()
+      }
+      // 向下滚动
+      if (distance <= this.fetchHeight * (this.currPage - 1) && scrollDirection < 0) {
+        this.currPage = (this.currPage - 1 < 1) ? 1 : (this.currPage - 1)
+        let currData = this.listData[this.currPage - 1]
+        this.currData = currData
+      }
+    }
+  }
 }
 </script>
 
