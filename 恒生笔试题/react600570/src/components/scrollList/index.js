@@ -10,7 +10,7 @@ class ScrollList extends React.Component{
             
             listDom:[],
             listData:[],
-            listHeight:20*60+10,
+            listHeight:500,
             currPage:1,
             pageSize:20,
             currData:[],

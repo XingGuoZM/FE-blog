@@ -1,6 +1,6 @@
 .listWrapper{
     width:100%;
-    height:calc(100% - 50px);
+    height:500px;
     overflow-y:scroll;
     position: relative;
 }
