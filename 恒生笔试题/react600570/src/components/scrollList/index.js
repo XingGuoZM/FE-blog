@@ -23,17 +23,18 @@ class ScrollList extends React.Component{
     componentWillMount(){
         // dom数量
         let arr=[]
+        const{currPage}=this.state;
         for(let i=0;i<this.state.pageSize;i++){ arr.push(i) }
         this.setState({listDom:arr})
-        this.getData();
+        this.getData(currPage);
     }
-    getData(pageNum,pageSize){
+    getData(pageNum){
         //模拟数据 
         let data=[]
-        const{listData}=this.state
+        const{listData,pageSize}=this.state
         let all=JSON.parse(JSON.stringify(listData))
-        for(let i=0;i<this.state.pageSize;i++){ 
-            let count=i+(this.state.currPage-1)*this.state.pageSize
+        for(let i=0;i<pageSize;i++){ 
+            let count=i+(pageNum-1)*pageSize
             let item ='第 '+count+' 条数据'
             data.push(item) 
         }
@@ -47,13 +48,15 @@ class ScrollList extends React.Component{
     }
     handleKeyup(){
         window.addEventListener('keyup',(e)=>{
-            let {currSelected}=this.state
-            // console.log(currSelected)
-            // currSelected=currSelected+(this.state.currPage-1)*20
-            console.log(currSelected)
+            let {currSelected,currPage,pageSize}=this.state
             if(e.keyCode===40){
                 e.preventDefault();
                 ++currSelected
+                console.log(currSelected,pageSize,currPage)
+                if(currSelected/pageSize===currPage){
+                    console.log("currSelected",currPage)
+                    this.handleNextPage();
+                }
                 this.setState({currSelected})
             }else if(e.keyCode===38){
                 e.preventDefault();
@@ -63,58 +66,61 @@ class ScrollList extends React.Component{
         })
     }
     handleSelect=(currSelected)=>{
+        console.log(currSelected,this.state.currSelected)
         if(this.state.currSelected===currSelected){
             this.setState({currSelected:-1})
         }else{
             this.setState({currSelected})
         }
     }
+    handlePrevPage=()=>{
+        let currPage=(this.state.currPage-1<1)?1:(this.state.currPage-1)
+        let currData=this.state.listData[currPage-1]
+        this.setState({currPage,currData})
+    }
+    handleNextPage=()=>{
+        let currPage=this.state.currPage+1
+        let listHeight=this.state.listHeight+1000
+        let currData=this.state.listData[currPage-2]
+        this.setState({listHeight,currPage,currData})
+        this.getData(currPage)
+    }
     handleScroll=(e)=>{
+        
         const distance=e.target.scrollTop
         // 滚动方向
         const scrollDirection = distance-this.state.preDistance
         this.setState({preDistance:distance})
         // 向上滚动
-        // console.log(distance,this.state.fetchHeight*this.state.currPage)
-       
         if(distance>=this.state.fetchHeight*this.state.currPage && scrollDirection>0){
-            let currPage=this.state.currPage+1
-            let listHeight=this.state.listHeight+1000
-            let currData=this.state.listData[currPage-2]
-            this.setState({listHeight,currPage,currData})
-            // this.setState({isLoading:true})
-            // window.setTimeout(()=>{
-                // this.setState({isLoading:false})
-                this.getData()
-            // },2000)
+            this.handleNextPage();
         }
         // 向下滚动
        if (distance<=this.state.fetchHeight*(this.state.currPage-1)&&scrollDirection<0){
-            let currPage=(this.state.currPage-1<1)?1:(this.state.currPage-1)
-            let currData=this.state.listData[currPage-1]
-            this.setState({currPage,currData})
+            this.handlePrevPage();
        }
     }
-    renderDom(listDom,currPage,currData,currSelected){
+    renderDom(){
         let activeStyle={
             backgroundColor:'rgba(255,111,0,.06)',
             border:'solid 1px #ff6f00',
             color:'#ff6f00'
         }
+        const {currPage,fetchHeight,currSelected,listDom,currData}=this.state;
         return listDom.map(item=>{
-            let isActive=currSelected===item+(this.state.currPage-1)*this.state.pageSize?activeStyle:null
-            return <div className='cell' onClick={()=>this.handleSelect(item+(this.state.currPage-1)*this.state.pageSize)} 
-                style={{...isActive,top:item*(50+10)+10+(currPage-1)*this.state.fetchHeight+'px'}} key={item}>
+            let isActive=currSelected===item?activeStyle:null
+            return <div className='cell' onClick={()=>this.handleSelect(item)} 
+                style={{...isActive,top:item*(50+10)+10+(currPage-1)*fetchHeight+'px'}} key={item}>
                 {currData[item]}
             </div>})
     }
     render(){
-        let {listHeight,currPage,listDom,currData,currSelected}=this.state
+        let {listHeight}=this.state
         
         return(<div className="listWrapper" id='list'>
             <div className='list' style={{height:listHeight+'px'}}>
-                {this.renderDom(listDom,currPage,currData,currSelected)}
-                <div className='loading' style={{top:listHeight+'px'}}>数据加载中...</div>
+                {this.renderDom()}
+                {/* <div className='loading' style={{top:listHeight+'px'}}>数据加载中...</div> */}
             </div>
         </div>)
     }
