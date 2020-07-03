@@ -1,21 +1,38 @@
 .listWrapper{
     width:100%;
-    height:500px;
+    height:450px;
     overflow-y:scroll;
     position: relative;
 }
 .list{
     /* width:100%; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.prevDom{
+    position: absolute;
+    width:95%;
+
+}
+.currDom{
+    position: absolute;
+    width:95%;
+    
+}
+.nextDom{
+    position: absolute;
+    width:95%;
+    
 }
 .cell{
-    width:95%;
-    position: absolute;
     height:50px;
     line-height:50px;
-    border:solid 1px #f2f2f2;
+    /* border:solid 1px #f2f2f2; */
     background-color:#f2f2f2;
+    /* margin-top:10px; */
     /* background-color:#fa2; */
 }
 .cell:hover{

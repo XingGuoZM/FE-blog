@@ -1,10 +1,11 @@
 import React from 'react';
-// import throttle from '../../util/throttle'
 import './index.css'
 class ScrollList extends React.Component{
     constructor(props){
         super(props);
         this.state={
+            debounceTimer:null,
+            throttleTimer:null,
             // 滚动高度，当滚动条滚动至该高度是开始追加数据
             fetchHeight:580,
             
@@ -42,28 +43,27 @@ class ScrollList extends React.Component{
         this.setState({currData:data,listData:all})
     }
     componentDidMount(){
+        // 滚动事件监听
         document.getElementById('list').addEventListener('scroll',this.handleScroll)
         // 键盘事件监听
-        this.handleKeyup()
+        // this.handleKeyup()
+        window.addEventListener('keyup',(e)=>this.handleKeyup(e))
     }
-    handleKeyup(){
-        window.addEventListener('keyup',(e)=>{
-            let {currSelected,currPage,pageSize}=this.state
-            if(e.keyCode===40){
-                e.preventDefault();
-                ++currSelected
-                console.log(currSelected,pageSize,currPage)
-                if(currSelected/pageSize===currPage){
-                    console.log("currSelected",currPage)
-                    this.handleNextPage();
-                }
-                this.setState({currSelected})
-            }else if(e.keyCode===38){
-                e.preventDefault();
-                --currSelected
-                this.setState({currSelected})
+    handleKeyup(e){
+        let {currSelected,currPage,pageSize}=this.state
+        if(e.keyCode===40){
+            e.preventDefault();
+            ++currSelected
+            if(currSelected/pageSize===currPage){
+                console.log("currSelected",currPage)
+                this.handleNextPage();
             }
-        })
+            this.setState({currSelected})
+        }else if(e.keyCode===38){
+            e.preventDefault();
+            --currSelected
+            this.setState({currSelected})
+        }
     }
     handleSelect=(currSelected)=>{
         console.log(currSelected,this.state.currSelected)
@@ -80,46 +80,39 @@ class ScrollList extends React.Component{
     }
     handleNextPage=()=>{
         let currPage=this.state.currPage+1
-        let listHeight=this.state.listHeight+1000
+        let listHeight=this.state.listHeight+500
         let currData=this.state.listData[currPage-2]
         this.setState({listHeight,currPage,currData})
         this.getData(currPage)
     }
     handleScroll=(e)=>{
-        
+
         const distance=e.target.scrollTop
         // 滚动方向
         const scrollDirection = distance-this.state.preDistance
         this.setState({preDistance:distance})
         // 向上滚动
-        if(distance>=this.state.fetchHeight*this.state.currPage && scrollDirection>0){
-            this.handleNextPage();
+        if(distance>500*this.state.currPage && scrollDirection>0){
+            this.handleNextPage()
         }
         // 向下滚动
-       if (distance<=this.state.fetchHeight*(this.state.currPage-1)&&scrollDirection<0){
+       if (distance<=500*(this.state.currPage-1)&&scrollDirection<0){
             this.handlePrevPage();
        }
     }
-    renderDom(){
-        let activeStyle={
-            backgroundColor:'rgba(255,111,0,.06)',
-            border:'solid 1px #ff6f00',
-            color:'#ff6f00'
-        }
-        const {currPage,fetchHeight,currSelected,listDom,currData}=this.state;
-        return listDom.map(item=>{
-            let isActive=currSelected===item?activeStyle:null
-            return <div className='cell' onClick={()=>this.handleSelect(item)} 
-                style={{...isActive,top:item*(50+10)+10+(currPage-1)*fetchHeight+'px'}} key={item}>
-                {currData[item]}
-            </div>})
+    renderDom(domData){
+        const{currPage}=this.state
+        return domData.map(item=>(<div className='cell' key={item}>{item+(currPage-1)*10}</div>))
     }
     render(){
-        let {listHeight}=this.state
-        
+        let {listHeight,currPage}=this.state
+        let prevDom=[0,1,2,3,4,5,6,7,8,9]
+        let currDom=[10,11,12,13,14,15,16,17,18,19]
         return(<div className="listWrapper" id='list'>
             <div className='list' style={{height:listHeight+'px'}}>
-                {this.renderDom()}
+                <div className='prevDom' style={{top:`${(currPage-1)*500}px`}}>{this.renderDom(prevDom)}</div>
+                <div className='currDom' style={{top:`${(currPage)*500}px`}}>{this.renderDom(currDom)}</div>
+                {/* <div className='nextDom' style={{top:`${(currPage+1)*500}px`}}>{this.renderDom(nextDom)}</div> */}
                 {/* <div className='loading' style={{top:listHeight+'px'}}>数据加载中...</div> */}
             </div>
         </div>)
