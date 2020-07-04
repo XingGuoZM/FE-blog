@@ -43,9 +43,6 @@ class ScrollList extends React.Component{
         const { pageSize,currData,pageNum,listHeight,cellHeight,currSelected } = this.state
         let domSize=parseInt(pageSize/2)
         let dom=new Array(domSize).fill(1)
-        const activeStyle={
-            backgroundColor:'#f2f2f2'
-        }
 
         const renderListDom=[0,1].map(ele=>{
             let isOdd = ele===1
@@ -116,6 +113,7 @@ class ScrollList extends React.Component{
         // 滚动方向
         const scrollDirection = distance-preDistance
         this.setState({preDistance:distance})
+
         // 向上滚动
         if (distance > domSize*cellHeight*pageNum && scrollDirection > 0) {
             this.handleNextPage()
