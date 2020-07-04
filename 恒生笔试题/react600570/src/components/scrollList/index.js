@@ -4,35 +4,31 @@ class ScrollList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            debounceTimer:null,
-            throttleTimer:null,
-            // 滚动高度，当滚动条滚动至该高度是开始追加数据
-            fetchHeight:580,
             
-            listDom:[],
             listData:[],
+            listWrapperHeight:450,
             listHeight:500,
-            currPage:1,
+            cellHeight:50,
+            pageNum:1,
             pageSize:20,
             currData:[],
             preDistance:0,
-            isLoading:false,
-            
-            currSelected:-1
+            currSelected:-1,
         }
     }
     componentWillMount(){
-        // dom数量
-        let arr=[]
-        const{currPage}=this.state;
-        for(let i=0;i<this.state.pageSize;i++){ arr.push(i) }
-        this.setState({listDom:arr})
-        this.getData(currPage);
+        // 获取数据
+        this.getData();
     }
-    getData(pageNum){
+    componentDidMount(){
+        // 滚动事件监听
+        document.getElementById('list').addEventListener('scroll',this.handleScroll)
+        // 键盘事件监听
+        window.addEventListener('keyup',this.handleKeyup)
+    }
+    getData(){
         //模拟数据 
-        
-        const{listData,pageSize,currData}=this.state
+        const { pageNum,listData,pageSize,currData}=this.state
         let data=[...currData.slice(10)]
         let all=JSON.parse(JSON.stringify(listData))
         for(let i=0;i<pageSize;i++){ 
@@ -43,31 +39,54 @@ class ScrollList extends React.Component{
         all.push(data)
         this.setState({currData:data,listData:all})
     }
-    componentDidMount(){
-        // 滚动事件监听
-        document.getElementById('list').addEventListener('scroll',this.handleScroll)
-        // 键盘事件监听
-        // this.handleKeyup()
-        window.addEventListener('keyup',(e)=>this.handleKeyup(e))
+    renderDom(){
+        const { pageSize,currData,pageNum,listHeight,cellHeight,currSelected } = this.state
+        let domSize=parseInt(pageSize/2)
+        let dom=new Array(domSize).fill(1)
+        const activeStyle={
+            backgroundColor:'#f2f2f2'
+        }
+
+        const renderListDom=[0,1].map(ele=>{
+            let isOdd = ele===1
+            return (<div className='listDom' style={{top:`${(isOdd?(pageNum):(pageNum-1))*cellHeight*domSize}px`}} key={ele}>
+                {dom.map((item,index)=>{
+                    let selectedIndex = index+ele*domSize+(pageNum-1)*domSize
+                    return (<div className='cell' 
+                        style={{
+                            height:cellHeight+'px',
+                            lineHeight:cellHeight+'px',
+                            backgroundColor:currSelected===selectedIndex?'#f2f2f2':null
+                        }} 
+                        key={index}
+                        onClick={()=>this.handleSelect(selectedIndex)}>
+                            {isOdd?currData[index+domSize]:currData[index]}
+                        </div>)
+                    })
+                }
+            </div>)
+        })
+        return (<div className='list' style={{height:listHeight+'px'}}>
+            {renderListDom}
+        </div>)
     }
-    handleKeyup(e){
-        let {currSelected,currPage,pageSize}=this.state
+
+    handleKeyup=(e)=>{
+        let {currSelected,pageNum,pageSize}=this.state
         if(e.keyCode===40){
-            e.preventDefault();
             ++currSelected
-            if(currSelected/pageSize===currPage){
-                console.log("currSelected",currPage)
+            if(currSelected/pageSize===pageNum){
                 this.handleNextPage();
             }
             this.setState({currSelected})
         }else if(e.keyCode===38){
-            e.preventDefault();
             --currSelected
+            if(currSelected<-1) currSelected=-1
             this.setState({currSelected})
         }
     }
     handleSelect=(currSelected)=>{
-        console.log(currSelected,this.state.currSelected)
+        console.log(currSelected)
         if(this.state.currSelected===currSelected){
             this.setState({currSelected:-1})
         }else{
@@ -75,47 +94,42 @@ class ScrollList extends React.Component{
         }
     }
     handlePrevPage=()=>{
-        let currPage=(this.state.currPage-1<1)?1:(this.state.currPage-1)
-        let currData=this.state.listData[currPage-1]
-        this.setState({currPage,currData})
+        const {pageNum,listData} = this.state
+        let currPageNum = pageNum < 2 ? 1 : (pageNum-1)
+        let currData = listData[currPageNum-1]
+        this.setState({pageNum:currPageNum,currData})
     }
     handleNextPage=()=>{
-        let currPage=this.state.currPage+1
-        let listHeight=this.state.listHeight+500
-        let currData=this.state.listData[currPage-2]
-        this.setState({listHeight,currPage,currData})
-        this.getData(currPage)
+        const {pageSize,pageNum, listData, listHeight,cellHeight} = this.state
+        let domSize = parseInt(pageSize/2)
+   
+        let currListHeight = listHeight+cellHeight*domSize
+        let currData = listData[pageNum-1]
+        let currPageNum = pageNum+1
+        this.setState({listHeight:currListHeight,pageNum:currPageNum,currData})
+        this.getData(pageNum+1)
     }
     handleScroll=(e)=>{
-
         const distance=e.target.scrollTop
+        const { pageSize,preDistance,pageNum,cellHeight }=this.state
+        let domSize = parseInt(pageSize/2)
         // 滚动方向
-        const scrollDirection = distance-this.state.preDistance
+        const scrollDirection = distance-preDistance
         this.setState({preDistance:distance})
         // 向上滚动
-        if(distance>500*this.state.currPage && scrollDirection>0){
+        if (distance > domSize*cellHeight*pageNum && scrollDirection > 0) {
             this.handleNextPage()
         }
         // 向下滚动
-       if (distance<=500*(this.state.currPage-1)&&scrollDirection<0){
+       if (distance <= domSize*cellHeight*(pageNum-1) && scrollDirection < 0) {
             this.handlePrevPage();
        }
     }
-    renderDom(domData){
-        const{currData}=this.state
-        return domData.map(item=>(<div className='cell' key={item}>{currData[item]}</div>))
-    }
+
     render(){
-        let {listHeight,currPage}=this.state
-        let prevDom=[0,1,2,3,4,5,6,7,8,9]
-        let currDom=[10,11,12,13,14,15,16,17,18,19]
-        return(<div className="listWrapper" id='list'>
-            <div className='list' style={{height:listHeight+'px'}}>
-                <div className='prevDom' style={{top:`${(currPage-1)*500}px`}}>{this.renderDom(prevDom)}</div>
-                <div className='currDom' style={{top:`${(currPage)*500}px`}}>{this.renderDom(currDom)}</div>
-                {/* <div className='nextDom' style={{top:`${(currPage+1)*500}px`}}>{this.renderDom(nextDom)}</div> */}
-                {/* <div className='loading' style={{top:listHeight+'px'}}>数据加载中...</div> */}
-            </div>
+        const { listWrapperHeight } = this.state
+        return(<div className="listWrapper" style={{height:listWrapperHeight+'px'}} id='list'>
+            {this.renderDom()}
         </div>)
     }
 }

@@ -5,33 +5,21 @@
     position: relative;
 }
 .list{
-    /* width:100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.prevDom{
+.listDom{
     position: absolute;
     width:95%;
+}
 
-}
-.currDom{
-    position: absolute;
-    width:95%;
-    
-}
-.nextDom{
-    position: absolute;
-    width:95%;
-    
-}
 .cell{
-    height:50px;
-    line-height:50px;
+    /* line-height:50px; */
     /* border:solid 1px #f2f2f2; */
-    background-color:#f2f2f2;
+    /* background-color:#f2f2f2; */
     /* margin-top:10px; */
     /* background-color:#fa2; */
 }
