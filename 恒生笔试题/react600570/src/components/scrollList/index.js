@@ -31,8 +31,9 @@ class ScrollList extends React.Component{
     }
     getData(pageNum){
         //模拟数据 
-        let data=[]
-        const{listData,pageSize}=this.state
+        
+        const{listData,pageSize,currData}=this.state
+        let data=[...currData.slice(10)]
         let all=JSON.parse(JSON.stringify(listData))
         for(let i=0;i<pageSize;i++){ 
             let count=i+(pageNum-1)*pageSize
@@ -101,8 +102,8 @@ class ScrollList extends React.Component{
        }
     }
     renderDom(domData){
-        const{currPage}=this.state
-        return domData.map(item=>(<div className='cell' key={item}>{item+(currPage-1)*10}</div>))
+        const{currData}=this.state
+        return domData.map(item=>(<div className='cell' key={item}>{currData[item]}</div>))
     }
     render(){
         let {listHeight,currPage}=this.state
