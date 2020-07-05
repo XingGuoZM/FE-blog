@@ -1,8 +1,3 @@
-
-
-### 冒泡排序  
-代码实现
-```
 /**
  * 冒泡排序
  */
@@ -18,9 +13,6 @@ const bubbleSort = function(arr){
   }
   return arr;
 }
-```
-### 快速排序  
-```
  /**
  * 快速排序
  */
@@ -38,14 +30,6 @@ const quickSort = function(arr){
   }
   return quickSort(left).concat(flag,quickSort(right))
 }
-```
-### 选择排序  
-### 直接插入排序  
-### 希尔排序  
 
-### 简单选择排序  
-### 堆排序  
-### 归并排序  
-### 计数排序  
-### 桶排序  
-### 基数排序  
+
+console.log(quickSort([9,8,7,6,5,4,3,2,1]))
