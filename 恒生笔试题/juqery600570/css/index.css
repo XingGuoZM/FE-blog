@@ -1,0 +1,31 @@
+* {
+  margin:0;
+  padding:0;
+}
+.listWrapper{
+  width:100%;
+  height:450px;
+
+  overflow-y:scroll;
+  position: relative;
+}
+
+.list{
+  width:100%;
+  height:500px;
+  position: absolute;
+}
+.list1{
+  top:0px;
+}
+.list2{
+  top:500px;
+}
+
+.cell{
+  width:100%;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  background-color:#ccc;
+}

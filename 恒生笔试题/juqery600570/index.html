@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jquery ScrollList</title>
+    <link type="text/css" rel="styleSheet" href='./css/index.css'/>
+  </head>
+  <body>
+    <section class="listWrapper" id='listWrapper'>
+      <div class="list list1" id='list1'>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+      </div>
+      <div class="list list2" id='list2'>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+        <div class='cell'></div>
+      </div>
+    </section>
+
+    <script src="./js/juqery.min.js"></script>
+    <script>
+
+      const listWrapper=$('#listWrapper')[0]
+      const list1=$('#list1')[0]
+      const list2=$('#list2')[0]
+      let pageNum=1,pageSize=20,domSize=parseInt(pageSize/2)
+      let distance=0,preDistance=0
+      let currData=[]
+
+      const getData=function(pageNum){
+        let curr=[...currData.slice(10)]
+        for(let i=0;i<pageSize;i++){
+          curr.push(i+(pageNum-1)*pageSize)
+        }
+
+        for(let i=0;i<domSize;i++){
+          list1.children[i].innerHTML=i+(pageNum-1)*pageSize
+          list2.children[i].innerHTML=i+domSize+(pageNum-1)*pageSize
+        }
+        currData=JSON.parse(JSON.stringify(curr))
+      }
+      const handleScroll=function(e){
+        let top = e.target.scrollTop;
+        // 滚动方向
+        let direction=top-preDistance
+        preDistance=top
+        if(top>=500*pageNum && direction>0){
+          pageNum++
+          list1.style.top=500*(pageNum-1)+'px'
+          list2.style.top=500*(pageNum)+'px'
+          getData(pageNum)
+        }
+
+        if(top<=500*(pageNum-1) && direction<0){
+          pageNum = pageNum < 2 ? 1 : (pageNum-1)
+          list1.style.top=500*(pageNum-1)+'px'
+          list2.style.top=500*(pageNum)+'px'
+          for(let i=0;i<domSize;i++){
+            list1.children[i].innerHTML=i+(pageNum-1)*pageSize
+            list2.children[i].innerHTML=i+domSize+(pageNum-1)*pageSize
+          }
+        }
+      }
+      getData(pageNum)
+      listWrapper.addEventListener('scroll',handleScroll)
+    </script>
+  </body>
+</html>
