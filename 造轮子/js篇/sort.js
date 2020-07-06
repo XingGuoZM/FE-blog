@@ -30,6 +30,19 @@ const quickSort = function(arr){
   }
   return quickSort(left).concat(flag,quickSort(right))
 }
+/**
+ * 插入排序
+ */
 
+ const insertSort = function(arr){
+
+ }
+
+/**
+ * 希尔排序
+ */
+const sheelSort = function(arr){
+  
+}
 
 console.log(quickSort([9,8,7,6,5,4,3,2,1]))
