@@ -1,6 +1,7 @@
 ## Promise解析  
+
 ```
-3个状态：pending、fullfilled、rejected。如果状态为fulltilled则走then，如果状态为rejected则走catch
+3个状态：pending、fullfilled、rejected。
 
 new Promise((resolve,reject)=>{
   resolve()
@@ -10,3 +11,11 @@ new Promise((resolve,reject)=>{
 
 })
 ```
+
+### 手动实现一个promise  
+```
+
+```
+
+#### 参考  
+* [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
