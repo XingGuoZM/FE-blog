@@ -11,8 +11,19 @@ app.use = (fn) => {
 
 app.compose = function() {
   // Your code goes here
+  //同步执行
+  // function dispatch(index){
+  //   if(index===app.middlewares.length) return ;
+  //   const fn=app.middlewares[index];
+  //   return fn(()=>dispatch(index+1))
+  // }
+  // dispatch(0);
 
-  
+  // [prev(),curr(),next()]
+  // prev(curr(next()))
+
+  const funcs=app.middlewares
+  return funcs.reduce((a, b) => (...args) => a(b(...args)))
 }
 app.use(next => {
    console.log(1);
