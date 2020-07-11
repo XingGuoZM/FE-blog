@@ -32,8 +32,8 @@ function compose2(){
   return prev || function(){}
 }
 const funcs=[func1,func2,func3,func4,func5]
-compose1('方法一输出：',funcs)
-compose2('方法二输出：',funcs)
+compose1(funcs)
+compose2(funcs)
 ```
 ### 函数柯里化  
 
@@ -41,3 +41,5 @@ compose2('方法二输出：',funcs)
 ### 参考  
 - [JS函数柯里化（curry）和函数合成（compose）](http://c.biancheng.net/view/5744.html)  
 - [JS函数式编程中compose的实现](https://www.jianshu.com/p/eda918cf738a)  
+- [ES6 Curry and Function Composition](https://github.com/learn-javascript-courses/es6-curry)  
+- [JS中的柯里化(currying)](https://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
