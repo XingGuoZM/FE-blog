@@ -40,3 +40,4 @@ compose2('方法二输出：',funcs)
 
 ### 参考  
 - [JS函数柯里化（curry）和函数合成（compose）](http://c.biancheng.net/view/5744.html)  
+- [JS函数式编程中compose的实现](https://www.jianshu.com/p/eda918cf738a)  
