@@ -1,4 +1,4 @@
-代码仓库:[koa-compose](https://github.com/koajs/compose/blob/master/index.js)  
+源码仓库:[koa-compose](https://github.com/koajs/compose/blob/master/index.js)  
 ### 前言  
 文章开始之前来做一道题目。给一个函数数组，封装一个函数可以依次执行这个函数数组里的函数  
 ```
@@ -113,6 +113,11 @@ composeSync2()
 ### 洋葱模型与中间件  
 * 洋葱模型：对数据进行串行处理的一种机制，类似于洋葱，被一层层中间件（处理数据的）包裹。
 * 中间件：处理数据的函数、类、方法，分散在模型的各个部位。
+盗图两张：
+
+![compose](https://upload-images.jianshu.io/upload_images/23744478-ff03b60b5e9da2e8.png)
+
+![middleware](https://upload-images.jianshu.io/upload_images/23744478-9746f3f18dd35183.png)
 
 ### 源码解析  
 ```
