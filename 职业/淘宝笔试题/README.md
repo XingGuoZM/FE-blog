@@ -40,7 +40,7 @@ console.log(aliNumber(100))
 
 
 
-### 第二题：react-taobao  
+### 第二题：react-hooks封装轮播组件 
 ```
  /**
   * 2.使用react+react-hooks实现一个轮播组件
