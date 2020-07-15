@@ -1,0 +1,56 @@
+.container{
+  width:500px;
+  height:300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow:hidden;
+}
+.page-wrapper{
+  height:300px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.page{
+  width:500px;
+  height:300px;
+  display: flex;
+  font-size:50px;
+  justify-content: center;
+  align-items: center;
+}
+.left-arrow{
+  width:50px;
+  height:50px;
+  position: absolute;
+  background-color: chocolate;
+  left:0px;
+  z-index:3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-arrow{
+  width:50px;
+  height:50px;
+  position: absolute;
+  background-color: chocolate;
+  right:0px;
+  z-index:3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @keyframes moveLeft{
+  from {left:0px;}
+  to {left:-500px;}
+} */
+
+/* @keyframes moveRight{
+  from {left:-500px}
+  to {left:0px}
+} */
