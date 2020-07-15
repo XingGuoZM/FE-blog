@@ -9,6 +9,7 @@
 .page-wrapper{
   height:300px;
   position: absolute;
+  left:0;
   display: flex;
   align-items: center;
 }

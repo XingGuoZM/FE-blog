@@ -1,28 +1,35 @@
 import React , { useState }from 'react'
 import './index.css'
 import { useEffect} from 'react';
-let timer
+let leftTimer=null
+let rightTimer=null
 function Slider(props){
   let [index,setIndex]=useState(0)
-  // let [left,setLeft]=useState(0)
+  let [left,setLeft]=useState(0)
+  let [direction,setDirection]=useState('left')
   let len=props.data.length
 
-
-  // function startAnimation(){
-  //     timer=setInterval(()=>{
-  //       console.log(left)
-  //       setLeft(left=>{
-  //         return left-50
-  //       })
-
-  //     },100)
-  // }
+  function startAnimation(type){
+    if(type==='left'){
+      leftTimer=setInterval(()=>{
+        setLeft(left=>left-100)
+      },100)
+    }else if(type==='right') {
+      rightTimer=setInterval(()=>{
+        setLeft(left=>left+100)
+      },100)
+    }
+  }
   useEffect(()=>{
-    // if(left>-450){
-    //   return ()=>clearInterval(timer)
-    // }
-
-  },[index])
+    console.log(left,index,direction)
+    if(left<-index*500 && direction==='left'){
+      setLeft(-500*index)
+      return ()=>clearInterval(leftTimer)
+    }else if(left>-index*500 && direction==='right'){
+      setLeft(-500*index)
+      return ()=>clearInterval(rightTimer)
+    }
+  },[index,left])
   
   // 点击滚动
   const handleClick=function(type){
@@ -30,11 +37,14 @@ function Slider(props){
     switch(type){
       case 'left':
         currIndex= index > len-2 ? 0 : ( ++index )
-        // startAnimation()
+        setDirection(type)
+        startAnimation(type)
         break;
       case 'right':
         currIndex= index < 1 ? len-1 : (--index)
-        // startAnimation(type)
+        if(currIndex!==len-1) startAnimation(type)
+        setDirection(type) 
+        
         break;
       default:
         break;
@@ -47,7 +57,10 @@ function Slider(props){
     let sec=window.location.hash && window.location.hash.slice(1)
     if(parseInt(sec)>len-1) window.location.hash=`#${len-1}`
     if(parseInt(sec)<0) window.location.hash=`#${0}`
-    else setIndex(parseInt(sec))
+    else {
+      setIndex(parseInt(sec))
+    }
+    setLeft(-index*500)
   })
 
   let colors=['#C1CDC1','#8B3E2F','#8470FF','#79CDCD','#008B00','#8B658B']
@@ -55,7 +68,7 @@ function Slider(props){
 
   return <div className='container'>
     <div className='left-arrow' onClick={()=>handleClick('left')}>left</div>
-    <div className='page-wrapper' style={{left: -500*index+'px'}}>
+    <div className='page-wrapper' style={{transform: `translateX(${left}px)`}}>
       {dataDom}
     </div>
     <div className='right-arrow' onClick={()=>handleClick('right')}>right</div>
