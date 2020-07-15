@@ -56,7 +56,7 @@ react-taobao
 ```
 
 ### 开发遇到问题汇总
-+ 目前存在滚动动画的bug（2020-7-15）  
++ 目前存在滚动动画的bug（2020-7-14）  
   - js怎么操作keyframe(试了一下，成本较高)  
   - 使用requestAnimationFrame完成动画效果(试了一下，误差较大)  
   - setInterval（试了一下，无法修改state）,bug一般的存在  
