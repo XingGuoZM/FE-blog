@@ -32,7 +32,7 @@ function aliNumber(count,number){
 }
 
 aliNumber(5,100)
-
+console.log(global,this)
 
 
 
