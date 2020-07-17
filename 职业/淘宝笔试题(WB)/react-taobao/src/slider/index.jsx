@@ -2,26 +2,9 @@ import React , { useState }from 'react'
 import './index.css'
 import { useEffect} from 'react'
 
-
-
 function Slider(props){
   let [index,setIndex]=useState(0)
-  let [left,setLeft]=useState(0)
   let len=props.data.length
-  let start=null
-  function step(timestamp) {
-    if (!start) start = timestamp;
-    let progress = timestamp - start;
-    if(progress>500*index) {
-      setLeft(500*index)
-      start=timestamp
-    }
-    else setLeft(progress)
-    console.log(start,timestamp)
-    if (progress < 500*index) {
-      window.requestAnimationFrame(step);
-    }
-  }
   
   useEffect(()=>{},[index])
   // 点击滚动
@@ -37,7 +20,6 @@ function Slider(props){
       default:
         break;
     }
-    window.requestAnimationFrame(step);
     setIndex(currIndex)
     window.location.hash=`#${currIndex}`; 
   }
@@ -54,7 +36,7 @@ function Slider(props){
 
   return <div className='container'>
     <div className='left-arrow' onClick={()=>handleClick('left')}>left</div>
-    <div className='page-wrapper' style={{transform: `translateX(-${left || index*500}px)`}}>
+    <div className='page-wrapper' style={{transform: `translateX(-${index*500}px)`}}>
       {dataDom}
     </div>
     <div className='right-arrow' onClick={()=>handleClick('right')}>right</div>
