@@ -1,6 +1,8 @@
 原文地址：[What is Redux JS?](https://www.mindfiresolutions.com/blog/2018/04/what-is-redux-js/)  
 
-有很多web开发者问我们，Redux.js是什么？Redux是一个开源的JavaScript库，它能帮助开发者更容易的创建自定义的用户界面，将整个应用的状态维护在单个且不可变的状态树中。不可变的状态树并不是不能变化而是不能直接修改，每次应用的状态修改都要通过redux通过特殊的函数来创建一个新的对象。Redux受到函数式编程语言-Elm和Facebook的创建用户界面的应用框架-Flux的启发，web开发者们甚至有选择的将几个广泛被使用的框架整合进redux，然而Redux却不同于其他的Javascript库和mvc框架。
+![What-is-Redux-JS](https://www.mindfiresolutions.com/blog/wp-content/uploads/What-is-Redux-JS.jpg)
+
+有很多web开发者问我们，Redux.js是什么？Redux是一个开源的JavaScript库，它能帮助开发者更容易的创建自定义的用户界面，将整个应用的状态维护在单个且不可变的状态树中。不可变的状态树并不是不能变化而是不能直接修改，每次应用的状态修改都要通过redux通过特殊的函数来创建一个新的对象。Redux受到函数式编程语言-Elm和Facebook的创建用户界面的应用框架-Flux的启发，[web开发者们](http://www.mindfiresolutions.com/web.htm)甚至有选择的将几个广泛被使用的框架整合进redux，然而Redux却不同于其他的Javascript库和mvc框架。
 
 ## 什么是Redux JS？ 可以从不同的方面来理解Redux Javascript库
 
@@ -20,13 +22,13 @@ Store被设计成一个拥有应用程序状态的对象。store提供了辅助�
 
 ### 兼容各类不同的前端界面库  
 大量的web开发者将Redux与AngularJS或ReactJS结合使用。除了AngularJS和ReactJS之外，Redux还能与其他许多前端视图库兼容。因此，JavaScript程序员可以
-将Redux和广泛使用的视图库，例如Ember，Meteor，Vue.js，Polymer和Backbone.js结合在一起。与此同时，他们还可以依靠强大的Redux生态系统来利用许多模版，中间件和工具。因此，一个前端开发者可以通过延伸Redux来轻松的管理应用程序的状态
+将Redux和广泛使用的视图库，例如Ember，Meteor，[Vue.js](https://www.evernote.com/shard/s603/sh/b66b62a0-8216-40f4-8300-e1bcf00c15a8/081a19f7a78b07908e106acd542adf15)，Polymer和[Backbone.js](https://mindfiresolutions.tumblr.com/post/160691286879/backbonejs-features-every-web-developers-should)结合在一起。与此同时，他们还可以依靠强大的Redux生态系统来利用许多模版，中间件和工具。因此，一个前端开发者可以通过延伸Redux来轻松的管理应用程序的状态
 
 ### 简化复杂web应用的开发
 目前，Redux比其他前端库和工具更受欢迎。通过支持函数式编程，它能让程序员更轻松的写出可阅读并且可复用的代码。与此同时，Redux通过要求JavaScript程序员遵守严格的代码重组准则保持代码的一致和易于理解。程序员可以通过将数据存储地点从服务端转移至客户端，进一步加快初始服务渲染的速度。开发者可以进一步利用Redux的第三方工具来实时监视Web应用程序的各个方面
 
 ### 有它自己的缺陷  
-现在，Redux是使用最广泛的JavaScript库之一。从其用户群包括Twitter，Uber和Khan Academy的事实可以知道其有效性。然而，Redux，就像其他JavaScript库一样有其缺陷。例如，它要求JavaScript程序员写其他的代码去捕获简单的UI变化和诸如按钮点击的用户操作。
+现在，Redux是使用最广泛的[JavaScript库](https://mindfiresolutions.tumblr.com/post/161994944229/7-new-javascript-libraries-that-web-developers)之一。从其用户群包括Twitter，Uber和Khan Academy的事实可以知道其有效性。然而，Redux，就像其他JavaScript库一样有其缺陷。例如，它要求JavaScript程序员写其他的代码去捕获简单的UI变化和诸如按钮点击的用户操作。
 许多程序员抱怨说，reducers不能使他们顺利的在不同任务之间切换。然而，前端开发者们可以通过与强大的视图库集成来轻松的克服这些Redux缺陷。
 
-目前，JavaScript开发者们正在广泛的使用Redux来有效管理应用的状态。与此同时，Redux帮助开发者们编写简洁，可复用和可维护的代码并且简化测试和调试。JavaScript程序员甚至可以将几个广泛应用的前端视图库整合在一起。同样，他们可以使用各种第三方工具，中间件和模版来延伸Redux。
+目前，[JavaScript开发者们](http://www.mindfiresolutions.com/Offshore-Javascript-AJAX-Development-India.htm)正在广泛的使用Redux来有效管理应用的状态。与此同时，Redux帮助开发者们编写简洁，可复用和可维护的代码并且简化测试和调试。JavaScript程序员甚至可以将几个广泛应用的前端视图库整合在一起。同样，他们可以使用各种第三方工具，中间件和模版来延伸Redux。

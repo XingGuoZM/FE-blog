@@ -2,6 +2,8 @@
 
 原文地址：[What is Redux JS?](https://www.mindfiresolutions.com/blog/2018/04/what-is-redux-js/)  
 
+![What-is-Redux-JS](https://www.mindfiresolutions.com/blog/wp-content/uploads/What-is-Redux-JS.jpg)
+
 Many web developers ask us, What is Redux JS? Redux is an open source JavaScript library, which  makes it easier for developers to build custom user interfaces (UI) by maintaining the entire application state in a single and immutable state tree. The immutable state tree cannot be altered or manipulated directly. Each time the application state changes Redux creates a new object using specific functions. Redux takes inspiration from the functional programming language – Elm and Facebook’s application architecture for building UIs – Flux. The web application developers even have option to integrate Redux with several widely used JavaScript frameworks. However, Redux is still different from other JavaScript libraries and model-view-controller (MVC) frameworks.
 
 ### What is Redux JS? Understanding Various Aspects of Redux JavaScript Library
