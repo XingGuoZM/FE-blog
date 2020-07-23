@@ -18,4 +18,5 @@ new Promise((resolve,reject)=>{
 ```
 
 #### 参考  
-* [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+* [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)  
+- [promise源码](https://github.com/then/promise/blob/master/src/core.js)  
