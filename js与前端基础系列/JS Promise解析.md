@@ -12,7 +12,10 @@ new Promise((resolve,reject)=>{
 })
 ```
 
-### 手动实现一个promise  
+## promise解决了什么问题  
+把异步操作的回调函数嵌套问题变成了异步操作的链式调用
+
+## 手动实现一个promise  
 ```
 
 ```

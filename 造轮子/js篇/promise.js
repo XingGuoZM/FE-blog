@@ -6,7 +6,7 @@ class Promise{
   }
   resolve(){
     this.status='fulfilled'
-    console.log('success')
+    // console.log('success')
   }
   reject(){
     this.status='rejected'
@@ -30,12 +30,17 @@ class Promise{
   }
 }
 
-
+console.log(1,this)
 new Promise(function(resolve,reject){
   resolve()
+  console.log(2,this)
 }).then(res=>{
 
 },err=>{
 
 })
 
+function hello(){
+  console.log(this)
+}
+hello();
