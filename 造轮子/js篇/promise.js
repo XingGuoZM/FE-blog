@@ -22,7 +22,6 @@ class Promise{
         }else{
           setTimeout(()=>{})
         }
-
     })
     return promise2;
   }
