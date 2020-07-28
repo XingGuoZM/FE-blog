@@ -17,7 +17,9 @@
 
 例如：一个宽度为200px的div，padding值为20px。  
 那么在w3c盒模型下，这个div实际宽度为240px。  
-在怪异盒模型下，这个div实际宽度为160px
+在怪异盒模型下，这个div实际宽度为160px  
+
+### 内联盒子和w
 
 ### 参考  
 - [MDN 盒模型](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model)  
