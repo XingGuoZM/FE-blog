@@ -1,0 +1,50 @@
+## Promise解析  
+Promise 是一个对象，它代表一个异步操作的最终完成或失败。由于它的 then 方法和 catch、finally 方法会返回一个新的 Promise，所以可以允许我们链式调用，解决了传统的回调地狱问题。
+
+#### then和catch方法  
+- Promise 的状态一经改变就不能再修改。
+- .then 和 .catch 都会返回一个新的 Promis。
+- catch 不管被链接到哪里，都能捕获上层未捕捉过得错误。
+- 在 Promise 中，返回一个任意的 非 Promise 的值 都会被包裹成 Promise 对象，例如 return 2 会被包装成 return Promise.resolve(2)。
+- Promsie 的 .then 或者 .catch 可以被调用多次，但如果 Promise 内部的状态一经改变，并且有了一个值，那么后续每次调用 .then 或者 .catch的时候都会直接拿到该值。
+- .then 或者 .catch 中 return 中 一个 error 对象并不会抛出错误，所以不会被后续的 .catch 捕获。
+- .then 或 .catch 返回的值不能是 Promise 本身，否则会造成死循环。
+- .then 方法是可以接收两个参数的，第一个是处理成功的参数，第二个是处理失败的参数，再某些时候你可以认为 catch是 .then 第二个参数的简便写法。
+- .then 或 .catch 的期望参数是函数，传入非函数会发生值穿透。  
+
+#### finally方法  
+- .finally() 方法也是返回一个 promise，他在 Promise 结束的时候，无论结果为 resolved 还是 rejected，都会执行里面的回调函数。  
+- .finally() 方法的回调不接受任何的参数，也就是说在 .finally() 函数中是没法 知道 Promise 的最终态是 resolved 还 rejected。  
+- 它最终返回的默认是一个 上一次的 Promise 对象值，不过如果抛出的是一个异常，则是返回 异常的 Promise 对象。
+
+#### all及race方法  
+- Promise.all() 可以将多个Promise实例包装成一个新的Promise实例。同时，成功和失败的返回值是不同的，成功的时候返回的是一个结果数组，而失败的时候则返回最先被 reject 失败状态的值，例如一个页面要分了多个异步请求去加载数据 ，那必须要等数据全部成功返回，页面才会成功显示。
+- Promise.race() 的作用也是接收一组异步任务，然后执行异步任务，只保留第一个执行完成的异步操作结果，其他的方法仍在执行，不管结果如何会被抛弃。比如有几个 异步请求同时去访问一个 图片，最先获取的则直接返回，其他的则无用了。
+- Promise.all().then() 结果中的数组的顺序和 Promise.all() 接收到的数组顺序一致。
+all 和 race 传入的数组中如果有会抛出异常的异步任务，那么只有最先抛出的错误会被捕获，并且是被 then 的第二个参数或者后面的 catch 捕获，但不会影响数组中其他的异步任务的执行。
+
+
+```
+3个状态：pending、fullfilled、rejected。
+
+new Promise((resolve,reject)=>{
+  resolve()
+}).then(res=>{
+
+}).catch(err=>{
+
+})
+```
+
+## promise解决了什么问题  
+把异步操作的回调函数嵌套问题变成了异步操作的链式调用
+
+## 手动实现一个promise  
+```
+
+```
+
+#### 参考  
+* [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)  
+- [promise源码](https://github.com/then/promise/blob/master/src/core.js)  
+- [2020前端近期面试题整理](https://blog.csdn.net/kkm486622296/article/details/106063151)
