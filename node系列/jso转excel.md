@@ -65,3 +65,7 @@ json测试数据
 ```
 运行后会在exel目录下生成json2excel.xlsx文件
 ![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200801004437037-1311461026.png)
+
+
+### 参考  
+- [nodejs json 转换成 Excel 支持大数据](https://www.jianshu.com/p/8aa148435499)
