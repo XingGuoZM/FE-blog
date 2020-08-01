@@ -68,4 +68,5 @@ json测试数据
 
 
 ### 参考  
-- [nodejs json 转换成 Excel 支持大数据](https://www.jianshu.com/p/8aa148435499)
+- [nodejs json 转换成 Excel 支持大数据](https://www.jianshu.com/p/8aa148435499)  
+- [ExcelJS](https://github.com/exceljs/exceljs/blob/master/README_zh.md#%E8%AF%BB-xlsx)
