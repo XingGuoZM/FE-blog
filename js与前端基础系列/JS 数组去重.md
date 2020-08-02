@@ -24,5 +24,5 @@ function removeDuplicate(arr){
 removeDuplicate(arr)
 ```
 
-### 二维数组怎么去重  
-1. 
+### 二维数组去重   
+

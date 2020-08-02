@@ -1,5 +1,17 @@
-## Promise解析  
+## Promise解释  
 Promise 是一个对象，它代表一个异步操作的最终完成或失败。由于它的 then 方法和 catch、finally 方法会返回一个新的 Promise，所以可以允许我们链式调用，解决了传统的回调地狱问题。
+
+```
+3个状态：pending、fullfilled、rejected。
+
+new Promise((resolve,reject)=>{
+  resolve()
+}).then(res=>{
+
+}).catch(err=>{
+
+})
+```
 
 #### then和catch方法  
 - Promise 的状态一经改变就不能再修改。
@@ -24,22 +36,11 @@ Promise 是一个对象，它代表一个异步操作的最终完成或失败。
 all 和 race 传入的数组中如果有会抛出异常的异步任务，那么只有最先抛出的错误会被捕获，并且是被 then 的第二个参数或者后面的 catch 捕获，但不会影响数组中其他的异步任务的执行。
 
 
-```
-3个状态：pending、fullfilled、rejected。
-
-new Promise((resolve,reject)=>{
-  resolve()
-}).then(res=>{
-
-}).catch(err=>{
-
-})
-```
 
 ## promise解决了什么问题  
 把异步操作的回调函数嵌套问题变成了异步操作的链式调用
 
-## 手动实现一个promise  
+## 实现一个简易的promise  
 ```
 
 ```

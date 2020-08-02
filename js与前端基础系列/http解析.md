@@ -100,6 +100,8 @@
   - 503 Service Unavailable 服务器由于维护或者负载过重未能应答。例如，Servlet可能在数据库连接池已满的情况下返回503。服务器返回503时可以提供一个Retry-After头。
   - 504 Gateway Timeout 由作为代理或网关的服务器使用，表示不能及时地从远程服务器获得应答。（HTTP 1.1新）505 HTTP Version Not Supported 服务器不支持请求中所指明的HTTP版本。（HTTP 1.1新）
 
+### 强缓存（本地缓存）和协商缓存  
+
 
 ### 参考  
 - [HTTP1.0、HTTP1.1 和 HTTP2.0 的区别](https://www.cnblogs.com/heluan/p/8620312.html)  
@@ -109,3 +111,4 @@
 - [TCP三次握手四次挥手详解](https://www.cnblogs.com/zmlctt/p/3690998.html)  
 - [TCP三次握手和四次挥手，史上最简单的解释，通俗易懂](https://github.com/wuwnnwng/TCP-THANDFH/blob/master/tcp.txt)  
 - [2020年前端面试题及答案](https://blog.csdn.net/raleway/article/details/104268283)  
+- [http协商缓存VS强缓存](https://www.cnblogs.com/wonyun/p/5524617.html)

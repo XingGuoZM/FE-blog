@@ -1,4 +1,11 @@
+### 什么是定位？  
+position  
 
+### 定位有几种？  
+- absolute  
+- fixed  
+- relative  
+- static  
 
 
 

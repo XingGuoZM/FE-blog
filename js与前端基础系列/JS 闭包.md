@@ -1,5 +1,14 @@
 ### 闭包是什么  
-
+函数作用域转移，导致相关变量不被销毁常驻内存。  
+函数里return另一个函数，调用之时进行赋值转移。类似如下结构
+```
+function func1(){
+  return function func2(){
+    //you code
+  }
+}
+const func3=func1();
+```
 ### 作用域  
 
 ### 参考  
