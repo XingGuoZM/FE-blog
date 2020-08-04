@@ -40,5 +40,11 @@
             <div class='right-circle'></div>
             <div class='square'></div>
         </section>
+        <script>
+            window.addEventListener('hello',(e)=>{
+                console.log(e.detail)
+            });
+            window.dispatchEvent(new CustomEvent('hello', {detail:{name:'张三'}}))
+        </script>
     </body>
 </html>
