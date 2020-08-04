@@ -7,7 +7,7 @@
 ## Deno是什么？  
 那么，Deno是什么，为什么创造它？它是Javascript和TypeScript的运行时，这意味着你可以使用两者中的任何一种语言编写程序并使用命令执行它们。与浏览器中运行的JavaScript不同，Deno程序可以访问主机上的资源，例如文件系统和环境变量。
 
-如果您知道[Node.js]（https://www.sitepoint.com/an-introduction-to-node-js/），并且您认为Deno听起来很相似，那是对的 。 Deno是Node的创建者Ryan Dahl的创意，他创建了Deno来解决他认为的[Node的设计缺陷]（https://www.youtube.com/watch?v=M3BM9TB-8yA）。 该项目的目的是提供一个默认情况下安全的脚本环境，它将TypeScript视为一流的语言，并尽可能与浏览器兼容（在实际情况下）
+如果您知道[Node.js](https://www.sitepoint.com/an-introduction-to-node-js/)，并且您认为Deno听起来很相似，那是对的 。 Deno是Node的创建者Ryan Dahl的创意，他创建了Deno来解决他认为的[Node的设计缺陷](https://www.youtube.com/watch?v=M3BM9TB-8yA)。 该项目的目的是提供一个默认情况下安全的脚本环境，它将TypeScript视为一流的语言，并尽可能与浏览器兼容（在实际情况下）
 
 ## 安全特性  
 Deno设计为开箱即用。 默认情况下，所有代码都在安全的沙箱中执行，这意味着您需要授予明确的权限，以允许程序访问网络或文件系统。
@@ -29,7 +29,7 @@ Deno设计为开箱即用。 默认情况下，所有代码都在安全的沙箱
 当然，由于TypeScript是现代JavaScript的超集，因此，如果您愿意，也可以使用旧的JS编写代码！ Deno支持一些对开发人员友好的出色功能，例如ES模块导入。
 
 ## 使用外部代码
-正如Ryan在演讲中提到的那样，Deno的目标之一是避免使用包管理器。与Node.js和PHP（分别使用[npm]（https://www.sitepoint.com/beginners-guide-node-package-manager/）和composer包管理器）等运行时/语言不同，Deno不使用包管理器。
+正如Ryan在演讲中提到的那样，Deno的目标之一是避免使用包管理器。与Node.js和PHP（分别使用[npm](https://www.sitepoint.com/beginners-guide-node-package-manager/)和composer包管理器）等运行时/语言不同，Deno不使用包管理器。
 
 相反，外部的包通过URL来引入
 ```
@@ -41,10 +41,10 @@ deno cache --reload my_module.ts
 ```
 
 ## 软件包托管  
-尽管Deno没有提供软件包的注册中心，但有一个[第三方可用的模块列表]（https://deno.land/x）。 该服务提供了一个标准化的版本化的URL，该URL映射到该模块的GitHub仓库。 您可以按名称搜索软件包并查看简要说明，通过单击可以查看软件包的readme。
+尽管Deno没有提供软件包的注册中心，但有一个[第三方可用的模块列表](https://deno.land/x)。 该服务提供了一个标准化的版本化的URL，该URL映射到该模块的GitHub仓库。 您可以按名称搜索软件包并查看简要说明，通过单击可以查看软件包的readme。
 
 ## 标准库  
-Deno提供了一个[标准库]（https://deno.land/std）（大致基于Golang），该库提供了一组高质量的没有外部依赖的标准模块。
+Deno提供了一个[标准库](https://deno.land/std)（大致基于Golang），该库提供了一组高质量的没有外部依赖的标准模块。
 
 标准库中的软件包没有和Deno一起安装。相反，它们可以在线使用。回顾上一节，这些模块是有版本的，你可以将代码固定到某个特定的版本：
 ```
@@ -77,7 +77,7 @@ import { copy } from "https://deno.land/std@0.50.0/fs/copy.ts";
 - ws: 创建websocket客户端和服务器  
 
 ## 安装Deno  
-Deno作为单个可执行文件存在，并没有其他依赖。 您可以从[发布页]（https://github.com/denoland/deno/releases）下载二进制文件，或使用以下安装程序进行安装：
+Deno作为单个可执行文件存在，并没有其他依赖。 您可以从[发布页](https://github.com/denoland/deno/releases)下载二进制文件，或使用以下安装程序进行安装：
 
 Shell (macOS, Linux):
 ```
