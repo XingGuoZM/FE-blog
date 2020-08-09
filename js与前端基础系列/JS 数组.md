@@ -11,7 +11,8 @@
 - sort数组排序
 
 ### map、forEach、every、filter、some  
-
+接收一个函数当参数
+map
 
 ### indexOf、lastIndexOf  
 

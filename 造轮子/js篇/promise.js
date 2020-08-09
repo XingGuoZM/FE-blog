@@ -30,7 +30,6 @@ class Promise{
   }
 }
 
-console.log(1,this)
 new Promise(function(resolve,reject){
   resolve()
   console.log(2,this)
@@ -39,8 +38,3 @@ new Promise(function(resolve,reject){
 },err=>{
 
 })
-
-function hello(){
-  console.log(this)
-}
-hello();

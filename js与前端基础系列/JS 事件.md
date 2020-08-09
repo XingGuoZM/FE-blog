@@ -5,6 +5,13 @@
 
 
 ### 浏览器  
+- 事件流 
+  - 事件捕获  
+  - 事件冒泡  
+- DOM事件  
+  - 鼠标  
+  - 键盘  
+- 自定义事件   
 ```
   window.addEventListener('hello',(e)=>{
       console.log(e.detail)

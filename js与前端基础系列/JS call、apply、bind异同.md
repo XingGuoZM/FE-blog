@@ -5,6 +5,9 @@
 ### call、apply和bind不同点  
 - bind只绑定函数执行的作用域，绑定后不会执行，而call和apply绑定执行作用域之后会立即执行  
 
+### 示例  
+
+
 
 ### 参考  
 - [call、apply和bind方法的用法以及区别](https://www.jianshu.com/p/bc541afad6ee)  
