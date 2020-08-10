@@ -1,4 +1,4 @@
-仓库地址：[rax-helloworld](https://github.com/XingGuoZM/native-module/tree/master/rax-helloworld) 
+仓库地址：[rax-todolist](https://github.com/XingGuoZM/native-module/tree/master/rax-todolist) 
 ### 简单介绍一下  
 rax系列由易到难完成一些小demo来培养学习的兴趣。后面会讲一些自己对rax框架的认识和理解，学习完成一些示例之后会开始研究源码实现以及rax为什么能兼容多端。todolist是一个简单的小例子，可以算作是学习rax练手的demo。环境和[前一篇](https://www.cnblogs.com/xingguozhiming/p/13466465.html)相同,
 

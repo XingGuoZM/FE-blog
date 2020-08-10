@@ -1,5 +1,5 @@
 ### 解析  
-Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置
+Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置，有4个值分别为top、left、right、bottom
 
 
 ### 示例  
