@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>getBoundingClientRect</title>
+        <style>
+            .list{
+                width:100%;
+                height:300px;
+                border:solid 1px #ff4747;
+                overflow:auto;
+            }
+            .item{
+              background-color:#f2f2f2;
+              height:50px;
+              width:100%;
+              margin-top:50px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <section id='list' class='list'>
+            <div class='item' >1</div>
+            <div class='item'>2</div>
+            <div class='item'>3</div>
+            <div class='item'>4</div>
+            <div class='item'>5</div>
+            <div class='item'>6</div>
+            <div class='item'>7</div>
+            <div class='item'>8</div>
+            <div class='item'>9</div>
+            <div class='item' id='lastItem'>10</div>
+        </section>
+        <script>
+            const list = document.getElementById('list');
+            const last=document.getElementById('lastItem');
+            list.addEventListener('scroll',()=>{
+              const target = last.getBoundingClientRect()
+              console.log('top:',target.top,'bottom:',target.bottom,'left:',target.left,'right:',target.right);
+            })
+        </script>
+    </body>
+</html>
