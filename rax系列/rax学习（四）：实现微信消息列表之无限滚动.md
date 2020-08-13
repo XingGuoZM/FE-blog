@@ -10,7 +10,7 @@
 - 滚动到底加载下一页的值  
 
 ### 解决方案  
-消息提示使用定位，无限滚动加载,主要是如何检测到某个item是否到底了,可以转化成某个div距离屏幕上下左右的距离的问题，即可以使用getBoundingClientRect来实现它，除了这个还需要获取屏幕的高度，浏览器中可以使用document.documentElement.clientHeight来获取可视高度。关于getBoundingClientRect我们可以写个小例子来熟悉一下,代码如下：
+消息提示使用定位，无限滚动加载,主要是如何检测到某个item是否到底了,可以转化成某个div距离屏幕上下左右的距离的问题，即可以使用getBoundingClientRect来实现它，除了这个还需要获取屏幕的高度，浏览器中可以使用document.documentElement.clientHeight来获取可视高度。关于getBoundingClientRect我们可以写个[小例子](https://github.com/XingGuoZM/blog/blob/master/%E9%80%A0%E8%BD%AE%E5%AD%90/scroll.html)来熟悉一下,代码如下：
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -302,6 +302,7 @@ export default ()=>{
 
 ### 参考  
 - [MDN getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)  
-- [关于js获取屏幕高度和宽度（ window.document.body，window.screen）(PC端和移动端)](https://blog.csdn.net/weixin_43278947/article/details/90376807)
+- [关于js获取屏幕高度和宽度（ window.document.body，window.screen）(PC端和移动端)](https://blog.csdn.net/weixin_43278947/article/details/90376807)  
+- [getBoundingClientRect小例子](https://github.com/XingGuoZM/blog/blob/master/%E9%80%A0%E8%BD%AE%E5%AD%90/scroll.html)
 
 
