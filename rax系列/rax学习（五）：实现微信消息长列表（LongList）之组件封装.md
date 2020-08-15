@@ -161,7 +161,7 @@ export default () => {
   };
   return <View className="wrapper">
     <View className="message">
-      <Text className="message-text">微信</Text>
+      <Text className="message-text">{sum === 0 ? '微信' : `微信(${sum})`}</Text>
       <Image className="more" source={{uri: '../../public/images/more.jpg'}} />
     </View>
 
@@ -547,8 +547,8 @@ export const getNav = () => {
 
 ### 效果展示  
 
-- ![example1](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200815230602593-1014136906.png)
+![example1](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200815232303037-909403480.png)
 
 
-- ![example2](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200815230637183-1294061085.png)
+![example2](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200815232440777-464316658.png)
 
