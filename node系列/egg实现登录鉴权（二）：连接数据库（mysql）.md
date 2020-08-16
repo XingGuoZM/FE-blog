@@ -1,6 +1,14 @@
 前一篇实现了基本的生成token和验证token的功能，这其实并没什么用。这一篇主要实现对数据库里的人员进行验证。
+## 开发环境
 
-需求
+- [node下载地址](http://nodejs.cn/download/)
+- [mysql下载地址](https://dev.mysql.com/downloads/mysql/)
+```
+node  v12.10.0
+mysql 
+```
+
+## 需求
 登录：查询数据库的user表验证该人员是否存在
 user表中存在该nickname，生成token返回
 user表中不存在该nickname，返回{code:'404',msg:'不存在该人员'}
@@ -288,4 +296,5 @@ package.json
 
 参考
 egg+sequelize+mysql实现CRUD
-egg实现登录鉴权（一）：生成token
+egg实现登录鉴权（一）：生成token  
+- ["Can’t be opened because Apple cannot check it for malicious software" 解决方案](https://www.cnblogs.com/wangzhihang/p/12085076.html)
