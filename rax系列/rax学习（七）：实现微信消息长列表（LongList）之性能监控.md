@@ -34,12 +34,35 @@
 - 监控列表的性能，暴露存在的性能问题
 
 ### 解决方案  
-我们在useEffect里面使用window.performance即可获得各个时间节点，我们通过计算就能得到白屏时间、首屏时间。我们要看到效果，首先我们要多加一点mock数据，数据太少性能问题不明显
+我们在useEffect里面使用window.performance即可获得各个时间节点，我们通过计算就能得到白屏时间、首屏时间。我们要看到效果，首先我们要多加一点mock数据，数据太少性能问题不明显,那如何造出大量的mock数据呢，这时候我们的mock.js就派上用场了，为什么之前要加一个mock.js,直接取mock.json不行吗？当然可以，只不过要快速创造出大量的数据，千条万条mock.json文件就会变得非常大，我们只需要在mock.js加个循环就能快速造出大量数据。我们可以这样写：
 
+- mock.js
+```
 
-### 效果展示  
+import mock from '../../mock.json';
 
+export const getList = (page) => {
+  if (page < 1) return [];
+  let res = mock.data[0].list;
+  return res.map(item => {
+    item.id = page * item.id;
+    return item;
+  });
+};
 
+export const getNav = () => {
+  return mock.nav;
+};
+```
+
+我们在页面调用的时候直接取值即可。
+
+### 问题展示  
+我们可以使用浏览器暴露的api - performance来计算时间，chrome提供了性能检测的面板，非常轻松就能检测到，来看一下我们前面做的长列表究竟有多牛逼？？？
+
+![性能检测情况](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200818231159208-889288110.png)
+
+我们在检测中可以看到，数据一多，页面就会拖不动，体验非常非常差，而且看到控制台还报了不少错误。好不容易做出个页面，居然如此垃圾，经不起风浪，真让人失望，自信心备受打击哦。下一节我们来讲一下如何定位问题并且快速的解决性能上的问题，如何做到轻松流畅的拖动几万条数据。
 
 
 ### 参考  
