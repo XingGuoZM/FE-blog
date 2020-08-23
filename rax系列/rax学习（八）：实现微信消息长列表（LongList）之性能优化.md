@@ -18,11 +18,116 @@
 - 深克隆mock每页数据
 - 性能优化
   1. 使用官网提供的RecyclerView试了下，在web端感觉并没有提升性能呀，1w条数据滚动起来还是非常卡的。本方案不考虑
-  2. 使用虚拟列表的方式实现，dom结构和数据分开，提高dom的利用率。 
+  2. 使用虚拟列表的方式实现，dom结构和数据分开，提高dom的利用率。由于最近经常加班，所以先写了个例子，后面会补充完整的。 
 
 ### 代码展示  
+- 目录结构  
+  我们看到在components下有三个目录，LongList（不做任何处理，使用ScrollView），RecyclerList（使用官网提供的长列表解决方案，写了个小示例），VirtureList（自己想到的解决方案，也是一个小示例）
+
+![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823211752134-1548308267.png)
+
+- VirtureList代码展示，我们的长列表整体上只有3页的dom结构，通过滚动来动态定位dom位置并且偷偷把数据替换掉。
+```
+import {createElement, createRef, useEffect, useState} from 'rax';
+import View from 'rax-view';
+import ScrollView from 'rax-scrollview';
+import './index.css';
+/**
+ * 虚拟列表例子
+ */
+const scrollRef = createRef();
+
+const bottomRef = createRef();
+const topRef = createRef();
+
+const firstRef = createRef();
+const secondRef = createRef();
+const thirdRef = createRef();
+
+let page = 1;
+let prevDis = 2;
+let currDis = 0;
+export default () => {
+  let [page1, setPage1] = useState(1);
+  let [page2, setPage2] = useState(2);
+  let [page3, setPage3] = useState(3);
+  function handleScroll() {
+    scrollRef.current._nativeNode.addEventListener('scroll', (e) => {
+      let y = bottomRef.current.getBoundingClientRect().bottom;
+      // 最底部item的底部到屏幕最上方的距离比上屏幕的距离，我们已知底部导航的高度占屏幕高度的10%
+      currDis = y / document.documentElement.clientHeight;
+      // 计算比率，检测是否到底了
+      let distance = 0.91;
+      // 向上滑动
+      if (currDis < distance && currDis < prevDis) {
+        // console.log('向上滑动', page);
+        bottomRef.current.style.bottom = `-${100 * page}vh`;
+        if (page % 3 === 1) {
+          thirdRef.current.style.top = `${100 * page + 100}vh`;
+          setPage3(page + 2);
+        } else if (page % 3 === 2) {
+          firstRef.current.style.top = `${100 * page + 100}vh`;
+          setPage1(page + 2);
+        } else if (page % 3 === 0) {
+          secondRef.current.style.top = `${100 * page + 100}vh`;
+          setPage2(page + 2);
+        }
+        page++;
+      // 向下滑动
+      } else if (currDis > distance && currDis > prevDis) {
+        // console.log('向下滑动', page);
+        bottomRef.current.style.bottom = `-${100 * page}vh`;
+        if (page % 3 === 1) {
+          thirdRef.current.style.top = `${100 * page - 200}vh`;
+          setPage3(page - 1 );
+        } else if (page % 3 === 2) {
+          firstRef.current.style.top = `${100 * page - 200}vh`;
+          setPage1(page - 1);
+        } else if (page % 3 === 0) {
+          secondRef.current.style.top = `${100 * page - 200}vh`;
+          setPage2(page - 1);
+        }
+        page--;
+      }
+    });
+  }
+  useEffect(() => {
+    handleScroll();
+  }, [page]);
+  return <ScrollView className="list-wrapper" ref={scrollRef}>
+    <View className="page-wrap">
+      <View className="top" ref={topRef}>到顶了～</View>
+      <View className="first page" ref={firstRef} >{page1}</View>
+      <View className="second page" ref={secondRef} >{page2}</View>
+      <View className="third page" ref={thirdRef} >{page3}</View>
+      <View className="bottom" ref={bottomRef}>到底了～</View>
+    </View>
+  </ScrollView>;
+};
+```
 
 ### 效果展示  
+我们通过浏览器滚动帧率的工具来查看效果，操作如下：
+
+![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823212608526-1151238185.png)
+
+![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823212918548-795126173.png)
+
+
+通过上面设置我们可以轻松的查看到滚动帧率的变化，帧率越大代表动画越流畅。使用virturelist的话，滚动到3000条左右的时候，每一页能存放10条，也就是数字300左右的时候，帧率值依旧非常大
+
+![virturelist](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823213242488-610051779.png)
+
+我们再来看看RecyclerList 3000条左右数据的时候的表现
+
+![recyclerlist](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823213519771-1310359167.png)
+
+最后我们看看，不做任何处理的时候，使用ScrollView 3000条数据时候的表现 
+
+![scrollview](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200823214357606-2002414882.png)  
+
+以上对比可能有些偏差，后续有时间会改进的。
+
 
 ### 参考  
 
