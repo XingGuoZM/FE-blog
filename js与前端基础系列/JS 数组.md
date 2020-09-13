@@ -11,8 +11,41 @@
 - sort数组排序
 
 ### map、forEach、every、filter、some  
-接收一个函数当参数
-map
+- 手动实现
+```
+
+const map=function(arr,fn){
+  let res=new Array(arr.length)
+  for(let i=0;i<arr.length;i++){
+    res[i]=fn(arr[i],i,arr)
+  }
+  return res
+}
+const forEach=function(arr,fn){
+  for(let i=0;i<arr.length;i++){
+    fn(arr[i],i,arr)
+  }
+}
+const filter = function(arr,fn){
+  let res=[]
+  for(let i=0;i<arr.length;i++){
+    if(fn(arr[i],i,arr)) res.push(arr[i])
+  }
+  return res
+}
+const some=function(arr,fn){
+  for(let i=0;i<arr.length;i++){
+    if(fn(arr[i],i,arr)) return true
+  }
+  return false
+}
+const every = function(arr,fn){
+  for(let i=0;i<arr.length;i++){
+    if(!fn(arr[i],i,arr)) return false
+  }
+  return true
+}
+```
 
 ### indexOf、lastIndexOf  
 

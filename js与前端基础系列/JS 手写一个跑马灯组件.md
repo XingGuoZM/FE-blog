@@ -56,7 +56,7 @@
 </html>
 ```
 
-- ra手写
+- rax手写
 ```
 import { createElement, createRef, useEffect, useState} from 'rax';
 import View from 'rax-view';

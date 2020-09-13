@@ -1,0 +1,4 @@
+### window
+### navigation  
+
+### location
