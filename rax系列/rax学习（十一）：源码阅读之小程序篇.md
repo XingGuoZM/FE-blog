@@ -4,6 +4,13 @@
 
 我们开始从小程序讲起，为什么要从小程序开始讲呢！因为小程序页面和我们的web页面基本上没啥很大的区别，我们就可以把小程序页面当作网页，app（微信、支付宝等）当作一个浏览器。我们找到[rax源码仓库](https://github.com/alibaba/rax/tree/master/packages)，开始从rax的render函数，createElement函数再到rax的渲染引擎等一系列展开来学习。
 
+### 什么是DSL？  
+
+### 编译时和运行时的区别？  
+
+### AST解析？  
+
+
 #### render函数
 
 ### 参考  
