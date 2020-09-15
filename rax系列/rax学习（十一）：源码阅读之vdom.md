@@ -21,8 +21,69 @@ DSL 其实是 Domain Specific Language 的缩写，中文翻译为领域特定�
 
 程序代码本身可以被映射成为一棵语法树，而通过操纵语法树，我们能够精准的获得程序代码中的某个节点
 
-#### render函数
-前面说了小程序本身可以看作是web页面，如果我们的宿主app是浏览器（例如qq浏览器、uc浏览器），那么我们开发的就是移动端（mobile）的页面，即我们说的h5页面。
+
+### vdom
+- [element](https://github.com/alibaba/rax/blob/master/packages/rax/src/vdom/element.js)  
+- [instance](https://github.com/alibaba/rax/blob/master/packages/rax/src/vdom/instance.js)  
+- [native](https://github.com/alibaba/rax/blob/master/packages/rax/src/vdom/native.js)  
+- [shallowEqual](https://github.com/alibaba/rax/blob/master/packages/rax/src/vdom/shallowEqual.js)  
+```
+import { isNull, isObject, EMPTY_OBJECT } from '../types';
+
+const hasOwnProperty = EMPTY_OBJECT.hasOwnProperty;
+
+/**
+ * inlined Object.is polyfill to avoid requiring consumers ship their own
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+ */
+export function is(x, y) {
+  // SameValue algorithm
+  if (x === y) {
+    // Steps 1-5, 7-10
+    // Steps 6.b-6.e: +0 != -0
+    return x !== 0 || 1 / x === 1 / y;
+  } else {
+    // Step 6.a: NaN == NaN
+    return x !== x && y !== y; // eslint-disable-line no-self-compare
+  }
+}
+
+/**
+ * Performs equality by iterating through keys on an object and returning false
+ * when any key has values which are not strictly equal between the arguments.
+ * Returns true when the values of all keys are strictly equal.
+ */
+export default function shallowEqual(objA, objB) {
+  if (is(objA, objB)) {
+    return true;
+  }
+
+  if (!isObject(objA) || isNull(objA) || !isObject(objB) || isNull(objB)) {
+    return false;
+  }
+
+  let keysA = Object.keys(objA);
+  let keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  // Test for A's keys different from B.
+  for (let i = 0; i < keysA.length; i++) {
+    if (!hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+### rax方法
+- [createElement()](https://github.com/alibaba/rax/blob/master/packages/rax/src/createElement.js)  
+
+- [render()](https://github.com/alibaba/rax/blob/master/packages/rax/src/render.js)  
+
 
 
 ### 参考  
