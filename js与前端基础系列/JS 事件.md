@@ -8,6 +8,8 @@
 - 事件流 
   - 事件捕获  
   - 事件冒泡  
+  - 阻止冒泡（event.stopPropagation()）  
+  - 阻止默认  
 - DOM事件  
   - 鼠标  
   - 键盘  
