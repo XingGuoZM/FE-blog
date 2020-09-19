@@ -1,6 +1,16 @@
 
+### 功能需求  
 
-- 原生手写  
+
+### 技术方案  
+
+### 使用说明  
+
+### 实现代码  
+- react(pc端)  
+
+- rax(mobile端)     
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -96,3 +106,7 @@ export default (props) => {
   </View>;
 };
 ```
+
+- vue(web端)   
+
+### 参考  
