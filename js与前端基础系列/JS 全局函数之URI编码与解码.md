@@ -1,4 +1,7 @@
 
+### 前言  
+url中传入特殊字符会出现乱码，需要对uri进行编码和转码操作
+
 ### 释义  
 在开始之前，我们先要了解两个名词URL、URI，什么是URL，什么是URI，什么是URN？
 
@@ -26,6 +29,8 @@ URI是以一种抽象的，高层次概念定义统一资源标识，而URL和UR
 
 
 ### 应用  
+- url中传参带中文
+- url中带有特殊字符大小写
 
 
 ### 参考  
@@ -35,3 +40,4 @@ URI是以一种抽象的，高层次概念定义统一资源标识，而URL和UR
 - [MDN encodeURI()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURI)  
 - [MDN decodeURIComponent()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent)  
 - [MDN encodeURIComponent()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)  
+- [为什么要encodeURI(url)两次才不会出现乱码？](https://www.jianshu.com/p/831618a8e116)

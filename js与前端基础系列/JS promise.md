@@ -15,7 +15,7 @@ new Promise((resolve,reject)=>{
 
 #### then和catch方法  
 - Promise 的状态一经改变就不能再修改。
-- .then 和 .catch 都会返回一个新的 Promis。
+- .then 和 .catch 都会返回一个新的 Promise。
 - catch 不管被链接到哪里，都能捕获上层未捕捉过得错误。
 - 在 Promise 中，返回一个任意的 非 Promise 的值 都会被包裹成 Promise 对象，例如 return 2 会被包装成 return Promise.resolve(2)。
 - Promsie 的 .then 或者 .catch 可以被调用多次，但如果 Promise 内部的状态一经改变，并且有了一个值，那么后续每次调用 .then 或者 .catch的时候都会直接拿到该值。
