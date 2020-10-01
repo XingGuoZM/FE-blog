@@ -55,6 +55,7 @@ close callbacks 阶段：执行 socket 的 close 事件回调
   10. I/O  
 
 + 宏任务：
+  - 同步代码，例如script里的除了异步的代码  
   - I/O, 比如文件读写、数据库数据读写等等  
   - [window.setTimeout](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout)  
   - [window.setInterval](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setInterval)   

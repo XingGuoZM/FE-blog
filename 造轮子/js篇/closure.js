@@ -16,10 +16,10 @@ function a(){
 // a()(); //1
 
 //方式二
-const fn = a;
+const fn = a();
 fn();//1
 fn();//2
-console.log(a())
+// console.log(a())
 
 // let m=0
 // function test(){
