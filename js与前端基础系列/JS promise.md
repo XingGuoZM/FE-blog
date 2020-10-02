@@ -42,10 +42,71 @@ all 和 race 传入的数组中如果有会抛出异常的异步任务，那么�
 
 ## 实现一个简易的promise  
 ```
+class MyPromise{
+  constructor(fn){
+    this.status='pending';
+    this.value=''
+    this.reason=''
+    //成功的回调
+    this.onResolveCBs=[]
+    //失败的回调
+    this.onRejectCBs=[]
 
+    let resolve=(reason)=>{
+      if(this.status=='pending'){
+        this.status='fulfilled';
+        this.reason=reason;
+        this.onResolveCBs.forEach(fn=>fn())
+      }
+    }
+
+    let reject=(value)=>{
+      if(this.status=='pending'){
+        this.status='rejected'
+        this.value=value;
+        this.onRejectCBs.forEach(fn=>fn())
+      }
+    }
+    
+    try{
+      fn(resolve,reject);
+    }catch(e){
+      reject(e)
+    }
+  }
+
+  then(onResolve,onReject){
+    if(this.status==='fulfilled'){
+      onResolve()
+    }
+    if(this.status==='rejected'){
+      onReject();
+    }
+    if(this.status==='pending'){
+      this.onResolveCBs.push(()=>onReject(this.value));
+      this.onRejectCBs.push(()=>onReject(this.reason))
+    }
+
+  }
+}
+
+
+new MyPromise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve()
+  },2000)
+  
+  // reject()
+}).then(res=>{
+  console.log('成功')
+},err=>{
+  console.log('失败')
+})
 ```
 
 #### 参考  
 * [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)  
 - [promise源码](https://github.com/then/promise/blob/master/src/core.js)  
-- [2020前端近期面试题整理](https://blog.csdn.net/kkm486622296/article/details/106063151)
+- [2020前端近期面试题整理](https://blog.csdn.net/kkm486622296/article/details/106063151)  
+- [面试官：“你能手写一个 Promise 吗”](https://zhuanlan.zhihu.com/p/183801144)
+- [Promises/A+](https://promisesaplus.com/)
