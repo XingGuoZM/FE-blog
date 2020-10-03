@@ -1,5 +1,7 @@
 
-// 法一：es5
+/**
+ *  法一：es5
+ */
 function add() {
   // 第一次执行时，定义一个数组专门用来存储所有的参数
   var _args = [].slice.call(arguments);
