@@ -36,6 +36,13 @@ compose1(funcs)
 compose2(funcs)
 ```
 ### 函数柯里化  
+```
+// 实现一个add方法，使计算结果能够满足如下预期：
+// add(1)(2)(3) = 6;
+// add(1, 2, 3)(4) = 10;
+// add(1)(2)(3)(4)(5) = 15;
+
+```
 
 
 ### 参考  
@@ -44,3 +51,4 @@ compose2(funcs)
 - [ES6 Curry and Function Composition](https://github.com/learn-javascript-courses/es6-curry)  
 - [JS中的柯里化(currying)](https://www.zhangxinxu.com/wordpress/2013/02/js-currying/)  
 - [[译] JavaScript中的函数柯里化](https://juejin.im/post/5c1a2f786fb9a04a073051f4)  
+- [详解JS函数柯里化](https://www.jianshu.com/p/2975c25e4d71)
