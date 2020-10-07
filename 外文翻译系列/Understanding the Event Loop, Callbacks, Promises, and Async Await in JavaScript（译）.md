@@ -1,0 +1,1 @@
+原文地址：[Understanding the Event Loop, Callbacks, Promises, and Async Await in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)
