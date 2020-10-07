@@ -11,11 +11,15 @@ window.location.search
 ```
 - 方法一：正则
 ```
-function getQueryString(name) {
+function getUrlParams(name) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    let r = window.location.search.substr(1).match(reg);
-    return r && decodeURIComponent(r[2])
+    let param = window.location.search.substr(1).match(reg);
+    return param && decodeURIComponent(param[2])
  }
+```
+- 方法二：字符串切割+循环遍历
+```
+
 ```
 
 ### 参考  

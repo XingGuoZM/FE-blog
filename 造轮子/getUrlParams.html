@@ -1,0 +1,19 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>获取url参数</title>
+        <style></style>
+    </head>
+    <body>
+        <script>
+            function getUrlParams(name) {
+                let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                let r = window.location.search.substr(1).match(reg);
+                return r && decodeURIComponent(r[2])
+            }
+            console.log(getUrlParams('name'))
+        </script>
+    </body>
+</html>
