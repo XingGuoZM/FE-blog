@@ -11,6 +11,7 @@
 - sort数组排序
 
 ### map、forEach、every、filter、some  
+所有的这些方法都不会改变原有数组
 - 手动实现
 ```
 
