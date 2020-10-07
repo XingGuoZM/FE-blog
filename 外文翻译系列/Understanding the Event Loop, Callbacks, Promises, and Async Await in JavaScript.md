@@ -1,18 +1,18 @@
 原文地址：[Understanding the Event Loop, Callbacks, Promises, and Async Await in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)
 
-The author selected the COVID-19 Relief Fund to receive a donation as part of the Write for DOnations program.
+The author selected the [COVID-19 Relief Fund](https://www.brightfunds.org/funds/write-for-donations-covid-19-relief-fund) to receive a donation as part of the [Write for DOnations](https://do.co/w4do-cta)program.
 
 ## Introduction
-In the early days of the internet, websites often consisted of static data in an HTML page. But now that web applications have become more interactive and dynamic, it has become increasingly necessary to do intensive operations like make external network requests to retrieve API data. To handle these operations in JavaScript, a developer must use asynchronous programming techniques.
+In the early days of the internet, websites often consisted of static data in an [HTML page](https://www.digitalocean.com/community/tutorial_series/how-to-build-a-website-with-html). But now that web applications have become more interactive and dynamic, it has become increasingly necessary to do intensive operations like make external network requests to retrieve [API](https://developer.mozilla.org/en-US/docs/Glossary/API) data. To handle these operations in JavaScript, a developer must use asynchronous programming techniques.
 
 Since JavaScript is a single-threaded programming language with a synchronous execution model that processes one operation after another, it can only process one statement at a time. However, an action like requesting data from an API can take an indeterminate amount of time, depending on the size of data being requested, the speed of the network connection, and other factors. If API calls were performed in a synchronous manner, the browser would not be able to handle any user input, like scrolling or clicking a button, until that operation completes. This is known as blocking.
 
 In order to prevent blocking behavior, the browser environment has many Web APIs that JavaScript can access that are asynchronous, meaning they can run in parallel with other operations instead of sequentially. This is useful because it allows the user to continue using the browser normally while the asynchronous operations are being processed.
 
-As a JavaScript developer, you need to know how to work with asynchronous Web APIs and handle the response or error of those operations. In this article, you will learn about the event loop, the original way of dealing with asynchronous behavior through callbacks, the updated ECMAScript 2015 addition of promises, and the modern practice of using async/await.
-```
-Note: This article is focused on client-side JavaScript in the browser environment. The same concepts are generally true in the Node.js environment, however Node.js uses its own C++ APIs as opposed to the browser’s Web APIs. For more information on asynchronous programming in Node.js, check out How To Write Asynchronous Code in Node.js.
-```
+As a JavaScript developer, you need to know how to work with asynchronous Web APIs and handle the response or error of those operations. In this article, you will learn about the event loop, the original way of dealing with asynchronous behavior through callbacks, the updated [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) addition of promises, and the modern practice of using async/await.
+
+Note: This article is focused on client-side JavaScript in the browser environment. The same concepts are generally true in the [Node.js](https://nodejs.org/) environment, however Node.js uses its own [C++ APIs](https://nodejs.org/api/) as opposed to the browser’s [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API). For more information on asynchronous programming in Node.js, check out [How To Write Asynchronous Code in Node.js](https://www.digitalocean.com/community/tutorials/how-to-write-asynchronous-code-in-node-js).
+
 ## The Event Loop
 This section will explain how JavaScript handles asynchronous code with the event loop. It will first run through a demonstration of the event loop at work, and will then explain the two elements of the event loop: the stack and the queue.
 
@@ -106,9 +106,9 @@ Using setTimeout, an asynchronous Web API, introduces the concept of the queue, 
 The queue, also referred to as message queue or task queue, is a waiting area for functions. Whenever the call stack is empty, the event loop will check the queue for any waiting messages, starting from the oldest message. Once it finds one, it will add it to the stack, which will execute the function in the message.
 
 In the setTimeout example, the anonymous function runs immediately after the rest of the top-level execution, since the timer was set to 0 seconds. It’s important to remember that the timer does not mean that the code will execute in exactly 0 seconds or whatever the specified time is, but that it will add the anonymous function to the queue in that amount of time. This queue system exists because if the timer were to add the anonymous function directly to the stack when the timer finishes, it would interrupt whatever function is currently running, which could have unintended and unpredictable effects.
-```
+
 Note: There is also another queue called the job queue or microtask queue that handles promises. Microtasks like promises are handled at a higher priority than macrotasks like setTimeout.
-```
+
 Now you know how the event loop uses the stack and queue to handle the execution order of code. The next task is to figure out how to control the order of execution in your code. To do this, you will first learn about the original way to ensure asynchronous code is handled correctly by the event loop: callback functions.
 
 ### Callback Functions
@@ -450,9 +450,10 @@ Output
 For reference, here is a table with the handler methods on Promise objects:
 
 Method	Description
-then()	Handles a resolve. Returns a promise, and calls onFulfilled function asynchronously
-catch()	Handles a reject. Returns a promise, and calls onRejected function asynchronously
-finally()	Called when a promise is settled. Returns a promise, and calls onFinally function asynchronously
+- then()	Handles a resolve. Returns a promise, and calls - onFulfilled function asynchronously
+- catch()	Handles a reject. Returns a promise, and calls onRejected function asynchronously
+- finally()	Called when a promise is settled. Returns a promise, and calls onFinally function asynchronously
+
 Promises can be confusing, both for new developers and experienced programmers that have never worked in an asynchronous environment before. However as mentioned, it is much more common to consume promises than create them. Usually, a browser’s Web API or third party library will be providing the promise, and you only need to consume it.
 
 In the final promise section, this tutorial will cite a common use case of a Web API that returns promises: [the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
@@ -487,7 +488,7 @@ followers: 3203
 ```
 This is the data requested from https://api.github.com/users/octocat, rendered in JSON format.
 
-This section of the tutorial showed that promises incorporate a lot of improvements for dealing with asynchronous code. But, while using then to handle asynchronous actions is easier to follow than the pyramid of callbacks, some developers still prefer a synchronous format of writing asynchronous code. To address this need, [ECMAScript 2016 (ES7)](https://www.ecma-international.org/ecma-262/7.0/index.html) introduced async functions and the await keyword to make working with promises easier.
+This section of the tutorial showed that promises incorporate a lot of improvements for dealing with asynchronous code. But, while using then to handle asynchronous actions is easier to follow than the pyramid of callbacks, some developers still prefer a synchronous format of writing asynchronous code. To address this need, [ECMAScript 2016 (ES7)](https://www.ecma-international.org/ecma-262/7.0/index.html)introduced async functions and the await keyword to make working with promises easier.
 
 ## Async Functions with async/await
 An async function allows you to handle asynchronous code in a manner that appears synchronous. async functions still use promises under the hood, but have a more traditional JavaScript syntax. In this section, you will try out examples of this syntax.
@@ -552,9 +553,9 @@ followers: 3203
 ...
 ```
 
-```
+
 Note: In many environments, async is necessary to use await—however, some new versions of browsers and Node allow using top-level await, which allows you to bypass creating an async function to wrap the await in.
-```
+
 
 Finally, since you are handling the fulfilled promise within the asynchronous function, you can also handle the error within the function. Instead of using the catch method with then, you will use the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) pattern to handle the exception.
 
@@ -578,9 +579,9 @@ The program will now skip to the catch block if it receives an error and log tha
 
 Modern asynchronous JavaScript code is most often handled with async/await syntax, but it is important to have a working knowledge of how promises work, especially as promises are capable of additional features that cannot be handled with async/await, like combining promises with [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all).
 
-```
+
 Note: async/await can be reproduced by using generators combined with promises to add more flexibility to your code. To learn more, check out our Understanding Generators in JavaScript tutorial.
-```
+
 
 ## Conclusion
 Because Web APIs often provide data asynchronously, learning how to handle the result of asynchronous actions is an essential part of being a JavaScript developer. In this article, you learned how the host environment uses the event loop to handle the order of execution of code with the stack and queue. You also tried out examples of three ways to handle the success or failure of an asynchronous event, with callbacks, promises, and async/await syntax. Finally, you used the Fetch Web API to handle asynchronous actions.
