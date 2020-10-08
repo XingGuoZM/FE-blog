@@ -13,3 +13,4 @@
 ### 参考  
 - [什么是作用域链，什么是原型链，它们的区别，在js中它们具体指什么？](https://www.cnblogs.com/pssp/p/5204324.html)  
 - [原型与原型链的理解](https://www.jianshu.com/p/f30fa27999e3)
+- [JavaScript深入之从原型到原型链 ](https://github.com/mqyqingfeng/Blog/issues/2)
