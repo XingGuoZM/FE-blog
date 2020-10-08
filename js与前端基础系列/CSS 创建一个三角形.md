@@ -1,6 +1,6 @@
 
 最近面试有被问到如何实现一个三角形，借此机会总结一下，将常用的几种方法梳理一遍。
-源文件地址：
+源文件地址：[创建一个三角形](https://github.com/XingGuoZM/blog/blob/master/%E9%80%A0%E8%BD%AE%E5%AD%90/triangle.html)
 ### 绘制三角形的几种方法汇总
 
 1. transform rotateZ(45deg) + 父子divoverflow：hidden
