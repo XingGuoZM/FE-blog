@@ -1,26 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>创建一个️️三角形</title>
-        <style>
-            .wrapper{
-                width:50px;
-                height:50px;
-                overflow:hidden;
-            }
-            .square{
-                width:50px;
-                height:50px;
-                background-color:red;
-                transform:rotateZ(45deg);
-                margin-top:35px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class='wrapper'>
-            <div class='square'></div>
+
+<head>
+    <meta charset="utf-8" />
+    <title>创建一个️️三角形</title>
+    <style>
+        .triangle-sec{
+            width:100%;
+            height:80px;
+            display:flex;
+            justify-content: center;
+        }
+        .triangle1-wrap {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .triangle1 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotateZ(45deg);
+            margin-top: 35px;
+        }
+
+        .triangle2 {
+            width: 0px;
+            height: 0px;
+            border-top: solid 50px blue;
+            border-bottom: solid 50px transparent;
+            border-left: solid 50px transparent;
+            border-right: solid 50px transparent;
+        }
+
+        .triangle3-wrap {
+            width:100px;
+            height:100px;
+            position: relative;
+            overflow:hidden;
+        }
+
+        .triangle3 {
+            width:50px;
+            height:50px;
+            position: absolute;
+            background-color: teal;
+        }
+        .triangle4{
+            width:50px;
+        }
+        .triangle5{
+            width: 50px;
+            height:50px;
+            background-image:linear-gradient(45deg,#fff 50%, #2980B9 0);
+        }
+        .triangle6{
+            width:50px;
+            height:50px;
+            position: relative;
+            overflow:hidden;
+        }
+        .triangle6:after{
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color:brown;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 35px;
+            top: 0px;
+        }
+        .triangle7{
+            width:50px;
+            height:50px;
+            background-image:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602140892677&di=754062cafde7897f9550b7691882b17b&imgtype=0&src=http%3A%2F%2Ftrademark-pics-search.oss-cn-shanghai.aliyuncs.com%2Fsmall%2Ft4517751695000576.jpg');
+            background-size:100% 100%;
+        }
+        .triangle8{
+            font-size:50px;
+            color:darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="triangle-sec">
+        <h1>方法一: transform rotateZ</h1>
+        <div class='triangle1-wrap'>
+            <div class='triangle1'></div>
         </div>
-    </body>
+    </section>
+    <section class="triangle-sec">
+        <h1>方法二:border</h1>
+        <div class='triangle2'></div>
+    </section>
+    <section class="triangle-sec">
+        <h1>方法三:canvas</h1>
+        <canvas id='triangle3' width='50' height='50'></canvas>
+    </section>
+    <section class="triangle-sec">
+        <h1>方法四:svg</h1>
+        <svg class="triangle4">
+            <path name="三角形" fill="green" d="M50 0 L0 50 L50 50  Z"/>
+        </svg>
+    </section>
+    <section class="triangle-sec">
+        <h1>方法五:渐变</h1>
+        <div class="triangle5"></div>
+    </section>
+    <section class="triangle-sec">
+        <h1>方法六:伪类</h1>
+        <div class="triangle6"></div>
+    </section>
+
+    <section class="triangle-sec">
+        <h1>方法七:background-image</h1>
+        <div class="triangle7"></div>
+    </section>
+
+    <section class="triangle-sec">
+        <h1>方法八:字体icon</h1>
+        <div class="triangle8">▲</div>
+    </section>
+
+    <script>
+        const triangle = document.getElementById('triangle3');
+        const ctx = triangle.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(50,0);
+        ctx.lineTo(0,50);
+        ctx.lineTo(50,50); 
+        ctx.fillStyle='aqua';
+        ctx.fill(); 
+    </script>
+</body>
+
 </html>
