@@ -11,11 +11,11 @@
 
 ```
 /*======定义结构======*/
-var node=function(element){
+const node=function(element){
     this.element=element
     this.next=null
 }
-var linkedList=function(){
+const linkedList=function(){
     this.head=new node("head")
     this.find=find
     this.insert=insert
@@ -23,7 +23,7 @@ var linkedList=function(){
     this.remove=remove
 }
 /*======查找======*/
-var find=function(item){
+const find=function(item){
     let currNode=this.head
     while(currNode.element!==item){
         currNode=currNode.next
@@ -36,7 +36,7 @@ var find=function(item){
 *1.查找找到目标节点，将新节点的next指向目标节点的下一个节点
 *2.将目标节点的next指向这个新节点
 */
-var insert=function(newElement,item){
+const insert=function(newElement,item){
     let newNode=new node(newElement)
     let currNode=this.find(item)
     newNode.next=currNode.next
@@ -46,7 +46,7 @@ var insert=function(newElement,item){
 /**
 *查找到目标节点，将其element修改
 */
-var update=function(item,newItem){
+const update=function(item,newItem){
     let currNode=this.find(item)
     currNode.element=newItem
 }
@@ -54,7 +54,7 @@ var update=function(item,newItem){
 /**
 *找到匹配节点的前一个节点，将其next指向当前节点的下一个节点，即删除当前节点
 */
-var remove=function(item){
+const remove=function(item){
     let currNode=this.head
     while(currNode.next!==null && currNode.next.element!==item){
         currNode=currNode.next
@@ -64,7 +64,7 @@ var remove=function(item){
     }
 }
 /*======测试代码======*/
-var list=new linkedList();
+const list=new linkedList();
 list.insert('first','head')
 list.insert('second','first')
 list.insert('third','second')

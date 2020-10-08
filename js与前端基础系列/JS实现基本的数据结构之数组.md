@@ -7,14 +7,27 @@
 
 
 ### reverse、sort  
+这两个方法会改变原有数组
 - reverse反转数组
+```
+const reverse = function (arr) {
+  let len = arr.length
+  let tmp;
+  for(let i = 0; i < len/2; i++) {
+    tmp = arr[i];
+    arr[i] = arr[len-i-1];
+    arr[len-i-1] = tmp;
+  }
+  return arr;
+}
+```
 - sort数组排序
+
 
 ### map、forEach、every、filter、some  
 所有的这些方法都不会改变原有数组
 - 手动实现
 ```
-
 const map=function(arr,fn){
   let res=new Array(arr.length)
   for(let i=0;i<arr.length;i++){
@@ -49,6 +62,30 @@ const every = function(arr,fn){
 ```
 
 ### indexOf、lastIndexOf  
+查找制定值第一次出现的位置（indexOf）和最后一次出现的位置（lastIndexOf）
+```
+const indexOf = function (arr, value) {
+  let index = -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (value === arr[i]) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
+
+const lastIndexOf = function (arr, value) {
+  let index = -1;
+  for (let i = arr.length - 1; i >=0; i--) {
+    if (value === arr[i]) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
+```
 
 ### reduce、reduceRight  
 
