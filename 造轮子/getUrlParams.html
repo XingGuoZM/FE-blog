@@ -8,12 +8,21 @@
     </head>
     <body>
         <script>
-            function getUrlParams(name) {
-                let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                let r = window.location.search.substr(1).match(reg);
-                return r && decodeURIComponent(r[2])
+            function getUrlParams(key) {
+                let reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+                let params = window.location.search.substr(1).match(reg);
+                return params && decodeURIComponent(params[2]);
             }
-            console.log(getUrlParams('name'))
+            function getUrlParams2(key) {
+                // let reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+                let params = window.location.search.substr(1);
+                let target = params.split('&').filter(item=>{
+                    let curr = item.split('=');
+                    return curr[0] == key
+                })
+                return target && decodeURIComponent(target[0]);
+            }
+            console.log(getUrlParams2('name'))
         </script>
     </body>
 </html>

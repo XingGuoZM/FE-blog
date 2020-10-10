@@ -11,11 +11,11 @@ window.location.search
 ```
 - 方法一：正则
 ```
-function getUrlParams(name) {
-    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    let param = window.location.search.substr(1).match(reg);
-    return param && decodeURIComponent(param[2])
- }
+    function getUrlParams(key) {
+        let reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+        let params = window.location.search.substr(1).match(reg);
+        return params && decodeURIComponent(params[2]);
+    }
 ```
 - 方法二：字符串切割+循环遍历
 ```
