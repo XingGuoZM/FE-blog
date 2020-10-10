@@ -37,3 +37,5 @@ import a from 'a';
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)
+
+- [MDN文档 JavaScript modules 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)
