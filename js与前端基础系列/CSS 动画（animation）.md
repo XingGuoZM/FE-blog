@@ -1,11 +1,19 @@
- ### 实现动画的几种方式  
+ 
+
+### 简介  
+动画，animation-name，animation-duration, animation-timing-function，animation-delay，animation-iteration-count，animation-direction，animation-fill-mode 和 animation-play-state
+
+
+### 简单动画
+
+
+### 扩展
+- 实现动画的几种方式  
   1. requestAnimationFrame  
   2. setTimeout  
   3. setInterval  
   4. CSS @keyframes  
-
-
-### js操作keyframe动画  
+- js操作keyframe动画  
 ```
 const getkeyframes=(name)=> {
   var animation = {};
@@ -44,3 +52,5 @@ const removeKeyframes=function(){
   head.removeChild(head.lastElementChild)
 }
 ```
+### 参考  
+- [MDN animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)  

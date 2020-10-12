@@ -1,0 +1,26 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="utf-8" />
+         <title>获取元素样式</title>
+         <style>
+            .computed-wrap{
+                width:100px;
+                height:100px;
+                background-color: aquamarine;
+            }
+         </style>
+     </head>
+     <body>
+         <div id="computed-wrap" class="computed-wrap"></div>
+         <script>
+               function getTheStyle(){
+                    let elem = document.getElementById("computed-wrap");
+                    let theCSSprop = window.getComputedStyle(elem,null);
+                    console.log(theCSSprop)
+                }
+                getTheStyle();
+         </script>
+     </body>
+ </html>
