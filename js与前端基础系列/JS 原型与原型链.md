@@ -2,6 +2,8 @@
 - 针对构造函数的  
 - 向上查找    
 
+
+![](https://raw.githubusercontent.com/chenfengyanyu/my-web-accumulation/master/images/typeof/proto.jpeg)
 ### proto、prototype、constructor
 - proto：事实上就是原型链指针！！
 

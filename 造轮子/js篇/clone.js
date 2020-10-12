@@ -4,3 +4,4 @@ let obj={name:'jack'}
 let ans=JSON.parse(JSON.stringify(obj))
 //法二：
 
+
