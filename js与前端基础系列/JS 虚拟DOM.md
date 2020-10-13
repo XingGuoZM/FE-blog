@@ -23,12 +23,12 @@
 ```
 
 ### 给定真实dom字符串形式，自动读取出并构建出虚拟dom?
-```
+```js
 let str='<div class="wrap"><img /><p>我是p标签</p><div id='div'></div></div>'
 
 ```
 ### 给定虚拟dom，自动构建出真实dom?
-```
+```js
 let obj={
   name:'div',
   classname:'wrap',

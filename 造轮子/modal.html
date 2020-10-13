@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>简易的弹窗</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            .modal-wrap{
+                width:100vw;
+                height:100vh;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                background-color:rgba(0,0,0,.5);
+            }
+            .modal{
+                width:50vw;
+                height:40vh;
+                background-color:#fff;
+            }
+            .modal-close{
+
+            }
+            .modal-close::before{
+                content: “\2716”;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='root'></div>
+        <!-- 引入dom操作函数 -->
+        <script src='./js/domCrud.js'></script>
+        <script>
+            let modalWrap = createNode('div', {id:'modal-wrap',className:'modal-wrap'});
+            let modal = createNode('div', {className:'modal'});
+            insertNode(findNode('body'),modalWrap);
+            insertNode(findNode('#modal-wrap'),modal);
+
+
+        </script>
+    </body>
+</html>

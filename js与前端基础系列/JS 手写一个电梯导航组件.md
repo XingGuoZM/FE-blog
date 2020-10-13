@@ -13,8 +13,6 @@ scrollToView
 ### 实现代码  
 - react(pc端)  
 
-- rax(mobile端)    
-
-- vue(web端)  
+- vue(mobile端)  
 
 ### 参考  

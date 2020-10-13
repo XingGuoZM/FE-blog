@@ -1,6 +1,5 @@
 const splice = function () {
 
-
 }
 
 const map = function (arr, fn) {
