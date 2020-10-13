@@ -69,3 +69,4 @@ var money= [20,10,5,1];
 - [JS-贪心算法](https://www.cnblogs.com/orxx/p/10301144.html)  
 - [JS基于贪心算法解决背包问题示例](https://www.jb51.net/article/129173.htm)
 - [JS使用贪心算法解决找零问题示例](https://www.jb51.net/article/129177.htm)
+- [小白带你学---贪心算法（Greedy Algorithm)](https://zhuanlan.zhihu.com/p/53334049)

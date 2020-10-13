@@ -69,16 +69,13 @@
              }
             /**
              * 渲染一段dom
-             * @param {*} htmlStr
+             * @param {*} node htmlStr
+             * node: 需要插入的父节点
              * htmlStr: dom字符串
-             * 调用示例: renderDom('<div id="myDiv">myDiv</div>');
+             * 调用示例: renderDom(findNode('#root'),'<div id="myDiv">myDiv</div>');
              */
-             const renderDom = function(htmlStr){
-                //  方法一：
-                // findNode('#root').innerHTML=htmlStr;
-                
-                // 方法二：
-
+             const renderDom = function(node, htmlStr){
+               node.innerHTML=htmlStr;
              }
 
              //测试
@@ -99,7 +96,7 @@
 
             // removeNode(root,node1)
 
-            renderDom(htmlStr);
+            renderDom(findNode('#root'),htmlStr);
 
          </script>
      </body>
