@@ -1,5 +1,5 @@
 ### 代码展示  
-```
+```js
 // IOS
 const isIOS = () => {
   if (typeof window.navigator.userAgent !== 'string') return false;

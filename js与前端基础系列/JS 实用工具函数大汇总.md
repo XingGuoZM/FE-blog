@@ -170,14 +170,38 @@ const debounce = function(fn,delay){
 
 5. 判断是否为数组
 ```js
-//法一
-const isArray1=function(value){
-    return Object.prototype.toString.apply(value)==='[object Array]'
+// 判断一个变量是否为数组
+/**
+ * 方法一
+ * @param {*} obj 
+ */
+function isArray1(obj) {
+    return obj instanceof Array;
 }
-//法二
-const isArray2=function(value){
-    return Array.isArray(value)
+
+/**
+ * 方法二
+ * @param {*} obj 
+ */
+function isArray2(obj) {
+    return Array.isArray(obj);
 }
+
+/**
+ * 方法三
+ * @param {*} obj 
+ */
+function isArray3(obj) {
+    return Object.prototype.toString.call(obj) === '[object Array]';
+}
+
+let obj1=null;
+let obj2={};
+let obj3=[];
+
+console.log(isArray1(obj1));
+console.log(isArray2(obj2));
+console.log(isArray3(obj3));
 ```
 
 6. 快速将数字字符串转数字
@@ -189,7 +213,6 @@ console.log(strToInt('1000000000'))
 ```
 
 7. 快速将时间类型转时间戳
-
 ```js
 // 入参：YYYY/MM/DD hh:mm:ss
 // 出参：对应时间的时间戳
@@ -212,7 +235,61 @@ function getTranslateX(element) {
 9. 对象克隆
 ```js
 // 法一
+/**
+ * 1、如果obj里面有时间对象，则JSON.stringify后再JSON.parse的结果，时间将只是字符串的形式。而不是时间对象
+ * 2、如果obj里有RegExp、Error对象，则序列化的结果将只得到空对象；
+ * 3、如果obj里有函数，undefined，则序列化的结果会把函数或 undefined丢失；
+ * 4、如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null
+ * 5、JSON.stringify()只能序列化对象的可枚举的自有属性，例如 如果obj中的对象是有构造函数生成的， 则使用JSON.parse(JSON.stringify(obj))深拷贝后，会丢弃对象的constructor；
+ * 6、如果对象中存在循环引用的情况也无法正确实现深拷贝；
+ * 
+ */
 JSON.parse(JSON.stringify(obj)) 
 // 法二
 
 ```
+
+10. 字符串首字母转大写
+```js
+// 字符串首字母转大写
+/**
+ * 方法一：js字符串切割
+ * @param {*} str 
+ */
+function firstToUpper1(str) {
+    return str.trim().toLowerCase().replace(str[0], str[0].toUpperCase());
+}
+/**
+ *方法二：js正则
+ */
+function firstToUpper2(str){
+    return str.replace(/\b(\w)(\w*)/g, function($0, $1, $2) {
+        return $1.toUpperCase() + $2.toLowerCase();
+    });
+}
+/**
+ * 方法三：js正则
+ */
+function firstToUpper3(str){
+    return str.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase());
+}
+/**
+ * 方法三：css
+ */
+// text-transform: capitalize;
+
+let str='hELLO'
+console.log(firstToUpper1(str));
+console.log(firstToUpper2(str));
+console.log(firstToUpper3(str));
+
+```
+
+
+### 参考
+- [使用jquery获取ur中指定参数值](https://blog.csdn.net/qq_26747571/article/details/52025031)
+- [关于JSON.parse(JSON.stringify(obj))实现深拷贝应该注意的坑](https://www.jianshu.com/p/b084dfaad501)
+- [How to Deep clone in javascript](https://stackoverflow.com/questions/4459928/how-to-deep-clone-in-javascript?answertab=votes#tab-top)
+- [如何判断一个变量是否为数组（isArray）](https://www.cnblogs.com/ShuiNian/p/9074866.html)
+- [如何通过javascript获取值translateX](https://qa.1r1g.com/sf/ask/2958703261/)
+- [JavaScript字符串单词首字母大写的实现方式](https://segmentfault.com/q/1010000003020515)

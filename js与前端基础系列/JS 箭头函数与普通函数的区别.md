@@ -7,7 +7,7 @@
 
 ### 验证示例  
 - 浏览器侧验证  
-```
+```js
   <script>
       const test1=(...numbers)=>{
           console.log(this)
