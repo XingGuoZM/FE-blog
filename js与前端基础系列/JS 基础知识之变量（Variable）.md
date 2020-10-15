@@ -1,14 +1,26 @@
 ### 什么是变量？  
 JavaScript的变量是存储数据的容器
 
-### 引用类型和基本类型  
-- 引用类型  
-- 基本类型  
+### 数据类型  
+- 7 种原始类型:
+    - Boolean
+    - Null
+    - Undefined
+    - Number
+    - BigInt
+    - String
+    - Symbol 
+和 Object 
 
 ### 声明变量的6种方式  
-1. var  
-2. const  
-3. let  
-4. class  
-5. import  
-6. function  
+1. var   
+2. let  
+3. class  
+4. import  
+5. function  
+
+### 声明常量的方式
+1. const
+
+### 参考
+- [MDN文档 JavaScript 数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures)

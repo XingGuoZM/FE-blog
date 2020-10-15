@@ -5,6 +5,10 @@
     2. 对于引用类型，除 function 以外，一律返回 object 类型。
     3. 对于 null ，返回 object 类型。
     4. 对于 function 返回 function 类型。
+```js
+    typeof null // "object"
+    typeof Object // "function",由此类推Number、String、Boolean、
+```
 - instanceof：判断引用类型的实例
 
 ![](https://raw.githubusercontent.com/chenfengyanyu/my-web-accumulation/master/images/typeof/proto.jpeg)
