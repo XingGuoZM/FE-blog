@@ -1,6 +1,9 @@
 
 
-
+console.log('this',this);
+console.log('window',window);
+console.log('global',global);
+console.log('module',module);
 
 console.log(this)
 console.log(window)
