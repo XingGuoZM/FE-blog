@@ -1,5 +1,4 @@
 
-
 /**
  * 第一题：实现洋葱圈模型 compose
  * 参考：https://github.com/koajs/compose/blob/master/index.js

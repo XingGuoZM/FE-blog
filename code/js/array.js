@@ -123,6 +123,22 @@ const sort = function(arr,fn){
   }
   return arr;
 }
-const arr = [1,4,3,20,5]
-sort(arr);
-console.log(arr)
+// const arr = [1,4,3,20,5]
+// sort(arr);
+// console.log(arr)
+
+
+/**
+ * 
+ * @param {*} arr
+ * @param {*} str 
+ * 
+ */
+
+const dismantleArray = function (arr,str){
+  // return JSON.parse('["a",["b",["c"],"e"],"d"]')
+  return  
+}
+
+const res = dismantleArray([1, [2, 3, [4]], 5], '[a, [b, [c], e], d]')
+console.log(res) // res: { a: 1, b: 2, c: 4, e: undefined, d: 5 }
