@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+
+### 功能需求  
+- 复用组件需求概括  
+
+- 复用组件详细描述  
+
+
+
+### 实现代码  
+ ```html
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -55,3 +65,6 @@
         </script>
     </body>
 </html>
+ ```
+
+### 参考  

@@ -1,0 +1,68 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="utf-8" />
+         <title>电梯导航demo</title>
+         <style>
+           *{
+             margin:0;
+             padding:0;
+           }
+           .elevator-tab-wrap{
+             width:100vw;
+             height:10vh;
+             position:fixed;
+             top:0px;
+             display:flex;
+           }
+           .elevator-tab{
+             width:25vw;
+             height:10vh;
+             display:flex;
+             justify-content: center;
+             align-items: center;
+             background:#ccc;
+           }
+           .sec{
+            width:100vw;
+            height:50vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size:100px;
+           }
+           #sec1{
+            background-color:antiquewhite;
+           }
+           #sec2{
+            background-color: blue;
+           }
+           #sec3{
+            background-color:coral;
+           }
+           #sec4{
+            background-color:greenyellow;
+           }
+         </style>
+     </head>
+     <body>
+          <section class='elevator-tab-wrap'>
+            <div class='elevator-tab' onclick="handleClick('#sec1')">sec1</div>
+            <div class='elevator-tab' onclick="handleClick('#sec2')">sec2</div>
+            <div class='elevator-tab' onclick="handleClick('#sec3')">sec3</div>
+            <div class='elevator-tab' onclick="handleClick('#sec4')">sec4</div>
+          </section>
+
+          <section id='sec1' class='sec'>1</section>
+          <section id='sec2' class='sec'>2</section>
+          <section id='sec3' class='sec'>3</section>
+          <section id='sec4' class='sec'>4</section>
+         <script>
+           function handleClick(name){
+             let sec = document.querySelector(name);
+             sec.scrollIntoView();
+           }
+         </script>
+     </body>
+ </html>
