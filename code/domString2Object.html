@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>高亮指定文本</title>
+        <style>
+          *{
+            margin:0;
+            padding:0;
+          }
+          
+        </style>
+    </head>
+    <body>
+      <div id='root'>
+        <div id="main" data-x="hello">Hello<span id="sub" /></div>
+      </div>
+      <script>
+        // <[a-zA-Z]+.*?>([\\s\\S]*?)</[a-zA-Z]*?>
+        function toObject(domStr){
+          let rg = new RegExp('<[^<>]+>','g');
+          console.log(domStr.replace(rg ,''))
+        }
+        let domStr=document.querySelector('#root').innerHTML;
+        toObject(domStr);
+      </script>
+    </body>
+</html>

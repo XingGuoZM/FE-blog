@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>高亮指定文本</title>
+        <style>
+          *{
+            margin:0;
+            padding:0;
+          }
+          
+        </style>
+    </head>
+    <body>
+      <!-- DOM 1， 高亮 "高兴" -->
+      <span id="dom1">
+        你好，很高兴见到你
+      </span>
+      <!-- DOM 1， 高亮 "高兴" -->
+      <span id="dom2">
+        你好，很高<span>兴见到</span>你
+      </span>
+      <!-- DOM 1， 高亮 "高兴" -->
+      <span id="dom3"> <span>你好，很高</span>兴见到你 </span>
+      <script>
+        function highLight(dom,str){
+          let domStr=dom.innerHTML.split('');
+          let indexArr=[]
+          for(let item of str){
+            if(domStr.indexOf(item)>-1) indexArr.push(domStr.indexOf(item));
+          }
+
+          for(let item of indexArr){
+            domStr[item]=`<span style="color:red">${domStr[item]}</span>`
+          }
+          document.querySelector('#dom1').innerHTML=domStr.join('');
+        }
+        const dom =document.querySelector('#dom3');
+        highLight(dom,'高兴');
+      </script>
+    </body>
+</html>

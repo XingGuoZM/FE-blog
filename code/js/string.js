@@ -31,3 +31,4 @@ let str='hELLO'
 console.log(firstToUpper1(str));
 console.log(firstToUpper2(str));
 console.log(firstToUpper3(str));
+

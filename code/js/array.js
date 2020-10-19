@@ -135,10 +135,11 @@ const sort = function(arr,fn){
  * 
  */
 
-const dismantleArray = function (arr,str){
-  // return JSON.parse('["a",["b",["c"],"e"],"d"]')
-  return  
-}
+// const dismantleArray = function (arr,str){
+//   // return JSON.parse('["a",["b",["c"],"e"],"d"]')
+//   return  
+// }
 
-const res = dismantleArray([1, [2, 3, [4]], 5], '[a, [b, [c], e], d]')
-console.log(res) // res: { a: 1, b: 2, c: 4, e: undefined, d: 5 }
+// const res = dismantleArray([1, [2, 3, [4]], 5], '[a, [b, [c], e], d]')
+// console.log(res) // res: { a: 1, b: 2, c: 4, e: undefined, d: 5 }
+
