@@ -7,7 +7,7 @@
     4. 对于 function 返回 function 类型。
 ```js
     typeof null // "object"
-    typeof Object // "function",由此类推Number、String、Boolean、
+    typeof Object // "function",由此类推Number、String、Boolean
 ```
 - instanceof：判断引用类型的实例
 
