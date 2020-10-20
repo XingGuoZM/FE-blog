@@ -1,11 +1,14 @@
 ## 浏览器对象模型（BOM）
-    - window
-    - navigation  
-    - location
+- window
+    - navigator: 当前应用程序的相关信息（只读）  
+    - location: 文档位置
+    - history: 浏览历史
+    - performance: 性能
+    - screen: 当前渲染窗口中和屏幕有关的属性
 
 ## 文档对象模型（DOM）
-    - Node  
-    - Element
+- Node  
+- Element
 ### scrollIntoView() 
     Element.scrollIntoView() 方法让当前的元素滚动到浏览器窗口的可视区域内。
 

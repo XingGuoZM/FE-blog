@@ -12,6 +12,18 @@ JavaScript的变量是存储数据的容器
     - Symbol 
 和 Object 
 
+### typeof与instanceof
+检测变量的类型
+- typeof返回的值可能为:
+    - 'number'
+    - 'string'
+    - 'boolean'
+    - 'symbol'
+    - 'bigint': 
+    - 'function': 基本包装类型（如String、Object、Number等）
+    - 'object': 对象、null
+    - 'undefined': 
+- 
 ### 声明变量的6种方式  
 1. var   
 2. let  
