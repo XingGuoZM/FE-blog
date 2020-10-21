@@ -1,3 +1,9 @@
+
+### 什么是虚拟DOM
+
+### vue和react中的虚拟dom
+
+
 ### js 对象模拟DOM  
 
 - HTML描述（真实dom） 

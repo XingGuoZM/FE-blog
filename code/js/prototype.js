@@ -18,7 +18,12 @@ class Base {
   class B extends Base{}
 
 
-  console.log(A.instance().name1()) // 'A'
-  console.log(B.instance().name1()) // 'B'
-  console.log(A.name2()) //'A'
-  console.log(B.name2()) //'B'
+
+
+  //========== 测试 =========
+  
+  // console.log(A.instance().name1()) // 'A'
+  // console.log(B.instance().name1()) // 'B'
+  // console.log(A.name2()) //'A'
+  // console.log(B.name2()) //'B'
+
