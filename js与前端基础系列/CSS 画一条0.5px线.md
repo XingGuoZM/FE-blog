@@ -1,5 +1,5 @@
 ### 原理
-通过transform: skew来实现。倾斜一定角度用户只看到1px的一半来实现效果
+通过transform: skew来实现。宽高缩小一半，用户只看到1px的一半来实现效果
 
 ### 代码实现
 ```html
@@ -14,9 +14,8 @@
              padding:0;
            }
            .line{
-               width:100%;
-               border-top:solid 1px #000;
-               transform:skew(45deg);
+               height: 1px;
+               transform: scaleY(0.5);
            }
          </style>
      </head>
@@ -25,3 +24,6 @@
      </body>
  </html>
 ```
+
+### 参考
+- [怎么画一条0.5px的边（更新）](https://juejin.im/post/6844903582370643975)
