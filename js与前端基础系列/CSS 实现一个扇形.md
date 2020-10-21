@@ -11,20 +11,15 @@ HTML
 
 CSS
 ```css
-  width: 100px;
-  height: 100px;
-  border-top-left-radius: 100px;
-  background-color: aquamarine;
+  width: 50px;
+  height: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #110099;
 ```
 ### 方法2. canvas + arc
 HTML
 ```html
-  <canvas id="sector2" class="sector2"></canvas>
-```
-CSS
-```css
-  width: 200px;
-  height: 100px;
+  <canvas id="sector2" width='200' height='100'></canvas>
 ```
 JS
 ```js
@@ -41,8 +36,8 @@ JS
 
 ### 方法3. svg+path
 HTML
-```
-  <svg class='sector3'>
+```html
+  <svg width='200' height='100'>
     <path xmlns="http://www.w3.org/2000/svg" fill="#110099" 
     d="M 50 50 
     A 50 50 90 0 0 50 -50 
@@ -53,7 +48,7 @@ HTML
 
 ## 效果展示
 
-![](https://img2020.cnblogs.com/blog/1347757/202010/1347757-20201021230319640-630683808.png)
+![](https://img2020.cnblogs.com/blog/1347757/202010/1347757-20201021231854461-978516051.png)
 
 
 
