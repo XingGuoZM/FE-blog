@@ -1,6 +1,6 @@
 
 今天晚上面试被问到用canvas实现一个扇形，现在就来总结一下前端实现一个扇形的几种方式  
-源文件地址：[实现一个扇形](https://github.com/XingGuoZM/blog/blob/master/%E9%80%A0%E8%BD%AE%E5%AD%90/triangle.html)
+源文件地址：[实现一个扇形](https://github.com/XingGuoZM/blog/blob/master/code/sector.html)
 
 ## 代码实现
 ### 方法1. border-radius
@@ -39,6 +39,24 @@ JS
   drawSector();
 ```
 
+### 方法3. svg+path
+HTML
+```
+  <svg class='sector3'>
+    <path xmlns="http://www.w3.org/2000/svg" fill="#110099" 
+    d="M 50 50 
+    A 50 50 90 0 0 50 -50 
+    L 50 50  
+    Z" />
+  </svg>
+```
+
 ## 效果展示
 
-![](https://img2020.cnblogs.com/blog/1347757/202010/1347757-20201021222805532-1733620340.png)
+![](https://img2020.cnblogs.com/blog/1347757/202010/1347757-20201021230319640-630683808.png)
+
+
+
+## 参考
+- [使用svg的path来绘画扇形](https://blog.51cto.com/xiaoshunzi/2349142)
+- [MDN文档 路径](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths)

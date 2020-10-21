@@ -27,6 +27,10 @@
       width: 200px;
       height: 100px;
     }
+    .sector3{
+      width:200px;
+      height:100px;
+    }
   </style>
 </head>
 
@@ -38,6 +42,16 @@
   <section class="sector-wrap">
     <div>方法二：canvas+arc</div>
     <canvas id="sector2" class="sector2"></canvas>
+  </section>
+  <section class="sector-wrap">
+    <div>方法三：svg+path</div>
+    <svg class='sector3'>
+      <path xmlns="http://www.w3.org/2000/svg" fill="#110099" 
+      d="M 50 50 
+      A 50 50 90 0 0 50 -50 
+      L 50 50  
+      Z" />
+    </svg>
   </section>
   <script>
     const drawSector = function () {
