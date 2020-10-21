@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>画一个️️扇形</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .sector-wrap {
+      width: 100vw;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sector1 {
+      width: 100px;
+      height: 100px;
+      border-top-left-radius: 100px;
+      background-color: aquamarine;
+    }
+
+    .sector2 {
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="sector-wrap">
+    <div>方法一：border-radius</div>
+    <div class="sector1"></div>
+  </section>
+  <section class="sector-wrap">
+    <div>方法二：canvas+arc</div>
+    <canvas id="sector2" class="sector2"></canvas>
+  </section>
+  <script>
+    const drawSector = function () {
+      const ctx = document.querySelector('#sector2').getContext('2d');
+      ctx.moveTo(50, 50);
+      ctx.arc(50, 50, 50, 0, 90 * Math.PI / 180);
+      ctx.lineTo(50, 50);
+      ctx.stroke();
+    }
+
+    drawSector();
+
+  </script>
+</body>
+
+</html>
