@@ -1,6 +1,6 @@
 
 ### 写一个移动端自适应viewport
-```
+```js
 const viewport = function () {
     // flexible的动态计算，兼容了很多场景
     const win = window;
@@ -81,9 +81,8 @@ const viewport = function () {
         const rem = 100 * (width / 750);
         docEl.style.fontSize = "".concat(rem, "px"); // @ts-ignore
 
-        if (window.__xsandStore__) {
-            // @ts-ignore
-            window.__xsandStore__.globalRem = width / 750;
+        if (window._customerStore) {
+            window._customerStore.globalRem = width / 750;
         }
     } // resize在safari中，收缩屏幕的时候也会触发
 
