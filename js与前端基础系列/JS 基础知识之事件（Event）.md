@@ -1,5 +1,7 @@
 ### 什么是事件  
 
+
+### 浏览器环境和node环境下的事件  
 - 浏览器中使用dispatchEvent 来发布事件，使用addEventListener来绑定并监听事件。
 - Node中使用emit发布事件，使用on来监听事件。
 
