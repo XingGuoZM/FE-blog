@@ -40,10 +40,11 @@
              * newNode: 要插入的节点
              * 调用示例: insertNode(root,node2)
              */
-             const insertNode = function(parentNode,newNode){
+             const insertNode = function(parentNode,newNode,referenceNode){
                 // appendChild
                 // insertBefore
-                parentNode.appendChild(newNode);
+               //  parentNode.appendChild(newNode);
+               parentNode.insertBefore(newNode,referenceNode);
              }
             /**
              * 替换一个节点
@@ -89,14 +90,14 @@
 
 
             //  insertNode(root,node1);
-            //  insertNode(root,node2);
+             insertNode(root,node2);
             //  insertNode(root,node3);
 
             // replaceNode(root,node4,node1);
 
             // removeNode(root,node1)
 
-            renderDom(findNode('#root'),htmlStr);
+            // renderDom(findNode('#root'),htmlStr);
 
          </script>
      </body>
