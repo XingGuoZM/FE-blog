@@ -2,23 +2,23 @@
  * 闭包示例
  */
 
-function a(){
-  let aa = 0;
+// function a(){
+//   let aa = 0;
 
-  function b(){
-      aa ++;
-      console.log(aa);
-  }
-  return b();
-}
+//   function b(){
+//       aa ++;
+//       console.log(aa);
+//   }
+//   return b();
+// }
 //方式一
 // a()(); //1
 // a()(); //1
 
 //方式二
-const fn = a();
-fn();//1
-fn();//2
+// const fn = a();
+// fn();//1
+// fn();//2
 // console.log(a())
 
 // let m=0
@@ -30,3 +30,28 @@ fn();//2
 // const fn=test;
 // fn();
 // fn()
+
+
+
+// function a(){
+//   let aa = 0;
+//   console.log(aa);
+//   function b(){
+//       aa ++;
+//   }
+//   return b;
+// }
+function a(){
+  let aa = 0;
+  function b(){
+      aa ++;
+      console.log(aa);
+  }
+  return b;
+}
+
+//调用
+const fn=a();
+fn();
+fn();
+fn();
