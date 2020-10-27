@@ -17,9 +17,6 @@ class Base {
   class A extends Base{}
   class B extends Base{}
 
-
-
-
   //========== 测试 =========
   
   // console.log(A.instance().name1()) // 'A'
@@ -27,3 +24,11 @@ class Base {
   // console.log(A.name2()) //'A'
   // console.log(B.name2()) //'B'
 
+
+
+function Person (){
+
+}
+
+const p = new Person();
+console.log(p.constructor,Person.prototype);
