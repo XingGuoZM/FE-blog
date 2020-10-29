@@ -12,10 +12,13 @@
          </style>
      </head>
      <body>
-        <canvas id="myCanvas"></canvas>
+        <canvas id="myCanvas" width='200' height='100'></canvas>
 
         <script>
-          
+          const ctx=document.querySelector('#myCanvas').getContext('2d');
+          ctx.moveTo(10,10);
+          ctx.lineTo(80,80);
+          ctx.stroke();
         </script>
      </body>
  </html>
