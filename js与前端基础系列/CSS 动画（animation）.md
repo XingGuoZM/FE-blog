@@ -13,8 +13,9 @@
   2. setTimeout  
   3. setInterval  
   4. CSS @keyframes  
+  5. canvas + requestAnimation
 - js操作keyframe动画  
-```
+```js
 const getkeyframes=(name)=> {
   var animation = {};
   // 获取所有的style
