@@ -24,7 +24,7 @@
   </script>
 ```
 - node侧验证  
-```
+```js
 const test1=(...numbers)=>{
   console.log(this)
   console.log(numbers)      

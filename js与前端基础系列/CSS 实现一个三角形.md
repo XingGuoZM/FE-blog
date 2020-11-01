@@ -5,14 +5,14 @@
 
 1. transform rotateZ(45deg) + 父子divoverflow：hidden
 HTML
-```
+```html
     <div class='triangle1-wrap'>
         <div class='triangle1'></div>
     </div>
 ```
 
 CSS
-```
+```css
     .triangle1-wrap{
         width:50px;
         height:50px;
@@ -29,12 +29,12 @@ CSS
 
 2. 设置border
 HTML
-```
+```html
     <div class='triangle2'></div>
 ```
 
 CSS
-```
+```css
     .triangle2{
         width:0px;
         height:0px;
@@ -48,11 +48,11 @@ CSS
 3. canvas
 
 HTMl
-```
+```html
     <canvas id='triangle3' width='50' height='50'></canvas>
 ```
 JS
-```
+```js
     const triangle = document.getElementById('triangle3');
     const ctx = triangle.getContext('2d');
     //填充三角形（等边）
@@ -65,13 +65,13 @@ JS
 ```
 4. svg
 HTML
-```
+```html
     <svg class='triangle4'>
         <path name="三角形" fill="green" d="M50 0 L0 50 L50 50  Z"/>
     </svg>
 ```
 CSS
-```
+```css
     .triangle4{
         width:50px;
     }
@@ -79,11 +79,11 @@ CSS
 
 5. 渐变
 HTML
-```
+```html
     <div class="triangle5"></div>
 ```
 CSS
-```
+```css
     .triangle5{
         width: 50px;
         height:50px;
@@ -92,11 +92,11 @@ CSS
 ```
 6. 伪类
 HTML
-```
+```html
     <div class="triangle6"></div>
 ```
 CSS
-```
+```css
     .triangle6{
         width:50px;
         height:50px;
@@ -117,11 +117,11 @@ CSS
 
 7. background-image
 HTML
-```
+```html
     <div class="triangle7"></div>
 ```
 CSS
-```
+```css
     .triangle7{
         width:50px;
         height:50px;
@@ -131,12 +131,12 @@ CSS
 ```
 8. 字体
 HTML
-```
+```html
     <div class="triangle8">▲</div>
 ```
 
 CSS
-```
+```css
     .triangle8{
         font-size:50px;
         color:darkmagenta;
