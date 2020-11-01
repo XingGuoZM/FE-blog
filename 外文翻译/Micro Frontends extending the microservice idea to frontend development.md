@@ -75,7 +75,7 @@ Team Product decides which functionality is included and where it is positioned 
 
 ## How to Create a Custom Element?
 Lets take the buy button as an example. Team Product includes the button simply adding <blue-buy sku="t_porsche"></blue-buy> to the desired position in the markup. For this to work, Team Checkout has to register the element blue-buy on the page.
-```
+```js
 class BlueBuy extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<button type="button">buy for 66,00 €</button>`;
@@ -83,8 +83,9 @@ class BlueBuy extends HTMLElement {
 
   disconnectedCallback() { ... }
 }
-```
+
 window.customElements.define('blue-buy', BlueBuy);
+```
 Now every time the browser comes across a new blue-buy tag, the connectedCallback is called. this is the reference to the root DOM node of the custom element. All properties and methods of a standard DOM element like innerHTML or getAttribute() can be used.
 
 ![Custom Element in Action](https://micro-frontends.org/ressources/video/custom-element.gif)
@@ -93,7 +94,7 @@ When naming your element the only requirement the spec defines is that the name 
 
 ## Parent-Child Communication / DOM Modification
 When the user selects another tractor in the variant selector, the buy button has to be updated accordingly. To achieve this Team Product can simply remove the existing element from the DOM and insert a new one.
-```
+```js
 container.innerHTML;
 // => <blue-buy sku="t_porsche">...</blue-buy>
 container.innerHTML = '<blue-buy sku="t_fendt"></blue-buy>';
@@ -101,12 +102,12 @@ container.innerHTML = '<blue-buy sku="t_fendt"></blue-buy>';
 The disconnectedCallback of the old element gets invoked synchronously to provide the element with the chance to clean up things like event listeners. After that the connectedCallback of the newly created t_fendt element is called.
 
 Another more performant option is to just update the sku attribute on the existing element.
-```
+```js
 document.querySelector('blue-buy').setAttribute('sku', 't_fendt');
 ```
 If Team Product used a templating engine that features DOM diffing, like React, this would be done by the algorithm automatically.
 
-Custom Element Attribute Change
+![Custom Element Attribute Change](https://micro-frontends.org/ressources/video/custom-element-attribute.gif)
 
 To support this the Custom Element can implement the attributeChangedCallback and specify a list of observedAttributes for which this callback should be triggered.
 ```js
@@ -190,7 +191,7 @@ class BlueBasket extends HTMLElement {
 }
 ```
 With this approach the mini basket fragment adds a listener to a DOM element which is outside its scope (window). This should be ok for many applications, but if you are uncomfortable with this you could also implement an approach where the page itself (Team Product) listens to the event and notifies the mini basket by calling refresh() on the DOM element.
-```
+```js
 // page.js
 const $ = document.getElementsByTagName;
 
