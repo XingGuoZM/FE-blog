@@ -1,13 +1,20 @@
  
 
-### 简介  
+## 简介  
 动画，animation-name，animation-duration, animation-timing-function，animation-delay，animation-iteration-count，animation-direction，animation-fill-mode 和 animation-play-state
 
+定义动画帧 @keyframes
 
-### 简单动画
 
+## 常见动画实现汇总
+1. 平移（弹跳，抖动）
+2. 缩放（呼吸）
+3. 旋转（佛光）
+4. 翻折（翻牌子）
+5. 抛物线（撒花）
+6. 闪光
 
-### 扩展
+## 扩展
 - 实现动画的几种方式  
   1. requestAnimationFrame  
   2. setTimeout  
@@ -53,5 +60,8 @@ const removeKeyframes=function(){
   head.removeChild(head.lastElementChild)
 }
 ```
-### 参考  
+## 问题汇总（FAQ）
+
+
+## 参考  
 - [MDN animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)  
