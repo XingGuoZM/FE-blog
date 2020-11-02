@@ -4,12 +4,12 @@
 ![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200801110428433-688502957.png)
 
 ### 第一步：安装exceljs  
-```
+```js
 npm i -S exceljs
 ```
 
 ### 第二步：编写excel2json脚本  
-```
+```js
 const fs = require('fs')
 const Excel = require('exceljs');
 
