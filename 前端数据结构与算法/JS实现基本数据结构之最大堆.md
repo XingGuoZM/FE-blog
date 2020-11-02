@@ -13,7 +13,7 @@
 - remove(node): 移除二叉树中指定节点
 
 ### 实现最大堆
-```
+```js
 function MaxHeap(initDataArray, maxSize = 9999) {
     let arr=initDataArray || [];
 

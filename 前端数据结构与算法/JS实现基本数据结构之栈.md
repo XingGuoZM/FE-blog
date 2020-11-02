@@ -11,7 +11,7 @@
 - toString（）：将栈结构的内容以字符串的形式返回。
 
 ### 使用数组实现栈结构
-```
+```js
  function Stack(){
       this.data =[]
     

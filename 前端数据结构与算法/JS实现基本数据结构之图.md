@@ -13,7 +13,7 @@
 - remove(node): 移除二叉树中指定节点
 
 ### 实现二叉树
-```
+```js
   function Graph {
     this.vertices = []; // 用来存放图中的顶点
     this.adjList = new Dictionary(); // 用来存放图中的边

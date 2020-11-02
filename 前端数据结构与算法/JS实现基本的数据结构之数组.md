@@ -9,7 +9,7 @@
 ### reverse、sort  
 这两个方法会改变原有数组
 - reverse反转数组
-```
+```js
 const reverse = function (arr) {
   let len = arr.length
   let tmp;
@@ -27,7 +27,7 @@ const reverse = function (arr) {
 ### map、forEach、every、filter、some  
 所有的这些方法都不会改变原有数组
 - 手动实现
-```
+```js
 const map=function(arr,fn){
   let res=new Array(arr.length)
   for(let i=0;i<arr.length;i++){
@@ -63,7 +63,7 @@ const every = function(arr,fn){
 
 ### indexOf、lastIndexOf  
 查找制定值第一次出现的位置（indexOf）和最后一次出现的位置（lastIndexOf）
-```
+```js
 const indexOf = function (arr, value) {
   let index = -1;
   for (let i = 0; i < arr.length; i++) {

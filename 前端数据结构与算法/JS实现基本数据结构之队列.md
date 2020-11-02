@@ -12,7 +12,7 @@
 - toString(): 将队列的内容以字符串的形式返回;
 
 ### 使用数组实现队列
-```
+```js
  function Queue(){
       this.data =[]
     

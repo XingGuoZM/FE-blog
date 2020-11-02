@@ -14,7 +14,7 @@
 
 按比例降序尽可能多放入物品
 
-```
+```js
 function greedy(values, weights, capacity){
   var returnValue = 0
   var remainCapacity = capacity
@@ -46,7 +46,7 @@ greedy(values, weights, capacity) // 320
 ```
 - 找零钱问题
 在现实生活中，经常遇到找零问题，假设有数目不限的面值为20,10,5,1的硬币。 给出需要找零数，求出找零方案，要求：使用数目最少的硬币。
-```
+```js
 var money= [20,10,5,1];
  /*
   * m[]:存放可供找零的面值，降序排列

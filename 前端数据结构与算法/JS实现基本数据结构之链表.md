@@ -9,7 +9,7 @@
 
 ### 实现一个简易的链表
 
-```
+```js
 /*======定义结构======*/
 const node=function(element){
     this.element=element

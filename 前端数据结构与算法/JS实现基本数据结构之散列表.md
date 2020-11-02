@@ -13,7 +13,7 @@
 - remove(node): 移除二叉树中指定节点
 
 ### 实现散列表
-```
+```js
   // 定义节点
   function Node(element){
     this.element = element;
