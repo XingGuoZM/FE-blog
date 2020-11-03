@@ -1,4 +1,5 @@
-### 什么是BFC(Block formatting context)  
+BFC(Block formatting context)  
+---
 BFC（块级格式上下文）就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素
 BFC 就是 ‘块级格式上下文’ 的格式，创建了BFC的元素就是一个独立的盒子，不过只有BLock-level box可以参与创建BFC，它规定了内部的Bloc-level Box 如何布局，并且与这个独立盒子里的布局不受外部影响，当然它也不会影响到外面的元素。 
 

@@ -19,7 +19,16 @@
               width:100%;
               margin-top:50px;
             }
-            
+            .scroll-wrap{
+                width:100px;
+                height:200px;
+                /* overflow:auto; */
+            }
+            .scroll{
+                width:100px;
+                height:900px;
+                background-color: aquamarine;
+            }
         </style>
     </head>
     <body>
@@ -33,6 +42,9 @@
             <div class='item'>1</div>
             <div class='item'>1</div>
             <div class='item' id='item1'>1</div>
+        </section>
+        <section class='scroll-wrap'>
+            <div class='scroll' id='scroll'>12345</div>
         </section>
         <script>
             let page = 1;
