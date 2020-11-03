@@ -13,7 +13,7 @@
 useEffect 给你提供了一个更好的选择。
 
 通过useEffect，你可以在函数组件内部直接操纵生命周期相关的事件。即，它们中的三个：componentDidMount, componentDidUpdate, and componentWillUnmount. 全部包含在一个函数中！让我们来看一个例子：
-```
+```js
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -88,7 +88,7 @@ useEffect在每次渲染之后运行（默认情况下），并且可以选择�
 ## 每次进行渲染时阻止副作用
 如果您想减少副作用的运行频率，可以提供第二个参数-一个数组。 将它们视为实现此效果的依赖项。 如果自上次以来某个依赖项已更改，则效果将再次运行。 （它还将在初始渲染后运行）
 
-```
+```js
 const [value, setValue] = useState('initial');
 
 useEffect(() => {
@@ -106,7 +106,7 @@ useEffect(() => {
 React不会这样做-它只会响应状态更改而重新渲染。
 
 useEffect也不会主动“监视”更改。 您可以将useEffect调用想像为以下伪代码：
-```
+```js
 let previousValues = [];
 let hasRun = false;
 function useEffect(effectFunc, dependencyArray = undefined) {
@@ -133,7 +133,7 @@ function useEffect(effectFunc, dependencyArray = undefined) {
 
 ## 在挂载后只运行一次  
 您可以通过传递空数组[]的特殊值来表示“仅在挂载时运行，而在卸载时清除”。 因此，如果我们将上面的组件更改为像这样调用useEffect：
-```
+```js
 useEffect(() => {
   console.log('mounted');
   return () => console.log('unmounting...');
@@ -143,16 +143,7 @@ useEffect(() => {
 然后，它将在初始渲染后打印“mounted”，在整个生命周期中保持沉默，并在退出时打印“unmounting...”。
 
 上面的伪代码不包含对此空数组功能的支持。 可能是这样的：
-```
-useEffect(() => {
-  console.log('mounted');
-  return () => console.log('unmounting...');
-}, [])  // <-- add this empty array here
-```
-Then it will print “mounted” after the initial render, remain silent throughout its life, and print “unmounting…” on its way out.
-
-Our pseudocode above didn’t include support for this empty array feature. Here’s what that might look like:
-```
+```js
 let previousValues = [];
 let hasRun = false;
 function useEffect(effectFunc, dependencyArray = undefined) {
@@ -199,7 +190,7 @@ function useEffect(effectFunc, dependencyArray = undefined) {
 但是请注意，React是自下而上渲染的！ 在这种情况下：底部，然后是中间，然后是顶部。 它是递归的-父级直到其所有子级都渲染完毕后才“完成”，并且useEffect仅在组件的渲染完成后才运行。
 
 从那时起，将不会发生任何事情，直到您单击其中一个元素以增加其计数。 完成后，唯一会重新渲染的组件是您单击的组件及其下方的组件。 （请注意，如果您单击“底部”，您将不会看到“顶部”或“中间”的“已渲染”消息）
-```
+```js
 function Top() {
   const [count, setCount] = useState(0);
 
@@ -246,7 +237,7 @@ function Bottom() {
 将第二个参数想像为“依赖项”数组–如果更改了变量，效果应重新运行。 这些可以是任何类型的变量：prop，state或其他任何变量。
 
 在此示例中，有3个state变量和3个按钮。 该效果仅在count2更改时运行，否则将保持安静。 尝试交互式示例。
-```
+```js
 function ThreeCounts() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
@@ -275,7 +266,7 @@ function ThreeCounts() {
 在此示例中，PropChangeWatch组件正在接收2个props（a和b），并且其效果仅在更改值时才会运行（因为我们正在传递包含[a]作为第二个参数的数组）。
 
 在[交互式示例](https://codesandbox.io/s/useeffect-run-on-props-change-k3wvz)中尝试一下.:
-```
+```js
 function PropChangeWatch({ a, b }) {
   useEffect(() => {
     console.log("value of 'a' changed to", a);
@@ -306,7 +297,7 @@ function Demo() {
 有时您只想在挂载时做一件小事，而做一件小事需要将一个函数重写为一个类。
 
 在此示例中，让我们看一下如何结合使用useEffect和useRef钩子将输入控件集中在第一个渲染上。
-```
+```js
 import React, { useEffect, useState, useRef } from "react";
 import ReactDOM from "react-dom";
 
@@ -342,17 +333,17 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 
 因此，即使我们将[inputRef]作为useEffect的第二个参数传递，它在初始挂载时实际上只会运行一次。 这基本上是“ componentDidMount”（时间原因，我们将在后面讨论）。
 
-为了证明这一点，请[尝试示例]（https://codesandbox.io/s/z6pommq8km）。 请注意它的聚焦方式（使用CodeSandbox编辑器时有点麻烦，但是请尝试单击右侧“浏览器”中的刷新按钮）。 然后尝试在框中输入。 每个字符都会触发重新渲染，但是如果您查看控制台，则会看到“render”仅打印一次。
+为了证明这一点，请[尝试示例]（https://codesandbox.io/s/z6pommq8km）。请注意它的聚焦方式（使用CodeSandbox编辑器时有点麻烦，但是请尝试单击右侧“浏览器”中的刷新按钮）。然后尝试在框中输入。 每个字符都会触发重新渲染，但是如果您查看控制台，则会看到“render”仅打印一次。
 
 ![](https://img2020.cnblogs.com/blog/1347757/202010/1347757-20201001110355095-1612445186.png)
 
 ## 使用useEffect请求数据
-让我们看看另一个常见的用例：请求数据并显示它。 在类组件中，您需要将此代码放入componentDidMount方法中。 为此，我们将使用useEffect。 我们还需要useState来存储数据。
+让我们看看另一个常见的用例：请求数据并显示它。在类组件中，您需要将此代码放入componentDidMount方法中。为此，我们将使用useEffect。我们还需要useState来存储数据。
 
 值得一提的是，当React新的Suspense功能的数据获取部分准备就绪时，这将是获取数据的首选方式。 从useEffect抓取有一个大难题（我们将继续介绍），而Suspense API的使用将变得更加容易。
 
 这是一个从Reddit获取帖子并显示它们的组件：
-```
+```js
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -395,11 +386,11 @@ ReactDOM.render(
   document.querySelector("#root")
 );
 ```
-您会注意到，我们没有在此处将第二个参数传递给useEffect。 这是不好的。 不要这样
+您会注意到，我们没有在此处将第二个参数传递给useEffect。这是不好的。不要这样
 
-不传递第二个参数将导致useEffect运行每个渲染。 然后，当它运行时，它将获取数据并更新状态。 然后，一旦状态更新，组件将重新渲染，这再次触发useEffect。 您可以看到问题。
+不传递第二个参数将导致useEffect运行每个渲染。然后，当它运行时，它将获取数据并更新状态。然后，一旦状态更新，组件将重新渲染，这再次触发useEffect。您可以看到问题。
 
-为了解决这个问题，我们需要传递一个数组作为第二个参数。 数组应该是什么？
+为了解决这个问题，我们需要传递一个数组作为第二个参数。数组应该是什么？
 
 继续思考一下。
 
@@ -407,9 +398,9 @@ ReactDOM.render(
 
 …
 
-useEffect依赖的唯一变量是setPosts。 因此，我们应该在此处传递数组[setPosts]。 由于setPosts是useState返回的设置器，因此不会在每个渲染器中都重新创建它，因此效果只能运行一次。
+useEffect依赖的唯一变量是setPosts。因此，我们应该在此处传递数组[setPosts]。由于setPosts是useState返回的设置器，因此不会在每个渲染器中都重新创建它，因此效果只能运行一次。
 
-有趣的事实：调用useState时，它返回的setter函数仅创建一次！ 每次渲染组件时，它都是完全相同的函数实例，这就是为什么效果可以安全依赖于一个实例的原因。 这个有趣的事实对于useReducer返回的调度函数也是如此。
+有趣的事实：调用useState时，它返回的setter函数仅创建一次！每次渲染组件时，它都是完全相同的函数实例，这就是为什么效果可以安全依赖于一个实例的原因。这个有趣的事实对于useReducer返回的调度函数也是如此。
 
 
 ## 当数据变化时重新发送请求
@@ -418,7 +409,7 @@ useEffect依赖的唯一变量是setPosts。 因此，我们应该在此处传�
 
 首先，我们将Reddit组件更改为接受subreddit作为prop，基于该subreddit请求数据，并仅在prop更改时重新运行效果：
 
-```
+```js
 // 1. Destructure the `subreddit` from props:
 function Reddit({ subreddit }) {
   const [posts, setPosts] = useState([]);
@@ -457,7 +448,7 @@ ReactDOM.render(
 
 这仍然是硬编码的，但是现在我们可以通过将Reddit组件包装为一个组件来对其进行自定义，以使我们可以更改subreddit。 添加此新的App组件，并在底部进行渲染：
 
-```
+```js
 function App() {
   // 2 pieces of state: one to hold the input value,
   // another to hold the current subreddit.
@@ -495,7 +486,7 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 我们在这里只可以使用一种状态-存储输入，并将相同的值发送给Reddit-但是Reddit组件将在每次按键时获取数据。
 
 顶部的useState可能看起来有些奇怪，尤其是第二行：
-```
+```js
 const [inputValue，setValue] = useState（“ reactjs”）;
 const [subreddit，setSubreddit] = useState（inputValue）;
 ```

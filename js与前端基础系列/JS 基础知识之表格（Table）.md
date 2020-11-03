@@ -1,6 +1,6 @@
 ### 一个简单的示例
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
