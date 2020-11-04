@@ -28,9 +28,9 @@
   参与浙江省民政局相关政务系统的开发，jsp转前端。
 
 ### 参与项目
-- 互动玩法相关页面（淘宝特价版/react/h5/2020.7～至今）  
+- 互动玩法（淘宝特价版/react/h5/2020.7～至今）  
 
-- 会场活动相关页面 & 商家后台（Aliexpress/weex react redux/native/2019.6～2020.7）  
+- 会场活动 & 商家后台（Aliexpress/weex react redux/native/2019.6～2020.7）  
 
 - 智慧园区管理系统（上海中电/vue全家桶 element-ui/pc后台/2018.6～20189.6）  
 
