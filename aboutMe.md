@@ -8,7 +8,7 @@
 个人信息
 ---
 - 李志铭/男/1995/本科
-- 江西财经大学/软件工程(2014~2018)
+- 江西财经大学/软件工程/2014~2018
 - 工作经验: 2017.6～至今
 - 技术博客: [mingL](https://www.cnblogs.com/xingguozhiming/)
 - Github: [XingGuoZM](https://github.com/XingGuoZM)
@@ -28,10 +28,13 @@
   参与浙江省民政局相关政务系统的开发，jsp转前端。
 
 ### 参与项目
-互动玩法相关页面（淘宝特价版/react/h5/2020.7～至今）
-会场活动相关页面 & 商家后台（Aliexpress/weex react redux/native/2019.6～2020.7）
-智慧园区管理系统（上海中电/vue全家桶 element-ui/pc后台/2018.6～20189.6）
-公墓殡葬管理管理系统（杭州安创/vue全家桶 element-ui/pc后台/2017.6～2018.4）
+- 互动玩法相关页面（淘宝特价版/react/h5/2020.7～至今）  
+
+- 会场活动相关页面 & 商家后台（Aliexpress/weex react redux/native/2019.6～2020.7）  
+
+- 智慧园区管理系统（上海中电/vue全家桶 element-ui/pc后台/2018.6～20189.6）  
+
+- 公墓殡葬管理管理系统（杭州安创/vue全家桶 element-ui/pc后台/2017.6～2018.4）  
 
 ### 标志性项目介绍
 - **互动玩法**  

@@ -20,3 +20,4 @@ Cashe-Control: max-age=31536000 单位为秒
 - [彻底弄懂HTTP缓存机制及原理](https://www.cnblogs.com/chenqf/p/6386163.html)
 - [HTTP缓存技术详解](https://www.jianshu.com/p/4f07740d68e4)
 - [MDN文档 HTTP 缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ)
+- [缓存（二）——浏览器缓存机制：强缓存、协商缓存](https://github.com/amandakelake/blog/issues/41)

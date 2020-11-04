@@ -29,3 +29,5 @@ BFC的本质就是所有元素都是块级元素（或者可以当成块级元�
 - [CSS中的BFC详解](https://www.cnblogs.com/chen-cong/p/7862832.html)  
 - [请描述一下BFC、IFC、GFC 和 FFC的区别？](https://zhuanlan.zhihu.com/p/134094372)
 - [详解BFC、IFC、GFC、FFC](https://juejin.im/post/6844904117056323597)
+- [BFC（块级格式上下文）](https://github.com/amandakelake/blog/issues/25)
+- [三栏布局-七种实现](https://github.com/amandakelake/blog/issues/28)
