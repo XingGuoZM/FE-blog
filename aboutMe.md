@@ -10,8 +10,8 @@
 - 李志铭/男/1995/本科
 - 江西财经大学/软件工程/2014~2018
 - 工作经验: 2017.6～至今
-- 技术博客: [mingL](https://www.cnblogs.com/xingguozhiming/)
-- Github: [XingGuoZM](https://github.com/XingGuoZM)
+- 技术博客: [https://www.cnblogs.com/xingguozhiming/](https://www.cnblogs.com/xingguozhiming/)
+- Github: [https://github.com/XingGuoZM](https://github.com/XingGuoZM)
 
 工作经历
 ---
