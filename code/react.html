@@ -1,0 +1,32 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="utf-8" />
+         <title>react</title>
+     </head>
+     <body>
+       <div id='root'></div>
+       <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+       <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+       <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+       
+      <script type="text/babel">
+        const { useEffect, useState} = React;
+        const { render } = ReactDOM;
+
+        function Count() {
+          const [count, setCount] = useState(0);
+          useEffect(()=>{
+            console.log('effect')
+          },[])
+          return <div onClick={()=>setCount(count+1)}>Click Me Add Count: {count}</div>;
+        }
+
+        render(<Count/>, document.getElementById('root'));
+      </script>
+     </body>
+ </html>
+
+
+
