@@ -4,12 +4,12 @@
 ![](https://img2020.cnblogs.com/blog/1347757/202008/1347757-20200801004323198-1414268881.png)
 
 ### 第一步：安装exceljs  
-```
+```js
 npm i -S exceljs
 ```
 
 ### 第二步：编写excel2json脚本  
-```
+```js
 const fs = require('fs')
 const Excel = require('exceljs');
 
@@ -35,13 +35,13 @@ const Excel = require('exceljs');
 json2excel('./json/json2excel.json','./excel/json2excel.xlsx');
 ```
 ### 运行查看效果  
-```
+```js
 node json2excel
 ```
 
 ### 测试效果  
 json测试数据
-```
+```js
 [
   {
     "id":"001",
