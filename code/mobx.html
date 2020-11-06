@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>mobx example</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+
+      <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+      <script src="https://unpkg.com/mobx-react@6.2.2/dist/mobxreact.umd.production.min.js"></script>
+      <script src="https://unpkg.com/mobx@6.0.0-rc.1/dist/mobx.umd.production.min.js"></script>
+      <script type="text/babel">
+        const { makeAutoObservable } = mobx
+        const { observer } = mobxReact
+
+        // Model the application state.
+        class Timer {
+            secondsPassed = 0
+
+            constructor() {
+                makeAutoObservable(this)
+            }
+
+            increase() {
+                this.secondsPassed += 1
+            }
+
+            reset() {
+                this.secondsPassed = 0
+            }
+        }
+
+        const myTimer = new Timer()
+
+        // Build a "user interface" that uses the observable state.
+        const TimerView = observer(({ timer }) => (
+            <button onClick={() => timer.reset()}>Seconds passed: {timer.secondsPassed}</button>
+        ))
+
+        ReactDOM.render(<TimerView timer={myTimer} />, document.body)
+
+        // Update the 'Seconds passed: X' text every second.
+        setInterval(() => {
+            myTimer.increase()
+        }, 1000)
+      </script> 
+    </body>
+</html>
