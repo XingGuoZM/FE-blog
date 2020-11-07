@@ -64,9 +64,55 @@ console.log(ans4);// 89,787,667,766,876
  * 情况二：非数值类型，如布尔值（true），字符串（'1233456333'）,对象（{name:123}）等
  * 情况三：负数，如-22221
  * 情况四：小数，如89877768866.098
- * 情况六：大数，如1000000000000000000000000000000
- * 情况七：边界情况，如undefine, null
+ * 情况五：大数，如1000000000000000000000000000000
+ * 情况六：边界情况，如undefine, null
 
+我们针对以上情况对工具函数进行改造，给出的解决方案,以正则为例写出如下代码
+```js
+function num2amount(num){
+  let suffix='';
+  let numStr='';
+  if (isNumber(num) || isNumberString(num) || isBigInt(num)) {
+    // 判断是否为负数,大数超过MAX_SAFE_INTEGER,
+    if(Number(num) < 0) return 0;
+    if(isBigInt(num)) return String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    numStr=String(num);
+    // 判断小数
+    if(String(num).indexOf('.')>0) {
+      numStr=Number(num).toFixed(2);
+      splitStr=numStr.split('.');
+      numStr=splitStr[0];
+      suffix=`.${splitStr[1]}`;
+    }
+    return numStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',')+suffix;
+  }
+  return '-';
+}
+//是否是有效的数字类型
+function isNumber(num){
+  return typeof num == 'number' && !isNaN(num);
+}
+// 判断是否是任意大的整数
+function isBigInt(num){
+  return typeof num == 'bigint';
+}
+// 判断是否为有效的数字字符串
+function isNumberString(str){
+  return typeof str == 'string' && !isNaN(Number(str));
+}
+
+
+// 测试结果
+let ans1 = num2amount('1233456333');//1,233,456
+let ans2 = num2amount(true);// -
+let ans3 = num2amount(-2); // 0
+let ans4 = num2amount(89877768866.098); // 877,768,866.10
+let ans5 = num2amount(1000000000000000000000000000000n);//1,000,000,000,000,000,000,000,000,000,000
+let ans6 = num2amount(null); // -
+let ans7 = num2amount(); // -
+```
+
+总结一下，看起来写一个工具函数没什么难度，其实就连简单的功能也不是那么容易的。都要考虑到方方面面，容错处理尤其重要。以上代码依旧不够简洁，以后发现有更好的实现方式再回来修改。
 
 
 

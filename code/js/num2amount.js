@@ -34,29 +34,36 @@ function num2amount2(num){
  * 方法三
  * @param {*} num 
  */
-function num2amount3(num){
-  let prefix=false;
+function num2amount(num){
   let suffix='';
-  // 非数字类型, 特别注意NaN情况，使用isNaN判断
-  if(typeof num != 'number' || isNaN(num)) {
-    return '-';
+  let numStr='';
+  if (isNumber(num) || isNumberString(num) || isBigInt(num)) {
+    // 判断是否为负数,大数超过MAX_SAFE_INTEGER,
+    if(Number(num) < 0) return 0;
+    if(isBigInt(num)) return String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    numStr=String(num);
+    // 判断小数
+    if(String(num).indexOf('.')>0) {
+      numStr=Number(num).toFixed(2);
+      splitStr=numStr.split('.');
+      numStr=splitStr[0];
+      suffix=`.${splitStr[1]}`;
+    }
+    return numStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',')+suffix;
   }
-  // 负数
-  if (num < 0) {
-    return 0;
-  }
-  // 判断是否超过JavaScript的最大的安全整数
-  if (!Number.isSafeInteger(num)) {
-
-  }
-  let numStr=String(num);
-  // 小数
-  if(numStr.indexOf('.')){
-    suffix = '.' + numStr.split('.')[1];
-    numStr = numStr.split('.')[0];
-  }
-  
-  return (numStr).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
+  return '-';
+}
+//是否是有效的数字类型
+function isNumber(num){
+  return typeof num == 'number' && !isNaN(num);
+}
+// 判断是否是大数
+function isBigInt(num){
+  return typeof num == 'bigint';
+}
+// 判断是否为有效的数字字符串
+function isNumberString(str){
+  return typeof str == 'string' && !isNaN(Number(str));
 }
 /**
  * 方法四
@@ -82,13 +89,19 @@ function num2amount4(num){
 
 // 测试用例
 /**
- * 情况一：正常情况，正整数，如8887677677566
- * 情况二：非数值类型，如布尔值（true），字符串（'1233456333'）,对象（{name:123}）等
+ * 情况一：正常情况，正整数，字符串，如8887677677566, '1233456333'
+ * 情况二：非数值类型，如布尔值（true）,对象（{name:123}）等
  * 情况三：负数，如-22221
  * 情况四：小数，如89877768866.098
- * 情况六：大数，如1000000000000000000000000000000
- * 情况七：边界情况，如undefine, null
+ * 情况五：大数，如1000000000000000000000000000000
+ * 情况六：边界情况，如undefine, null
  */
-let ans3 = num2amount3(1000000000000000000000000000000);
-console.log(ans3);
+let ans1 = num2amount('1233456333');//1,233,456
+let ans2 = num2amount(true);// -
+let ans3 = num2amount(-2); // 0
+let ans4 = num2amount(89877768866.098); // 877,768,866.10
+let ans5 = num2amount(1000000000000000000000000000000n);//1,000,000,000,000,000,000,000,000,000,000
+let ans6 = num2amount(null); // -
+let ans7 = num2amount(); // -
+console.log(ans1,ans2,ans3,ans4,ans5,ans6,ans7);
  
