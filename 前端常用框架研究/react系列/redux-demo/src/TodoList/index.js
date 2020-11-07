@@ -1,17 +1,15 @@
 import React from 'react'
-import {render} from 'react-dom'
-import rootReducer from './reducers'
-import {createStore} from 'redux'
 import { connect } from 'react-redux'
-const store=createStore(rootReducer)
 
-class Todo extends React.Component{
-  render(){
+function TodoList(props) {
+    const { value, add } = props;
     return (
-      <div>hello</div>
+      <div>
+        <input onKeyUp={add}></input>
+        <h1>{value}</h1>
+      </div>
     )
-  }
 }
-
-connect()(Todo)
-export default Todo
+const mapStateToProps = (state) =>({value: state.value});
+const mapDispatchToProps = (dispatch) => ({add:(e)=>e.keyCode===13 && dispatch({ type: 'add',value:e.target.value})});
+export default connect(mapStateToProps,mapDispatchToProps)(TodoList)

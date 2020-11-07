@@ -1,6 +1,6 @@
-import {createStore} from 'redux'
-import helloWorld from './reducers/index'
+import {createStore} from 'redux';
+import reducer from '../reducers';
 
-let store=createStore(helloWorld)
+const store = createStore(reducer);
 
-export default store
+export default store;
