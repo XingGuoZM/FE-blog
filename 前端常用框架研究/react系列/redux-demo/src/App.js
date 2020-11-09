@@ -6,7 +6,7 @@ function App(props) {
   return (
     <div className="App">
       <h1>{timer}</h1>
-      <button onClick={add}>add</button>
+      <button onClick={add}>plus</button>
       <button onClick={minus}>minus</button>
     </div>
   );
