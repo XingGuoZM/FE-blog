@@ -18,4 +18,4 @@ function log(){
   i++
   console.log(i)
 }
-setInterval(throttle(log,2000),200)
+setInterval(throttle(log,2000),200);
