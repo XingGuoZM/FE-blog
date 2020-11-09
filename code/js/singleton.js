@@ -1,6 +1,4 @@
-实现一个单例模式
----
-```js
+
 function Singleton(name) {
   this.name = name;
   this.instance = null;
@@ -21,9 +19,3 @@ const b = Singleton.getInstance('b');
 console.log(a===b);//true
 console.log(a);
 console.log(b);
-```
-
-
-参考
----
-- [JavaScript 单例模式](https://segmentfault.com/a/1190000012842251)
