@@ -1,14 +1,21 @@
 import React from 'react';
-import TodoList from './TodoList'
-import {Provider} from 'react-redux';
-import store from './store'
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
+  const {timer, add, minus} = props;
   return (
-    <Provider store={store}>
-      <TodoList/>
-    </Provider>
+    <div className="App">
+      <h1>{timer}</h1>
+      <button onClick={add}>add</button>
+      <button onClick={minus}>minus</button>
+    </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) =>({timer: state.timer});
+const mapDispatchToProps = (dispatch) => ({
+  add: ()=>dispatch({ type: 'add' }),
+  minus: ()=>dispatch({ type: 'minus' }),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
