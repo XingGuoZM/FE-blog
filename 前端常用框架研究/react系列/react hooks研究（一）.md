@@ -39,7 +39,15 @@
 步入正题
 ---
 
+问题汇总（FAQ）
+---
+- 为什么有时候在effect里拿到的是旧的state或prop？
+- 为什么有时候会出现无限重复请求的问题？
+- 如何用useEffect模拟componentDidMount生命周期？
+- 如何正确地在useEffect里请求数据？[]又是什么？
+- 我应该把函数当做effect的依赖吗？
 
 参考
 ---
 - [react官方文档 Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)

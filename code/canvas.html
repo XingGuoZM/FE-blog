@@ -12,36 +12,44 @@
          </style>
      </head>
      <body>
-        <canvas id="myCanvas" width='600' height='600'></canvas>
-
+        <canvas id="bar" width='600' height='200'></canvas>
+        <canvas id="pie" width='600' height='200'></canvas>
+        <canvas id="polyline" width='600' height='200'></canvas>
+        
         <script>
-          let rectx=100;
-          let recty=50;
-          const canvas=document.querySelector('#myCanvas');
-          const ctx=canvas.getContext('2d');
-          // 初始化
-          function clear(){
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          function drawBar(){
+            const canvas = document.querySelector('#bar');
+            const ctx = canvas.getContext('2d');
+            ctx.fillRect(0, 0, 200, 100);
           }
-          // 绘制
-          function draw(){
-            clear();
-            ctx.fillStyle = '#0099b0';
-            ctx.fillRect(rectx, recty, 200, 100);
+          function drawPie(deg){
+            const canvas = document.querySelector('#pie');
+            const ctx = canvas.getContext('2d');
+            ctx.arc(50,50,50,0,Math.PI*2,true);
+            ctx.fill();
+          }
+          function drawPolyline(){
+            const canvas = document.querySelector('#polyline');
+            const ctx = canvas.getContext('2d');
+            ctx.moveTo(0,0);
+            ctx.lineTo(100,100);
             ctx.stroke();
           }
-          // 更新
-          function update(){
-            rectx+=1
-            recty+=1
+          try{
+            drawBar();
+          }catch(e){
+
           }
-          //
-          window.requestAnimationFrame(gameLoop);
-          function gameLoop() {
-              update();
-              draw();
-              window.requestAnimationFrame(gameLoop);
-          }
+          
+          drawPie();
+          drawPolyline();
+         
+          // window.requestAnimationFrame(gameLoop);
+          // function gameLoop() {
+          //     update();
+          //     draw();
+          //     window.requestAnimationFrame(gameLoop);
+          // }
         </script>
      </body>
  </html>
