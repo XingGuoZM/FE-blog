@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>column</title>
+        <style>
+            /* .wrap{
+              column:3 auto;
+            }
+            .item{
+              width:200px;
+              height:100px;
+              border:solid coral 1px;
+            } */
+            .content-box {
+              columns:3 auto;
+              -webkit-columns: 3 auto;
+            }
+        </style>
+    </head>
+    <body>
+      <!-- <section class="wrap">
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+      </section> -->
+      <p class="content-box">
+        This is a bunch of text split into three columns
+        using the CSS `columns` property. The text
+        is equally distributed over the columns.
+      </p>
+    </body>
+</html>

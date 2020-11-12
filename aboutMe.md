@@ -63,8 +63,8 @@
 ### 技术难点攻克  
   - pc端: 树形表格(vue), 表单表格(vue), axios请求统一处理。
   - 移动端: 公用头部适配各种机型(react), tab瀑布流(react), viewport适配各种机型。
-  - react hooks: 封装倒计时组件时，effect与setInterval组合, 状态不更新问题。
-  - vue: 图片拖动效果不好问题，封装自定义指令v-drag(流畅拖动效果)，供团队使用，[博客地址](https://www.cnblogs.com/xingguozhiming/p/10211483.html)
+  - react hooks: 无限重复请求的问题、effect里拿到是旧的state问题。
+  - vue: 图片拖动效果，封装自定义指令v-drag(流畅拖动效果)，供团队使用，[博客地址](https://www.cnblogs.com/xingguozhiming/p/10211483.html)
   - node脚本: 批量修改json文件(如统计线上模块版本号), json与excel文件互转, 自动化完成一些简单重复工作(代码上传下载、自动发版等)。
 
 ### 前端工程化和技术提升

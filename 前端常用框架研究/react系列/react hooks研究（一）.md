@@ -36,8 +36,12 @@
 ```
 下面我们分析一下以上的这段代码，我们要对react的源码进行阅读，所以我们选择引入没有压缩的react的development版本，引入babel存粹是为了解析jsx，逻辑代码的script要加上type="text/babel"是为了支持jsx语法，不加会报错（具体会报什么错呢？会解析不了<，在HelloMessage函数return的时候会抛出异常）。
 
-步入正题
+正题
 ---
+1. useState
+2. useEffect
+3. useRef
+4. 其他（useReducer、useContext）
 
 问题汇总（FAQ）
 ---

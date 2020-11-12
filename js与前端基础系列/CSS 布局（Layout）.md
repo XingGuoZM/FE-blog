@@ -21,13 +21,15 @@ BFC的本质就是所有元素都是块级元素（或者可以当成块级元�
 - FFC（Flex formatting contexts）：自适应格式上下文
   - display:flex/inline-flex
 - GFC（GrideLayout formatting contexts）：网格布局格式化上下文
+- css3 columns
 
 ### 参考 
 - [【CSS】深入理解BFC原理及应用](https://www.jianshu.com/p/acf76871d259)  
-- [MDN 块格式化上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)  
+- [MDN文档 块格式化上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)  
 - [2020年前端面试题及答案](https://blog.csdn.net/raleway/article/details/104268283)  
 - [CSS中的BFC详解](https://www.cnblogs.com/chen-cong/p/7862832.html)  
 - [请描述一下BFC、IFC、GFC 和 FFC的区别？](https://zhuanlan.zhihu.com/p/134094372)
 - [详解BFC、IFC、GFC、FFC](https://juejin.im/post/6844904117056323597)
 - [BFC（块级格式上下文）](https://github.com/amandakelake/blog/issues/25)
 - [三栏布局-七种实现](https://github.com/amandakelake/blog/issues/28)
+- [MDN文档 columns](https://developer.mozilla.org/zh-CN/docs/Web/CSS/columns)
