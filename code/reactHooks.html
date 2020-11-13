@@ -12,24 +12,39 @@
        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
       
       <script type="text/babel">
-        const { useEffect, useState} = React;
+        const { useEffect, useState, useContext} = React;
         const { render } = ReactDOM;
+        const Context = React.createContext();
 
-        function Count() {
-          const [count, setCount] = useState(0);
-          // useEffect(()=>{
-          //   console.log('effect')
-          //   fetch('./abc.json').then(res=>{
-              
-          //   }).catch(err=>{
-          //     console.log(234)
-          //     setCount(count+1);
-          //   })
-          // },[])
-          return <div onClick={()=>setCount(count+1)}>Click Me Add Count: {count}</div>;
+        function App() {
+
+          return <Wrap>
+            
+              <Ch1/>
+              <Ch1/>
+              <Ch1/>
+              <Ch1/>
+              <Ch1/>
+              <Ch2/>
+            </Wrap>
         }
-
-        render(<Count/>, document.getElementById('root'));
+        function Wrap({children}){
+          const [count,setCount] = useState(0);
+          const onChange = ()=>setCount(count+1);
+          return <Context.Provider value={count}>
+            <button onClick={onChange}>increase</button>
+            {children}
+          </Context.Provider>
+        }
+        function Ch1(){
+          console.log('ch1 render');
+          return <div>ch1</div>;
+        }
+        function Ch2(){
+          const str=useContext(Context);
+          return <div>ch2 {str}</div>
+        }
+        render(<App/>, document.getElementById('root'));
       </script>
      </body>
  </html>

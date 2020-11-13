@@ -10,14 +10,22 @@
      </head>
      <body>
         <script>
-        const api = Promise.resolve={
-          name:'123',
-          age:22
-        };
+        // const api = Promise.resolve={
+        //   name:'123',
+        //   age:22
+        // };
 
-        fetch(api).then(res => {
-          console.log(res);
+        // fetch(api).then(res => {
+        //   console.log(res);
+        // });
+
+        const abortController = new AbortController();
+
+        fetch('/api/query',{
+          signal:abortController.signal
         });
+
+        abortController.abort();
         </script>
      </body>
  </html>
