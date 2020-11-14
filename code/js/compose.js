@@ -51,7 +51,7 @@ function func3(next){
 const arr=[func1,func2,func3]
 
 //方法一：
-const composeSync1=function(){
+const composeSync1 = function(arr) {
   function dispatch(index){
     if(index===arr.length) return ;
     return arr[index](()=>dispatch(index+1))
@@ -59,15 +59,21 @@ const composeSync1=function(){
   return dispatch(0)
 }
 //方法二：
-const composeSync2=function(){
+const composeSync2 = function(arr){
   let prev=()=>{ }
   for(let i=arr.length-1;i>=0;i--){
     prev=arr[i].bind(this,prev)
   }
   return prev()
 }
-// composeSync1()
-// composeSync2()
+// 方法三：
+const composeSync3 = function(arr) {
+  // let prev = () => {};
+  return arr.reduceRight((a,b)=>b.bind(this,a));
+}
+// composeSync1(arr)
+// composeSync2(arr)
+composeSync3(arr)();
 
 
 // async compose (异步组合)
@@ -122,7 +128,6 @@ function composeAsync(middleware) {
     }
   }
 }
-composeAsync(fnArr)()
+// composeAsync(fnArr)()
 // koa-compose (koa中间件)
-
 

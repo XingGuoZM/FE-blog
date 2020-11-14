@@ -1,4 +1,13 @@
 
+### 变量类型判断方法汇总
+1. Object.prototype.toString.call(),例如
+```
+Object.prototype.toString.call('hello'); // "[object String]"
+Object.prototype.toString.call({name:'jack'}); // "[object Object]"
+```
+2. typeof判断基本类型
+3. instanceof判断对象的具体类型
+
 ### 解释
 - typeof: 返回一个字符串，表示未经计算的操作数的类型
     1. 对于基本类型，除null以外，均可以返回正确的结果，NaN返回number。
@@ -16,6 +25,22 @@
 - instanceof：用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
 
 ![](https://raw.githubusercontent.com/chenfengyanyu/my-web-accumulation/master/images/typeof/proto.jpeg)
+
+### 实现原理
+typeof原理即
+instanceof原理即判断右边的变量的原型是否在左边变量的原型链上
+
+### 模拟实现typeof 和 instanceof
+
+typeof
+```
+```
+
+instanceof
+```
+
+```
+
 
 ### 示例
 ```js
@@ -40,3 +65,4 @@ console.log(u instanceof Cat);  //false
 - [MDN文档 instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof)
 - [MDN文档 typeof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof)
 - [Why is null instanceof Object false?](https://www.sololearn.com/Discuss/1815657/why-is-null-instanceof-object-false)
+- [浅谈 instanceof 和 typeof 的实现原理](https://juejin.im/post/6844903613584654344)
