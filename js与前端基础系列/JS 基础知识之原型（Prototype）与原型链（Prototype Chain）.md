@@ -1,10 +1,15 @@
+先弄清楚几个概念
+1. 构造函数
+什么是构造函数呢？构造函数就是
+2. 实例对象
+
 原型链
 ---
 ```
 每个实例对象（ object ）都有一个私有属性（称之为 __proto__ ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( __proto__ ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节
 ```
 
-### 原型、原型链、构造函数  
+### 原型、原型链、构造器
 - 针对构造函数的  
 - 向上查找  
 
@@ -46,8 +51,8 @@ class B extends Base{}
 ```
 
 ### 参考  
-- [什么是作用域链，什么是原型链，它们的区别，在js中它们具体指什么？](https://www.cnblogs.com/pssp/p/5204324.html)  
 - [原型与原型链的理解](https://www.jianshu.com/p/f30fa27999e3)
 - [JavaScript深入之从原型到原型链 ](https://github.com/mqyqingfeng/Blog/issues/2)
 - [三分钟看完JavaScript原型与原型链](https://juejin.im/post/6844903567375990791)
 - [MDN文档 继承与原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [三张图搞懂JavaScript的原型对象与原型链](https://www.cnblogs.com/shuiyi/p/5305435.html)

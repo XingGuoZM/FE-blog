@@ -11,3 +11,4 @@
 
 ## 参考
 - [What is React Fiber ?](https://giamir.com/what-is-react-fiber)
+- [React Fiber性能优化（内部试讲）](https://zhuanlan.zhihu.com/p/35578843)
