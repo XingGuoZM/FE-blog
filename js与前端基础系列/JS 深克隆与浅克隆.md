@@ -3,15 +3,22 @@
 
 
 ### 深克隆实现  
-```
+```js
 let obj={a:{b:'hello'}}
 //方法一
 JSON.parse(JSON.stringify(obj))  
 //方法二
-
+function deepClone(obj) {
+  if(!obj) return obj;
+  let newObj = Array.isArray(obj) ? [] : {};
+  for(let key in obj){
+    obj[key] && (newObj[key] = deepClone(obj[key]))
+  }
+  return newObj;
+}
 ```
 ### 浅克隆实现  
-```
+```js
 let obj={a:{b:'hello'}}
 //方法一
 Object.assign(obj)
