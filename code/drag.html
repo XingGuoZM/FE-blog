@@ -1,0 +1,42 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="utf-8" />
+         <title>自由拖动div</title>
+         <style>
+           *{
+             margin:0;
+             padding:0;
+           }
+           .drag{
+             /* width:100px;
+             height:100px; */
+             /* border:solid 1px #ccc; */
+             position: absolute;
+           }
+         </style>
+     </head>
+     <body>
+        <span class="drag">hello</span>
+        <script>
+          const dragEl=document.querySelector('.drag');
+          let isMouseDown = false;
+
+          document.addEventListener('mousedown',(e)=>{
+            isMouseDown=true;
+          });
+
+          document.addEventListener('mousemove',(e)=>{
+            if(isMouseDown){
+              dragEl.style.left=e.clientX+'px';
+              dragEl.style.top=e.clientY+'px';
+            }
+          });
+
+          document.addEventListener('mouseup',(e)=>{
+            isMouseDown=false;
+          })
+        </script>
+     </body>
+ </html>

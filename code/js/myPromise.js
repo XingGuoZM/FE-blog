@@ -16,7 +16,13 @@
 // }).finally(res=>{
 //   console.log('finally',res)
 // })
-
+/**
+ * 1. 状态互斥不可逆
+ * 2. 异步处理
+ * 3. then链式调用、值透传
+ * 4. promise.all和promise.race
+ * @param {*} excutor 
+ */
 
 function MyPromise(excutor){
   this.status='pending';
@@ -46,7 +52,12 @@ function MyPromise(excutor){
     reject(err);
   }
 
-  this.then = (resolve,reject)=>{
+  this.then = (success,fail)=>{
+
+    let promise2 = new MyPromise((resolve,reject)=>{
+
+    })
+
     if(this.status==='fulfilled'){
       resolve(this.value);
     }
