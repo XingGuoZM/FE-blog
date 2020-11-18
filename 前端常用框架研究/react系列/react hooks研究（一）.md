@@ -39,19 +39,32 @@
 正题
 ---
 1. useState
+  - 释义：在函数组件中使用类组件state的能力。接收一个初始状态值，返回一个两个值的数组，第一个为state的当前值，第二个为state的setter方法，调用时会重新渲染组件（rerender），若想获取前一个状态值可传一个函数到state的setter方法中，入参为previous state，返回新的state。
+  - 问题汇总
+    - 如何获取前一个状态值（previous state）?
+    - state为对象时，属性变化时不会自动更新?
 2. useEffect
+  - 释义：在函数组件中使用类组件的生命周期的能力。componentDidMount,componentDidUpdate和componentWillUnmount三个生命周期的替代品
+  - 问题汇总
+    - 如何只执行一次useEffect?
+    - 如何在组件销毁前需要清除effect里的逻辑？
+    - effect与setInterval定时器组合，state不更新？
+    - 数据请求如何保证不会无限触发effect?
 3. useRef
-4. 其他（useReducer、useContext）
-
-问题汇总（FAQ）
----
-- 为什么有时候在effect里拿到的是旧的state或prop？
-- 为什么有时候会出现无限重复请求的问题？
-- 如何用useEffect模拟componentDidMount生命周期？
-- 如何正确地在useEffect里请求数据？[]又是什么？
-- 我应该把函数当做effect的依赖吗？
+4. useContext和useReducer
+5. useCallback
+6. useMemo
+7. 自定义hook
 
 参考
 ---
 - [react官方文档 Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
+- [React Hooks 系列之1 useState](https://gaohaoyang.github.io/2020/03/01/react-hooks1-useState/)
+- [React Hooks 系列之2 useEffect](https://gaohaoyang.github.io/2020/05/11/react-hooks2-useEffect/)
+- [React Hooks 系列之3 useContext](https://gaohaoyang.github.io/2020/05/12/react-hooks3-useContext/)
+- [React Hooks 系列之4 useReducer](https://gaohaoyang.github.io/2020/05/13/react-hooks4-useReducer/)
+- [React Hooks 系列之5 useCallback](https://gaohaoyang.github.io/2020/05/18/react-hooks5-useCallback/)
+- [React Hooks 系列之6 useMemo](https://gaohaoyang.github.io/2020/05/19/react-hooks6-useMemo/)
+- [React Hooks 系列之7 useRef](https://gaohaoyang.github.io/2020/05/26/react-hooks7-useRef/)
+- [React Hooks 系列之8 custom Hook](https://gaohaoyang.github.io/2020/05/27/react-hooks8-customHooks/)
