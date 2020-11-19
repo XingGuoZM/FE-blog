@@ -9,3 +9,4 @@
 - [react官方文档 Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
 - [一篇文章告诉你React里为什么不能用index作为key](https://juejin.im/post/6844903527836286989)
 - [vue中使用v-for时为什么不能用index作为key？](https://segmentfault.com/a/1190000019961419)
+- [详解 Diff 过程](https://github.com/crazylxr/deep-in-react/blob/master/analysis/%E8%AF%A6%E8%A7%A3%20Diff%20%E8%BF%87%E7%A8%8B.md)

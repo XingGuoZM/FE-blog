@@ -1,0 +1,33 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <meta charset="utf-8" />
+         <title>react HOC</title>
+     </head>
+     <body>
+       <div id='root'></div>
+       <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+       <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+       <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+      
+      <script type="text/babel">
+        const { useEffect, useState, useContext} = React;
+        const { render } = ReactDOM;
+        const Context = React.createContext();
+
+        function App({child}) {
+
+          return <div>{child()}</div>
+        }
+        function child(){
+          return <div>HOC test</div>
+        }
+
+        render(<App child={child}/>, document.getElementById('root'));
+      </script>
+     </body>
+ </html>
+
+
+
