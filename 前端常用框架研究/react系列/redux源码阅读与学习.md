@@ -1,5 +1,7 @@
 ### redux原理  
 
+### 单向数据流
+
 ### createStore、reducer、actions  
 
 ### 参考  

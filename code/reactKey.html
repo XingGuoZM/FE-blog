@@ -18,14 +18,14 @@
         function List() {
           const [arr,setArr]=useState([{name:1},{name:2},{name:3}]);
           function handleClick(){
-            setArr(arr.splice(1,1));
+            setArr([...arr.reverse()]);
           }
           useEffect(()=>{
-            console.log(arr)
+            // console.log(arr)
           },[arr])
           return <div>
             <input type='button' value='click' onClick={()=>handleClick()}/>
-            {arr.map((item,index)=><div key={item.name}>{item.name}</div>)}
+            {arr.map((item,index)=><div key={index}>{item.name}</div>)}
           </div>
         }
 

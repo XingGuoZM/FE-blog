@@ -51,6 +51,8 @@
     - effect与setInterval定时器组合，state不更新？
     - 数据请求如何保证不会无限触发effect?
 3. useRef
+  - 访问dom节点
+  - 保存变量的一个容器
 4. useContext和useReducer
 5. useCallback
 6. useMemo

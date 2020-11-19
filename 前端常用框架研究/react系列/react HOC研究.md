@@ -3,6 +3,7 @@
 
 
 ### hoc示例
+redux connect方法
 
 ### 参考
 - [Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
