@@ -1,3 +1,15 @@
+是什么
+---
+
+为什么
+---
+解耦
+逻辑复用
+
+怎么办
+---
+
+
 环境准备
 ---
 先要准备三个依赖包，及其对应的cdn链接分别为
@@ -54,14 +66,13 @@
   - 访问dom节点
   - 保存变量的一个容器
 4. useContext和useReducer
-5. useCallback
-6. useMemo
-7. 自定义hook
+5. useCallback和useMemo
+6. 自定义hook
 
 参考
 ---
 - [react官方文档 Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
+- [react官方文档 Hook API 索引](https://zh-hans.reactjs.org/docs/hooks-reference.html)
 - [React Hooks 系列之1 useState](https://gaohaoyang.github.io/2020/03/01/react-hooks1-useState/)
 - [React Hooks 系列之2 useEffect](https://gaohaoyang.github.io/2020/05/11/react-hooks2-useEffect/)
 - [React Hooks 系列之3 useContext](https://gaohaoyang.github.io/2020/05/12/react-hooks3-useContext/)
