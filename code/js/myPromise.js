@@ -56,7 +56,7 @@ function MyPromise(excutor){
 
     let promise2 = new MyPromise((resolve,reject)=>{
 
-    })
+    });
 
     if(this.status==='fulfilled'){
       resolve(this.value);
@@ -67,6 +67,19 @@ function MyPromise(excutor){
     if(this.status === 'pending'){
       this.onResolveCB.push(()=>resolve(this.value))
       this.onRejectCB.push(()=>reject(this.reason))
+    }
+  }
+  this.all = (asyncTasks)=>{
+    let ans = [];
+    for(let i = 0; i < asyncTasks.length; i++) {
+      Promise.resolve(asyncTasks[i]).then(res=>{
+        ans.push(res);
+        if(ans.length===asyncTasks.length){
+          return resolve(ans);
+        }
+      },(error)=>{
+        reject(error);
+      })
     }
   }
 }
