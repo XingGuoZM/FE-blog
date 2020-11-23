@@ -1,0 +1,30 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p id="text">在一些博客系统，如掘金的博客中，可以复制代码，它是如何实现的</p>
+
+    <div id="_text"></div>
+    <script>
+
+      function copy(){
+        document.execCommand('copy');
+      }
+      function selection(element){
+        const selection = window.getSelection();
+        const range = document.createRange();
+
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        selectedText = selection.toString();
+      }
+      const node = document.querySelector('#text');
+
+      selection(node);
+      copy();
+    </script>
+  </body>
+</html>

@@ -12,7 +12,8 @@
        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
        <script src="https://unpkg.com/redux@4.0.5/dist/redux.js"></script>
       
-      <script type="text/babel">
+      <!-- useContext -->
+      <!-- <script type="text/babel">
         const { useEffect, useState, useContext} = React;
         const { render } = ReactDOM;
         const Context = React.createContext();
@@ -44,6 +45,41 @@
           return <div>ch2 {str}</div>
         }
         render(<App/>, document.getElementById('root'));
+      </script> -->
+      
+      <!-- useCallback -->
+      <script type="text/babel">
+        const {useState,useEffect,useCallback} = React;
+        const {render} = ReactDOM;
+
+        function Count({text,count}){
+          console.log(`Rendering ${text}`);
+          return <div>{text}:{count}</div>
+        }
+        function Button({handleClick,children}){
+          console.log(`Rendering button`,children);
+          return <button onClick={handleClick}>{children}</button>
+        }
+        function App(){
+          const [age,setAge] = useState(20);
+          const [salary,setSalary] = useState(1000);
+
+          const increaseAge = () => {
+            setAge(age+1);
+          }
+          const increaseSalary = () => {
+            setSalary(salary+1000);
+          }
+
+          return <div>
+              <Count text='Age' count={age}/>
+              <Button handleClick={increaseAge}>IncreaseAge</Button>
+              <Count text='salary' count={salary}/>
+              <Button handleClick={increaseSalary}>IncreaseSalary</Button>
+            </div>
+
+        }
+        render(<App />,document.querySelector('#root'));
       </script>
      </body>
  </html>
