@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+      *{
+        padding:0;
+        margin:0;
+      }
+      .log{
+        width:100%;
+        height:50%;
+        background:#eee;
+        position:fixed;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='log'></div>
+    <script>
+      const logEl=document.querySelector('.log');
+      console.log=function(msg){
+        logEl.innerHTML=`> ${msg}`
+      }
+      console.log('hello world')
+    </script>
+  </body>
+</html>

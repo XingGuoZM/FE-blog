@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>浏览器解析过程</title>
+    <link href='./index.css' rel="stylesheet">
+    <!-- <script src='./index.js'></script> -->
+  </head>
+  <body>
+    <!-- <script>
+      console.log(document.querySelector('.wrap'));
+    </script> -->
+    <div class="wrap"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded',()=>{
+        console.log('DOMContentLoaded')
+      })
+      window.onload=function(){
+        console.log('load')
+      }
+    </script>
+  </body>
+</html>
