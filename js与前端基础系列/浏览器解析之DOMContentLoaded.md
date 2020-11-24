@@ -7,6 +7,8 @@
 3. css文档解析完成之后才会开始执行js
 4. 
 
+load与DOMContentLoaded的区别
+---
 html文档解析完成会触发DOMContentLoaded
 所有资源加载完成之后才会触发loaded
 
@@ -16,8 +18,6 @@ defer与async异同
 正常情况下脚本下载与解析会阻塞html文档的解析
 async表示异步加载并执行
 defer表示异步下载但延迟执行，延迟至DOMContentLoaded事件触发之前完成
-
-load和DOMContentLoaded
 
 
 ### 参考
