@@ -1,8 +1,13 @@
-## Promise解释  
-Promise 是一个对象，它代表一个异步操作的最终完成或失败。由于它的 then 方法和 catch、finally 方法会返回一个新的 Promise，所以可以允许我们链式调用，解决了传统的回调地狱问题。
+## Promise作用
+Promsie是js异步处理的一种解决方案
 
-```
-3个状态：pending、fullfilled、rejected。
+### promise最重要的特点（非常重要）
+1. 状态不可变，不可逆，不中断，只能由pending到fulfilled或者pending到rejected
+2. 链式调用和值无阻塞传递，即前面无论失败与否都会执行下一步
+3. 
+
+```js
+//3个状态：pending、fullfilled、rejected。
 
 new Promise((resolve,reject)=>{
   resolve()
@@ -45,7 +50,7 @@ all 和 race 传入的数组中如果有会抛出异常的异步任务，那么�
 
 ## 实现一个简易的promise  
 本示例只是实现了最简单的同步和异步操作，并没有完成then 的链式调用&值穿透特性，还有promise的一些方法，all、race等也没完成。我觉得手写promise是对promise有更深入的了解和学习，并不一定要复制一个一摸一样的promise，毕竟我们只要理解其原理，能够尽可能帮助我们完成工作。其实要实现链式调用也很简单，只需要在then方法最后返回一个promise，如此即可链式调用。all方法也挺简单，all方法接收一个promise数组，我们定义一个数组存储所有项的返回值，等到所有都返回了再resolve一下，难点就在于怎么判读所有promise都执行完成都返回值了呢？很简单，我们可以通过我们定义的数组的length和all参数个数进行对比就能完成了。
-```
+```js
 class MyPromise{
   constructor(fn){
     this.status='pending';

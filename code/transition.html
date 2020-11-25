@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'/>
+    <title>trasition 渐变</title>
+    <style>
+      .wrap{
+        width:100px;
+        height:50px;
+        background-color: darkseagreen;
+        transition: background-color 1s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+
+    <script>
+      window.onload=function(){
+        document.querySelector('.wrap').style.backgroundColor='#000'
+      }
+    </script>
+  </body>
+</html>

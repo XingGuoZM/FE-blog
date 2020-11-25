@@ -1,10 +1,16 @@
  
 
 ## 简介  
-动画，animation-name，animation-duration, animation-timing-function，animation-delay，animation-iteration-count，animation-direction，animation-fill-mode 和 animation-play-state
+动画，需配合@keyframes使用，可灵活自定义动画帧。
 
-定义动画帧 @keyframes
-
+- animation-name
+- animation-duration
+- animation-timing-function
+- animation-delay
+- animation-iteration-count
+- animation-direction
+- animation-fill-mode 
+- animation-play-state
 
 ## 常见动画实现汇总
 1. 平移（弹跳，抖动）
@@ -21,6 +27,7 @@
   3. setInterval  
   4. CSS @keyframes  
   5. canvas + requestAnimation
+  6. transition
 - js操作keyframe动画  
 ```js
 const getkeyframes=(name)=> {
@@ -61,7 +68,7 @@ const removeKeyframes=function(){
 }
 ```
 ## 问题汇总（FAQ）
-
+1. js如何操作keyframe
 
 ## 参考  
 - [MDN animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)  
