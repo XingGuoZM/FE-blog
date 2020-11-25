@@ -1,15 +1,14 @@
 
 ### 解释
-
 允许你旋转(rotate)，缩放(scale)，倾斜(skew)或平移(translate)给定元素
+
 ### 使用
-- 旋转
-```CSS
-    tranform:rotate(45deg);
-```
-- 缩放
-- 倾斜
-- 平移
+- 旋转(rotate)
+- 缩放(scale)
+- 倾斜(skew)
+- 平移(translate)
+
+- matrix: matrix(a,b,c,d,tx,ty)表示matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY());
 
 
 ### 相关问题汇总
@@ -21,3 +20,8 @@
 
 ### 参考  
 - [MDN transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
+- [MDN translate()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function/translate)
+- [MDN rotate()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function/rotate())
+- [MDN skew()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function/skew)
+- [MDN scale()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function/scale)
+- [MDN matrix()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function/matrix())
