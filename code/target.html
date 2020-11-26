@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>target currentTarget</title>
+  </head>
+  <body>
+    <div id='parent'>
+      parent
+      <div id='child'>children</div>
+    </div>
+    <script>
+      const parentEl = document.querySelector('#parent');
+      const childEl = document.querySelector('#child');
+
+      document.querySelector('#parent').addEventListener('click',(e)=>{
+        console.log(e.target.id);
+        console.log(e.currentTarget.id);
+      })
+    </script>
+  </body>
+</html>

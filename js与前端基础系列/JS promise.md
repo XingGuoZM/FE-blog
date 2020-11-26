@@ -120,3 +120,5 @@ new MyPromise((resolve,reject)=>{
 - [2020前端近期面试题整理](https://blog.csdn.net/kkm486622296/article/details/106063151)  
 - [面试官：“你能手写一个 Promise 吗”](https://zhuanlan.zhihu.com/p/183801144)
 - [Promises/A+](https://promisesaplus.com/)
+- [javascript基础修炼(7)——Promise，异步，可靠性](https://www.cnblogs.com/dashnowords/p/9709477.html)
+- [Promise详解与实现（Promise/A+规范）](https://www.jianshu.com/p/459a856c476f)
