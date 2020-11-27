@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>loading</title>
+    <style>
+      .loading{
+        width:50px;
+        height:50px;
+        border:solid 1px darkgreen;
+        transform:rotate(45deg);
+        /* animation:rotateDiv 1s infinite linear; */
+        /* animation:translateDiv 1s infinite ease; */
+        transition:transform 1s;
+
+      }
+      @keyframes rotateDiv{
+        0%{
+          transform:rotate(0deg);
+        }
+        50%{
+          transform:rotate(180deg);
+        }
+        100%{
+          transform:rotate(360deg);
+        }
+      }
+      @keyframes translateDiv{
+        0%{
+          transform: translateY(0px);
+        }
+        50%{
+          transform:translateY(100px);
+        }
+        100%{
+          transform:translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading"></div>
+    <script>
+      const setAni = requestAnimationFrame(()=>{
+        document.querySelector('.loading').style.transform='rotate(90deg)';
+        setAni();
+      });
+    </script>
+  </body>
+</html>
