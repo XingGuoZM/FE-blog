@@ -112,7 +112,8 @@ new MyPromise((resolve,reject)=>{
 ```
 
 ### 问题汇总（FAQ）
-
+1. promise.all的缺点，
+2. 请求限流，多个相同请求合并
 
 #### 参考  
 * [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)  

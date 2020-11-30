@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Cookie</title>
+
+  </head>
+  <body>
+    <script>
+      function setCookie(key,value,expireDays){
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + expireDays);
+        document.cookie =
+          key +
+          "=" +
+          escape(value) +
+          (expireDays == null ? "" : ";expires=" + exdate.toGMTString());
+      }
+      function delCookie(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if (cval != null) {
+          document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+      }
+      function getCookie(name) {
+        var arr,
+          reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if ((arr = document.cookie.match(reg))) {
+          return arr[2];
+        } else {
+          return null;
+        }
+      }
+      setCookie('name','h',new Date('2020-11-28'));
+      console.log(getCookie('name'))
+    </script>
+  </body>
+</html>

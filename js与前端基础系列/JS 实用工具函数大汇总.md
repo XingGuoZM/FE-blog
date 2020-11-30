@@ -285,6 +285,43 @@ console.log(firstToUpper3(str));
 
 ```
 
+11. cookies增删查
+```js
+function setCookie(key,value,expireDays){
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + expireDays);
+        document.cookie =
+          key +
+          "=" +
+          escape(value) +
+          (expireDays == null ? "" : ";expires=" + exdate.toGMTString());
+      }
+      function delCookie(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if (cval != null) {
+          document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+      }
+      function getCookie(name) {
+        var arr,
+          reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if ((arr = document.cookie.match(reg))) {
+          return arr[2];
+        } else {
+          return null;
+        }
+      }
+```
+
+12. 获取元素css样式
+```js
+function getStyle(el, ruleName) {
+  return getComputedStyle(el, null).getPropertyValue(ruleName);
+}
+```
+
 
 ### 参考
 - [使用jquery获取ur中指定参数值](https://blog.csdn.net/qq_26747571/article/details/52025031)
@@ -293,3 +330,4 @@ console.log(firstToUpper3(str));
 - [如何判断一个变量是否为数组（isArray）](https://www.cnblogs.com/ShuiNian/p/9074866.html)
 - [如何通过javascript获取值translateX](https://qa.1r1g.com/sf/ask/2958703261/)
 - [JavaScript字符串单词首字母大写的实现方式](https://segmentfault.com/q/1010000003020515)
+- [36个工作中常用的JavaScript函数片段](https://enoyao.blog.csdn.net/article/details/106090081)

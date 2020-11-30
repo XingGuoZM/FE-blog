@@ -5,3 +5,4 @@
 - [Daniel Imms](https://github.com/Tyriar)
 - [qiu-deqing](https://github.com/qiu-deqing)
 - [第一名的小蝌蚪](https://github.com/airuikun)
+- [Eno Yao](https://github.com/Wscats)
