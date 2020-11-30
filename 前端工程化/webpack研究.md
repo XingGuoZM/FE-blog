@@ -1,3 +1,6 @@
+### webpack是什么？
+webpack是应用程序构建器
+
 
 ### 工作原理
 webpack.config.js打包配置，
