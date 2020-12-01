@@ -20,7 +20,19 @@ plugins配置
 3. 代码分离（公共依赖包提取）
 4. tree shaking（未引用代码移除）
 5. loader（文件转换）和plugin（打包插件）
+6. import中绝对路径及webpack配置
+
+### 打包提速
+1. 约束入口
+2. uglifyjs-webpack-plugin开启多线程打包
+3. happypack加速多线程loader
+4. 使用dll拆分代码
+5. 约束hash
+
+### 打包
 
 ## 参考
 - [webpack中文网](https://www.webpackjs.com/)
 - [脑阔疼的webpack按需加载](https://juejin.cn/post/6844903718387875847)
+- [webpack增量打包多页应用](https://juejin.cn/post/6844903553127940110)
+- [import绝对路径及webpack中配置](https://www.geekjc.com/post/5b6a767ab840f24124d6ffc7)
