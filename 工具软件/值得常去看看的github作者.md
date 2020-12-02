@@ -14,5 +14,12 @@
 - [DDFE](https://github.com/DDFE)
 - [ElemeFE](https://github.com/ElemeFE)
 - [掘金技术社区](https://github.com/xitu)
+- [Tencent](https://github.com/Tencent)
+- [alibaba](https://github.com/alibaba)
+- [百度](https://github.com/baidu)
+- [baidu FEX](https://github.com/fex-team/)
+- [美团](https://github.com/meituan-dianping)
+- [Bytedance Inc](https://github.com/bytedance)
+
 
 
