@@ -42,12 +42,13 @@ js与前端基础系列
 前端工程化
 ---
 ```
-1. webpack研究
-2. rollup研究
-3. gulp研究
-4. babel研究
-5. 微前端研究
-6. 前端必备库汇总
+  1. webpack研究
+  2. rollup研究
+  3. gulp研究
+  4. babel研究
+  5. typescript研究
+  6. 微前端研究
+  7. 前端必备库汇总
 ```
 
 前端设计模式
