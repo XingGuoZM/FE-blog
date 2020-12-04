@@ -1,5 +1,5 @@
 1. 移动端视口自适应 viewport
-```
+```js
 const viewport = function () {
     // flexible的动态计算，兼容了很多场景
     const win = window;
@@ -102,7 +102,7 @@ const viewport = function () {
 };
 ```
 2. 判断当前终端是Android还是IOS
-```
+```js
 // IOS
 const isIOS = () => {
   if (typeof window.navigator.userAgent !== 'string') return false;
@@ -331,3 +331,4 @@ function getStyle(el, ruleName) {
 - [如何通过javascript获取值translateX](https://qa.1r1g.com/sf/ask/2958703261/)
 - [JavaScript字符串单词首字母大写的实现方式](https://segmentfault.com/q/1010000003020515)
 - [36个工作中常用的JavaScript函数片段](https://enoyao.blog.csdn.net/article/details/106090081)
+- [lodash中文网](https://www.lodashjs.com/)

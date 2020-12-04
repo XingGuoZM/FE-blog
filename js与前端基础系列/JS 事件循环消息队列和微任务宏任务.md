@@ -55,7 +55,7 @@ close callbacks 阶段：执行 socket 的 close 事件回调
   10. I/O  
 
 + 宏任务：
-  - 同步代码，例如script里的除了异步的代码  
+  - 同步任务，例如script里的除了异步的代码  
   - I/O, 比如文件读写、数据库数据读写等等  
   - [window.setTimeout](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout)  
   - [window.setInterval](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setInterval)   
@@ -89,7 +89,7 @@ close callbacks 阶段：执行 socket 的 close 事件回调
 ### 举个栗子  
 下面举个例子加深印象，例子来自网络。当存在多个不同的异步操作时，看宿主环境（node、浏览器等等）是怎么执行的,可以把下面代码或者练习题的代码拷出来，利用浏览器断点看下执行过程。  
 
-```
+```js
 //因为涉及到process 所以应该在node环境下执行  
 
 
@@ -146,9 +146,10 @@ process.nextTick(function() {
 // 13
 ```
 得出结论：微任务优先级大小：process.nextTick > setTimeout
+
 ### 练习题  
 字节笔试题
-  ```
+  ```js
   async function async1() {        
     console.log('async1 start');
     await async2();

@@ -1,0 +1,18 @@
+{
+  "name": "babel-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"./node_modules/.bin/babel src --out-dir lib --plugins=@babel/plugin-transform-arrow-functions",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-arrow-functions": "^7.12.1"
+  }
+}
