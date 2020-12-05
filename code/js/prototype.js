@@ -31,4 +31,13 @@ function Person (){
 }
 
 const p = new Person();
-console.log(p.constructor,Person.prototype);
+// console.log(p.constructor,Person.prototype);
+
+
+function AA(){
+
+}
+const BB = {}
+
+console.log(AA.prototype);
+console.log()

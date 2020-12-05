@@ -1,7 +1,14 @@
 //手动实现一个简易new
 
-function myNew(fn, ...args){
-	let instance = Object.create(fn.prototype);
-	let result = fn.call(instance, ...args);
-	return typeof result === 'object' ? result :instance;
+function myNew(func, ...args){
+	let obj = {};
+	obj.__proto__ = func.prototype;
+	let ans = func.call(obj, ...args);
+	return typeof(result) === 'object' ? ans :obj;
 }
+
+
+function A(a){
+	this.name='123'
+}
+console.log(myNew(A,12)); 

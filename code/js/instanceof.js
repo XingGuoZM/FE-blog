@@ -15,6 +15,18 @@ const a = new A();
  * prototype、__proto__、constructor
  */
 
- console.log(A.__proto__);
- console.log(A.prototype);
- console.log(A.constructor);
+const b = {};
+
+//  console.log(A.__proto__);
+//  console.log(A.prototype);
+//  console.log(A.constructor);
+//  console.log(a);
+
+function myInstanceof(instance,type){
+  while(instance){
+    instance=instance.__proto__;
+    if(instance===type.prototype) return true;
+  }
+  return false
+}
+console.log(myInstanceof(a,A))
