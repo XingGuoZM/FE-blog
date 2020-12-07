@@ -1,5 +1,4 @@
 ### 模块化发展历程  
-模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
 
 IIFE： 使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
 ```js
@@ -44,16 +43,22 @@ import a from 'a';
 4. 方便单个模块功能调试、升级
 5. 测试：可测试性，单元测试
 
-
+模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
 
 ### webpack工作原理
-
-
+将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包
 
 ### 模拟实现一个webpack
 webpack可以做什么？重要的两个点如下
-- 转换 ES6 语法成 ES5，语法转换，专心做js文件的转换。
+- 转换 ES6 语法成 ES5，语法转换，只做js文件的转换。
 - 处理模块加载依赖，依赖加载。
+
+### 问题汇总(FAQ)
+1. 实现require()函数
+2. 写一个webpack plugin
+3. webpack plugin和loader有啥区别？
+4. 做过哪些webpack优化？
+5. tree shaking
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)
