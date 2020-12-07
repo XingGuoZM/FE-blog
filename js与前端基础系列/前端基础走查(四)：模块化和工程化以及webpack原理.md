@@ -1,4 +1,4 @@
-### 模块化  
+### 模块化发展历程  
 模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
 
 IIFE： 使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
@@ -36,7 +36,11 @@ ES Modules： ES6 引入的模块化，支持import 来引入另一个 js 。
 ```js
 import a from 'a';
 ```
+### 前端模块化的重要意义？
+前端模块化有什么好处呢
+1. 
 
+### 前端工程化
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)
