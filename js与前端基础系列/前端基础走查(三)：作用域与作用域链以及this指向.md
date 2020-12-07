@@ -48,6 +48,7 @@ a = 1;
 我们知道函数调用有两种方式，第一种是直接调用，第二种是当作构造函数通过new来实例化。
 函数也是变量。函数可以挂在全局对象上，也可以当作对象的属性  
 例如我们在浏览器的环境中定义一个函数
+this指向当前执行环境的上下文对象，浏览器中默认为window，node中默认为global
 ```js
 function a(){
   console.log('a');
@@ -73,14 +74,13 @@ this的绑定有以下几种可能
  * @param {*} args 参数数组 
  */
 Function.prototype.myCall=function(context, ...args){
-  context = !!context ? context : window;
-  args = !!args ? args : [];
+  context = context || window;
+  // Function.prototype this为当前运行的函数
+  // 让fn的上下文为 context
+  context.fn = this;
 
-  const key = Symbol();
-  context[key] = this;
-
-  const ans = context[key](...args);
-  delete context[key];
+  const ans = context.fn(...args);
+  delete context.fn;
   return ans;
 }
 ```
@@ -88,12 +88,8 @@ Function.prototype.myCall=function(context, ...args){
 ```js
 Function.prototype.myBind = function(context,...args){
   const fn = this;
-  args = Array.isArray(args) ? args : [];
-  return function newFn(...newArgs){
-    if(this instanceof newFn){
-      return new fn(...args,...newArgs);
-    }
-    return fn.apply(context,[...args,...newArgs]);
+  return function(){
+    fn.call(...arguments,...args);
   }
 }
 ```
@@ -112,4 +108,5 @@ Function.prototype.myBind = function(context,...args){
 - [JS中的作用域和作用域链](https://www.cnblogs.com/leftJS/p/11067908.html)  
 - [JavaScript 开发进阶：理解 JavaScript 作用域和作用域链](https://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html)  
 - [深入理解this机制系列第一篇——this的4种绑定规则](https://www.cnblogs.com/xiaohuochai/p/5735901.html)
-- [面试感悟,手写bind,apply,call](https://juejin.cn/post/6844903891092389901#heading-11)
+- [第 6 题：手写代码，简单实现call](https://github.com/airuikun/Weekly-FE-Interview/issues/6)
+- [第 8 题：手写代码，简单实现bind](https://github.com/airuikun/Weekly-FE-Interview/issues/8)

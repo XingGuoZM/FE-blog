@@ -5,14 +5,13 @@
  * @param {*} args 参数数组 
  */
 Function.prototype.myCall=function(context, ...args){
-  context = typeof(context) == 'object' ? context : window;
-  args = Array.isArray(args) ? args : [];
-
-  const key = Symbol();
-  context[key] = this;
-  //隐式调用函数
-  const ans = context[key](...args);
-  delete context[key];
+  context = context || window;
+  args = args || [];
+  // Function.prototype this为当前运行的函数
+  // 让fn的上下文为 context
+  context.fn = this;
+  const ans = context.fn(...args);
+  delete context.fn;
   return ans;
 }
 
