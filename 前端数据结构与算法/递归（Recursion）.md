@@ -33,5 +33,15 @@ function add2(count) {
 let ans = add2(2);
 console.log(ans);
 ```
+
+### 递归优化相关
+
+
+### 问题汇总(FAQ)
+1. 尾递归优化
+
 ### 参考
+- [尾调用优化](https://www.ruanyifeng.com/blog/2015/04/tail-call.html)
+
+
 
