@@ -10,6 +10,7 @@
 - [CommanderXL](https://github.com/CommanderXL)
 - [iamkun](https://github.com/iamkun)
 - [枪鱼](https://github.com/ChanceYu)
+- [Joseph Xia](https://github.com/su37josephxia)
 
 ### Github(组织)
 - [DDFE](https://github.com/DDFE)
