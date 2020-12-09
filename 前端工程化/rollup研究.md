@@ -7,3 +7,4 @@
 
 ## 参考
 - [Rollup.js 中文网](https://www.rollupjs.com/)
+- [从 rollup 初版源码学习打包原理](https://juejin.cn/post/6898865993289105415)

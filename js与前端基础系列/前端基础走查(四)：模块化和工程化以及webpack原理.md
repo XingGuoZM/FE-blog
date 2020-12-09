@@ -35,6 +35,10 @@ ES Modules： ES6 引入的模块化，支持import 来引入另一个 js 。
 ```js
 import a from 'a';
 ```
+
+### es module
+
+
 ### 前端模块化的重要意义？
 前端模块化有什么好处呢
 1. 合作：多人协作互不干扰，避免全局污染
@@ -44,8 +48,6 @@ import a from 'a';
 5. 测试：可测试性，单元测试
 
 模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
-
-### babel
 
 ### webpack工作原理
 将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包
@@ -70,3 +72,4 @@ webpack可以做什么？重要的两个点如下
 - [webpack工程化打包原理解析与实现 ](https://github.com/airuikun/blog/issues/4)
 - [astexplorer](https://astexplorer.net/)
 - [不容错过的 Babel7 知识](https://juejin.cn/post/6844904008679686152)
+- [深入解析ES Module（一）：禁用export default object](https://zhuanlan.zhihu.com/p/40733281)

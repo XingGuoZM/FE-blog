@@ -11,6 +11,7 @@
 - [iamkun](https://github.com/iamkun)
 - [枪鱼](https://github.com/ChanceYu)
 - [Joseph Xia](https://github.com/su37josephxia)
+- [wangtunan](https://github.com/wangtunan)
 
 ### Github(组织)
 - [DDFE](https://github.com/DDFE)
