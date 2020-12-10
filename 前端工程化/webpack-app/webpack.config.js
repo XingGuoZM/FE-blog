@@ -1,18 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+// const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports={
   mode: 'development',
   entry:'./src/index.js',
   plugins:[
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({title:'app',template:'public/index.html'})
   ],
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.jsx|js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -25,7 +25,7 @@ module.exports={
   },
   output:{
     path: path.join(__dirname,'public'),
-    filename:"index.bundle.js"
+    filename:"main.js"
   },
   devServer:{
     contentBase:'./public',
