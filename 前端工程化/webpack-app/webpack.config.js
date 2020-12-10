@@ -7,7 +7,7 @@ module.exports={
   entry:'./src/index.js',
   plugins:[
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({title:'app'})
+    new HtmlWebpackPlugin({title:'app',template:'public/index.html'})
   ],
   module: {
     rules: [
@@ -17,7 +17,7 @@ module.exports={
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env','@babel/preset-react','module:@babel/plugin-transform-react-jsx']
+            presets: ['@babel/preset-env','@babel/preset-react']
           }
         }
       }
