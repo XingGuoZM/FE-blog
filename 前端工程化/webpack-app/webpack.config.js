@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports={
   mode: 'development',
-  entry:'./src/index.js',
+  entry:'./src/main.jsx',
   plugins:[
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({title:'app',template:'public/index.html'})
@@ -12,7 +12,7 @@ module.exports={
   module: {
     rules: [
       {
-        test: /\.jsx|js$/,
+        test: /\.jsx|js|tsx$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

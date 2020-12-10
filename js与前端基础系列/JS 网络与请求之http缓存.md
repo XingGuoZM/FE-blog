@@ -1,4 +1,7 @@
 
+### 缓存是什么？
+我们说的缓存，必然要是存放于内存中的，这样它便能距离应用更近，更快的给出应用所需要的数据，以获得更快的服务响应
+
 ### http 1.0缓存
 Expires
 
@@ -27,3 +30,4 @@ Cashe-Control: max-age=31536000 单位为秒
 - [MDN文档 HTTP 缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ)
 - [缓存（二）——浏览器缓存机制：强缓存、协商缓存](https://github.com/amandakelake/blog/issues/41)
 - [蚂蚁、字节、滴滴面试经历总结](https://juejin.im/post/6844904161830502407)
+- [缓存，确实很香，却也很受伤！](https://www.cnblogs.com/niejunlei/p/12914336.html)

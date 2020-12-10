@@ -11,3 +11,4 @@ redux connect方法
 ### 参考
 - [Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
 - [为何在React中推荐使用HOC，而不是mixins来实现组件复用。但在Vue中，很少有HOC的尝试？](https://www.zhihu.com/question/67588479)
+- [Vue和React的区别，你在用哪个呢？](https://developer.51cto.com/art/202009/626000.htm)
