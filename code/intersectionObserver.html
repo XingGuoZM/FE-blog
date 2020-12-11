@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>intersection observer</title>
+    <style>
+      .list{
+        width:500px;
+        height:500px;
+        border:solid 1px coral;
+        overflow:auto;
+      }
+      .item{
+        width:500px;
+        height:50px;
+        background: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='list'>
+      <section class="item">1</section>
+      <section class="item">2</section>
+      <section class="item">3</section>
+      <section class="item">4</section>
+      <section class="item">5</section>
+      <section class="item">6</section>
+      <section class="item">7</section>
+      <section class="item">8</section>
+      <section class="item">9</section>
+      <section class="item">10</section>
+      <section class="item">11</section>
+      <section class="item">12</section>
+      <section class="item">13</section>
+      <section class="item">14</section>
+      <section class="item">15</section>
+    </div>
+    <script>
+      const io = new IntersectionObserver((entry)=>{
+        console.log(entry);
+      },{threshold:[1]});
+      
+      function update(){
+        const els = document.querySelectorAll('.item');
+        els.forEach(item=>{
+          io.observe(item);
+        })
+      }
+      update();
+    </script>
+  </body>
+</html>

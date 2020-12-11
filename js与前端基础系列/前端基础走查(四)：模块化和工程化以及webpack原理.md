@@ -36,7 +36,28 @@ ES Modules： ES6 引入的模块化，支持import 来引入另一个 js 。
 import a from 'a';
 ```
 
-### es module
+### export、import、export default、import()、module.exports
+import a from 'a-module'; // 编译时加载
+const a = require('a-module'); // 运行时加载
+
+es6模块：export + import
+commonjs模块：module.exports + require
+
+node.js(v13.2以上版本)里要使用import和export怎么办？
+1. 文件扩展名改成.mjs
+
+package.json文件指定模块入口文件，main和exports
+优先级： exports > main
+
+es6模块中不存在以下变量
+1. this
+2. arguments
+3. require
+4. module
+5. exports
+6. __filename
+7. __dirname
+### es6 import加载和node commonjs加载
 
 
 ### 前端模块化的重要意义？
@@ -73,3 +94,5 @@ webpack可以做什么？重要的两个点如下
 - [astexplorer](https://astexplorer.net/)
 - [不容错过的 Babel7 知识](https://juejin.cn/post/6844904008679686152)
 - [深入解析ES Module（一）：禁用export default object](https://zhuanlan.zhihu.com/p/40733281)
+- [ECMAScript 6 入门 Module 的语法](https://es6.ruanyifeng.com/#docs/module)
+- [ECMAScript 6 入门 Module 的加载实现](https://es6.ruanyifeng.com/#docs/module-loader)

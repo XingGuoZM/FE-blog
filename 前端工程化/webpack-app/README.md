@@ -5,6 +5,7 @@ npm install --save-dev webpack-dev-server
 
 npm install --save-dev typescript
 npm install --save-dev typescript ts-loader
+npm install --save @types/react 
 
 npm install -g less
 npm install --save-dev 
