@@ -36,10 +36,13 @@ ES Modules： ES6 引入的模块化，支持import 来引入另一个 js 。
 import a from 'a';
 ```
 
-### export、import、export default、import()、module.exports
+### es6模块和commonjs模块
+
+1. es6 import加载和node commonjs加载
+```js
 import a from 'a-module'; // 编译时加载
 const a = require('a-module'); // 运行时加载
-
+```
 es6模块：export + import
 commonjs模块：module.exports + require
 
@@ -57,7 +60,6 @@ es6模块中不存在以下变量
 5. exports
 6. __filename
 7. __dirname
-### es6 import加载和node commonjs加载
 
 
 ### 前端模块化的重要意义？
