@@ -73,7 +73,10 @@ es6模块中不存在以下变量
 模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
 
 ### webpack工作原理
-将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包
+将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包。webpack真正的核心是能让用户自己写loader和plugin自定义打包规则，能很大程度的按照用户的意愿打包出满意的js和css文件，例如我们可以使用代码压缩插件来减少包体积，可以使用样式转换loader来将css文件引入到我们的js文件中，css-loader、style-loader等等。
+
+### 手写一个webpack的loader和plugin
+
 
 ### 模拟实现一个webpack
 webpack可以做什么？重要的两个点如下
