@@ -37,8 +37,8 @@ import a from 'a';
 ```
 
 ### es6模块和commonjs模块
-
-1. es6 import加载和node commonjs加载
+浏览器支持使用es6模块，node支持使用commjs模块
+es6 import加载和node commonjs加载
 ```js
 import a from 'a-module'; // 编译时加载
 const a = require('a-module'); // 运行时加载
@@ -47,7 +47,7 @@ es6模块：export + import
 commonjs模块：module.exports + require
 
 node.js(v13.2以上版本)里要使用import和export怎么办？
-1. 文件扩展名改成.mjs
+文件扩展名改成.mjs
 
 package.json文件指定模块入口文件，main和exports
 优先级： exports > main
@@ -76,7 +76,12 @@ es6模块中不存在以下变量
 将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包。webpack真正的核心是能让用户自己写loader和plugin自定义打包规则，能很大程度的按照用户的意愿打包出满意的js和css文件，例如我们可以使用代码压缩插件来减少包体积，可以使用样式转换loader来将css文件引入到我们的js文件中，css-loader、style-loader等等。
 
 ### 手写一个webpack的loader和plugin
-
+loader
+```
+```
+plugin
+```
+```
 
 ### 模拟实现一个webpack
 webpack可以做什么？重要的两个点如下
@@ -88,7 +93,7 @@ webpack可以做什么？重要的两个点如下
 2. 写一个webpack plugin
 3. webpack plugin和loader有啥区别？
 4. 做过哪些webpack优化？
-5. tree shaking
+5. 什么是tree shaking？它的作用？如何使用？
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)
@@ -101,3 +106,5 @@ webpack可以做什么？重要的两个点如下
 - [深入解析ES Module（一）：禁用export default object](https://zhuanlan.zhihu.com/p/40733281)
 - [ECMAScript 6 入门 Module 的语法](https://es6.ruanyifeng.com/#docs/module)
 - [ECMAScript 6 入门 Module 的加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
+- [webpack中文网 编写一个 loader](https://www.webpackjs.com/contribute/writing-a-loader/)
+- [webpack中文网 编写一个插件](https://www.webpackjs.com/contribute/writing-a-plugin/)
