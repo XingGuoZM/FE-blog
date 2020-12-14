@@ -3,19 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports={
   entry:'./src/index.js',
-  module:{
-    rules:[
-      {
-        test:/\.js$/,
-        use:[
-          {
-            loader: path.resolve(__dirname,'loader/index.js'),
-            options:{name:'hello webpack'}
-          }
-        ]
-      }
-    ]
-  },
+  // module:{
+  //   rules:[
+  //     {
+  //       test:/\.js$/,
+  //       use:[
+  //         {
+  //           loader: path.resolve(__dirname,'loader/index.js'),
+  //           options:{name:'hello webpack'}
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   plugins:[
     new HtmlWebpackPlugin({title:'myLoader'})
   ],

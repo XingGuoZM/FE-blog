@@ -1,1 +1,1 @@
-(() => { var e = { 27: e => { e.exports = "const div = document.createElement('div');\ndiv.innerHTML='hello my webpack loader';\n\ndocument.body.appendChild(div);" } }, n = {}; !function r(t) { if (n[t]) return n[t].exports; var o = n[t] = { exports: {} }; return e[t](o, o.exports, r), o.exports }(27) })();
+(()=>{const e=document.createElement("div");e.innerHTML="hello my webpack loader",console.log("这是一个日志"),document.body.appendChild(e)})();

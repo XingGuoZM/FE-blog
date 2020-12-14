@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/generator": "^7.12.10",
+    "@babel/parser": "^7.12.10",
+    "@babel/traverse": "^7.12.10",
+    "@babel/types": "^7.12.10",
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
