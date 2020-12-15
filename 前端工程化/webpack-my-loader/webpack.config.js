@@ -17,7 +17,7 @@ module.exports={
   //   ]
   // },
   plugins:[
-    new HtmlWebpackPlugin({title:'myLoader'})
+    new HtmlWebpackPlugin({title:'my-loader'})
   ],
   output:{
     filename:'[name].bundle.js',

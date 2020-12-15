@@ -1,0 +1,1 @@
+(()=>{const e=document.createElement("div");e.innerHTML="Hello My Plugin",document.body.appendChild(e)})();

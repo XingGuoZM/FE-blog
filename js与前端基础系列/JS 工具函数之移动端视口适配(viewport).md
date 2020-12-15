@@ -1,4 +1,13 @@
 
+### 物理像素(physical pixel)、设备独立像素(density-independent pixel)和css像素
+物理像素又被称为设备像素，它是显示设备中最微小的物理部件，每个像素可以根据操作系统设置自己的颜色和亮度。  
+
+设备独立像素又被称为密度无关像素，可以认为是计算机坐标系统中的一个点，这个点代表一个可以由程序使用的虚拟像素（如css像素），然后由相关系统转化成物理像素（老早在没有 retina 屏之前，设备独立像素与物理像素是相等的）  
+
+css像素是一个抽象的单位，主要使用在浏览器上，用来精确度量web页面上的内容。一般情况之下，CSS像素称为与设备无关的像素(device-independent pixel)，简称DIPs
+
+
+
 ### 写一个移动端自适应viewport
 ```js
     const viewport = function () {
@@ -104,3 +113,6 @@
 
 ### 参考
 - [MDN文档 在移动浏览器中使用viewport meta标签控制布局](https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag)
+- [移动端适配](https://github.com/xiangxingchen/blog/issues/2)
+- [使用Flexible实现手淘H5页面的终端适配](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)
+- [可伸缩布局方案](https://github.com/amfe/lib-flexible)

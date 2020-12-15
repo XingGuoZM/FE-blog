@@ -73,7 +73,7 @@ es6模块中不存在以下变量
 模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
 
 ### webpack工作原理
-将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包。webpack真正的核心是能让用户自己写loader和plugin自定义打包规则，能很大程度的按照用户的意愿打包出满意的js和css文件，例如我们可以使用代码压缩插件来减少包体积，可以使用样式转换loader来将css文件引入到我们的js文件中，css-loader、style-loader等等。
+将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包。webpack真正的核心是能让用户自己写loader和plugin自定义打包规则，能很大程度的按照用户的意愿打包出满意的js和css文件，例如我们可以使用代码压缩插件来减少包体积，可以使用样式转换loader来将css文件引入到我们的js文件中，css-loader、style-loader等等。本质上，webpack是一种事件流的机制，它的工作流程就是各个插件串联起来，而实现这一切的核心就是Tapable。
 
 ### 手写一个webpack的loader和plugin
 loader
@@ -108,3 +108,5 @@ webpack可以做什么？重要的两个点如下
 - [ECMAScript 6 入门 Module 的加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
 - [webpack中文网 编写一个 loader](https://www.webpackjs.com/contribute/writing-a-loader/)
 - [webpack中文网 编写一个插件](https://www.webpackjs.com/contribute/writing-a-plugin/)
+- [手写一个webpack插件](https://segmentfault.com/a/1190000019010101)
+- [webpack实战-手写一个loader](https://zhuanlan.zhihu.com/p/102729238)
