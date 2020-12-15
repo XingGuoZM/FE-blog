@@ -1,5 +1,8 @@
 
 /**
+ * 手写一个plugin示例
+ * 功能：清除代码里的console
+ * 
  * @babel/parser 将源代码解析成 AST
    @babel/traverse 对AST节点进行递归遍历，生成一个便于操作、转换的path对象
    @babel/generator 将AST解码生成js代码

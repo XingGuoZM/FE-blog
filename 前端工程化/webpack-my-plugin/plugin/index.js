@@ -1,3 +1,7 @@
+/**
+ *  手写一个plugin示例
+ */
+
 class MyPlugin{
   apply(compiler){
     compiler.hooks.compilation.tap('CompilationPlugin',compilation=>{
