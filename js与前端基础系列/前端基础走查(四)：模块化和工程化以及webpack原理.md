@@ -1,5 +1,4 @@
 ### 模块化发展历程  
-
 IIFE： 使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
 ```js
 (function(){
@@ -63,7 +62,6 @@ es6模块中不存在以下变量
 
 
 ### 前端模块化的重要意义？
-前端模块化有什么好处呢
 1. 合作：多人协作互不干扰，避免全局污染
 2. 灵活架构，焦点分离
 3. 解耦：方便模块间组合、分解 、解耦
@@ -76,12 +74,9 @@ es6模块中不存在以下变量
 将js模块（entry）打包成一个js文件（output），在这个过程中可以添加一些文件转化操作（loader）和文件处理操作（plugin）。这些配置都统一配置到webpack.config.js中，webpack能读取这个配置文件，按照这个规则进行打包。webpack真正的核心是能让用户自己写loader和plugin自定义打包规则，能很大程度的按照用户的意愿打包出满意的js和css文件，例如我们可以使用代码压缩插件来减少包体积，可以使用样式转换loader来将css文件引入到我们的js文件中，css-loader、style-loader等等。本质上，webpack是一种事件流的机制，它的工作流程就是各个插件串联起来，而实现这一切的核心就是Tapable。
 
 ### 手写一个webpack的loader和plugin
-loader
-```
-```
-plugin
-```
-```
+- [写一个自定义的loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-my-loader)
+
+- [写一个自定义的plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-my-plugin)
 
 ### 模拟实现一个webpack
 webpack可以做什么？重要的两个点如下
