@@ -11,7 +11,7 @@ IIFE： 使用自执行函数来编写模块化，特点：在一个单独的函
 AMD(Asynchronous Module Definition)： 使用requireJS 来编写模块化，特点：依赖必须提前声明好。
 ```js
 define('./index.js',function(code){
-	// code 就是index.js 返回的内容
+// code 就是index.js 返回的内容
 })
 ```
 
