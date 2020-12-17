@@ -85,10 +85,11 @@ webpack可以做什么？重要的两个点如下
 
 ### 问题汇总(FAQ)
 1. 实现require()函数
-2. 写一个webpack plugin
-3. webpack plugin和loader有啥区别？
-4. 做过哪些webpack优化？
-5. 什么是tree shaking？它的作用？如何使用？
+2. es6模块和commonjs模块区别
+3. 写一个webpack plugin
+4. webpack plugin和loader有啥区别？
+5. 做过哪些webpack优化？
+6. 什么是tree shaking？它的作用？如何使用？
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)

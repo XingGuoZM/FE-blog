@@ -16,8 +16,8 @@ console.log(module.exports) // node模块变量 空对象 {}
 ```js
 a=1
 console.log(a); //1
-console.log(window.a);//
-console.log(global.a);
+console.log(window.a);//1
+console.log(global.a);//1
 ```
 
 ### 作用域、作用域链 

@@ -1,6 +1,6 @@
 ### http请求
 
-### ajax
+### ajax与XmlHttpRequest
 
 ### 封装一个batchFetch，完成请求合并
 
