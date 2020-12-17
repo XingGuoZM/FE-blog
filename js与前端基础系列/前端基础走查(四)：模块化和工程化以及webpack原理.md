@@ -42,11 +42,14 @@ es6 import加载和node commonjs加载
 import a from 'a-module'; // 编译时加载
 const a = require('a-module'); // 运行时加载
 ```
+- 问：编译时与运行时分别是什么，有什么区别？
+- 答：编译时即代码翻译的过程，将人能理解的代码翻译成机器能理解的代码。运行时即代码执行的过程，机器解读代码。所以我们的require可以在代码的任何地方运行成功，import只能写在模块的开头。
+
 es6模块：export + import
 commonjs模块：module.exports + require
 
-node.js(v13.2以上版本)里要使用import和export怎么办？
-文件扩展名改成.mjs
+- 问：node.js(v13.2以上版本)里要使用import和export怎么办？
+- 答：文件扩展名改成.mjs
 
 package.json文件指定模块入口文件，main和exports
 优先级： exports > main
@@ -90,6 +93,8 @@ webpack可以做什么？重要的两个点如下
 4. webpack plugin和loader有啥区别？
 5. 做过哪些webpack优化？
 6. 什么是tree shaking？它的作用？如何使用？
+7. webpack打包多页应用
+8. babel与ast(抽象语法树)
 
 ### 参考  
 - [第 26 题: 介绍模块化发展历程](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/28#issuecomment-470043656)
