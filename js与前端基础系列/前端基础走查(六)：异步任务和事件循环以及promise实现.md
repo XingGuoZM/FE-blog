@@ -21,6 +21,7 @@ node事件循环和浏览器事件循环的区别
 1. promise和setTimeout执行顺序问题？
 2. 实现一个async函数
 3. 异步的异常处理
+4. 回调函数属于异步任务吗？
 
 ### 参考
 - [浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.cn/post/6844903761949753352)

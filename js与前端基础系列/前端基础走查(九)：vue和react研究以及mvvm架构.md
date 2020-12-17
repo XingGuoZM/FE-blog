@@ -21,8 +21,18 @@
 
 ### 手写一个mvvm架构
 
+### 问题汇总(FAQ)
+* vue如何收集依赖
+* new Vue()发生了什么？
+* vue nextTick()如何实现的？
+* react setState()同步执行还是异步执行
+* react shouldComponentUpdate如何使用，业务优化场景
+* react和vue的diff算法的异同
+
+
 
 ### 参考
 - [剖析Vue实现原理 - 如何实现双向绑定mvvm](https://github.com/DMQ/mvvm)
+- [react基本原理及性能优化](https://segmentfault.com/a/1190000015648248)
 
 
