@@ -11,7 +11,7 @@
 
 ### 问题汇总（FAQ）
 1. script加载资源时，async和defer异同
-2. 
+2. DOMContentLoaded何时执行？
 
 ### 参考  
 - [关键渲染路径](https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path)
