@@ -3,10 +3,13 @@
 - vue2,通过Object.defineProperty劫持对象get set属性，来完成数据的自动更新
 - vue3,通过使用es6 proxy方式代理目标对象，监听对象属性的更新
 
+**proxy与reflect**
+
+
 ### 实现一个简易的vue
 
 ### react实现原理
-- 
+新旧两个虚拟DOM的对比
 
 ### 实现一个简易的react
 
@@ -34,5 +37,7 @@
 ### 参考
 - [剖析Vue实现原理 - 如何实现双向绑定mvvm](https://github.com/DMQ/mvvm)
 - [react基本原理及性能优化](https://segmentfault.com/a/1190000015648248)
+- [ECMAScript 6 入门 Proxy](https://es6.ruanyifeng.com/#docs/proxy)
+- [ECMAScript 6 入门 Reflect](https://es6.ruanyifeng.com/#docs/reflect)
 
 
