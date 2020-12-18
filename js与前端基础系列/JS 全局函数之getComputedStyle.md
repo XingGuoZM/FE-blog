@@ -1,4 +1,5 @@
-
+### 先看一个例子
+```html
  <!DOCTYPE html>
  <html lang="en">
      <head>
@@ -29,3 +30,11 @@
          </script>
      </body>
  </html>
+```
+由上述例子可以看到直接使用style获取只能获取到内联样式，要获取到head中的内部嵌入的样式则需要借助全局函数getComputedStyle来获取，在IE浏览器中提供了currentStyle。
+
+IE中不存在getComputedStyle,可以使用currentStyle替代
+其他浏览器中使用getComputedStyle获取样式，css和style都能获取到
+
+### 参考
+- [原生js获取css样式](https://www.jianshu.com/p/bdd5038b1ccd)
