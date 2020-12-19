@@ -5,13 +5,15 @@
 
 ### DOMContentLoaded与script加载async和defer
 
+async和defer都是对script外链的js资源的异步操作的过程。js资源的加载和解析过程，defer是异步加载，同步解析，async是异步加载，异步解析。
+
 
 ### node执行过程
 
 
 ### 问题汇总（FAQ）
-1. script加载资源时，async和defer异同
-2. DOMContentLoaded何时执行？
+- script加载资源时，async和defer异同
+- DOMContentLoaded何时执行？
 
 ### 参考  
 - [关键渲染路径](https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path)

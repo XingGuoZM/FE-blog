@@ -3,7 +3,7 @@
 ### HTTP缓存
 
 ### ajax与XmlHttpRequest
-axios
+
 
 ### websocket
 
@@ -17,6 +17,7 @@ axios
 5. 封装一个基于websocket长链接
 6. websocket有什么缺点
 7. 浏览器跨域问题？解决办法？
+8. axios请求取消、请求拦截
 
 
 ### 参考
