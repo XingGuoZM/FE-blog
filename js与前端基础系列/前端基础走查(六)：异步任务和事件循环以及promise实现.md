@@ -17,7 +17,7 @@ promise核心
 - 值无阻塞传递和链式调用
 - then里面才是异步操作，promise实例过程都是同步操作
 
-
+await是基于promise的封装，async是基于Generate的封装
 ### 实现一个promise
 
 
