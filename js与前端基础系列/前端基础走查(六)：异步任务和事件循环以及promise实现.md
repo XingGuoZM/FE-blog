@@ -1,7 +1,5 @@
-
-
-### 异步任务是什么？
-
+### 同步任务与异步任务
+js单线程，顺序执行任务。排队执行的任务称为同步任务，并行执行的任务称为异步任务
 
 ### 事件循环(Event Loop)？
 浏览器两个任务线程，一个叫task，另一个叫microTasck。处理异步任务的时候需要这两个线程进行配合，同步任务进task，宏任务放到task最后，微任务推进microTask当前同步任务完成之后，会执行微任务队列，执行完成之后会清空，然后执行task里的宏任务。
@@ -26,6 +24,7 @@ await是基于promise的封装，async是基于Generate的封装
 - 实现一个async函数
 - 异步的异常处理
 - 回调函数属于异步任务吗？
+- 同步任务是宏任务吗？
 - 异步操作的取消
 
 
@@ -36,4 +35,6 @@ await是基于promise的封装，async是基于Generate的封装
 - [ECMAScript 6 入门 Generator 函数的语法](https://es6.ruanyifeng.com/#docs/generator)
 - [ECMAScript 6 入门 Generator 函数的异步应用](https://es6.ruanyifeng.com/#docs/generator-async)
 - [ECMAScript 6 入门 async 函数](https://es6.ruanyifeng.com/#docs/async)
+- [异步JavaScript](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5)
+- [通用异步编程概念](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E6%A6%82%E5%BF%B5)
 

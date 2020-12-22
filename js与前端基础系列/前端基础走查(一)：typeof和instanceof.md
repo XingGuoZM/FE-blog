@@ -46,10 +46,11 @@ function myInstanceof(instance,type){
 ```
 
 ## 问题汇总(FAQ)
-1. 为什么typeof null是'object'，但null instanceof Object却是false呢？typeof NaN是'number',但NaN instanceof Number为false？
-2. typeof和instanceof有什么区别？
-3. typeof返回值有几个？
-4. instanceof有什么缺陷？
+- 为什么typeof null是'object'，但null instanceof Object却是false呢？typeof NaN是'number',但NaN instanceof Number为false？
+- typeof和instanceof有什么区别？
+- typeof返回值有几个？
+- instanceof有什么缺陷？
+- null是对象吗？
 
 ## 参考
 - [JS 基础｜搞懂 typeof 和 instanceof](http://jartto.wang/2019/01/17/js-typeof/)
