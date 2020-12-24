@@ -95,13 +95,16 @@ Function.prototype.myBind = function(context,...args){
 ```
 
 ### 问题汇总(FAQ)
-1. this的4中绑定方式？
-2. this隐式丢失
-2. 普通函数和箭头函数区别？
-3. 闭包
-4. call、apply和bind实现，如何深克隆一个函数？
-5. 变量提升
-6. node中exports和module.exports
+- this的4中绑定方式？
+- this隐式丢失
+- 普通函数和箭头函数区别？
+- 闭包
+- call、apply和bind实现，如何深克隆一个函数？
+- call或bind能改变箭头函数的this指向吗？为什么？
+不能，箭头函数没有自己的this
+![](https://img2020.cnblogs.com/blog/1347757/202012/1347757-20201224095608717-28916980.png)
+- 变量提升
+- node中exports和module.exports
 
 ### 参考  
 - [什么是作用域链，什么是原型链，它们的区别，在js中它们具体指什么？](https://www.cnblogs.com/pssp/p/5204324.html)  
@@ -110,3 +113,4 @@ Function.prototype.myBind = function(context,...args){
 - [深入理解this机制系列第一篇——this的4种绑定规则](https://www.cnblogs.com/xiaohuochai/p/5735901.html)
 - [第 6 题：手写代码，简单实现call](https://github.com/airuikun/Weekly-FE-Interview/issues/6)
 - [第 8 题：手写代码，简单实现bind](https://github.com/airuikun/Weekly-FE-Interview/issues/8)
+- [MDN文档 箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
