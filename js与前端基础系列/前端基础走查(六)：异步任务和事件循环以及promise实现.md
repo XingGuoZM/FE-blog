@@ -6,8 +6,8 @@ js单线程，顺序执行任务。排队执行的任务称为同步任务，并
 node事件循环和浏览器事件循环的区别
 
 ### 微任务和宏任务
-- 宏任务：同步代码，setTimeout/setInterval等
-- 微任务：promise，process.nextTick
+- 宏任务：同步js代码（即script标签里的代码）、setTimeout/setInterval/setImmediate(即宿主环境本身具有的能力)等
+- 微任务：promise、async/await、process.nextTick(即js具有的能力)等
 
 ### Promise、Generate、async/await
 promise核心

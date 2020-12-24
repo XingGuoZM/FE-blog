@@ -31,3 +31,5 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 - [页面生命周期：DOMContentLoaded，load，beforeunload，unload](https://zh.javascript.info/onload-ondomcontentloaded)
 - [脚本：async，defer](https://zh.javascript.info/script-async-defer)
 - [资源加载：onload，onerror](https://zh.javascript.info/onload-onerror)
+- [你不知道的 DOMContentLoaded](https://zhuanlan.zhihu.com/p/25876048)
+
