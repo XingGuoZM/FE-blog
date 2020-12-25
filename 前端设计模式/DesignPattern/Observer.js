@@ -8,7 +8,8 @@
 function Observer(id) {
   this.id = id;
   this.update = (obs) => {
-    console.log(obs.id);
+    console.log('观察者:'+this.id);
+    console.log('被观察者:'+obs.id);
   }
 }
 /**
