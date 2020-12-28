@@ -1,12 +1,20 @@
-### 同步任务与异步任务
-js单线程，顺序执行任务。排队执行的任务称为同步任务，并行执行的任务称为异步任务
+### 同步任务异步任务和微任务宏任务
+js单线程，顺序执行任务。排队执行的任务称为同步任务，并行执行的任务称为异步任务。每当任务
+
+### 执行栈与任务队列
 
 ### 事件循环(Event Loop)？
 浏览器两个任务线程，一个叫task，另一个叫microTasck。处理异步任务的时候需要这两个线程进行配合，同步任务进task，宏任务放到task最后，微任务推进microTask当前同步任务完成之后，会执行微任务队列，执行完成之后会清空，然后执行task里的宏任务。
+
+
 node事件循环和浏览器事件循环的区别
 
+
+浏览器中包含主进程，ui渲染进程
+
+
 ### 微任务和宏任务
-- 宏任务：同步js代码（即script标签里的代码）、setTimeout/setInterval/setImmediate(即宿主环境本身具有的能力)等
+- 宏任务：同步js代码（即script标签里的代码）、IO操作、UI渲染、setTimeout/setInterval/setImmediate(即宿主环境本身具有的能力)等
 - 微任务：promise、async/await、process.nextTick(即js具有的能力)等
 
 ### Promise、Generate、async/await
@@ -16,7 +24,16 @@ promise核心
 - then里面才是异步操作，promise实例过程都是同步操作
 
 await是基于promise的封装，async是基于Generate的封装
-### 实现一个promise
+### 实现一个promise和async
+promise
+```
+
+```
+
+async
+```
+
+```
 
 
 ### 问题汇总(FAQ)
