@@ -9,14 +9,31 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
   },
   plugins:[
     new HtmlWebpackPlugin({title:'webpack-vue'}),
     new VueLoaderPlugin()
   ],
   output:{
-    filename:'[name].bundle.js'
+    filename:'[name].bundle.js',
+    path: __dirname + '/dist',
   }
 }

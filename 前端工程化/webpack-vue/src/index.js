@@ -1,5 +1,4 @@
-import Vue from 'vue';
+const div = document.createElement('div');
+div.innerHTML = 'hello webpack-vue';
 
-new Vue({
-  
-})
+document.body.appendChild(div);
