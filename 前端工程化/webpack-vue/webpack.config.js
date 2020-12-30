@@ -1,8 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin= require('vue-loader/lib/plugin');
 
 module.exports = {
+  mode:'development',
   entry:'./src/index.js',
   module:{
     rules: [
@@ -29,7 +30,7 @@ module.exports = {
     port: 9000
   },
   plugins:[
-    new HtmlWebpackPlugin({title:'webpack-vue'}),
+    // new HtmlWebpackPlugin({title:'webpack-vue'}),
     new VueLoaderPlugin()
   ],
   output:{
