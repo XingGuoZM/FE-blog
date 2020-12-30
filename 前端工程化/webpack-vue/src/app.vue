@@ -8,7 +8,16 @@ export default {
     return {
       msg: 'Hello world!'
     }
-  }
+  },
+  template: '<div>hello Vue</div>',
+    created:function(){
+      alert('created')
+      // alert(1)
+    },
+    mounted:function(){
+      console.log(document.querySelector('#root'))
+      // alert('mounted')
+    }
 }
 </script>
 
