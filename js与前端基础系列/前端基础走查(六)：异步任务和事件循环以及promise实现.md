@@ -84,8 +84,22 @@ new Promise((resolve,reject)=>{
 await是基于promise的封装，async是基于Generate的封装
 
 使用示例
+async-await.js
 ```js
+async function getData(){
+  let data = await require('fs').readFileSync('./index.json');
+  console.log(JSON.parse(data));
+  return data;
+}
+getData();
 
+```
+
+index.json
+```js
+{
+  "name":"zhangsna"
+}
 ```
 
 ### 实现一个promise和async
