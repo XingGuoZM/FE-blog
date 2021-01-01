@@ -27,13 +27,67 @@ node中包含
 - 宏任务：同步js代码（即script标签里的代码）、IO操作、UI渲染、setTimeout/setInterval/setImmediate(即宿主环境本身具有的能力)等
 - 微任务：promise、async/await、process.nextTick(即js具有的能力)等
 
-### Promise、Generate、async/await
+### 迭代器（Iterator）和生成器（Generator）
+迭代器可以认为是一种类似链表的数据结构，包含next()方法和value值。
+生成器可以认为是一种生成迭代器对象的函数，返回一个迭代器。
+
+使用示例如下
+```js
+function *createIterator(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+let iterator = createIterator();
+
+console.log(
+  iterator.next().value,
+  iterator.next().value,
+  iterator.next().value,
+)
+```
+
+### Promise、async/await
 promise核心
 - 状态不可逆、只会变化一次、不可取消
 - 值无阻塞传递和链式调用
 - then里面才是异步操作，promise实例过程都是同步操作
 
+
+使用示例
+```js
+const { resolve } = require("path")
+
+/**
+ * promise三要素
+ * 1. 值无阻塞穿透，
+ * 2. then链式调用
+ * 3. 状态不可变
+ */
+new Promise((resolve,reject)=>{
+  resolve();
+}).then((res)=>{
+
+},(err)=>{
+
+}).then((res)=>{
+
+},(err)=>{
+
+}).catch(err=>{
+
+})
+
+```
+
 await是基于promise的封装，async是基于Generate的封装
+
+使用示例
+```js
+
+```
+
 ### 实现一个promise和async
 promise
 ```
@@ -54,6 +108,7 @@ async
 - 同步任务是宏任务吗？
 - 异步操作的取消
 - Node与浏览器的 Event Loop 差异
+- 迭代器中如何抛出错误
 
 
 ### 参考
