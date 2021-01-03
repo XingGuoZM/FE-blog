@@ -1,3 +1,5 @@
+js引擎是基于单线程事件循环的概念构建的。同一时刻只允许一个代码块在执行，需要跟踪即将运行的代码，那些代码被放在一个任务队列中，每当一段代码准备执行时，都会被添加到任务队列。每当javascript引擎中的一段代码结束执行，事件循环会执行队列中的下一个任务，它是JavaScript引擎中的一段程序，负责监控代码执行并管理任务队列。
+
 ### 同步任务异步任务和微任务宏任务
 js单线程，顺序执行任务。排队执行的任务称为同步任务，并行执行的任务称为异步任务。每当任务进入执行栈时会被判断是同步任务还是异步任务，同步任务直接压栈执行，异步任务进入任务队列排队，根据宏任务和微任务分类分别进入宏任务队列和微任务队列，按照先宏任务后微任务的次序执行
 
@@ -134,4 +136,5 @@ async
 - [ECMAScript 6 入门 async 函数](https://es6.ruanyifeng.com/#docs/async)
 - [异步JavaScript](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5)
 - [通用异步编程概念](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E6%A6%82%E5%BF%B5)
+- [深入理解es6 NICHOLAS C.ZAKAS 著]()
 
