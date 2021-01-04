@@ -14,22 +14,12 @@
 
 const getData = ()=>new Promise(resolve=>setTimeout(()=>resolve('data'),1000));
 
-// const test = async function(){
-//   const data1 = await getData();
-//   console.log('data1:',data1);
+const test = async function(){
+  const data1 = await getData();
+  console.log('data1:',data1);
 
-//   const data2 = await getData();
-//   console.log('data2:',data2);
-// }
-
-// test();
-
-
-const test = function* (){
-  yield getData();
-  yield getData();
+  const data2 = await getData();
+  console.log('data2:',data2);
 }
-const data = test().next().value;
-data.then(res=>{
-  console.log(res);
-});
+
+test();k
