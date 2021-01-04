@@ -88,13 +88,17 @@ await是基于promise的封装，async是基于Generate的封装
 使用示例
 async-await.js
 ```js
-async function getData(){
-  let data = await require('fs').readFileSync('./index.json');
-  console.log(JSON.parse(data));
-  return data;
-}
-getData();
+const getData = ()=>new Promise(resolve=>setTimeout(()=>resolve('data'),1000));
 
+const test = async function(){
+  const data1 = await getData();
+  console.log('data1:',data1);
+
+  const data2 = await getData();
+  console.log('data2:',data2);
+}
+
+test();
 ```
 
 index.json
@@ -137,4 +141,5 @@ async
 - [异步JavaScript](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5)
 - [通用异步编程概念](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E6%A6%82%E5%BF%B5)
 - [深入理解es6 NICHOLAS C.ZAKAS 著]()
+- [手写async await的最简实现（20行）](https://segmentfault.com/a/1190000022705474)
 
