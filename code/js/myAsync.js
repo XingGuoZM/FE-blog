@@ -25,9 +25,9 @@
  }
 
 
- //测试
+//测试
 const getData = ()=>new Promise(resolve=>setTimeout(()=>resolve('data'),1000));
 
-myAsync(getData)().then(res=>{
-  console.log(res);
-})
+// myAsync(getData)().then(res=>{
+//   console.log(res);
+// })
