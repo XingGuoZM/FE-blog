@@ -93,7 +93,6 @@ new Promise((resolve,reject)=>{
 }).catch(err=>{
 
 })
-
 ```
 
 await是基于promise的封装，async是基于Generate的封装
@@ -134,16 +133,15 @@ async：首先我们把async看成是一个高阶函数，接受一个generate�
 
 
 ### 问题汇总(FAQ)
-- promise和setTimeout执行顺序问题
-- 实现一个async函数
-- 异步的异常处理
-- 回调函数属于异步任务吗？
-- 同步任务是宏任务吗？
-- 异步操作的取消
-- Node与浏览器的 Event Loop 差异
-- 迭代器中如何抛出错误
-- co模块原理
-- 如何判断一个对象是不是promise
+- promise和setTimeout执行顺序问题  
+- 实现一个async函数与co模块原理  
+- 异步的异常处理  
+- 回调函数属于异步任务吗？  
+- 同步任务是宏任务吗？  
+- 异步操作的取消  
+- Node与浏览器的 Event Loop 差异  
+- 迭代器中如何抛出错误  
+- 如何判断一个对象是不是promise  
 
 ### 参考
 - [浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.cn/post/6844903761949753352)
@@ -157,4 +155,5 @@ async：首先我们把async看成是一个高阶函数，接受一个generate�
 - [深入理解es6 NICHOLAS C.ZAKAS 著]()
 - [手写async await的最简实现（20行）](https://segmentfault.com/a/1190000022705474)
 - [阿里&字节：手写 async/await 的实现](https://github.com/sisterAn/JavaScript-Algorithms/issues/56)
+- [co源码](https://github.com/tj/co/blob/master/index.js)
 
