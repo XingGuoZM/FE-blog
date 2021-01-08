@@ -23,7 +23,11 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 
 ### 问题汇总（FAQ）
 - script加载资源时，async和defer异同
+- script
+- 使用createElement创建script标签，是异步加载脚本吗？
+- defer和async与DOMContentLoaded执行顺序？
 - DOMContentLoaded何时执行？
+
 
 ### 参考  
 - [关键渲染路径](https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path)
@@ -32,4 +36,5 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 - [脚本：async，defer](https://zh.javascript.info/script-async-defer)
 - [资源加载：onload，onerror](https://zh.javascript.info/onload-onerror)
 - [你不知道的 DOMContentLoaded](https://zhuanlan.zhihu.com/p/25876048)
+- [javascript高级程序设计（第4版）]()
 
