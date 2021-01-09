@@ -51,6 +51,10 @@ function myInstanceof(instance,type){
 - typeof返回值有几个？
 - instanceof有什么缺陷？
 - null是对象吗？
+- let、const、var的区别与暂时性死区
+var存在声明提升并且可以多次重复声名同一个变量，声明范围为函数作用域，全局声明会成为window或者global的属性
+let 声明的范围为块级作用域，全局声明不会成为window或者global的属性
+const声明时必须初始化变量且不能被修改，不允许重复声明
 
 ## 参考
 - [JS 基础｜搞懂 typeof 和 instanceof](http://jartto.wang/2019/01/17/js-typeof/)
