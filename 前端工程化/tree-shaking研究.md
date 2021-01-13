@@ -18,9 +18,9 @@
 ```
 
 ## 示例demo
-[webpack tree-shaking]()
+[webpack tree-shaking](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-tree-shaking)
 
-[rollup tree-shaking]()
+[rollup tree-shaking](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/rollup-tree-shaking)
 
 ## 参考
 - [webpack中文网 tree shaking](https://webpack.docschina.org/guides/tree-shaking/)
