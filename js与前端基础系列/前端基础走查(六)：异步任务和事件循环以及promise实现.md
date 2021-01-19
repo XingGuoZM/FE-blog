@@ -142,6 +142,7 @@ async：首先我们把async看成是一个高阶函数，接受一个generate�
 - Node与浏览器的 Event Loop 差异  
 - 迭代器中如何抛出错误  
 - 如何判断一个对象是不是promise  
+- 实现ajax并发请求控制
 
 ### 参考
 - [浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.cn/post/6844903761949753352)
