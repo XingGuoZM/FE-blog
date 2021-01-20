@@ -1,0 +1,31 @@
+{
+  "name": "module-2",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "xxx@163.com",
+  "homepage": "https://github.com/XingGuoZM/blog#readme",
+  "license": "ISC",
+  "main": "lib/module-2.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XingGuoZM/blog.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/XingGuoZM/blog/issues"
+  },
+  "dependencies": {
+    "module-1": "^0.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
