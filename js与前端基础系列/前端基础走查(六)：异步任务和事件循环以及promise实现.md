@@ -157,4 +157,5 @@ async：首先我们把async看成是一个高阶函数，接受一个generate�
 - [手写async await的最简实现（20行）](https://segmentfault.com/a/1190000022705474)
 - [阿里&字节：手写 async/await 的实现](https://github.com/sisterAn/JavaScript-Algorithms/issues/56)
 - [co源码](https://github.com/tj/co/blob/master/index.js)
+- [MDN文档 异步JavaScript简介](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E7%AE%80%E4%BB%8B)
 
