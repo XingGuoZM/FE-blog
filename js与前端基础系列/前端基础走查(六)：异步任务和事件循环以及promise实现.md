@@ -95,6 +95,9 @@ new Promise((resolve,reject)=>{
 })
 ```
 
+实现一个简易的promise
+```
+```
 await是基于promise的封装，async是基于Generate的封装
 
 使用示例
@@ -120,23 +123,15 @@ index.json
 }
 ```
 
-### 实现一个promise和async
-promise
+实现一个简易的async函数(首先我们把async看成是一个高阶函数，接受一个generate函数当作参数,即实现一个co模块)
 ```
-
 ```
-
-async：首先我们把async看成是一个高阶函数，接受一个generate函数当作参数,本质上是一个co模块
-```
-
-```
-
 
 ### 问题汇总(FAQ)
 - promise和setTimeout执行顺序问题  
 - 实现一个async函数与co模块原理  
-- 异步的异常处理  
-- 回调函数属于异步任务吗？  
+- 异步操作（promise、async-await、generate、setTimeout、setInterval）的异常处理  
+- 回调函数属于异步任务吗？ 
 - 同步任务是宏任务吗？  
 - 异步操作的取消  
 - Node与浏览器的 Event Loop 差异  
