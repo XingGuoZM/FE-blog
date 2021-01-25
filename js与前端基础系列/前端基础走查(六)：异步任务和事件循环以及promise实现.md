@@ -5,6 +5,8 @@ js引擎是基于单线程事件循环的概念构建的。同一时刻只允许
 
 所谓"异步"，简单说就是一个任务不是连续完成的，可以理解成该任务被人为分成两段，先执行第一段，然后转而执行其他任务，等做好了准备，再回过头执行第二段。
 
+宏任务和微任务即存在多个异步任务的同时存在时的执行优先级的划分标准，宏任务队列的一项对应当前微任务队列，执行一个宏任务之后，随后依次执行当前微任务队列的所有任务，直到微任务队列全部执行完成。如此反复循环，直到宏任务队列和微任务队列任务完全执行完毕为止。
+
 ### 执行栈与任务队列
 执行栈是任务代码执行的地方
 
@@ -36,8 +38,6 @@ node中的事件循环包含6个阶段
 外部输入数据 -> 轮询(poll) -> 检查(check) -> 关闭事件回调(close callback) -> 定时器检查(timers) -> I/O事件回调(I/O callbacks) -> 闲置(idle,prepare) -> 轮询(poll)
 
 如此反复
-
-
 
 ### 微任务和宏任务
 - 宏任务：同步js代码（即script标签里的代码）、IO操作、UI渲染、setTimeout/setInterval/setImmediate(即宿主环境本身具有的能力)等
@@ -96,7 +96,66 @@ new Promise((resolve,reject)=>{
 ```
 
 实现一个简易的promise
-```
+```js
+function MyPromise(excutor){
+  this.status='pending';
+  this.value = null;
+  this.reason = null;
+  this.onResolveCB=[];
+  this.onRejectCB=[]
+  const resolve = (value) => {
+    if(this.status==='pending'){
+      // console.log('fulfilled');
+      this.value=value;
+      this.status = 'fulfilled';
+      this.onResolveCB.forEach(fn=>fn());
+    }
+  }
+  const reject = (reason) => {
+    if(this.status === 'pending'){
+      // console.log('rejected');
+      this.reason=reason;
+      this.status='rejected';
+      this.onRejectCB.forEach(fn=>fn());
+    }
+  }
+  try{
+    excutor(resolve,reject);
+  }catch(err){
+    reject(err);
+  }
+
+  this.then = (success,fail)=>{
+
+    let promise2 = new MyPromise((resolve,reject)=>{
+
+    });
+
+    if(this.status==='fulfilled'){
+      resolve(this.value);
+    }
+    if(this.status === 'rejected'){
+      reject(this.reason);
+    }
+    if(this.status === 'pending'){
+      this.onResolveCB.push(()=>resolve(this.value))
+      this.onRejectCB.push(()=>reject(this.reason))
+    }
+  }
+  this.all = (asyncTasks)=>{
+    let ans = [];
+    for(let i = 0; i < asyncTasks.length; i++) {
+      Promise.resolve(asyncTasks[i]).then(res=>{
+        ans.push(res);
+        if(ans.length===asyncTasks.length){
+          return resolve(ans);
+        }
+      },(error)=>{
+        reject(error);
+      })
+    }
+  }
+}
 ```
 await是基于promise的封装，async是基于Generate的封装
 
@@ -123,8 +182,9 @@ index.json
 }
 ```
 
-实现一个简易的async函数(首先我们把async看成是一个高阶函数，接受一个generate函数当作参数,即实现一个co模块)
+实现一个简易的async函数(首先我们把async看成是一个高阶函数，接受一个generate函数当作参数,即实现一个[co模块](https://github.com/tj/co/blob/master/index.js))
 ```
+
 ```
 
 ### 问题汇总(FAQ)
@@ -132,7 +192,7 @@ index.json
 - 实现一个async函数与co模块原理  
 - 异步操作（promise、async-await、generate、setTimeout、setInterval）的异常处理  
 - 回调函数属于异步任务吗？ 
-- 同步任务是宏任务吗？
+- 同步任务是宏任务吗？script标签里的同步代码为什么是宏任务？
 - script标签里的同步代码为啥是宏任务？  
 - 异步操作如何取消  
 - Node与浏览器的 Event Loop 差异  
