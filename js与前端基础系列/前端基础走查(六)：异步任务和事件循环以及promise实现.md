@@ -16,7 +16,6 @@ js引擎是基于单线程事件循环的概念构建的。同一时刻只允许
 浏览器两个任务线程，一个叫task，另一个叫microTasck。处理异步任务的时候需要这两个线程进行配合，同步任务进task，宏任务放到task最后，微任务推进microTask当前同步任务完成之后，会执行微任务队列，执行完成之后会清空，然后执行task里的宏任务。如此反复，直到所有任务都完成
 宏任务是一个一个执行的。
 微任务是一队一队执行的。
-可以认为宏任务
 
 ### node事件循环和浏览器事件循环的差异
 
@@ -67,9 +66,8 @@ console.log(
 ### Promise、async/await
 promise核心
 - 状态不可逆、只会变化一次、不可取消
-- 值无阻塞传递和链式调用
+- 无阻塞值传递和链式调用
 - then里面才是异步操作，promise实例过程都是同步操作
-
 
 使用示例
 ```js
@@ -214,4 +212,5 @@ index.json
 - [阿里&字节：手写 async/await 的实现](https://github.com/sisterAn/JavaScript-Algorithms/issues/56)
 - [co源码](https://github.com/tj/co/blob/master/index.js)
 - [MDN文档 异步JavaScript简介](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E7%AE%80%E4%BB%8B)
+- [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
 

@@ -7,7 +7,7 @@
 
 async和defer都是对script外链的js资源的异步操作的过程。js资源的加载和解析过程，defer是异步加载，同步解析，async是异步加载，异步解析。
 
-### 页面生命周期
+### 浏览器页面生命周期
 - DOMContentLoaded —— 浏览器已完全加载 HTML，并构建了 DOM 树，但像 \<img\> 和样式表之类的外部资源可能尚未加载完成。
 - load —— 浏览器不仅加载完成了 HTML，还加载完成了所有外部资源：图片，样式等。
 - beforeunload/unload —— 当用户正在离开页面时。
@@ -18,12 +18,13 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 - beforeunload 事件 —— 用户正在离开：我们可以检查用户是否保存了更改，并询问他是否真的要离开。
 - unload 事件 —— 用户几乎已经离开了，但是我们仍然可以启动一些操作，例如发送统计数据。
 
-### node执行过程
+### node环境
+node官网给出的解释是node是基于chrome v8引擎的运行时。首先来了解下chrome v8是什么？它能够干什么？
 
 
 ### 问题汇总（FAQ）
 - script加载资源时，async和defer异同
-- script
+- script标签里的代码为什么是宏任务？
 - 使用createElement创建script标签，是异步加载脚本吗？
 - defer和async与DOMContentLoaded执行顺序？
 - DOMContentLoaded何时执行？
