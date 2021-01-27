@@ -8,7 +8,7 @@ js引擎是基于单线程事件循环的概念构建的。同一时刻只允许
 宏任务和微任务即存在多个异步任务的同时存在时的执行优先级的划分标准，宏任务队列的一项对应当前微任务队列，执行一个宏任务之后，随后依次执行当前微任务队列的所有任务，直到微任务队列全部执行完成。如此反复循环，直到宏任务队列和微任务队列任务完全执行完毕为止。
 
 ### 执行栈与任务队列
-执行栈是任务代码执行的地方
+执行栈也叫调用栈，被用来存储代码运行时创建的所有执行上下文
 
 异步任务进入任务队列排队，等到执行栈为空时才开始执行异步任务
 
@@ -213,4 +213,5 @@ index.json
 - [co源码](https://github.com/tj/co/blob/master/index.js)
 - [MDN文档 异步JavaScript简介](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E7%AE%80%E4%BB%8B)
 - [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
+- [[译] 理解 JavaScript 中的执行上下文和执行栈](https://juejin.cn/post/6844903682283143181)
 
