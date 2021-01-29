@@ -1,6 +1,8 @@
 {
   "packages": [
-    "packages/*"
+    "packages/react-module1",
+    "packages/react-module2",
+    "packages/react-module3"
   ],
   "version": "0.0.0"
 }
