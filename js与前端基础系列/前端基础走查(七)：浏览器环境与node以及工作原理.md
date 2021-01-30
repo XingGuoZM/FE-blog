@@ -18,6 +18,12 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 - beforeunload 事件 —— 用户正在离开：我们可以检查用户是否保存了更改，并询问他是否真的要离开。
 - unload 事件 —— 用户几乎已经离开了，但是我们仍然可以启动一些操作，例如发送统计数据。
 
+### 浏览器控制面板介绍（chrome为例）
+Element、Console比较简单，element主要用于查看dom结构与标签元素和样式，console用于控制台输出日志、报错和警告等。
+Sources和Network是比较常用且非常有用的工具。这两个面板对于web前端调试有着至关重要的用处
+
+
+
 ### node环境
 node官网给出的解释是node是基于chrome v8引擎的运行时。首先来了解下chrome v8是什么？它能够干什么？
 
