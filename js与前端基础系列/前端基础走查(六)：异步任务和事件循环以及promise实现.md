@@ -1,3 +1,7 @@
+### 写在前面
+2021年的第一个月过去了，只产出了一篇2020年的年终总结。博客数量产出为啥变得少了？一方面与年底加班多有关系，不过github我依旧每天都会提交代码，不曾懈怠。为什么要每天都提交代码呢？我渴望改变，渴望提升，渴望成长，当然也很热爱前端。另一个方面是自己想法改变了，看了自己过去2年写的博客，感觉在制造网络垃圾，数量多但是很多都没有营养，质量偏差。因此今年开始准备改变策略，一个月写博客的数量不需要太多，2～4篇即可，能把自己要说的技术表达清楚，最好能形成自己独有的思考问题的方式方法。再一个就是年底了，心情会突然很浮躁，所以会去参加线下的社交活动，和别人聊聊天这样，基本都是读书会，看书也要花费时间。对了今年开始读书也要精读，对于我来说，读完一本书写完自己的真实感受的读后感才算完整的，读后感我会发布到[个人简书](https://www.jianshu.com/u/a832807a6813)平台上。
+
+### js引擎
 js引擎是基于单线程事件循环的概念构建的。同一时刻只允许一个代码块在执行，需要跟踪即将运行的代码，那些代码被放在一个任务队列中，每当一段代码准备执行时，都会被添加到任务队列。每当javascript引擎中的一段代码结束执行，事件循环会执行队列中的下一个任务，它是JavaScript引擎中的一段程序，负责监控代码执行并管理任务队列。
 
 ### 同步任务异步任务和微任务宏任务
@@ -6,11 +10,6 @@ js引擎是基于单线程事件循环的概念构建的。同一时刻只允许
 所谓"异步"，简单说就是一个任务不是连续完成的，可以理解成该任务被人为分成两段，先执行第一段，然后转而执行其他任务，等做好了准备，再回过头执行第二段。
 
 宏任务和微任务即存在多个异步任务的同时存在时的执行优先级的划分标准，宏任务队列的一项对应当前微任务队列，执行一个宏任务之后，随后依次执行当前微任务队列的所有任务，直到微任务队列全部执行完成。如此反复循环，直到宏任务队列和微任务队列任务完全执行完毕为止。
-
-### 执行栈与任务队列
-执行栈也叫调用栈，被用来存储代码运行时创建的所有执行上下文
-
-异步任务进入任务队列排队，等到执行栈为空时才开始执行异步任务
 
 ### 事件循环(Event Loop)？
 浏览器两个任务线程，一个叫task，另一个叫microTasck。处理异步任务的时候需要这两个线程进行配合，同步任务进task，宏任务放到task最后，微任务推进microTask当前同步任务完成之后，会执行微任务队列，执行完成之后会清空，然后执行task里的宏任务。如此反复，直到所有任务都完成
@@ -93,68 +92,6 @@ new Promise((resolve,reject)=>{
 })
 ```
 
-实现一个简易的promise
-```js
-function MyPromise(excutor){
-  this.status='pending';
-  this.value = null;
-  this.reason = null;
-  this.onResolveCB=[];
-  this.onRejectCB=[]
-  const resolve = (value) => {
-    if(this.status==='pending'){
-      // console.log('fulfilled');
-      this.value=value;
-      this.status = 'fulfilled';
-      this.onResolveCB.forEach(fn=>fn());
-    }
-  }
-  const reject = (reason) => {
-    if(this.status === 'pending'){
-      // console.log('rejected');
-      this.reason=reason;
-      this.status='rejected';
-      this.onRejectCB.forEach(fn=>fn());
-    }
-  }
-  try{
-    excutor(resolve,reject);
-  }catch(err){
-    reject(err);
-  }
-
-  this.then = (success,fail)=>{
-
-    let promise2 = new MyPromise((resolve,reject)=>{
-
-    });
-
-    if(this.status==='fulfilled'){
-      resolve(this.value);
-    }
-    if(this.status === 'rejected'){
-      reject(this.reason);
-    }
-    if(this.status === 'pending'){
-      this.onResolveCB.push(()=>resolve(this.value))
-      this.onRejectCB.push(()=>reject(this.reason))
-    }
-  }
-  this.all = (asyncTasks)=>{
-    let ans = [];
-    for(let i = 0; i < asyncTasks.length; i++) {
-      Promise.resolve(asyncTasks[i]).then(res=>{
-        ans.push(res);
-        if(ans.length===asyncTasks.length){
-          return resolve(ans);
-        }
-      },(error)=>{
-        reject(error);
-      })
-    }
-  }
-}
-```
 await是基于promise的封装，async是基于Generate的封装
 
 使用示例
@@ -180,14 +117,11 @@ index.json
 }
 ```
 
-实现一个简易的async函数(首先我们把async看成是一个高阶函数，接受一个generate函数当作参数,即实现一个[co模块](https://github.com/tj/co/blob/master/index.js))
-```
-
-```
 
 ### 问题汇总(FAQ)
 - promise和setTimeout执行顺序问题  
 - 实现一个async函数与co模块原理  
+- 实现一个简易的promse
 - 异步操作（promise、async-await、generate、setTimeout、setInterval）的异常处理  
 - 回调函数属于异步任务吗？ 
 - 同步任务是宏任务吗？script标签里的同步代码为什么是宏任务？
