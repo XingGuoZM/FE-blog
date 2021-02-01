@@ -20,7 +20,7 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 
 ### 浏览器控制面板介绍（chrome为例）
 Element、Console比较简单，element主要用于查看dom结构与标签元素和样式，console用于控制台输出日志、报错和警告等。
-Sources和Network是比较常用且非常有用的工具。这两个面板对于web前端调试有着至关重要的用处
+Sources和Network是比较常用且非常有用的工具。这两个面板对于web前端调试有着至关重要的作用。Sources可以查看源代码、打断点、查看执行栈
 
 
 
@@ -34,6 +34,7 @@ node官网给出的解释是node是基于chrome v8引擎的运行时。首先来
 - 使用createElement创建script标签，是异步加载脚本吗？
 - defer和async与DOMContentLoaded执行顺序？
 - DOMContentLoaded何时执行？
+- ui渲染与宏任务执行顺序
 
 
 ### 参考  

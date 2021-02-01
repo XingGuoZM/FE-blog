@@ -4,6 +4,9 @@
   "scripts": {
     "start": "lerna bootstrap"
   },
+  "dependencies": {
+    "react": "^17.0.1"
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   }
