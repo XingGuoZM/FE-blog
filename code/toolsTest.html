@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>截流</title>
+</head>
+
+<body>
+  <button onclick="clk()">截流测试</button>
+  <script>
+    function throttle(fn, delay) {
+      let startTime = 0;
+      return function (...args) {
+        let endTime = +new Date();
+        if (!startTime || endTime - startTime > delay) {
+          fn(...args);
+          startTime = endTime;
+        }
+      }
+    }
+    function print() {
+      console.log('log。。。')
+    }
+    const clk = throttle(() => print(), 5000);
+    clk()
+  </script>
+</body>
+
+</html>
