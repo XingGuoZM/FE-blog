@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>截流</title>
+  <title>工具函数</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
       let startTime = 0;
       return function (...args) {
         let endTime = +new Date();
-        if (!startTime || endTime - startTime > delay) {
+        if (endTime - startTime > delay) {
           fn(...args);
           startTime = endTime;
         }
@@ -22,8 +22,7 @@
     function print() {
       console.log('log。。。')
     }
-    const clk = throttle(() => print(), 5000);
-    clk()
+    const clk = throttle(() => print(), 1000);
   </script>
 </body>
 
