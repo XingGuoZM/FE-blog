@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "packages/hello-world",
+    "packages/count-down"
+  ],
+  "version": "0.0.0"
+}
