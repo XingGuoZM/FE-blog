@@ -1,9 +1,7 @@
-const module1 = require('module1');
+const m = require('module1');
 
 function module2() {
-  // console.log('moudule2');
-  module1();
+  m.module1();
 }
-module.exports = {
-  module2
-}
+
+module2();
