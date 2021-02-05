@@ -27,6 +27,8 @@ Sources和Network是比较常用且非常有用的工具。这两个面板对于
 ### node环境
 node官网给出的解释是node是基于chrome v8引擎的运行时。首先来了解下chrome v8是什么？它能够干什么？
 
+### 浏览器（chrome）与node关系
+
 
 ### 问题汇总（FAQ）
 - script加载资源时，async和defer异同

@@ -32,8 +32,8 @@
   </section>
   <script>
 
-    function getCountdown() {
-      const remainTime = +new Date('2020/10/19 00:00:00') - +new Date();
+    function getCountdown(str) {
+      const remainTime = +new Date(str) - +new Date();
       // 获取天数
       const d = parseInt(remainTime / 24 / 60 / 60 / 1000);
       // 获取小时数
@@ -46,7 +46,7 @@
     }
 
     setInterval(() => {
-      document.querySelector('#countdown').innerHTML = getCountdown();
+      document.querySelector('#countdown').innerHTML = getCountdown('2020/10/19 00:00:00');
     }, 1000)
   </script>
 </body>

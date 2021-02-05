@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <div>
+    <span>f</span>
+    <span>o</span>
+    <span>o<div></div></span>
+  </div>
+  <script>
+    function calculateDOMNodes() {
+      const map = {
+        totalElementsCount: 1,
+        maxDOMTreeDepth: 0,
+        maxChildrenCount: 0
+      }
+      let depth = 0;
+      const root = document.querySelector('html');
+      traverse(root, map, depth);
+      console.log(map)
+    }
+    function traverse(node, map, depth) {
+      let children = node.childNodes;
+      depth++;
+      map.maxDOMTreeDepth = depth > map.maxDOMTreeDepth ? depth : map.maxDOMTreeDepth
+      map.maxChildrenCount = node.childElementCount > map.maxChildrenCount ? node.childElementCount : map.maxChildrenCount;
+      for (let i = 0; i < children.length; i++) {
+        traverse(children[i], map, depth);
+        if (children[i].tagName && children[i].tagName !== 'SCRIPT') {
+          map.totalElementsCount++;
+        }
+      }
+    }
+    calculateDOMNodes();
+  </script>
+</body>
+
+</html>
