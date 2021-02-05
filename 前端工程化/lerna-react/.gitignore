@@ -1,4 +1,4 @@
-/packages/module-1/node_modules
-/packages/module-2/node_modules
-/packages/module-3/node_modules
+/packages/hello-world/node_modules
+/packages/count-down/node_modules
+/example/node_modules
 /node_modules
