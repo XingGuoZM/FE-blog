@@ -10,14 +10,13 @@
     <span>o<div></div></span>
   </div>
   <script>
-    function calculateDOMNodes() {
+    function calculateDOMNodes(root) {
       const map = {
         totalElementsCount: 1,
         maxDOMTreeDepth: 0,
         maxChildrenCount: 0
       }
       let depth = 0;
-      const root = document.querySelector('html');
       traverse(root, map, depth);
       console.log(map)
     }
@@ -33,7 +32,8 @@
         }
       }
     }
-    calculateDOMNodes();
+    const node = document.querySelector('html');
+    calculateDOMNodes(node);
   </script>
 </body>
 
