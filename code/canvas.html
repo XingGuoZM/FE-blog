@@ -1,55 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
 
- <!DOCTYPE html>
- <html lang="en">
-     <head>
-         <meta charset="utf-8" />
-         <title>canvas示例</title>
-         <style>
-           *{
-             margin:0;
-             padding:0;
-           }
-         </style>
-     </head>
-     <body>
-        <canvas id="bar" width='600' height='200'></canvas>
-        <canvas id="pie" width='600' height='200'></canvas>
-        <canvas id="polyline" width='600' height='200'></canvas>
-        
-        <script>
-          function drawBar(){
-            const canvas = document.querySelector('#bar');
-            const ctx = canvas.getContext('2d');
-            ctx.fillRect(0, 0, 200, 100);
-          }
-          function drawPie(deg){
-            const canvas = document.querySelector('#pie');
-            const ctx = canvas.getContext('2d');
-            ctx.arc(50,50,50,0,Math.PI*2,true);
-            ctx.fill();
-          }
-          function drawPolyline(){
-            const canvas = document.querySelector('#polyline');
-            const ctx = canvas.getContext('2d');
-            ctx.moveTo(0,0);
-            ctx.lineTo(100,100);
-            ctx.stroke();
-          }
-          try{
-            drawBar();
-          }catch(e){
+<head>
+  <meta charset="utf-8" />
+  <title>canvas示例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
 
-          }
-          
-          drawPie();
-          drawPolyline();
-         
+<body>
+  <canvas id="bar" width='600' height='200'></canvas>
+  <canvas id="pie" width='600' height='200'></canvas>
+  <canvas id="polyline" width='600' height='200'></canvas>
+
+  <script>
+    function drawBar() {
+      const canvas = document.querySelector('#bar');
+      const ctx = canvas.getContext('2d');
+      ctx.fillRect(0, 0, 200, 100);
+    }
+    function drawPie(deg) {
+      const canvas = document.querySelector('#pie');
+      const ctx = canvas.getContext('2d');
+      ctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+      ctx.fill();
+    }
+    function drawPolyline() {
+      const canvas = document.querySelector('#polyline');
+      const ctx = canvas.getContext('2d');
+      ctx.moveTo(0, 0);
+      ctx.lineTo(100, 100);
+      ctx.stroke();
+    }
+    try {
+      drawBar();
+    } catch (e) {
+
+    }
+
+    drawPie();
+    drawPolyline();
+
           // window.requestAnimationFrame(gameLoop);
           // function gameLoop() {
           //     update();
           //     draw();
           //     window.requestAnimationFrame(gameLoop);
           // }
-        </script>
-     </body>
- </html>
+  </script>
+</body>
+
+</html>
