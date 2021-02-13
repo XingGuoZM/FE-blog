@@ -10,6 +10,11 @@
 
 ### ajax与XmlHttpRequest
 
+ajax
+xmlhttprequest
+
+
+
 
 ### websocket
 
