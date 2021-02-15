@@ -22,8 +22,12 @@ async和defer都是对script外链的js资源的异步操作的过程。js资源
 Element、Console比较简单，element主要用于查看dom结构与标签元素和样式，console用于控制台输出日志、报错和警告等。
 Sources和Network是比较常用且非常有用的工具。这两个面板对于web前端调试有着至关重要的作用。Sources可以查看源代码、打断点、查看执行栈。Network用于查看网络请求
 
+Performance和Memory相对用的比较少，Performance面板用于测试网页性能，Memory用于查看内存情况
+Application面板用于查看本地存储管理
+
 ### node环境
 node官网给出的解释是node是基于chrome v8引擎的运行时。首先来了解下chrome v8是什么？它能够干什么？
+
 
 ### 问题汇总（FAQ）
 - script加载资源时，async和defer异同
