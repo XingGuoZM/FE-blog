@@ -19,6 +19,9 @@ mvvm，观察者模式
 ### react实现原理
 通过diff算法对比新旧两个虚拟DOM，状态的批量更新
 
+class component
+react hooks
+
 ### 实现一个简易的react
 
 
@@ -39,6 +42,7 @@ mvvm，观察者模式
 * react setState()同步执行还是异步执行
 * react shouldComponentUpdate如何使用，业务优化场景
 * react和vue的diff算法的异同
+* react hoc与minix的差别与优劣
 
 
 
