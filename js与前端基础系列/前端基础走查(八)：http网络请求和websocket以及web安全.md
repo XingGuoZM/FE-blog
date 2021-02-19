@@ -1,5 +1,6 @@
 ### HTTP(超文本传输协议)
 
+
 ### HTTP缓存
 - Cache-control
 - Expired
@@ -10,8 +11,8 @@
 
 ### ajax与XmlHttpRequest
 
-ajax
-xmlhttprequest
+ajax是一种页面局部刷新的技术，局部的数据变化动态更新
+xmlhttprequest对象
 
 
 
