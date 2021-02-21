@@ -25,6 +25,7 @@ Sources和Network是比较常用且非常有用的工具。这两个面板对于
 Performance和Memory相对用的比较少，Performance面板用于测试网页性能，Memory用于查看内存情况
 Application面板用于查看本地存储管理
 
+
 ### node环境
 node官网给出的解释是node是基于chrome v8引擎的运行时。首先来了解下chrome v8是什么？它能够干什么？
 
