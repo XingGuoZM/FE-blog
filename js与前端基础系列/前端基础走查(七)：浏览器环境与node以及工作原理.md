@@ -48,4 +48,5 @@ node是运行在服务环境上的js
 - [资源加载：onload，onerror](https://zh.javascript.info/onload-onerror)
 - [你不知道的 DOMContentLoaded](https://zhuanlan.zhihu.com/p/25876048)
 - [javascript高级程序设计（第4版）]()
+- [浏览器与Node的事件循环(Event Loop)有何区别?](https://zhuanlan.zhihu.com/p/54882306)
 
