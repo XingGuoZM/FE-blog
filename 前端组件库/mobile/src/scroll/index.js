@@ -1,20 +1,21 @@
 import {useEffect} from 'react';
 import BetterScroll from 'better-scroll'
 import './index.css';
-
+/**
+ * better-scroll文档
+ * https://better-scroll.github.io/docs/zh-CN/
+ */
 
 export default function ScrollList() {
 
   useEffect(()=>{
-    
     let bs = new BetterScroll('.wrapper', {
-      movable: true,
-      zoom: true
+      probeType: 3
     });
-    bs.on('scroll',()=>{
-      console.log('scroll');
+    bs.on('scroll',(pos)=>{
+      console.log('scroll',pos.x,pos.y);
     })
-  })
+  });
 
   return <section className='wrapper'>
     <div className='content'>
@@ -27,17 +28,6 @@ export default function ScrollList() {
       <div>7</div>
       <div>8</div>
       <div>9</div>
-      <div>10</div>
-      <div>11</div>
-      <div>12</div>
-      <div>13</div>
-      <div>14</div>
-      <div>15</div>
-      <div>16</div>
-      <div>17</div>
-      <div>18</div>
-      <div>19</div>
-      <div>20</div>
     </div>
   </section>
 }

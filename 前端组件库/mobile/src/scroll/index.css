@@ -1,3 +1,9 @@
 .wrapper{
+  width:7.5rem;
+  height:4rem;
+  background-color: bisque;
+  overflow:hidden;
+}
+.content{
 
 }
