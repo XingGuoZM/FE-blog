@@ -1,10 +1,11 @@
-import Canvas2Drag from './components/canvas/drag'
+import Canvas2Drag from './components/canvas/drag';
+import Canvas2Draw from './components/canvas/draw';
 import './index'
 
 function App() {
   return (
     <div className="app">
-      <Canvas2Drag/>
+      <Canvas2Draw />
     </div>
   );
 }

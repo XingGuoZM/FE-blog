@@ -2,12 +2,12 @@ import {useState,useEffect} from 'react';
 import './drag.css';
 
 function Canvas2Drag(){
-  const [startX,setStartX] = useState();
+  
 
   useEffect(()=>{
     const ctx = init();
     // drawLine(ctx);
-    window.requestAnimationFrame(drawLine(ctx))
+    window.requestAnimationFrame(()=>drawLine(ctx))
     // drawRectangle(ctx);
     drawRound(ctx);
   });
@@ -19,15 +19,17 @@ function Canvas2Drag(){
   }
 
   function drawLine(ctx){
-    let time = new Date();
-    console.log(time.getSeconds())
-    if(time.getSeconds()>55) return;
-    ctx.moveTo(10*time.getSeconds(),50*time.getSeconds());
-    ctx.lineTo(10*time.getSeconds(),10*time.getSeconds());
+    let time = +new Date();
+    // console.log(time);
+    // if(time.getMilliseconds()>600) return ;
+
+    ctx.clearRect(0,0,500,800);
+    ctx.moveTo(time/100000000000,time/100000000000);
+    ctx.lineTo(time/10000000000,time/10000000000);
 
     ctx.stroke();
 
-    window.requestAnimationFrame(drawLine(ctx))
+    window.requestAnimationFrame(()=>drawLine(ctx));
   }
 
   function drawRectangle(ctx){
@@ -42,7 +44,7 @@ function Canvas2Drag(){
     ctx.fill();
   }
 
-  return <canvas id='myCanvas' width="800px" height="500px" className="wrap"/>
+  return <canvas id='myCanvas' width="800" height="500" className="wrap"/>
 }
 
 
