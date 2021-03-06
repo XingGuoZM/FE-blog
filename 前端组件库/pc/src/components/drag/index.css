@@ -1,3 +1,17 @@
-.dragWrap {
- color: #fff 
+.drag-wrap {
+  width:100%;
+  height:100%;
+}
+
+.src-wrap{
+  width:500px;
+  height:500px;
+  border:solid 1px #ccc;
+}
+
+.dragger{
+  width:50px;
+  height:50px;
+  background-color:#cca;
+  cursor: move;
 }
