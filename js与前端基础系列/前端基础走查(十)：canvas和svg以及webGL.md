@@ -13,4 +13,7 @@
 
 ## webGL
 
+## 问题汇总
+* 绘制一个三角形（canvas、svg、webGL）
+
 ## 参考
