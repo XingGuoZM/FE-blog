@@ -1,41 +1,100 @@
-import {useState, useEffect} from 'react';
+import {
+  useState,
+  useEffect,
+  useRef
+} from 'react';
 import './index.css';
 /**
- * 拖拽组件实现点
- * 1. 
+ * 拖拽组件实现
+ * 1. 拖动效果的实现(onmousedown、onmousemove、onmouseup + translate)
+ * 2. 拖动边界的判断
+ * 3. 辅助线
+ * 
+ * 优化点
+ * 1. 入参考虑，特别考虑单位问题（px，rem，vw/vh）
+ * 2. 
  */
 
-function Dragger(){
+function Dragger(props) {
 
-  const [y,setY] = useState(null);
-  const [x,setX] = useState(null);
-  const [flag,setFlag] = useState(false);
+  const dragRef = useRef(null);
+  const { width, height, config } = props;
 
-  function handleDown(e){
-    setFlag(true)
+  const [y, setY] = useState(config.top);
+  const [x, setX] = useState(config.left);
+  const [innerY, setInnerY] = useState(null);
+  const [innerX, setInnerX] = useState(null);
+  const [offsetW, setOffsetW] = useState(null);
+  const [offsetH, setOffsetH] = useState(null);
+  const [active, setActive] = useState(false);
+
+  function handleDown(e) {
+    const dragger = dragRef.current;
+    const ix = e.clientX - dragger.offsetLeft;
+    const iy = e.clientY - dragger.offsetTop;
+    setActive(true);
+    setInnerY(iy);
+    setInnerX(ix);
   }
-  function handleMove(e){
-    const dragger = document.querySelector('.dragger');
-    const disX = e.clientX -  dragger.offsetLeft;
-    const disY = e.clientY - dragger.offsetTop;
-    if(flag && e.clientX>=25 && e.clientX >=25 && e.clientX<=475 && e.clientY<=475){
-      setY(disY);
-      setX(disX);
+  function handleMove(e) {
+    if (active &&
+      e.clientX >= innerX &&
+      e.clientY >= innerY &&
+      e.clientX <= width - offsetW + innerX &&
+      e.clientY <= height - offsetH + innerY
+    ) {
+      setY(e.clientY - innerY);
+      setX(e.clientX - innerX);
     }
   }
-  function handleUp(e){
-    setFlag(false);
+  function handleUp(e) {
+    setActive(false);
   }
 
-  return <div className="drag-wrap" >
-      <section className="src-wrap" onMouseMove={(e)=>handleMove(e)}>
-        <div className="dragger" 
-          style={{transform:`translate(${x}px,${y}px)`}}
-          onMouseDown={(e)=>handleDown(e)}
-        
-          onMouseUp={(e)=>handleUp(e)}/>
-      </section>
-    </div>
+  useEffect(() => {
+    const dragger = dragRef.current;
+    setOffsetW(dragger.offsetWidth);
+    setOffsetH(dragger.offsetHeight);
+  }, []);
+  return <div className="drag-wrap" onMouseUp={(e) => handleUp(e)}>
+    <section
+      className="src-wrap"
+      style={{
+        width: width + 'px',
+        height: height + 'px'
+      }}
+      onMouseMove={(e) => handleMove(e)}>
+      <div
+        className="dragger"
+        ref={dragRef}
+        style={{
+          width: config.width + 'px',
+          height: config.height + 'px',
+          backgroundColor: config.backgroundColor,
+
+          position: 'absolute',
+          top: y + 'px',
+          left: x + 'px'
+        }}
+        onMouseDown={(e) => handleDown(e)} />
+      <span
+        className='dragger-line'
+        style={{
+          display: active ? 'block' : 'none',
+          height: height + 'px',
+          position: 'absolute',
+          left: x + offsetW / 2 + 'px'
+        }} />
+      <span
+        className='dragger-line'
+        style={{
+          display: active ? 'block' : 'none',
+          width: width + 'px',
+          position: 'absolute',
+          top: y + offsetH / 2 + 'px'
+        }} />
+    </section>
+  </div>
 }
 
 export default Dragger;
