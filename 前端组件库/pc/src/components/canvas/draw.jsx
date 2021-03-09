@@ -1,38 +1,36 @@
-import {useState,useEffect} from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './draw.css';
 
+function Canvas2Draw() {
+  const drawRef = useRef();
+  let active = false;
 
-function Draw(){
 
+  useEffect(() => {
+    const canvas = drawRef.current;
+    const ctx = canvas.getContext('2d');
 
-  useEffect(()=>{
-    init();
+    canvas.addEventListener('mousedown', (e) => {
+      active = true;
+      ctx.beginPath();
+      ctx.moveTo(e.clientX, e.clientY);
+    });
+    canvas.addEventListener('mousemove', (e) => {
+      if (active) {
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.stroke();
+      }
+    });
+    document.body.addEventListener('mouseup', (e) => {
+      active = false;
+    });
   });
 
-  function init(){
-    const canvas = document.querySelector('#myCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    
-    canvas.addEventListener('mousedown',(e)=>{
-      const x = e.clientX - canvas.offsetLeft;
-      const y = e.clientY - canvas.offsetTop;
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      canvas.addEventListener('mousemove',(e)=>{
-        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-        ctx.stroke();
-      });
-  
-      canvas.addEventListener('mouseup',(e)=>{
-        // console.log(12)
-        ctx.closePath();
-      });
-    });
-
-  }
-
-  return <canvas id='myCanvas' width='500' height='500' className="drawWrap"/>
+  return <canvas ref={drawRef}
+    id='myCanvas'
+    width='800'
+    height="500"
+    className="wrap" />
 }
 
-export default Draw;
+export default Canvas2Draw;

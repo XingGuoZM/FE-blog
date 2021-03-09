@@ -1,50 +1,51 @@
-import {useState,useEffect} from 'react';
+
+import { useState, useRef, useEffect } from 'react';
 import './drag.css';
 
-function Canvas2Drag(){
-  
+function Canvas2Drag() {
+  const dragRef = useRef();
+  let active = false;
+  let disx = 0;
+  let disy = 0;
+  let innerx = 0;
+  let innery = 0;
 
-  useEffect(()=>{
-    const ctx = init();
-    // drawLine(ctx);
-    window.requestAnimationFrame(()=>drawLine(ctx))
-    // drawRectangle(ctx);
-    drawRound(ctx);
+  useEffect(() => {
+    const canvas = dragRef.current;
+    const ctx = canvas.getContext('2d');
+    init(canvas, ctx);
+    drawRect(ctx, 0, 0);
   });
+  function init(canvas, ctx) {
+    canvas.addEventListener('mousedown', (e) => {
+      active = true;
+      disx = e.clientX - innerx;
+      disy = e.clientY - innery;
+    });
+    canvas.addEventListener('mousemove', (e) => {
+      if (active) {
+        drawRect(ctx, e.clientX - disx, e.clientY - disy);
+        ctx.stroke();
+      }
+    });
+    document.body.addEventListener('mouseup', (e) => {
+      active = false;
+      innerx = e.clientX - disx;
+      innery = e.clientY - disy;
+    });
 
-  function init(){
-    const canvas = document.querySelector('#myCanvas');
-    return  canvas.getContext('2d');
-    
+  }
+  function drawRect(ctx, x, y) {
+    ctx.clearRect(0, 0, 800, 500);
+    ctx.fillStyle = "#fcc";
+    ctx.fillRect(x, y, 100, 50);
   }
 
-  function drawLine(ctx){
-    let time = +new Date();
-    // console.log(time);
-    // if(time.getMilliseconds()>600) return ;
-
-    ctx.clearRect(0,0,500,800);
-    ctx.moveTo(time/100000000000,time/100000000000);
-    ctx.lineTo(time/10000000000,time/10000000000);
-
-    ctx.stroke();
-
-    window.requestAnimationFrame(()=>drawLine(ctx));
-  }
-
-  function drawRectangle(ctx){
-    ctx.fillStyle = "rgb(200,0,0)";
-    ctx.fillRect (20, 20, 100, 100);
-  }
-
-  function drawRound(ctx){
-    ctx.beginPath();
-    ctx.arc(100,75,50,0,2*Math.PI);
-    ctx.fillStyle='#c2c';
-    ctx.fill();
-  }
-
-  return <canvas id='myCanvas' width="800" height="500" className="wrap"/>
+  return <canvas
+    ref={dragRef}
+    width='800'
+    height="500"
+    className="canvas-drag" />
 }
 
 
