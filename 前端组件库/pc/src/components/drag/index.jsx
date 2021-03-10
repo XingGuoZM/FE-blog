@@ -24,8 +24,8 @@ function Dragger(props) {
   const [x, setX] = useState(config.left);
   const [innerY, setInnerY] = useState(null);
   const [innerX, setInnerX] = useState(null);
-  const [offsetW, setOffsetW] = useState(null);
-  const [offsetH, setOffsetH] = useState(null);
+  // const [offsetW, setOffsetW] = useState(null);
+  // const [offsetH, setOffsetH] = useState(null);
   const [active, setActive] = useState(false);
 
   function handleDown(e) {
@@ -40,8 +40,8 @@ function Dragger(props) {
     if (active &&
       e.clientX >= innerX &&
       e.clientY >= innerY &&
-      e.clientX <= width - offsetW + innerX &&
-      e.clientY <= height - offsetH + innerY
+      e.clientX <= width - config.width + innerX &&
+      e.clientY <= height - config.height + innerY
     ) {
       setY(e.clientY - innerY);
       setX(e.clientX - innerX);
@@ -52,9 +52,9 @@ function Dragger(props) {
   }
 
   useEffect(() => {
-    const dragger = dragRef.current;
-    setOffsetW(dragger.offsetWidth);
-    setOffsetH(dragger.offsetHeight);
+    // const dragger = dragRef.current;
+    // setOffsetW(dragger.offsetWidth);
+    // setOffsetH(dragger.offsetHeight);
   }, []);
   return <div className="drag-wrap" onMouseUp={(e) => handleUp(e)}>
     <section
@@ -83,7 +83,7 @@ function Dragger(props) {
           display: active ? 'block' : 'none',
           height: height + 'px',
           position: 'absolute',
-          left: x + offsetW / 2 + 'px'
+          left: x + config.width / 2 + 'px'
         }} />
       <span
         className='dragger-line'
@@ -91,7 +91,7 @@ function Dragger(props) {
           display: active ? 'block' : 'none',
           width: width + 'px',
           position: 'absolute',
-          top: y + offsetH / 2 + 'px'
+          top: y + config.height / 2 + 'px'
         }} />
     </section>
   </div>
