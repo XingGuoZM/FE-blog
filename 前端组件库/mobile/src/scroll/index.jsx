@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import BetterScroll from 'better-scroll'
 import './index.css';
 /**
@@ -8,12 +8,12 @@ import './index.css';
 
 export default function ScrollList() {
 
-  useEffect(()=>{
+  useEffect(() => {
     let bs = new BetterScroll('.wrapper', {
-      probeType: 3
+      probeType: 3,
     });
-    bs.on('scroll',(pos)=>{
-      console.log('scroll',pos.x,pos.y);
+    bs.on('scroll', (pos) => {
+      console.log('scroll', pos.x, pos.y);
     })
   });
 

@@ -1,0 +1,15 @@
+.tab-wrap{
+  width:7.5rem;
+  height:10rem;
+  overflow:hidden;
+}
+.tab-content{
+  width:30rem;
+  display:flex;
+}
+.tab{
+  width:7.5rem;
+  height:10rem;
+  background-color: lightblue;
+  flex-shrink:0;
+}
