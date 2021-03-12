@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react';
-import BetterScroll from 'better-scroll'
+import BScroll from '@better-scroll/core'
+import Slide from '@better-scroll/slide'
 import './index.css';
+BScroll.use(Slide);
 
-function Tab() {
+function Tab(props) {
+
   useEffect(() => {
-    let bs = new BetterScroll('.tab-wrap', {
-      probeType: 3,
-      scrollX: true
+    let bs = new BScroll('.tab-wrap', {
+      scrollX: true,
+      scrollY: false,
+      slide: {
+        autoplay: false,
+        loop: false
+      },
+      momentum: false,
+      bounce: false,
+      probeType: 3
     });
-    bs.on('scroll', (e) => {
-      console.log('scroll')
+    bs.on('slideWillChange', (page) => {
+      // 即将要切换的页面
+      console.log(page.pageX, page.pageY)
     })
   });
   return <div className='tab-wrap'>
