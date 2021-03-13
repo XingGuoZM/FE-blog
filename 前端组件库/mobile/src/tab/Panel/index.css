@@ -1,0 +1,7 @@
+
+.tab-panel-item{
+  width:7.5rem;
+  height:10rem;
+  background-color: lightblue;
+  flex-shrink:0;
+}

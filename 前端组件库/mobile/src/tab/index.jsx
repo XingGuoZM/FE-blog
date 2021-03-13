@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-import BScroll from '@better-scroll/core'
-import Slide from '@better-scroll/slide'
+import BScroll from '@better-scroll/core';
+import Slide from '@better-scroll/slide';
+import Panel from './Panel';
+import Nav from './Nav';
 import './index.css';
 BScroll.use(Slide);
 
 function Tab(props) {
 
   useEffect(() => {
-    let bs = new BScroll('.tab-wrap', {
+    let bs = new BScroll('.tab-panel', {
       scrollX: true,
       scrollY: false,
       slide: {
@@ -24,11 +26,11 @@ function Tab(props) {
     })
   });
   return <div className='tab-wrap'>
-    <div className='tab-content'>
-      <section className='tab'>1</section>
-      <section className='tab'>2</section>
-      <section className='tab'>3</section>
-      <section className='tab'>4</section>
+    <Nav />
+    <div className='tab-panel'>
+      <div className='tab-panel-content'>
+        {[1, 2, 3, 4].map(item => <Panel index={item} key={item} />)}
+      </div>
     </div>
   </div>
 }
