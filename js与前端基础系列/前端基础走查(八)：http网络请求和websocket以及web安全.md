@@ -18,7 +18,7 @@ xmlhttprequest对象
 ### tcp，udp
 tcp三次握手，四次挥手，传输协议
 
-udp
+udp:无连接传输协议，用户数据包协议
 
 ### websocket
 长链接
