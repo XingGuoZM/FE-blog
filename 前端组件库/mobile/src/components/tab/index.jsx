@@ -7,7 +7,8 @@ import './index.css';
 BScroll.use(Slide);
 
 function Tab(props) {
-
+  const { tabNav, tabPanel, data, tabChange } = props;
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     let bs = new BScroll('.tab-panel', {
       scrollX: true,
@@ -22,14 +23,25 @@ function Tab(props) {
     });
     bs.on('slideWillChange', (page) => {
       // 即将要切换的页面
-      console.log(page.pageX, page.pageY)
+      const { pageX, pageY } = page;
+      tabChange(pageX);
+      setIndex(pageX);
     })
   });
+  const tabData = data;
+  function renderPanelItem(data, id) {
+    const { panelItem } = tabPanel;
+    return data.map(item => panelItem(item, id));
+  }
+  function renderNavItem(data) {
+    const { navItem } = tabNav;
+    return data.map(item => navItem && navItem(item));
+  }
   return <div className='tab-wrap'>
-    <Nav />
+    <Nav data={tabData} navItem={renderNavItem} tabNav={tabNav} index={index} />
     <div className='tab-panel'>
       <div className='tab-panel-content'>
-        {[1, 2, 3, 4].map(item => <Panel index={item} key={item} />)}
+        {tabData.map(item => <Panel key={item.id} data={item} panelItem={renderPanelItem} />)}
       </div>
     </div>
   </div>

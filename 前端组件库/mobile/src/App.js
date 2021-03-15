@@ -1,16 +1,16 @@
 import './App.css';
 import { viewport } from './util';
-import ScrollList from './scroll';
-import DragDemo from './drag';
-import Tab from './tab';
-
+// import ScrollList from './scroll';
+// import DragDemo from './components/drag';
+import { Tab, ScrollList, DragDemo } from './components';
+import { tabProps } from './config';
 function App() {
   viewport();
   return (
     <div className="App">
       {/* <ScrollList /> */}
       {/* <DragDemo/> */}
-      <Tab />
+      <Tab {...tabProps} />
     </div>
   );
 }

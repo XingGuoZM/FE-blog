@@ -1,0 +1,15 @@
+.tab-nav{
+  display:flex;
+  background:#ccc;
+  position:sticky;
+}
+.tab-nav-item{
+  font-size:0.5rem;
+  width:1.5rem;
+}
+
+.tab-nav-active-item{
+  color:red;
+  font-size:0.5rem;
+  width:1.5rem;
+}
