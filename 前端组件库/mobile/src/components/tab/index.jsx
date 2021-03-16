@@ -21,17 +21,19 @@ function Tab(props) {
       bounce: false,
       probeType: 3
     });
+
     bs.on('slideWillChange', (page) => {
       // 即将要切换的页面
       const { pageX, pageY } = page;
       tabChange(pageX);
       setIndex(pageX);
-    })
+      console.log(page);
+    });
   });
   const tabData = data;
-  function renderPanelItem(data, id) {
+  function renderPanelItem(data) {
     const { panelItem } = tabPanel;
-    return data.map(item => panelItem(item, id));
+    return data.map(item => panelItem(item, item.id));
   }
   function renderNavItem(data) {
     const { navItem } = tabNav;

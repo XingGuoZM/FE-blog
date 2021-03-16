@@ -1,12 +1,11 @@
 .tab-wrap{
   width:7.5rem;
-  /* height:20rem; */
+
   overflow:hidden;
-  position: relative;
 }
 
 .tab-panel{
-
+  height:10rem;
 }
 
 .tab-panel-content{

@@ -1,9 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './index.css';
+
 
 export default function Nav(props) {
   const { data, navItem, tabNav, index } = props;
-  console.log('===', data, index);
+  const navRef = useRef();
+  let fixStyle = {};
+  useEffect(() => {
+    // const { top } = navRef.current.getBoundingClientRect();
+    // if (top === 0) {
+    //   fixStyle = {
+    //     position: 'absolute',
+    //     zIndex: 2
+    //   }
+    // }
+  });
   function renderItem() {
     if (!!tabNav.navItem) {
       return navItem(data);
@@ -15,7 +26,7 @@ export default function Nav(props) {
     </div>);
   }
 
-  return <div className="tab-nav">
+  return <div className="tab-nav" style={fixStyle} ref={navRef}>
     {renderItem()}
   </div>
 }

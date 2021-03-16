@@ -6,7 +6,16 @@ const tabNav = {
 }
 const tabPanel = {
   panelItem: (data, index) => {
-    return <div key={index}>{data.name}</div>;
+    return <div key={index}
+      style={{
+        width: '7rem',
+        height: '3.5rem',
+        marginLeft: '0.25rem',
+        marginTop: '0.25rem',
+        backgroundColor: '#ddd'
+      }}>
+      {/* {data.name} */}
+    </div>;
   },
 }
 const tabProps = {
@@ -17,6 +26,18 @@ const tabProps = {
       list: [{
         id: 1,
         name: 'panel1'
+      }, {
+        id: 2,
+        name: 'panel2'
+      }, {
+        id: 3,
+        name: 'panel3'
+      }, {
+        id: 4,
+        name: 'panel4'
+      }, {
+        id: 5,
+        name: 'panel5'
       }]
     },
     {
@@ -31,7 +52,7 @@ const tabProps = {
   tabNav,
   tabPanel,
   tabChange: (index) => {
-    console.log(index);
+    console.log('scroll', index);
   }
 }
 
