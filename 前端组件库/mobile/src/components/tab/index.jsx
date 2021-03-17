@@ -18,17 +18,22 @@ function Tab(props) {
         loop: false
       },
       momentum: false,
-      bounce: false,
+      bounce: {
+        left: true,
+        right: true
+      },
       probeType: 3
     });
-
-    bs.on('slideWillChange', (page) => {
-      // 即将要切换的页面
-      const { pageX, pageY } = page;
-      tabChange(pageX);
-      setIndex(pageX);
-      console.log(page);
+    bs.on('scroll', (e) => {
+      console.log('scroll', e);
     });
+    // bs.on('slideWillChange', (page) => {
+    //   // 即将要切换的页面
+    //   const { pageX, pageY } = page;
+    //   tabChange(pageX);
+    //   setIndex(pageX);
+    //   console.log(page);
+    // });
   });
   const tabData = data;
   function renderPanelItem(data) {

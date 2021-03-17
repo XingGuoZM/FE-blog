@@ -5,7 +5,7 @@
 }
 
 .tab-panel{
-  height:10rem;
+  overflow-y:scroll;
 }
 
 .tab-panel-content{

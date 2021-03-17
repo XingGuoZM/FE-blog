@@ -29,15 +29,6 @@ const tabProps = {
       }, {
         id: 2,
         name: 'panel2'
-      }, {
-        id: 3,
-        name: 'panel3'
-      }, {
-        id: 4,
-        name: 'panel4'
-      }, {
-        id: 5,
-        name: 'panel5'
       }]
     },
     {
