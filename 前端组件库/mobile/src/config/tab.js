@@ -10,8 +10,8 @@ const tabPanel = {
       style={{
         width: '7rem',
         height: '3.5rem',
-        marginLeft: '0.25rem',
-        marginTop: '0.25rem',
+        marginTop: '0.15rem',
+        marginLeft: '0.1rem',
         backgroundColor: '#ddd'
       }}>
       {/* {data.name} */}
@@ -38,12 +38,22 @@ const tabProps = {
         id: 1,
         name: 'panel2'
       }]
+    }, {
+      id: 3,
+      name: 'tab3',
+      list: [{
+        id: 1,
+        name: 'panel3'
+      }, {
+        id: 2,
+        name: 'panel4'
+      }]
     }
   ],
   tabNav,
   tabPanel,
   tabChange: (index) => {
-    console.log('scroll', index);
+    // console.log('scroll', index);
   }
 }
 

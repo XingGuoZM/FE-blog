@@ -1,11 +1,10 @@
 .tab-wrap{
   width:7.5rem;
-
   overflow:hidden;
 }
 
 .tab-panel{
-  overflow-y:scroll;
+  /* overflow-y:scroll; */
 }
 
 .tab-panel-content{

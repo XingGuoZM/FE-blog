@@ -24,16 +24,16 @@ function Tab(props) {
       },
       probeType: 3
     });
-    bs.on('scroll', (e) => {
-      console.log('scroll', e);
-    });
-    // bs.on('slideWillChange', (page) => {
-    //   // 即将要切换的页面
-    //   const { pageX, pageY } = page;
-    //   tabChange(pageX);
-    //   setIndex(pageX);
-    //   console.log(page);
+    // bs.on('scroll', (e) => {
+    //   // console.log('scroll', e);
     // });
+    bs.on('slideWillChange', (page) => {
+      // 即将要切换的页面
+      const { pageX, pageY } = page;
+      tabChange(pageX);
+      setIndex(pageX);
+      console.log(page.pageX);
+    });
   });
   const tabData = data;
   function renderPanelItem(data) {
