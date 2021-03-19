@@ -53,7 +53,7 @@ const tabProps = {
   tabNav,
   tabPanel,
   tabChange: (index) => {
-    // console.log('scroll', index);
+    console.log('scroll', index);
   }
 }
 

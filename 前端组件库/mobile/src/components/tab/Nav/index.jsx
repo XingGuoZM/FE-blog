@@ -3,7 +3,7 @@ import './index.css';
 
 
 export default function Nav(props) {
-  const { data, navItem, tabNav, index } = props;
+  const { data, navItem, tabNav } = props;
   const navRef = useRef();
   let fixStyle = {};
   useEffect(() => {
@@ -14,6 +14,7 @@ export default function Nav(props) {
     //     zIndex: 2
     //   }
     // }
+
   });
   function renderItem() {
     if (!!tabNav.navItem) {
@@ -21,7 +22,7 @@ export default function Nav(props) {
     }
     return data.map((item, i) => <div
       key={item.id}
-      className={index === i ? 'tab-nav-active-item' : 'tab-nav-item'}>
+      className='tab-nav-item'>
       {item.name}
     </div>);
   }
