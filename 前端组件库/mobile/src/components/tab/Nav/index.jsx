@@ -14,7 +14,6 @@ export default function Nav(props) {
     //     zIndex: 2
     //   }
     // }
-
   });
   function renderItem() {
     if (!!tabNav.navItem) {

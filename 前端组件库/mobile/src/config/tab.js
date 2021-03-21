@@ -25,6 +25,18 @@ const tabProps = {
       list: [{
         id: 1,
         name: 'panel1'
+      },{
+        id: 2,
+        name: 'panel2'
+      },{
+        id: 3,
+        name: 'panel3'
+      },{
+        id: 4,
+        name: 'panel3'
+      },{
+        id: 5,
+        name: 'panel3'
       }]
     },
     {
