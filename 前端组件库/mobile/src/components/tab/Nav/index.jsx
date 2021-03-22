@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './index.css';
 
-
 export default function Nav(props) {
   const { data, navItem, tabNav } = props;
   const navRef = useRef();
