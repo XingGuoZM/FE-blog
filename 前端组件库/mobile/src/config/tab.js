@@ -11,7 +11,6 @@ const tabPanel = {
         width: '7rem',
         height: '3.5rem',
         marginTop: '0.15rem',
-        marginLeft: '0.1rem',
         backgroundColor: '#ddd'
       }}>
       {/* {data.name} */}
@@ -26,9 +25,18 @@ const tabProps = {
       list: [{
         id: 1,
         name: 'panel1'
-      }, {
+      },{
         id: 2,
         name: 'panel2'
+      },{
+        id: 3,
+        name: 'panel3'
+      },{
+        id: 4,
+        name: 'panel3'
+      },{
+        id: 5,
+        name: 'panel3'
       }]
     },
     {
@@ -36,6 +44,9 @@ const tabProps = {
       name: 'tab2',
       list: [{
         id: 1,
+        name: 'panel1'
+      }, {
+        id: 2,
         name: 'panel2'
       }]
     }, {
@@ -47,6 +58,9 @@ const tabProps = {
       }, {
         id: 2,
         name: 'panel4'
+      }, {
+        id: 3,
+        name: 'panel5'
       }]
     }
   ],
