@@ -10,7 +10,7 @@ async function retry(fn, delay, count) {
   }
 }
 // http请求并发
-function limit() {
+function concurrent() {
 
 }
 // http请求超时
