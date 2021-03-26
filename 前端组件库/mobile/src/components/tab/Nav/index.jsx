@@ -8,7 +8,7 @@ export default function Nav(props) {
   const navRef = useRef();
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(() => handleScroll(), 500))
+    window.addEventListener('scroll', throttle(() => handleScroll(), 100))
   }, []);
   function handleScroll() {
 
@@ -16,6 +16,8 @@ export default function Nav(props) {
     console.log(top);
     if (top < 0) {
       setFixStyle({ position: 'fixed', top: 0 });
+    } else {
+      setFixStyle({ position: 'static' });
     }
   }
   function renderItem() {
