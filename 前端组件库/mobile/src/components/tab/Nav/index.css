@@ -2,8 +2,7 @@
   display:flex;
   background:#ccc;
   width:7.5rem;
-  /* position:fixed;
-  top:0; */
+  z-index: 2;
 }
 .tab-nav-item{
   font-size:0.5rem;
