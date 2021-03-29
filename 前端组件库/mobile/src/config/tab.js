@@ -16,6 +16,7 @@ const tabPanel = {
       {/* {data.name} */}
     </div>;
   },
+  endItem:()=><div style={{fontSize:'0.3rem'}}>到底了</div>
 }
 const tabProps = {
   data: [
