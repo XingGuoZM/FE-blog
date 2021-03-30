@@ -34,7 +34,7 @@ function Tab(props) {
   }, []);
   const tabData = data;
   function renderPanelItem(data) {
-    const { panelItem } = tabPanel;
+    const { panelItem,endItem } = tabPanel;
     return data.map(item => panelItem(item, item.id));
   }
   function renderNavItem(data) {
@@ -45,7 +45,7 @@ function Tab(props) {
     <Nav data={tabData} navItem={renderNavItem} tabNav={tabNav} index={index} />
     <div className='tab-panel'>
       <div className='tab-panel-content'>
-        {tabData.map(item => <Panel key={item.id} data={item} panelItem={renderPanelItem} />)}
+        {tabData.map(item => <Panel key={item.id} data={item} panelItem={renderPanelItem} endItem={tabPanel.endItem}/>)}
       </div>
     </div>
   </div>
