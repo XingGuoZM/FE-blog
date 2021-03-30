@@ -9,41 +9,20 @@ async function retry(fn, delay, count) {
     }
   }
 }
-// http请求并发
-class Scheduler {
-  constructor() {
-    this.waitTasks = [];
-    this.runningTasks = [];
-    this.resolve = null;
-  }
-  add(task) {
-    return new Promise((resolve, reject) => {
-      task.resolve = resolve;
-      if (this.runningTasks.length < 2) {
-        this.run(task);
-      } else {
-        this.waitTasks.push(task);
-      }
+
+function concurrent(list, max, handle) {
+  const recursion = (arr) => {
+    return handle(arr.shift()).then(() => {
+      if (arr.length < 0) return recursion(arr);
+      return 'finish';
     });
   }
-  run(task) {
-    this.runningTasks.push(task);
-    task().then(() => {
-      task.resolve();
-      this.remove(task);
-      if (this.waitTasks.length > 0) {
-        this.run(this.waitTasks.shift());
-      }
-    })
+  const listCopy = [].concat(list);
+  let handleList = [];
+  while (max--) {
+    handleList.push(recursion(listCopy));
   }
-  remove(task) {
-    let index = this.runningTasks.indexOf(task);
-    this.runningTasks.splice(index, 1);
-  }
-  //补全代码
-}
-function concurrent(urls, max, callback) {
-
+  return Promise.all(handleList);
 }
 // http请求超时
 function timeout(fn, ms) {
@@ -53,3 +32,21 @@ function timeout(fn, ms) {
   });
   return Promise.race([mainPromise, timeoutPromise]);
 }
+
+
+// 并发测试
+const httpList = [1, 2, 3, 4];
+const httpMax = 3;
+let count = 0;
+const httpHandle = (item) => {
+  count++
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(item, '当前并发量：', count--);
+      resolve();
+    }, Math.random() * 2000);
+  }).then(res => {
+    console.log('finish', res)
+  })
+}
+concurrent(httpList, httpMax, httpHandle)
