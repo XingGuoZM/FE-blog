@@ -1,4 +1,4 @@
-// http请求重试
+// http请求重试参考代码
 async function retry(fn, delay, count) {
   try {
     await fn();
@@ -9,7 +9,7 @@ async function retry(fn, delay, count) {
     }
   }
 }
-
+// http请求并发控制参考代码
 function concurrent(list, max, handle) {
   const recursion = (arr) => {
     return handle(arr.shift()).then(() => {
@@ -24,7 +24,7 @@ function concurrent(list, max, handle) {
   }
   return Promise.all(handleList);
 }
-// http请求超时
+// http请求超时参考代码
 function timeout(fn, ms) {
   const mainPromise = fn();
   const timeoutPromise = new Promise((resolve, reject) => {
