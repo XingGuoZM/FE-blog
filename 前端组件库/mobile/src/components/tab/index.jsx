@@ -9,7 +9,6 @@ BScroll.use(Slide);
 function Tab(props) {
   const { tabNav, tabPanel, data, tabChange } = props;
   const [index, setIndex] = useState(0);
-  let bs = null;
   useEffect(() => {
     let bs = new BScroll('.tab-panel', {
       scrollX: true,
@@ -34,7 +33,7 @@ function Tab(props) {
   }, []);
   const tabData = data;
   function renderPanelItem(data) {
-    const { panelItem,endItem } = tabPanel;
+    const { panelItem, endItem } = tabPanel;
     return data.map(item => panelItem(item, item.id));
   }
   function renderNavItem(data) {
@@ -45,7 +44,7 @@ function Tab(props) {
     <Nav data={tabData} navItem={renderNavItem} tabNav={tabNav} index={index} />
     <div className='tab-panel'>
       <div className='tab-panel-content'>
-        {tabData.map(item => <Panel key={item.id} data={item} panelItem={renderPanelItem} endItem={tabPanel.endItem}/>)}
+        {tabData.map(item => <Panel key={item.id} data={item} panelItem={renderPanelItem} endItem={tabPanel.endItem} />)}
       </div>
     </div>
   </div>
