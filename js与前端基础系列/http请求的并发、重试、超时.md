@@ -1,5 +1,4 @@
-
-
+最近项目中用到了http请求的并发、重试和超时，虽然现有的很多库都可以直接拿来用，但是我们今天还是手动来实现一下，看看背后的实现逻辑。以后使用到的时候可以直接改造。http请求可以使用promise模拟，代码如下：
 
 ### 请求并发
 ```
@@ -18,8 +17,6 @@ function concurrent(list, max, handle) {
   }
   return Promise.all(handleList);
 }
-
-
 ```
 
 ### 请求重试
