@@ -20,5 +20,14 @@
  * @return {number[]}
  */
 const twoSum = function (nums, target) {
-
+  let map = new Map();
+  nums.forEach((item, i) => map.set(item, i));
+  for (let i = 0; i < nums.length; i++) {
+    if (map.get(target - nums[i]) && map.get(target - nums[i]) !== i) {
+      return [i, map.get(target - nums[i])];
+    }
+  }
+  return [];
 };
+const ans = twoSum([1, 3, 4, 2], 6)
+console.log(ans);
