@@ -40,7 +40,8 @@ node是运行在服务环境上的js
 - defer和async与DOMContentLoaded执行顺序？
 - DOMContentLoaded何时执行？
 - ui渲染与宏任务执行顺序
-
+- node事件循环和浏览器事件循环
+- node js模块和浏览器js模块（）
 
 ### 参考  
 - [关键渲染路径](https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path)

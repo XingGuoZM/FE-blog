@@ -9,10 +9,12 @@
 - flex-shrink
 
 ### 问题汇总（FAQ）
-1. 问题一： overflow:auto;失效
+- 问题一： overflow:auto;失效
   解决方案：子元素加flex-shrink:0;
 
-2. 水平垂直居中
+- 水平垂直居中
+
+
 
 
 ### 参考
