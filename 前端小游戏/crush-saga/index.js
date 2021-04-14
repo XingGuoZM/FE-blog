@@ -100,6 +100,9 @@ function eliminate() {
       }
     }
   }
+  console.log(cells);
+  refresh();
+  console.log(cells);
   // drawFruits();
 }
 // 点击选中
@@ -140,12 +143,15 @@ function getTarget(x, y) {
 function gameLoop() {
 
 }
-function enSmall(x,y,ms){
+function enDown(){
+
+}
+function enSmall(x,y){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawCheckerboard();
 
-  for(let i=0;i<10;i++){
-    for(let j=0;j<10;j++){
+  for(let i=0;i<cells.length;i++){
+    for(let j=0;j<cells.length;j++){
       if(i===x && j===y){
         ctx.font = "0px serif";
         ctx.fillText(cells[j][i], 12 + 50 * i, 40 + 50 * j);
@@ -166,6 +172,18 @@ function switchCell(){
   curr.x=-1;
   curr.y=-1;
   eliminate();
+}
+function refresh(){
+  for(let i=0;i<cells.length;i++){
+    for(let j=cells[0].length;j>=0;j--){
+      if(cells[i][j]===1 || cells[i][j]===2 || cells[i][j]==-1){
+        for(let k=i-1;k>=0;k--){
+          cells[k+1][j]=cells[k][j];
+          cells[k][j]=-1
+        }
+      }
+    }
+  }
 }
 init();
 eliminate();
