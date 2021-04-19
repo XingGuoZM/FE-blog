@@ -37,6 +37,7 @@ function drawFruits() {
   }
 }
 
+
 function randomFruit(i) {
   return FRUITS[Math.floor(Math.random(i) * 10)]
 }
