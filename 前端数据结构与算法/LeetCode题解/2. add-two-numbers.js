@@ -18,5 +18,54 @@
 示例 3：
 输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 输出：[8,9,9,9,0,0,0,1]
-
 */
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+function ListNode(val, next) {
+  this.val = (val === undefined ? 0 : val)
+  this.next = (next === undefined ? null : next)
+}
+const addTwoNumbers = function (l1, l2) {
+  const n1 = traverseList(l1);
+  const n2 = traverseList(l2);
+  return Number(n1) + Number(n2);
+};
+
+const buildList = function (num) {
+  let str = String(num);
+  let head = new ListNode();
+  for (let i = 0; i < str.length; i++) {
+    let curr = new ListNode(str[i]);
+    // curr.next = head;
+    head.next = curr;
+  }
+  // const l2 = new ListNode(3);
+  console.log(curr);
+}
+
+const traverseList = function (list) {
+  let num = ''
+  while (list) {
+    num = list.val + num;
+    list = list.next;
+  }
+  return num;
+}
+
+
+
+const l2 = new ListNode(3);
+const l1 = new ListNode(4, l2);
+const l = new ListNode(2, l1);
+traverseList(l)
