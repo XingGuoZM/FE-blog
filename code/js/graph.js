@@ -60,7 +60,6 @@ graph.addEdge('E', 'I');
  * 图的遍历
  *
  */
-
 function BFS(graph, startV, cb) {
   let vertexList = graph.getVertexList();
   let edgeList = graph.getEdgeList();
@@ -82,5 +81,13 @@ function BFS(graph, startV, cb) {
     if (cb) cb(u);
   }
 }
+function DFS(graph, startV, cb) {
 
-BFS(graph, 'A', value => console.log(`visited vertex: ${value}`));
+}
+BFS(graph, 'D', value => console.log(`visited vertex: ${value}`));
+
+/**
+ *
+ * 最短路径
+ */
+
