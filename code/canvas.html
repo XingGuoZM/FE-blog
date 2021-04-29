@@ -36,6 +36,20 @@
       ctx.lineTo(100, 100);
       ctx.stroke();
     }
+    // 图片url转base64
+    function imageUrl2Base64(url) {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = url;
+      return new Promise((resolve) => {
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          resolve(canvas.toDataURL("image/png"));
+        }
+      });
+    }
     try {
       drawBar();
     } catch (e) {
