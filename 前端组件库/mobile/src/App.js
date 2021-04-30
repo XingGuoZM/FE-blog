@@ -2,7 +2,7 @@ import './App.css';
 import { viewport } from './util';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
-import { Tab, ScrollList, DragDemo } from './components';
+import {Modal, Tab, ScrollList, DragDemo } from './components';
 import { tabProps } from './config';
 function App() {
   viewport();
@@ -10,7 +10,8 @@ function App() {
     <div className="App">
       {/* <ScrollList /> */}
       {/* <DragDemo/> */}
-      <Tab {...tabProps} />
+      {/* <Tab {...tabProps} /> */}
+      <Modal/>
     </div>
   );
 }
