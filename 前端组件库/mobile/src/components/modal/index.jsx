@@ -3,8 +3,9 @@ import './index.css';
 
 class Modal extends Component{
   render(){
+    console.log(this.props)
     return <div className="modal-wrap">
-      <div className="modal-content"></div>
+      <div className="modal-content">{this.props.children}</div>
     </div>
   }
 }

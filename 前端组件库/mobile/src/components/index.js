@@ -1,10 +1,11 @@
+
 import Tab from './tab';
-import Modal from './modal';
+import ModalManager from './modal/modalManager';
 import ScrollList from './scroll';
 import DragDemo from './drag';
 
 export {
-  Modal,
+  ModalManager,
   Tab,
   ScrollList,
   DragDemo
