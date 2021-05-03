@@ -2,14 +2,21 @@ import React,{Component}from 'react';
 import ReactDOM from 'react-dom';
 import Modal from './index';
 
-export default (props)=> {
-
-  if(!document.querySelector('#modalBox')){
-    const dom =document.createElement('div');
-    dom.id='modalBox';
-    ReactDOM.render(
-      <Modal children={props} />,
-      document.body.appendChild(dom)
-    );
+export default class modalManager { 
+  node=document.body;
+  compMap=new Map();
+  stack=[];
+  regist(props){
+    this.compMap.set()
+    if(props.dom) this.node=props.dom;
+      ReactDOM.render(
+        <Modal children={props} />,
+        this.node
+      );
   }
+
+  showModal(){
+
+  }
+
 }
