@@ -3,7 +3,8 @@ import React,{useState,useEffect} from 'react';
 export default (props)=>{
   const {showModal,closeModal}=props;
   useEffect(()=>{
-    showModal();
+    console.log(props)
+    // showModal();
   },[])
-  return <div>hello</div>
+  return <div>Modal1</div>
 }

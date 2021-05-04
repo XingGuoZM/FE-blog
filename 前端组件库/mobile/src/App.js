@@ -7,17 +7,19 @@ import Modal1 from './pages/modal1';
 import { tabProps } from './config';
 function App() {
   viewport();
-  const dom = <div style={{backgroundColor:'#fff'}}>hello</div>
-  const mm = new ModalManager(dom);
+  const mm = new ModalManager();
   mm.regist({modal1:Modal1})
   // Modal.regist({key:'modal1'})
+  function openModal(){
+    mm.showModal();
+  }
   return (
     <div className="App">
       {/* <ScrollList /> */}
       {/* <DragDemo/> */}
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
-      <button>open</button>
+      <button onClick={()=>openModal()}>open</button>
     </div>
   );
 }
