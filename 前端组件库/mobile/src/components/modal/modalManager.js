@@ -8,9 +8,9 @@ export default class modalManager {
   visible=false;
   stack=[];
   regist(props){
-    // if(document.querySelector('#modal-box')){
-    //   return 
-    // }
+    if(document.querySelector('#modal-box')){
+      return 
+    }
     const div= document.createElement('div');
     div.id='modal-box';
     document.body.appendChild(div);
@@ -31,13 +31,16 @@ export default class modalManager {
   }
 
   showModal(){
+    const Modal1 = this.compMap.get('modal1');
      ReactDOM.render(
-      <Modal Children={this.compMap.get('modal1')} />,
+      <Modal children={<div>Hello</div>} />,
       document.querySelector('#modal-box')
     );
   }
   closeModal(){
-    this.visible=false;
+    // this.visible=false;
+    const modalBox=document.body.querySelector('#modal-box');
+    document.removeChild(modalBox);
   }
   closeAll(){
 

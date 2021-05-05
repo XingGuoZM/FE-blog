@@ -3,18 +3,18 @@ import './index.css';
 
 class Modal extends Component{
   constructor(){
-
+    super();
   }
   init(){
     
   }
   render(){
-    const {Children} = this.props;
+    const {children} = this.props;
     
     // const {visible}=this.state;
     return <div className="modal-wrap" >
       <div className="modal-content">
-        <Children/>
+      {children}
       </div>
     </div>
   }
