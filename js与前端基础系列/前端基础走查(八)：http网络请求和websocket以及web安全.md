@@ -2,8 +2,12 @@
 
 
 ### HTTP缓存
+强缓存
 - Cache-control
 - Expired
+协商缓存
+e-tag
+304
 
 ### 浏览器跨域问题及解决方案
 - jsonp: script标签src属性发送get请求，在url里加入一个回调函数当作参数来获取服务端返回的数据。
