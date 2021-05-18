@@ -10,6 +10,7 @@ Expires是过期的时间点，Cashe-Control是过期时长。
 协商缓存
 Last-Modify/If-Modify-Since
 ETag/If-None-Match
+304
 
 ### 参考
 - [HTTP缓存机制](https://www.cnblogs.com/ranyonsue/p/8918908.html)
