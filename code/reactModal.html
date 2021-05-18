@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>React Modal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mask {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      width: 50vw;
+      height: 25vh;
+      background-color: #fff;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='root'></div>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function Modal(props) {
+      if (props.visible) {
+        return <div className='wrap'>
+          <div className='mask' onClick={props.close}></div>
+          <div className='content'>Content</div>
+        </div>
+      }
+      return null;
+    }
+    function Button(props) {
+      return <button onClick={props.open}>打开弹层</button>
+    }
+
+    function App() {
+      const [visible, setVisible] = useState(false);
+
+      return <div>
+        <Button open={() => setVisible(true)} />
+        <Modal visible={visible} close={() => setVisible(false)} />
+      </div>
+    }
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>
