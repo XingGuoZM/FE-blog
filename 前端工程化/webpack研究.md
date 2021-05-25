@@ -37,6 +37,7 @@ plugins配置
 5. 约束hash
 
 ### 打包优化
+tree-shaking消除无用代码
 
 ### 问题汇总(FAQ)
 - loader和plugin有什么不同?
@@ -46,6 +47,7 @@ plugin是一个扩展器，它丰富了 webpack 本身，为其进行了一些�
 ```
 - webpack能做哪些优化？
 
+
 ## 参考
 - [webpack中文网](https://www.webpackjs.com/)
 - [脑阔疼的webpack按需加载](https://juejin.cn/post/6844903718387875847)
@@ -53,3 +55,4 @@ plugin是一个扩展器，它丰富了 webpack 本身，为其进行了一些�
 - [import绝对路径及webpack中配置](https://www.geekjc.com/post/5b6a767ab840f24124d6ffc7)
 - [Webpack打包流程构建原理](https://github.com/impeiran/Blog/issues/6)
 - [AST抽象语法树——最基础的javascript重点知识，99%的人根本不了解](https://segmentfault.com/a/1190000016231512)
+- [Tree-Shaking性能优化实践 - 原理篇](https://juejin.cn/post/6844903544756109319)
