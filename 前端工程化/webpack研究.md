@@ -34,10 +34,11 @@ plugins配置
 2. uglifyjs-webpack-plugin开启多线程打包
 3. happypack加速多线程loader
 4. 使用dll拆分代码
-5. 约束hash
+5. 约束hash   
 
 ### 打包优化
 tree-shaking消除无用代码
+webpack tree-shaking与rollup tree-shaking对比
 
 ### 问题汇总(FAQ)
 - loader和plugin有什么不同?
