@@ -8,6 +8,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 8000
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
