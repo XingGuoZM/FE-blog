@@ -40,6 +40,9 @@ plugins配置
 tree-shaking消除无用代码
 webpack tree-shaking与rollup tree-shaking对比
 
+### 扩展
+如何基于webpack做实时编译、动态编译
+
 ### 问题汇总(FAQ)
 - loader和plugin有什么不同?
 ```

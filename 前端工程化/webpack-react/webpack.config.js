@@ -1,5 +1,5 @@
 const path = require('path');
-
+const consoleLogBuild = require('./plugins/test');
 module.exports = {
   entry: './src/index.js',
   devServer: {
@@ -9,7 +9,7 @@ module.exports = {
     port: 8000
   },
   devtool: 'source-map',
-  mode:'development',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -28,7 +28,7 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   plugins: [
-
+    new consoleLogBuild()
   ],
   output: {
     filename: '[name].bundle.js',
