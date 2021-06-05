@@ -1,8 +1,26 @@
 ### webpack是什么？
 webpack是应用程序构建器,将我们的项目中的模块合成一个js文件，供页面调用。模块打包器，在webpack的世界里，万物皆模块。
 
-### AST（抽象语法树）
+### commonjs模块和es6模块
+- commonjs模块：
+1. 模块依赖关系的建立发生在代码运行阶段
+2. 模块导入（require函数，可以动态指定路径）导出（module.exports）
+3. 值拷贝，对于commonjs来说获取的是一份导出值的拷贝
+4. 循环依赖问题，模块第二次引用时不会再次加载，所以出现循环依赖的时候只执行已经输出的部分。
 
+- es6模块
+1. 模块依赖关系的建立发生在代码编译阶段
+2. 模块导入（import...from...）导出（export、export default），不支持动态导入路径，必须位于模块的顶层作用域
+3. 动态映射，es6模块获取的是导出值的动态映射，并且这个映射是只读的。
+4. 利用动态映射，可以解决循环依赖问题
+
+es6模块的优势
+1. 死代码检测和排除
+2. 模块变量类型检查
+3. 编译器优化
+
+### AST（抽象语法树）
+源代码编译过程
 
 ### 工作原理与构建流程
 webpack打包过程大致分为三个阶段
@@ -62,3 +80,4 @@ plugin是一个扩展器，它丰富了 webpack 本身，为其进行了一些�
 - [Webpack打包流程构建原理](https://github.com/impeiran/Blog/issues/6)
 - [AST抽象语法树——最基础的javascript重点知识，99%的人根本不了解](https://segmentfault.com/a/1190000016231512)
 - [Tree-Shaking性能优化实践 - 原理篇](https://juejin.cn/post/6844903544756109319)
+- [Commonjs、esm、Amd 和 Cmd 的循环依赖表现和原理](https://www.jianshu.com/p/ba0faf79c167)
