@@ -1,7 +1,10 @@
 const path = require('path');
-const consoleLogBuild = require('./plugins/test');
+// const consoleLogBuild = require('./plugins/test');
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+    vendor: ['react', 'react-dom']
+  },
   devServer: {
     contentBase: path.join(__dirname, '/public'),
     compress: true,
@@ -27,9 +30,9 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  plugins: [
-    new consoleLogBuild()
-  ],
+  // plugins: [
+  //   new consoleLogBuild()
+  // ],
   output: {
     filename: '[name].bundle.js',
     path: __dirname + '/public'
