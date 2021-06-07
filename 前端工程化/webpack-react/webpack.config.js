@@ -1,9 +1,10 @@
 const path = require('path');
-// const consoleLogBuild = require('./plugins/test');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
   entry: {
-    app: './src/index.js',
-    vendor: ['react', 'react-dom']
+    app: './src/index.js'
   },
   devServer: {
     contentBase: path.join(__dirname, '/public'),
@@ -27,12 +28,24 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      title: 'webpack-react',
+      templateContent:
+        `
+        <html>
+          <body>
+            <div id='root'></div>
+            <script src='./app.bundle.js'></script>
+          </body>
+        </html>
+      `
+    })
+  ],
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  // plugins: [
-  //   new consoleLogBuild()
-  // ],
   output: {
     filename: '[name].bundle.js',
     path: __dirname + '/public'
