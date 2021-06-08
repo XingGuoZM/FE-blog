@@ -42,7 +42,7 @@ plugins配置
 ### webpack作用
 1. 按需加载（懒加载）
 2. 热替换（热加载）
-3. 代码分离（公共依赖包提取）
+3. 代码分离（公共依赖包提取,vendor、optimization.splitChunks）
 4. tree shaking（未引用代码移除）
 5. loader（文件转换）和plugin（打包插件）
 loader 转译源代码的转换规则
