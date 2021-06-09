@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
+    vendor: ['react', 'react-dom']
   },
   devServer: {
     contentBase: path.join(__dirname, '/public'),
@@ -32,19 +33,16 @@ module.exports = {
     // new CleanWebpackPlugin(),
     new htmlWebpackPlugin({
       title: 'webpack-react',
-      templateContent:
-        `
-        <html>
-          <body>
-            <div id='root'></div>
-            <script src='./app.bundle.js'></script>
-          </body>
-        </html>
-      `
+      templateContent: `<html><body><div id='root'></div></body></html>`
     })
   ],
   resolve: {
     extensions: [".js", ".jsx"]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   output: {
     filename: '[name].bundle.js',
