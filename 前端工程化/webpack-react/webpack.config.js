@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const test = require('./plugins/test');
 
 module.exports = {
   entry: {
@@ -31,6 +32,7 @@ module.exports = {
   },
   plugins: [
     // new CleanWebpackPlugin(),
+    new test(),
     new htmlWebpackPlugin({
       title: 'webpack-react',
       templateContent: `<html><body><div id='root'></div></body></html>`

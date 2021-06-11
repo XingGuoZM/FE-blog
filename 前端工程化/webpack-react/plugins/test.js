@@ -9,7 +9,7 @@ class MyPlugin {
     compiler.hooks.compile.tap(pluginName, params => {
       console.log('webpack 构建过程开始');
     });
-    let modules = [];
+    // let modules = [];
     compiler.hooks.emit.tapAsync(pluginName, (compilation, cb) => {
       compilation.chunks.forEach(chunk => {
         // chunk包含多个模块，通过chunk.modulesIterable可以遍历模块列表      
@@ -18,11 +18,11 @@ class MyPlugin {
 
           module.dependencies.forEach(dependency => {
             // console.log(dependency);
-            modules.push(dependency);
+            // modules.push(dependency);
           });
           // 
         }
-        fs.writeFileSync('./plugins/dependency.json', JSON.stringify(modules));
+        // fs.writeFileSync('./plugins/dependency.json', JSON.stringify(modules));
         cb();
       });
     })
