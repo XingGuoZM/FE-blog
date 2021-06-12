@@ -20,7 +20,8 @@ es6模块的优势
 3. 编译器优化
 
 ### AST（抽象语法树）
-源代码编译过程
+它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构.
+源代码编译之后的形态
 
 ### 工作原理与构建流程
 webpack打包过程大致分为三个阶段
@@ -81,3 +82,4 @@ plugin是一个扩展器，它丰富了 webpack 本身，为其进行了一些�
 - [AST抽象语法树——最基础的javascript重点知识，99%的人根本不了解](https://segmentfault.com/a/1190000016231512)
 - [Tree-Shaking性能优化实践 - 原理篇](https://juejin.cn/post/6844903544756109319)
 - [Commonjs、esm、Amd 和 Cmd 的循环依赖表现和原理](https://www.jianshu.com/p/ba0faf79c167)
+- [学习抽象语法树 AST](https://zhuanlan.zhihu.com/p/367990285)
