@@ -2,6 +2,8 @@
 webpack是应用程序构建器,将我们的项目中的模块合成一个js文件，供页面调用。模块打包器，在webpack的世界里，万物皆模块。
 
 ### commonjs模块和es6模块
+模块是webpack打包的基础。
+
 - commonjs模块：
 1. 模块依赖关系的建立发生在代码运行阶段
 2. 模块导入（require函数，可以动态指定路径）导出（module.exports）
