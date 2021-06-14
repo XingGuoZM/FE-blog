@@ -43,14 +43,12 @@ plugins配置
 2. clean-webpack-plugin
 
 ### webpack作用
-1. 按需加载（懒加载）
-2. 热替换（热加载）
-3. 代码分离（公共依赖包提取,vendor、optimization.splitChunks）
-4. tree shaking（未引用代码移除）
-5. loader（文件转换）和plugin（打包插件）
+1. 热替换（热加载）
+2. 代码分离（公共依赖包提取,vendor、optimization.splitChunks）+按需加载或延迟加载（import函数）
+3. tree shaking（未引用代码移除）
+4. loader（文件转换）和plugin（打包插件）
 loader 转译源代码的转换规则
 plugin 可以帮助用户直接触及到编译过程，plugin可以将处理函数注册到编译过程中的不同事件点上运行的生命周期钩子函数上。
-6. import中绝对路径及webpack配置
 
 ### 打包提速
 1. 约束入口
