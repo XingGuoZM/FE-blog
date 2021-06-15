@@ -1,5 +1,5 @@
 {
-  "name": "webpack-node",
+  "name": "webpack-demo-plugin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2"
-  }
+  "license": "ISC"
 }
