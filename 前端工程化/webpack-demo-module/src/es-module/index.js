@@ -1,5 +1,5 @@
+import { log } from './log';
+// import log from './log';
 
-function sum(a, b) {
-  return a + b;
-}
-export default sum;
+log('hello world')
+

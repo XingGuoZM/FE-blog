@@ -1,4 +1,3 @@
-function sum(a, b) {
-  return a + b;
-}
-module.exports = { sum }
+const log = require('./log');
+
+log('hello world');
