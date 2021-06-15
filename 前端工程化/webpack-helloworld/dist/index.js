@@ -1,1 +1,4 @@
-document.body.appendChild(function(){const e=document.createElement("div");return e.innerHTML="Hello Webpack",e}());
+document.body.appendChild(function () {
+  const e = document.createElement("div");
+  return e.innerHTML = "Hello Webpack", e
+}());

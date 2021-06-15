@@ -1,3 +1,4 @@
-const log = require('./log');
 
-log('hello world');
+const { multi } = require('./multi');
+
+multi(1, 2);

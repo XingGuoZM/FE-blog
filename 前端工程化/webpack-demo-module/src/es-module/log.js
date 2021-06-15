@@ -1,11 +1,10 @@
-function log(msg) {
-  console.log(msg);
+function log() {
+  console.log(...arguments);
 };
 
 function other() {
   console.log('other log');
 }
-
 
 export {
   log,

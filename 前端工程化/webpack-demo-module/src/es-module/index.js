@@ -1,5 +1,4 @@
-import { log } from './log';
-// import log from './log';
 
-log('hello world')
+import { sum } from './sum';
+sum(1, 2);
 
