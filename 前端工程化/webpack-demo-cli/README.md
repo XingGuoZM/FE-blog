@@ -1,4 +1,4 @@
 ### 测试
 ```
-webpack ./src/index.js
+webpack ./src/index.js --mode=development
 ```

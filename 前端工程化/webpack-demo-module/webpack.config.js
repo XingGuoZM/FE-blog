@@ -1,8 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/es-module/index.js',
-  mode: 'production',
+  entry: './src/cjs-module/index.js',
+  mode: 'development',
+  devtool: '',
   output: {
     path: path.join(__dirname, '/public'),
   }
