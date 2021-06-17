@@ -1,4 +1,4 @@
-const { log } = require('./log');
+// const { log } = require('./log');
 function sum(a, b) {
   return a + b;
 }
