@@ -7,6 +7,7 @@
 // log('hello')
 // console.log(log)
 
-require('./sum');
-require('./sum').msg = '123';
-console.log(require('./sum'));
+const { sum } = require('./sum');
+
+const res = sum(1, 2);
+console.log(res);
