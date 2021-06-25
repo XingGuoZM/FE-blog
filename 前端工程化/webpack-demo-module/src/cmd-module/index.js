@@ -3,6 +3,5 @@ seajs.config({
 });
 
 seajs.use(['add'], function ({ add }) {
-
-  add(1, 2);
+  add(1, 2)
 })

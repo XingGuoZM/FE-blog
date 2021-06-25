@@ -1,5 +1,5 @@
-define(function (require, exports, module) {
-
+define(['hello'], function (require, exports, module) {
+  require('hello')
   function log() {
     console.log(...arguments);
   }
