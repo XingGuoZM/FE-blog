@@ -1,7 +1,7 @@
 继续研究前端工程化，前面了解了js的模块。今天来研究下webpack这个打包工具，
 
 ## webpack
-webpack是一个基于node环境的js模块打包工具，两个必不可少的条件，一是node环境，二是只会消费js模块。webpack支持主流的js模块打包。包括commonjs module和es module.
+webpack是一个基于node环境的js模块打包工具，两个必不可少的条件，一是node环境，二是只会消费js模块,也就是说webpack是打包不了除js以外的文件的，例如css、html等等。webpack支持主流的js模块打包。包括commonjs module和es module.
 
 先来看一个最简单的webpack打包的例子，[源码地址](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-cli)
 
