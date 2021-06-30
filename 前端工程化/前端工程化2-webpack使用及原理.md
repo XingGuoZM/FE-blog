@@ -167,6 +167,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   __webpack_require__("./src/index.js");
 })();
 ```
+下面来解释一下这几行代码的含义，所有的代码都被一个立即执行函数包裹，先定义了一个名称为__webpack_modules__的对象，每一个key都是模块对应的相对路径，value是一个箭头函数，模块里的所有代码都被一个eval包围。然后下面定义了一个名为__webpack_module_cache__的缓存对象，再下面是一个名为__webpack_require__的函数，每次执行这个函数时都会检查一下__webpack_module_cache__是否存在moduleId的key,存在的话直接返回结果，如果不存在则在__webpack_modules__对象中找到对应的模块返回。再下面又是三个立即执行函数
 
 如果我们执行
 ```js
