@@ -1,0 +1,638 @@
+{
+  "hash": "9f77e44e0643ea7af34f",
+  "version": "5.10.0",
+  "time": 224,
+  "builtAt": 1625124936901,
+  "publicPath": "auto",
+  "outputPath": "/Users/lzm/blog/前端工程化/webpack-demo-cli/dist",
+  "assetsByChunkName": {
+    "main": [
+      "main.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "main.js",
+      "size": 52,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 52
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [
+        179
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 108,
+      "sizes": {
+        "javascript": 108
+      },
+      "names": [
+        "main"
+      ],
+      "idHints": [],
+      "runtime": [
+        "main"
+      ],
+      "files": [
+        "main.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "fafdbf6a436c9d5729f7",
+      "childrenByOrder": {},
+      "id": 179,
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "size": 108,
+          "sizes": {
+            "javascript": 108
+          },
+          "built": true,
+          "codeGenerated": true,
+          "cached": false,
+          "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js|4998c67f8d35ea086e2a30fef5d475b4",
+          "name": "./src/index.js + 1 modules",
+          "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": 796,
+          "chunks": [
+            179
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./src",
+              "loc": "main",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "modules": [
+            {
+              "type": "module",
+              "moduleType": "javascript/auto",
+              "size": 47,
+              "sizes": {
+                "javascript": 47
+              },
+              "built": true,
+              "codeGenerated": false,
+              "cached": false,
+              "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "name": "./src/index.js",
+              "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "index": 0,
+              "preOrderIndex": 0,
+              "index2": 1,
+              "postOrderIndex": 1,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "profile": {
+                "total": 35,
+                "resolving": 22,
+                "restoring": 0,
+                "building": 12,
+                "integration": 0,
+                "storing": 1,
+                "additionalResolving": 0,
+                "additionalIntegration": 0,
+                "factory": 22,
+                "dependencies": 0
+              },
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ExpressionStatement) with side effects in source code at 3:0-21"
+              ],
+              "depth": 0
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/auto",
+              "size": 61,
+              "sizes": {
+                "javascript": 61
+              },
+              "built": true,
+              "codeGenerated": false,
+              "cached": false,
+              "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+              "name": "./src/log.js",
+              "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+              "index": 1,
+              "preOrderIndex": 1,
+              "index2": 0,
+              "postOrderIndex": 0,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+                  "name": "./src/index.js",
+                  "profile": {
+                    "total": 35,
+                    "resolving": 22,
+                    "restoring": 0,
+                    "building": 12,
+                    "integration": 0,
+                    "storing": 1,
+                    "additionalResolving": 0,
+                    "additionalIntegration": 0,
+                    "factory": 22,
+                    "dependencies": 0
+                  },
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "profile": {
+                "total": 6,
+                "resolving": 1,
+                "restoring": 0,
+                "building": 5,
+                "integration": 0,
+                "storing": 0,
+                "additionalResolving": 0,
+                "additionalIntegration": 0,
+                "factory": 1,
+                "dependencies": 0
+              },
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": false,
+                  "explanation": "",
+                  "userRequest": "./log",
+                  "loc": "1:0-24",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                },
+                {
+                  "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony import specifier",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./log",
+                  "loc": "3:0-3",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1
+            }
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./src"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "size": 108,
+      "sizes": {
+        "javascript": 108
+      },
+      "built": true,
+      "codeGenerated": true,
+      "cached": false,
+      "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js|4998c67f8d35ea086e2a30fef5d475b4",
+      "name": "./src/index.js + 1 modules",
+      "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+      "index": 0,
+      "preOrderIndex": 0,
+      "index2": 1,
+      "postOrderIndex": 1,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": 796,
+      "chunks": [
+        179
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./src",
+          "loc": "main",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "size": 47,
+          "sizes": {
+            "javascript": 47
+          },
+          "built": true,
+          "codeGenerated": false,
+          "cached": false,
+          "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "name": "./src/index.js",
+          "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "profile": {
+            "total": 35,
+            "resolving": 22,
+            "restoring": 0,
+            "building": 12,
+            "integration": 0,
+            "storing": 1,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 22,
+            "dependencies": 0
+          },
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ExpressionStatement) with side effects in source code at 3:0-21"
+          ],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "size": 61,
+          "sizes": {
+            "javascript": 61
+          },
+          "built": true,
+          "codeGenerated": false,
+          "cached": false,
+          "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+          "name": "./src/log.js",
+          "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+          "index": 1,
+          "preOrderIndex": 1,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "name": "./src/index.js",
+              "profile": {
+                "total": 35,
+                "resolving": 22,
+                "restoring": 0,
+                "building": 12,
+                "integration": 0,
+                "storing": 1,
+                "additionalResolving": 0,
+                "additionalIntegration": 0,
+                "factory": 22,
+                "dependencies": 0
+              },
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "profile": {
+            "total": 6,
+            "resolving": 1,
+            "restoring": 0,
+            "building": 5,
+            "integration": 0,
+            "storing": 0,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 1,
+            "dependencies": 0
+          },
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": false,
+              "explanation": "",
+              "userRequest": "./log",
+              "loc": "1:0-24",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony import specifier",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./log",
+              "loc": "3:0-3",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "size": 61,
+      "sizes": {
+        "javascript": 61
+      },
+      "built": true,
+      "codeGenerated": false,
+      "cached": false,
+      "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+      "name": "./src/log.js",
+      "nameForCondition": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/log.js",
+      "index": 1,
+      "preOrderIndex": 1,
+      "index2": 0,
+      "postOrderIndex": 0,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "total": 35,
+            "resolving": 22,
+            "restoring": 0,
+            "building": 12,
+            "integration": 0,
+            "storing": 1,
+            "additionalResolving": 0,
+            "additionalIntegration": 0,
+            "factory": 22,
+            "dependencies": 0
+          },
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "profile": {
+        "total": 6,
+        "resolving": 1,
+        "restoring": 0,
+        "building": 5,
+        "integration": 0,
+        "storing": 0,
+        "additionalResolving": 0,
+        "additionalIntegration": 0,
+        "factory": 1,
+        "dependencies": 0
+      },
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": false,
+          "explanation": "",
+          "userRequest": "./log",
+          "loc": "1:0-24",
+          "moduleId": null,
+          "resolvedModuleId": null
+        },
+        {
+          "moduleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "/Users/lzm/blog/前端工程化/webpack-demo-cli/src/index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony import specifier",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./log",
+          "loc": "3:0-3",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "optimizationBailout": [],
+      "depth": 1
+    }
+  ],
+  "entrypoints": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        179
+      ],
+      "assets": [
+        {
+          "name": "main.js",
+          "size": 52
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 52,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        179
+      ],
+      "assets": [
+        {
+          "name": "main.js",
+          "size": 52
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 52,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "warnings": [
+    {
+      "message": "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/",
+      "stack": "NoModeWarning: configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/\n    at /usr/local/lib/node_modules/webpack/lib/WarnNoModeSetPlugin.js:20:30\n    at Hook.eval [as call] (eval at create (/usr/local/lib/node_modules/webpack/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:21:1)\n    at Hook.CALL_DELEGATE [as _call] (/usr/local/lib/node_modules/webpack/node_modules/tapable/lib/Hook.js:14:14)\n    at Compiler.newCompilation (/usr/local/lib/node_modules/webpack/lib/Compiler.js:942:30)\n    at /usr/local/lib/node_modules/webpack/lib/Compiler.js:984:29\n    at Hook.eval [as callAsync] (eval at create (/usr/local/lib/node_modules/webpack/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/usr/local/lib/node_modules/webpack/node_modules/tapable/lib/Hook.js:18:14)\n    at Compiler.compile (/usr/local/lib/node_modules/webpack/lib/Compiler.js:979:28)\n    at /usr/local/lib/node_modules/webpack/lib/Compiler.js:470:12\n    at Compiler.readRecords (/usr/local/lib/node_modules/webpack/lib/Compiler.js:821:11)"
+    }
+  ],
+  "warningsCount": 1,
+  "children": []
+}

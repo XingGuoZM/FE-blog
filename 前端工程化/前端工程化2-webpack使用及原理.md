@@ -119,7 +119,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ })()
 ;
 ```
-我们把注释清一下，
+注释可以帮助我们更好的读懂代码，现在我们希望把结构理清楚，所以先把注释清一下，得到如下的代码。
 
 ```js
 (() => {
@@ -167,7 +167,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   __webpack_require__("./src/index.js");
 })();
 ```
-下面来解释一下这几行代码的含义，所有的代码都被一个立即执行函数包裹，先定义了一个名称为__webpack_modules__的对象，每一个key都是模块对应的相对路径，value是一个箭头函数，模块里的所有代码都被一个eval包围。然后下面定义了一个名为__webpack_module_cache__的缓存对象，再下面是一个名为__webpack_require__的函数，每次执行这个函数时都会检查一下__webpack_module_cache__是否存在moduleId的key,存在的话直接返回结果，如果不存在则在__webpack_modules__对象中找到对应的模块返回。再下面又是三个立即执行函数
+下面来解释一下这几行代码的含义，所有的代码都被一个立即执行函数包裹，先定义了一个名称为__webpack_modules__的对象，每一个key都是模块对应的相对路径，value是一个箭头函数，模块里的所有代码都被一个eval包围。然后下面定义了一个名为__webpack_module_cache__的缓存对象，再下面是一个名为__webpack_require__的函数，每次执行这个函数时都会检查一下__webpack_module_cache__是否存在moduleId的key,存在的话直接返回结果，如果不存在则在__webpack_modules__对象中找到对应的模块返回。再下面又是三个立即执行函数，立即执行函数里面给__webpack_require__加上d、o、r方法，o方法是obj环境下执行prop方法，这么写的好处是，确定prop不是obj原型链上的方法，第二个就是确保this永远指向obj。r方法是在exports对象上定义一个新的属性，[Object.defineProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象，[Symbol.toStringTag](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag)用来表示该对象的自定义类型标签，由此可以看出r方法是在exports对象上添加一个属性为Symbol.toStringTag，值为Module（如果支持symbol的情况下）和属性为__esModule，值为true。d方法是获取defination里所有方法并且执行，而且在exports添加key。最后执行__webpack_require__的入口模块。
 
 如果我们执行
 ```js
