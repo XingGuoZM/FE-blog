@@ -187,7 +187,7 @@ webpack ./src/index.js --mode=production
 ## webpack具体的打包过程
 从入口模块开始查找，找到相关依赖将其转化成一个或者多个chunk,构建成chunk图。
 
-**webpack loader**
-webpack只能打包js模块，现在我们看到能够打包jsx、vue、css等文件是通过webpack loader进行转化成js模块的形式进行打包的。
-
-**webpack plugin**
+初始化阶段
+编译阶段
+构建阶段
+输出阶段

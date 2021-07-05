@@ -3,3 +3,9 @@
 
 ## tapable
 
+
+
+## 参考
+- [https://github.com/webpack/tapable](https://github.com/webpack/tapable)
+- [干货！撸一个webpack插件(内含tapable详解+webpack流程)](https://juejin.cn/post/6844903713312604173)
+- [Webpack tapable 使用研究](https://juejin.cn/post/6844903895584473096)
