@@ -191,3 +191,7 @@ webpack ./src/index.js --mode=production
 编译阶段
 构建阶段
 输出阶段
+
+
+## 参考
+- [Webpack 源码研究](https://juejin.cn/post/6844903903675285511)

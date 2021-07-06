@@ -118,3 +118,135 @@
 //   console.log('calculate promise end')
 // })
 
+/**
+ *  AsyncParallelBailHook Test
+ */
+// import Car from './AsyncParallelBailHook/Car';
+
+// const car = new Car();
+// //插件注册的钩子执行结束后，会进行bail(熔断), 然后会调用最终的回调，无论其他插件是否执行完。
+// car.hooks.drift.tapAsync('driftPlugin1', (cb) => {
+//   setTimeout(() => {
+//     console.log('drift 1');
+//     // cb传入的参数在调用的时候能拿到，有参数说明进行了熔断（bail）
+//     cb(1);
+//   }, 1000)
+// });
+
+// car.hooks.drift.tapAsync('driftPlugin2', (cb) => {
+//   setTimeout(() => {
+//     console.log('drift 2');
+//     cb();
+//   }, 2000)
+// });
+
+// car.drift((result) => {
+//   console.log(`ends: ${result}`);
+// });
+
+/**
+ *   AsyncSeriesHook
+ * 串行执行
+ */
+// import Car from './AsyncSeriesHook/Car';
+// const car = new Car();
+
+// // 1s后 打印‘calculate routes 1’
+// // 在上面的基础上再过2s后，打印‘calculate routes 2’
+// // 最后打印'ends...'
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin1', () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 1');
+//       resolve();
+//     }, 1000)
+//   })
+// });
+
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin2', () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 2');
+//       resolve();
+//     }, 2000);
+//   })
+// });
+// car.calculateRoutes().then(() => {
+//   console.log('ends...');
+// });
+
+/**
+ * AsyncSeriesBailHook Test
+ */
+// import Car from './AsyncSeriesBailHook/Car';
+// const car = new Car();
+// // 1s之后打印'calculate routes 1'
+// // 然后打印 'ends'
+// // 不会再执行calculateRoutesPlugin2
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin1', () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 1')
+//       resolve(1);
+//     }, 1000);
+//   })
+// });
+
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin2', () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 2');
+//       resolve(2);
+//     }, 2000)
+//   })
+// });
+
+// car.calculateRoutes().then(() => {
+//   console.log('ends...')
+// });
+
+/**
+ * AsyncSeriesWaterfallHook Test
+ */
+// import Car from './AsyncSeriesWaterfallHook/Car';
+// const car = new Car();
+// // 1s之后打印'calculate routes 1 undefined'
+// // 再过2s之后打印'calculate routes 2 1'
+// // 最后打印'ends...'
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin1', (result) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 1', result)
+//       resolve(1);
+//     }, 1000)
+//   })
+// });
+
+// car.hooks.calculateRoutes.tapPromise('calculateRoutesPlugin2', (result) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('calculate routes 2', result);
+//       resolve(2);
+//     }, 2000)
+//   })
+// });
+
+// car.calculateRoutes().then(() => {
+//   console.log('ends...');
+// });
+
+
+/**
+ * Plugin Test
+ * 插件封装
+ */
+import Car from './AsyncSeriesHook/Car';
+import Calculate from './plugin/calculateRoutes';
+const car = new Car();
+const calculate = new Calculate();
+
+calculate.apply(car);
+
+car.calculateRoutes().then(() => {
+  console.log('ends...');
+});
