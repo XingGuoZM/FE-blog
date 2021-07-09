@@ -1,5 +1,5 @@
 
-import CountDown from './CountDown';
+import CountDown from './CountDown/hooks&SetInterval';
 function App() {
   return (
     <div>

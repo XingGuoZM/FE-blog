@@ -1,35 +1,36 @@
-import { useEffect, useState } from 'react';
-let timer = 0;
+import { useEffect, useState, useRef } from 'react';
+
 export default function CountDown(props) {
   const { remainTs, onComplete } = props;
   const [countDownTime, setCountDownTime] = useState(0);
+  const timer = useRef();
   useEffect(() => {
     count(remainTs);
     return () => {
-      window.clearTimeout(timer);
+      window.clearTimeout(timer.current);
     };
   }, [remainTs]);
   const count = (remainTs) => {
-    if (timer) window.clearTimeout(timer);
+    if (timer.current) window.clearTimeout(timer.current);
     setCountDownTime(remainTs - 1000);
     if (remainTs <= 0) {
-      window.clearTimeout(timer);
+      window.clearTimeout(timer.current);
       onComplete();
     } else {
-      timer = window.setTimeout(() => count(remainTs - 1000), 1000);
+      timer.current = window.setTimeout(() => count(remainTs - 1000), 1000);
     }
   };
-  const castToString = (v) => (v < 10 ? `0${v}` : String(v));
+
   const counter = (ms) => {
     let minuteText = '';
     let secondText = '';
     const second = Math.floor((ms % 60000) / 1000);
     const minute = Math.floor(ms / 60000);
     if (minute >= 0) {
-      minuteText = castToString(minute);
+      minuteText = minute < 10 ? `0${minute}` : String(minute);
     }
     if (second >= 0) {
-      secondText = castToString(second);
+      secondText = second < 10 ? `0${second}` : String(second);
     }
     return {
       minute: minuteText,
