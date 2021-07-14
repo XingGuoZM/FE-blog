@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>js如何渲染十万条数据并不卡住界面</title>
+</head>
+
+<body>
+  <ul>控件</ul>
+  <script>
+    setTimeout(() => {
+      let data = 100000;
+      let once = 20;
+      let num = data / once;
+      let currentIndex = 0;
+      let ul = document.querySelector('ul');
+      let frameagent = document.createDocumentFragment();
+      function add() {
+        for (var i = 0; i < once; i++) {
+          let li = document.createElement('li');
+          li.innerText = Math.floor(Math.random() * data);
+          frameagent.appendChild(li);
+        }
+        currentIndex += 1;
+        ul.appendChild(frameagent);
+        loop();
+      }
+      function loop() {
+        if (currentIndex < num) {
+          window.requestAnimationFrame(add);
+        }
+      }
+      loop();
+    }, 0)
+  </script>
+</body>
+
+</html>
