@@ -24,4 +24,7 @@ index.js里的代码逻辑为，创建一个div，div的innerHTML设置为"hello
 最终展现出的效果，通过“npm run start”命令可以启动项目，在浏览器页面中会打印出"hello world"。
 
 ## webpack的组成部分
-webpack作为一个打包工具，它的职责聚焦在js模块打包，对外开放loader和plugin来丰富其生态圈。webpack提供了命令行工具webpack-cli和本地web服务器webpack-dev-server,这两个工具可以提升我们的开发体验和提高调试效率。
+我们看到安装了三个包：webpack webpack-cli webpack-dev-server。这三个工具是一个webpack应用的必不可少的组成部分。
+webpack作为一个打包工具，它的职责聚焦在js模块打包，对外开放loader和plugin来丰富其生态圈。webpack-cli是webpack的命令行工具，有了这个工具我们可以使用shell命令轻松的控制我们的项目工程，例如启动、构建打包等。webpack-dev-server是为我们的应用配套的本地web服务器，例如热加载等。这两个工具可以提升我们的开发体验和提高调试效率。
+
+下面我们来看下这三个工具是如何配合使用的，找到./node_modules/.bin目录，里面有三个文件分别是webpack、webpack-cli、webpack-dev-server。切到我们的目录下执行webpack或webpack-cli或webpack-dev-server，那么该应用会自动执行对应的文件。
