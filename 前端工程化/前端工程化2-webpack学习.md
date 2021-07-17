@@ -204,4 +204,6 @@ if (!cli.installed) {
 
 - 第三会询问你是否进行安装webpack-cli,会创建一个逐行读取的接口，不理解readLine的可以看[这里](http://nodejs.cn/api/readline.html#readline_readline),它主要看你输入的字符串的第一个字是不是“y”，不区分大小写。这里判断如果不是"y",则打印一条提示信息告诉我们"需要通过命令行安装webpack-cli，也可以手动自行安装cli"。如果是“y”,则先打印一条正在安装的信息，然后执行runCommand，安装完成之后自动执行runCli，安装失败则会提示报错信息。
 
-如果检测到安装了则直接执行runCli
+如果检测到安装了则直接执行runCli.
+
+我们再来看下runCommand和runCli这两个函数，runCommand主要实现方式是通过node子进程的[spawn方法](http://nodejs.cn/api/child_process.html#child_process_child_process_spawn_command_args_options)来执行命令。runCli主要实现方式是通过require函数来调用bin文件来执行命令行。
