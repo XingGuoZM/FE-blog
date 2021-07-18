@@ -27,7 +27,7 @@ index.js里的代码逻辑为，创建一个div，div的innerHTML设置为"hello
 我们看到安装了三个包：webpack webpack-cli webpack-dev-server。这三个工具是一个webpack应用的必不可少的组成部分。
 webpack作为一个打包工具，它的职责聚焦在js模块打包，对外开放loader和plugin来丰富其生态圈。webpack-cli是webpack的命令行工具，有了这个工具我们可以使用shell命令轻松的控制我们的项目工程，例如启动、构建打包等。webpack-dev-server是为我们的应用配套的本地web服务器，例如热加载等。这两个工具可以提升我们的开发体验和提高调试效率。
 
-下面我们来看下这三个工具是如何配合使用的，找到./node_modules/.bin目录，里面有三个文件分别是webpack、webpack-cli、webpack-dev-server。切到我们的目录下执行webpack或webpack-cli或webpack-dev-server，那么该应用会自动执行对应的文件。
+下面我们来看下这三个工具是如何配合使用的，找到./node_modules/.bin目录，里面有三个文件分别是webpack、webpack-cli、webpack-dev-server,三个文件分别对应./node_modules包下webpack、webpack-cli、webpack-dev-server三个目录下bin的文件。切到我们的目录下执行webpack或webpack-cli或webpack-dev-server，那么该应用会自动执行对应的文件。
 
 - webpack
 ```js
@@ -207,3 +207,54 @@ if (!cli.installed) {
 如果检测到安装了则直接执行runCli.
 
 我们再来看下runCommand和runCli这两个函数，runCommand主要实现方式是通过node子进程的[spawn方法](http://nodejs.cn/api/child_process.html#child_process_child_process_spawn_command_args_options)来执行命令。runCli主要实现方式是通过require函数来调用bin文件来执行命令行。
+
+- webpack-cli
+```js
+#!/usr/bin/env node
+
+"use strict";
+
+const Module = require("module");
+
+const originalModuleCompile = Module.prototype._compile;
+
+require("v8-compile-cache");
+
+const importLocal = require("import-local");
+const runCLI = require("../lib/bootstrap");
+const utils = require("../lib/utils");
+
+if (!process.env.WEBPACK_CLI_SKIP_IMPORT_LOCAL) {
+    // Prefer the local installation of `webpack-cli`
+    if (importLocal(__filename)) {
+        return;
+    }
+}
+
+process.title = "webpack";
+
+if (utils.packageExists("webpack")) {
+    runCLI(process.argv, originalModuleCompile);
+} else {
+    const { promptInstallation, logger, colors } = utils;
+
+    promptInstallation("webpack", () => {
+        utils.logger.error(`It looks like ${colors.bold("webpack")} is not installed.`);
+    })
+        .then(() => {
+            logger.success(`${colors.bold("webpack")} was installed successfully.`);
+
+            runCLI(process.argv, originalModuleCompile);
+        })
+        .catch(() => {
+            logger.error(
+                `Action Interrupted, Please try once again or install ${colors.bold(
+                    "webpack",
+                )} manually.`,
+            );
+
+            process.exit(2);
+        });
+}
+
+```
