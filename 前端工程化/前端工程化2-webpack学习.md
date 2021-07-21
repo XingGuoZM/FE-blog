@@ -433,7 +433,7 @@ processOptions(config, argv, (config, options) => {
 ```
 看到上面三个文件的开头第一行都会有“#!/usr/bin/env node”，这行代码代表什么意思呢。为了满足我的好奇心，特意去google了一下。在stackoverflow有人解释了,原来这是一个shebang行。它的作用是告诉操作系统，将纯文本文件通过什么编译器编译该文件。本文件中是使用node来变异文件。在./node_modules/.bin目录下的文件都是纯文本文件，通过加上“#!”前缀来表示shebang line。有了shebang line,我们可以指定特定的编译器来编译我们的文件。
 
-下面来解读一下webpack-dev-server文件，
+下面来解读一下webpack-dev-server文件，该文件主要是startDevServer函数，启动开发环境下的服务器。
 
 
 ## 参考
