@@ -433,8 +433,10 @@ processOptions(config, argv, (config, options) => {
 ```
 看到上面三个文件的开头第一行都会有“#!/usr/bin/env node”，这行代码代表什么意思呢。为了满足我的好奇心，特意去google了一下。在stackoverflow有人解释了,原来这是一个shebang行。它的作用是告诉操作系统，将纯文本文件通过什么编译器编译该文件。本文件中是使用node来变异文件。在./node_modules/.bin目录下的文件都是纯文本文件，通过加上“#!”前缀来表示shebang line。有了shebang line,我们可以指定特定的编译器来编译我们的文件。
 
-下面来解读一下webpack-dev-server文件，该文件主要是startDevServer函数，启动开发环境下的服务器。
+下面来大概看一下webpack-dev-server文件，该文件主要是startDevServer函数，启动开发环境下的服务器。通过new Server()来得到一个实例，通过追溯源码可以发现，Server是通过sockjs或者ws（即websocket）封装实现的。后面我会对webpack-dev-server这个包详细解读的。
 
+## webpack使用总结
+要完整的使用webpack打包我们的前端应用，最少要安装三个包webpack、webpack-dev-server和webapck-cli。我们可以在项目根目录下创建webpack.config.js来配置我们的webpack应用，基本的使用可以查看官网[指南](https://webpack.docschina.org/guides/),一步一步来学习。下一节我们深入的学习一下webapck更高级的应用，webpack本质上是一个tapable类，对吧！那么tapable是什么？有什么用呢？webpack的plugin和loader如何使用、是怎么工作的？
 
 ## 参考
 - [https://stackoverflow.com/questions/33509816/what-exactly-does-usr-bin-env-node-do-at-the-beginning-of-node-files](https://stackoverflow.com/questions/33509816/what-exactly-does-usr-bin-env-node-do-at-the-beginning-of-node-files)
