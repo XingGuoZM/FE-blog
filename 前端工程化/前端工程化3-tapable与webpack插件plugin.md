@@ -11,10 +11,11 @@ AsyncSeriesHook
 其中AsyncSeriesHook表示钩子类型，它是由tapable提供的。
 
 ## tapable
-tapable事件发布流
+webpack是一种事件流机制，它的工作机制就是讲各个插件串联起来，tapable是一种事件流机制，它主要是事件的监听和触发，包含多种不同的监听和触发事件的方式。
 
 
 ## 参考
 - [https://github.com/webpack/tapable](https://github.com/webpack/tapable)
 - [干货！撸一个webpack插件(内含tapable详解+webpack流程)](https://juejin.cn/post/6844903713312604173)
 - [Webpack tapable 使用研究](https://juejin.cn/post/6844903895584473096)
+- [Webpack 核心库 Tapable 的使用与原理解析](https://zhuanlan.zhihu.com/p/100974318)
