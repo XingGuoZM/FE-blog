@@ -95,6 +95,7 @@ function SyncHook(args = [], name = undefined) {
 	return hook;
 }
 ```
+我们再来看下其他钩子，AsyncParallelHook、AsyncParallelHook等异步钩子的核心代码都和上面类似，最重要的是Hook类和comiple方法。所以Hook类和HookCodeFactory类是公共的、可复用的父类。
 
 ### Hook类解读
 [Hook.js源码地址](https://github.com/webpack/tapable/blob/master/lib/Hook.js)
@@ -109,4 +110,5 @@ function SyncHook(args = [], name = undefined) {
 - [https://github.com/webpack/tapable](https://github.com/webpack/tapable)
 - [干货！撸一个webpack插件(内含tapable详解+webpack流程)](https://juejin.cn/post/6844903713312604173)
 - [Webpack tapable 使用研究](https://juejin.cn/post/6844903895584473096)
+- [Webpack tapable 源码研究](https://juejin.cn/post/6844903898088472589)
 - [Webpack 核心库 Tapable 的使用与原理解析](https://zhuanlan.zhihu.com/p/100974318)
