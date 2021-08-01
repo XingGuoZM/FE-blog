@@ -2,7 +2,7 @@ import './App.css';
 import { viewport } from './util';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
-import {ModalManager, Tab, ScrollList, DragDemo } from './components';
+import {ModalManager, Tab, ScrollList, DragDemo,Marquee } from './components';
 import Modal1 from './pages/modal1';
 import { tabProps } from './config';
 function App() {
@@ -19,7 +19,8 @@ function App() {
       {/* <DragDemo/> */}
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
-      <button onClick={()=>openModal()}>open</button>
+      {/* <button onClick={()=>openModal()}>open</button> */}
+      <Marquee/>
     </div>
   );
 }
