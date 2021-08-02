@@ -99,7 +99,59 @@ function SyncHook(args = [], name = undefined) {
 
 ### Hook类解读
 [Hook.js源码地址](https://github.com/webpack/tapable/blob/master/lib/Hook.js)
-看源码的时候我们要先对其进行删减，把最精华的核心代码提炼出来阅读，然后一个就是要对其函数进行分类，一类一类来看。
+看源码的时候我们要先对其进行删减，把最精华的核心代码提炼出来阅读，然后一个就是要对其函数进行分类，一类一类来看。首先先看结构，我们精简一下，大概是如下结构代码
+```js
+
+const CALL_DELEGATE = function(...args) {
+	this.call = this._createCall("sync");
+	return this.call(...args);
+};
+const CALL_ASYNC_DELEGATE = function(...args) {
+	this.callAsync = this._createCall("async");
+	return this.callAsync(...args);
+};
+const PROMISE_DELEGATE = function(...args) {
+	this.promise = this._createCall("promise");
+	return this.promise(...args);
+};
+
+class Hook {
+	constructor(args = [], name = undefined) {
+		this._args = args;
+		this.taps = [];
+		this.interceptors = [];
+
+		this.call = CALL_DELEGATE;
+		this.callAsync = CALL_ASYNC_DELEGATE;
+		this.promise = PROMISE_DELEGATE;
+
+		this.compile = this.compile;
+		this.tap = this.tap;
+		this.tapAsync = this.tapAsync;
+		this.tapPromise = this.tapPromise;
+	}
+	compile(options) {
+		throw new Error("Abstract: should be overridden");
+	}
+	_createCall(type) {
+		...
+	}
+	tap(options, fn) {
+		...
+	}
+
+	tapAsync(options, fn) {
+		...
+	}
+
+	tapPromise(options, fn) {
+		...
+	}
+	intercept(interceptor) {
+		...
+	}
+}
+```
 
 
 ### HookCodeFactory类解读
