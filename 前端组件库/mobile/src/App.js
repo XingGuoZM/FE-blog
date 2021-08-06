@@ -2,7 +2,7 @@ import './App.css';
 import { viewport } from './util';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
-import { ModalManager, Tab, ScrollList, DragDemo, Marquee } from './components';
+import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
 import Modal1 from './pages/modal1';
 import { tabProps } from './config';
 const list = [
@@ -26,7 +26,8 @@ function App() {
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
       {/* <button onClick={()=>openModal()}>open</button> */}
-      <Marquee data={list} />
+      {/* <Marquee data={list} /> */}
+      <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} />
     </div>
   );
 }
