@@ -2,15 +2,21 @@ import './App.css';
 import { viewport } from './util';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
-import {ModalManager, Tab, ScrollList, DragDemo,Marquee } from './components';
+import { ModalManager, Tab, ScrollList, DragDemo, Marquee } from './components';
 import Modal1 from './pages/modal1';
 import { tabProps } from './config';
+const list = [
+  { name: 'hello' },
+  { name: 'bin' },
+  { name: 'fash' }
+]
+
 function App() {
   viewport();
   const mm = new ModalManager();
-  mm.regist({modal1:Modal1})
+  mm.regist({ modal1: Modal1 })
   // Modal.regist({key:'modal1'})
-  function openModal(){
+  function openModal() {
     mm.showModal();
   }
   return (
@@ -20,7 +26,7 @@ function App() {
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
       {/* <button onClick={()=>openModal()}>open</button> */}
-      <Marquee/>
+      <Marquee data={list} />
     </div>
   );
 }
