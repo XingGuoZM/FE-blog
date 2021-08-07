@@ -99,7 +99,8 @@ function SyncHook(args = [], name = undefined) {
 
 ### Hook类解读
 [Hook.js源码地址](https://github.com/webpack/tapable/blob/master/lib/Hook.js)
-看源码的时候我们要先对其进行删减，把最精华的核心代码提炼出来阅读，然后一个就是要对其函数进行分类，一类一类来看。首先先看结构，我们对代码精简一下，大概是如下结构代码。taps属性用于存储插件、interceptors属性用于存储拦截器，compile方法是个抽象方法，需要子类进行重写
+**结构分析**
+看源码的时候我们要先对其进行删减，把最精华的核心代码提炼出来阅读，然后一个就是要对其函数进行分类，一类一类来看。首先先看结构，我们对代码精简一下，大概是如下结构代码。Hook类外面有3个委托函数，分别对应sync、async和promise，这3个委托方法都会调用Hook类的_createCall方法。taps属性用于存储插件、interceptors属性用于存储拦截器，compile方法是个抽象方法，需要子类进行重写。还有我们熟悉的tap、tapAsync、tapPromise方法，intercept方法用于插件的拦截。
 ```js
 const CALL_DELEGATE = function(...args) {
 	this.call = this._createCall("sync");
@@ -151,6 +152,7 @@ class Hook {
 	}
 }
 ```
+****
 
 
 ### HookCodeFactory类解读
