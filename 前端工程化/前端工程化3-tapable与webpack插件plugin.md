@@ -152,7 +152,10 @@ class Hook {
 	}
 }
 ```
-****
+**核心方法**
+_tap方法
+
+_insert方法
 
 
 ### HookCodeFactory类解读
