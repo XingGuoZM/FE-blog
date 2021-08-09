@@ -160,7 +160,8 @@ _insert方法
 
 ### HookCodeFactory类解读
 [HookCodeFactory源码](https://github.com/webpack/tapable/blob/master/lib/HookCodeFactory.js)
-
+看HookCodeFactory的源码也是遵循上面的原则，先看结构，对该类进行拆解。通过观察我们发现有以下几个方法:create、setup、contentWithInterceptors、callTap、callTapsSeries、callTapsLooping、callTapsParallel等。
+create
 
 ## 参考
 - [https://github.com/webpack/tapable](https://github.com/webpack/tapable)
