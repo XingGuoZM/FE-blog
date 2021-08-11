@@ -1,5 +1,6 @@
 import './App.css';
 import { viewport } from './util';
+import useCountdown from './hooks/useCountdown';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
@@ -19,6 +20,7 @@ function App() {
   function openModal() {
     mm.showModal();
   }
+  const { day, hour, minute, second } = useCountdown(10000, () => { console.log('complete!') });
   return (
     <div className="App">
       {/* <ScrollList /> */}
@@ -27,7 +29,7 @@ function App() {
       {/* <Modal/> */}
       {/* <button onClick={()=>openModal()}>open</button> */}
       {/* <Marquee data={list} /> */}
-      <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} />
+      {/* <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} /> */}
     </div>
   );
 }
