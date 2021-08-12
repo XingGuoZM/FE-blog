@@ -3,6 +3,7 @@ import { viewport } from './util';
 import useCountdown from './hooks/useCountdown';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
+import Scroll from './pages/Scroll';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
 import Modal1 from './pages/modal1';
 import { tabProps } from './config';
@@ -30,6 +31,7 @@ function App() {
       {/* <button onClick={()=>openModal()}>open</button> */}
       {/* <Marquee data={list} /> */}
       {/* <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} /> */}
+      <Scroll />
     </div>
   );
 }
