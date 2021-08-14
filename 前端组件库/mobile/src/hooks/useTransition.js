@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
  * duration<number>: 动画时长,单位毫秒
  * onCompolete<function>: 动画结束时回调
  */
-export default function useScrollTransition(element, { duration, onComplete }) {
+export default function useTransition(element, { duration, onComplete }) {
   const [transform, setTransform] = useState();
   const [disableTransition, setDisableTransition] = useState(false);
   const start = useRef(0);
