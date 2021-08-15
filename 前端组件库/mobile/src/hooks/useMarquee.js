@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import useTransition from './useTransition';
-
-export default function useMarquee(element,list, index) {
+let index=0;
+export default function useMarquee(element,list,{duration,delay}) {
   const intervalRef = useRef();
   const [isStart,setIsStart] = useState(false);
-  const [setTransform, setDisableTransition] = useTransition(element, { duration: 1000, onComplete:()=>{} });
+  const [setTransform, setDisableTransition] = useTransition(element, { duration, onComplete:()=>{} });
   useEffect(() => {
     if (isStart && element) {
       intervalRef.current = setInterval(() => {
@@ -17,7 +17,7 @@ export default function useMarquee(element,list, index) {
           setDisableTransition(false);
           setTransform(`translateY(-${index}rem)`);
         }
-      }, 1000);
+      }, delay);
     }
   }, [isStart]);
   const start =()=>{
