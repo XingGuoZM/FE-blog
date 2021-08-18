@@ -4,8 +4,9 @@ import useCountdown from './hooks/useCountdown';
 // import ScrollList from './scroll';
 // import DragDemo from './components/drag';
 // import ScrollAnimation from './pages/scrollAnimation';
-import HorseLamp from './pages/HorseLamp';
+// import HorseLamp from './pages/HorseLamp';
 // import Carousel from './pages/Carousel';
+import InfinateScroll from './pages/InfinateScroll';
 import MockPage from './pages/MockPage';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
 import Modal1 from './pages/modal1';
@@ -36,8 +37,9 @@ function App() {
       {/* <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} /> */}
       {/* <ScrollAnimation /> */}
       {/* <HorseLamp /> */}
-      <MockPage />
+      {/* <MockPage /> */}
       {/* <Carousel /> */}
+      <InfinateScroll />
     </div>
   );
 }

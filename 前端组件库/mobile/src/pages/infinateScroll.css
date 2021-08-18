@@ -1,0 +1,16 @@
+.wrap{
+  width:7.5rem;
+  height:5rem;
+  background-color:#ccc;
+  overflow:hidden;
+}
+.list{
+
+}
+.item{
+  width:7.5rem;
+  height:5rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

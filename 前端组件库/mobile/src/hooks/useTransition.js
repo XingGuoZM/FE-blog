@@ -14,7 +14,6 @@ export default function useTransition(element, { duration, onComplete }) {
   useEffect(() => {
     if (element) {
       element.style.transform = transform;
-
       element.style.transition = !disableTransition && `transform ${duration / 1000}s`;
     }
     const loop = (timestamp) => {
