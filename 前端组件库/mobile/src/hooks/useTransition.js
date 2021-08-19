@@ -7,14 +7,14 @@ import { useEffect, useState, useRef } from 'react';
  */
 export default function useTransition(element, { duration, onComplete }) {
   const [transform, setTransform] = useState();
-  const [disableTransition, setDisableTransition] = useState(false);
+  const [transition, setTransition] = useState(`transform ${duration / 1000}s`);
   const start = useRef(0);
 
   // 每次transform变化时开始滚动
   useEffect(() => {
     if (element) {
       element.style.transform = transform;
-      element.style.transition = !disableTransition && `transform ${duration / 1000}s`;
+      element.style.transition = transition;
     }
     const loop = (timestamp) => {
       if (!start.current) start.current = timestamp;
@@ -26,7 +26,7 @@ export default function useTransition(element, { duration, onComplete }) {
       }
     };
     window.requestAnimationFrame(loop);
-  }, [transform, disableTransition]);
+  }, [transform]);
 
-  return [setTransform, setDisableTransition];
+  return [setTransform, setTransition];
 }

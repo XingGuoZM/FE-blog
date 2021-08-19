@@ -1,27 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useTransition from './useTransition';
 
 export default function useMarquee(parentElement, element, { duration }) {
   const [isStart, setIsStart] = useState(false);
-  const [setTransform, setDisableTransition] = useTransition(element, { duration });
+  const [setTransform, setTransition] = useTransition(element, { duration });
+  const endRef = useRef(false);
   useEffect(() => {
     if (isStart) {
       start();
     }
   }, [isStart]);
   const loop = () => {
-    setTransform(`translateY(0)`);
-    setDisableTransition(true);
-    window.setInterval(() => {
-      if (element && parentElement) {
-        const wrapHeight = parentElement.clientHeight;
-        const listHeight = element.clientHeight;
-        const dis = listHeight - wrapHeight;
+    if (element && parentElement) {
+      const wrapHeight = parentElement.clientHeight;
+      const listHeight = element.clientHeight;
+      const dis = listHeight - wrapHeight;
+      if (endRef.current) {
         setTransform(`translateY(-${dis}px)`);
-        setDisableTransition(false);
+        setTransition(`transform ${duration / 1000}s linear 0s`);
+        endRef.current = false;
+      } else {
+        setTransform(`translateY(0px)`);
+        setTransition(null);
+        endRef.current = true;
       }
-    }, duration)
-
+      window.setTimeout(() => {
+        loop();
+      }, endRef.current ? 0 : duration);
+    }
   };
   const start = () => {
     setIsStart(true);

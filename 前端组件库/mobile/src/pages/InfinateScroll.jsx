@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import useScroll from '../hooks/useScroll';
 import './infinateScroll.css';
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
 function InfinateScroll() {
   const wrapRef = useRef();
   const listRef = useRef();
-  const [start, stop] = useScroll(wrapRef.current, listRef.current, { duration: 2000 })
+  const [start, stop] = useScroll(wrapRef.current, listRef.current, { duration: 3000 })
   useEffect(() => {
     start();
   }, []);
