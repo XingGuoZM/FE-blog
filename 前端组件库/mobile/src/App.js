@@ -25,7 +25,7 @@ function App() {
   function openModal() {
     mm.showModal();
   }
-  const { day, hour, minute, second } = useCountdown(10000, () => { console.log('complete!') });
+  // const { day, hour, minute, second } = useCountdown(10000, () => { console.log('complete!') });
   return (
     <div className="App">
       {/* <ScrollList /> */}
