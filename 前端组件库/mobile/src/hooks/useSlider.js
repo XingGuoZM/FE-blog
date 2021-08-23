@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import useTransition from './useTransition';
 
-export default function useMarquee(element, list, { duration, delay, direction }) {
+export default function useSlider(element, list, { duration, delay, direction }) {
   const timerRef = useRef();
   const [isStart, setIsStart] = useState(false);
-  const [setTransform, setDisableTransition] = useTransition(element, { duration, onComplete: () => { } });
+  const [setTransform, setTransition] = useTransition(element, { duration, onComplete: () => { } });
   useEffect(() => {
     if (isStart) {
       start();
@@ -21,10 +21,10 @@ export default function useMarquee(element, list, { duration, delay, direction }
       timerRef.current = window.setTimeout(
         () => {
           if (index === len) {
-            setDisableTransition(true);
+            setTransition(null);
             index = 0;
           } else {
-            setDisableTransition(false);
+            setTransition(`transform ${duration / 1000}s`)
           }
           if (direction === 'row') {
             setTransform(`translateX(-${(index * width) / len}px)`);

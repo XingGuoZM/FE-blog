@@ -15,7 +15,6 @@ export default function useTransition(element, { duration, onComplete }) {
     if (element) {
       element.style.transform = transform;
       element.style.transition = transition;
-      console.log(transform, transition);
     }
     const loop = (timestamp) => {
       if (!start.current) start.current = timestamp;

@@ -2,16 +2,16 @@ import { useEffect, useState, useRef } from 'react';
 /**
  * 帧动画Hook
  * element<HTMLElement>: 动画目标节点
- * duration<number>: 动画时长,单位毫秒
- * onCompolete<function>: 动画结束时回调
+ * setKeyframes
+ * setOptions
  */
-export default function useTransition(element, keyframes, options) {
-  const [start, setStart] = useState();
+export default function useAnimate(element, onComplete) {
+  const [keyframes, setKeyframes] = useState([]);
+  const [options, setOptions] = useState({});
   useEffect(() => {
     if (element) {
       element.animate(keyframes, options);
     }
-  }, [start]);
-
-  return [setStart];
+  }, [keyframes, options]);
+  return { setKeyframes, setOptions };
 }
