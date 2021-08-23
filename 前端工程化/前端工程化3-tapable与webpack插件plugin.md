@@ -152,12 +152,17 @@ class Hook {
 	}
 }
 ```
-
+_insert方法主要作用是在taps数组最前面插入一项，
 
 ### HookCodeFactory类解读
 [HookCodeFactory源码](https://github.com/webpack/tapable/blob/master/lib/HookCodeFactory.js)
 看HookCodeFactory的源码也是遵循上面的原则，先看结构，对该类进行拆解。通过观察我们发现有以下几个方法:create、setup、contentWithInterceptors、callTap、callTapsSeries、callTapsLooping、callTapsParallel等。
-create
+create和setup方法是一对，我们可以看到每个钩子里都有compile方法，这个方法里都存在这两行代码
+```js
+	factory.setup(this, options);
+	return factory.create(options);
+```
+setup方法很简单，将注册的方法都收集起来。
 
 ## 参考
 - [https://github.com/webpack/tapable](https://github.com/webpack/tapable)
