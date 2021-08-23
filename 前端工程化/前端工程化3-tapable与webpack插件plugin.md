@@ -12,7 +12,7 @@ AsyncSeriesHook
 ## tapable
 在写了一系列的[demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-tapable)之后才慢慢对tapable有所了解。原来tapable是管理事件的类库，它能帮助我们处理异步同步、串并行等各种复杂的事件，提供了相对完善的钩子（hook）来使用它。
 
-其中webpack就是扩展自tapable,它的工作机制就是讲各个插件串联起来。tapable是一种事件流机制，它主要是事件的监听和触发，包含多种不同的监听和触发事件的方式。tapable提供的钩子（hook）有以下几个
+其中webpack就是扩展自tapable,它的工作就是管理众多插件，对外提供tap（注册）和call（调用）方法。tapable是一种事件流机制，它主要是事件的监听和触发，本质上是订阅-发布模式，包含多种不同的监听和触发事件的方式。tapable提供的钩子（hook）有以下几个
 ```js
 const {
   // 同步钩子
