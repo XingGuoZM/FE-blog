@@ -5,8 +5,8 @@ import useCountdown from './hooks/useCountdown';
 // import DragDemo from './components/drag';
 // import ScrollAnimation from './pages/scrollAnimation';
 // import HorseLamp from './pages/HorseLamp';
-import Carousel from './pages/Carousel';
-// import InfinateScroll from './pages/InfinateScroll';
+// import Carousel from './pages/Carousel';
+import InfinateScroll from './pages/InfinateScroll';
 // import Spread from './pages/Speard';
 import MockPage from './pages/MockPage';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
@@ -26,8 +26,7 @@ function App() {
   function openModal() {
     mm.showModal();
   }
-  const { day, hour, minute, second, millisecond } = useCountdown(10000, () => { console.log('complete!') });
-  console.log(millisecond);
+  // const { day, hour, minute, second, millisecond } = useCountdown(10000, () => { console.log('complete!') });
   return (
     <div className="App">
       {/* <ScrollList /> */}
@@ -40,8 +39,8 @@ function App() {
       {/* <ScrollAnimation /> */}
       {/* <HorseLamp /> */}
       {/* <MockPage /> */}
-      <Carousel />
-      {/* <InfinateScroll /> */}
+      {/* <Carousel /> */}
+      <InfinateScroll />
       {/* <Spread /> */}
     </div>
   );

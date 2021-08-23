@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
  * setKeyframes
  * setOptions
  */
-export default function useAnimate(element, onComplete) {
+export default function useAnimate(element) {
   const [keyframes, setKeyframes] = useState([]);
   const [options, setOptions] = useState({});
   useEffect(() => {
