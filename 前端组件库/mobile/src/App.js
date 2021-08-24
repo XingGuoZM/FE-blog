@@ -17,9 +17,8 @@ const list = [
   { name: 'bin' },
   { name: 'fash' }
 ]
-
+viewport();
 function App() {
-  viewport();
   const mm = new ModalManager();
   mm.regist({ modal1: Modal1 })
   // Modal.regist({key:'modal1'})

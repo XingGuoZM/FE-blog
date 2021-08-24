@@ -84,7 +84,7 @@ SyncHook.prototype = null;
 
 module.exports = SyncHook;
 ```
-精简一下，就是如下几行代码，我们发现这个钩子直接new了一个Hook的实例，然后再给它赋上几个基本的属性，tapAsyn和tapPromise直接报错，compile也是从factory直接create一个。现在我们要看的就是Hook和HookCodeFactory这两个公共类。
+精简一下，就是如下几行代码，我们发现这个钩子直接new了一个Hook的实例，然后再给它赋上几个基本的属性，tapAsyn和tapPromise直接报错，compile也是从factory直接create一个。实现上使用了面向对象的继承和工厂模式，现在我们要看的就是Hook和HookCodeFactory这两个公共类。
 ```js
 function SyncHook(args = [], name = undefined) {
 	const hook = new Hook(args, name);
