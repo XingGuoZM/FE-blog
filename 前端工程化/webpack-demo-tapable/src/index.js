@@ -1,17 +1,17 @@
 /**
  * SyncHook Test
  */
-// import Car from './SyncHook/Car';
+import Car from './SyncHook/Car';
 
-// const car = new Car();
-// car.startHook.tap('startPlugin', () => {
-//   console.log('waiting...')
-// });
-// car.start();
-// car.accelerateHook.tap('acceleratePlugin', (speed) => {
-//   console.log(`加速到${speed}`);
-// });
-// car.accelerate(100);
+const car = new Car();
+car.startHook.tap('startPlugin', () => {
+  console.log('waiting...')
+});
+car.start();
+car.accelerateHook.tap('acceleratePlugin', (speed) => {
+  console.log(`加速到${speed}`);
+});
+car.accelerate(100);
 
 
 
