@@ -6,8 +6,9 @@ import useCountdown from './hooks/useCountdown';
 // import ScrollAnimation from './pages/scrollAnimation';
 // import HorseLamp from './pages/HorseLamp';
 // import Carousel from './pages/Carousel';
-import InfinateScroll from './pages/InfinateScroll';
+// import InfinateScroll from './pages/InfinateScroll';
 // import Spread from './pages/Speard';
+import VirtualList from './pages/VirtualList';
 import MockPage from './pages/MockPage';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
 import Modal1 from './pages/modal1';
@@ -39,8 +40,9 @@ function App() {
       {/* <HorseLamp /> */}
       {/* <MockPage /> */}
       {/* <Carousel /> */}
-      <InfinateScroll />
+      {/* <InfinateScroll /> */}
       {/* <Spread /> */}
+      <VirtualList />
     </div>
   );
 }

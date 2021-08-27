@@ -1,0 +1,27 @@
+.wrap{
+  width:7.5rem;
+  height:8rem;
+  overflow-y: scroll;
+}
+.list{
+  display:flex;
+  flex-direction: column;
+}
+.item{
+  width:7.5rem;
+  height:3rem;
+  background-color:lightskyblue;
+  margin-bottom:0.2rem;
+  font-size:1rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.endItem{
+  font-size:0.3rem;
+  width:7.5rem;
+  height:0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

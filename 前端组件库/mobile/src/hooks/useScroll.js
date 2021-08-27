@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import useAnimate from './useAnimate';
 
-export default function useScroll(parentElement, element) {
+export default function useScroll(element) {
   const { setKeyframes, setOptions } = useAnimate(element);
   const start = () => {
     setKeyframes([
