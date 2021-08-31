@@ -67,8 +67,14 @@ const removeKeyframes=function(){
   head.removeChild(head.lastElementChild)
 }
 ```
+## element animate
+js也能使用animate来做帧动画，
+
 ## 问题汇总（FAQ）
-1. js如何操作keyframe
+- js如何操作keyframe？
+element animate函数
+
+
 
 ## 参考  
 - [MDN animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)  
