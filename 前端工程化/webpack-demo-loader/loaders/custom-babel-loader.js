@@ -1,6 +1,7 @@
 
 module.exports = require('babel-loader').custom(babel => {
   function myPlugin() {
+    // console.log(babel);
     return { visitor: {} };
   }
   return {
@@ -24,6 +25,7 @@ module.exports = require('babel-loader').custom(babel => {
       };
     },
     result(result) {
+      console.log(result.code)
       return {
         ...result,
         code: result.code + '\n//自定义loader生成'
