@@ -13,6 +13,8 @@ ts-loader
 file-loader
 url-loader
 
+[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)
+
 **plugin**
 CommonsChunkPlugin
 DllPlugin
