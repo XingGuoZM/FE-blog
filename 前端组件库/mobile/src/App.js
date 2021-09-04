@@ -12,6 +12,7 @@ import VirtualList from './pages/VirtualList';
 import MockPage from './pages/MockPage';
 import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
 import Modal1 from './pages/modal1';
+import TestEffect from './pages/TestEffect';
 import { tabProps } from './config';
 const list = [
   { name: 'hello' },
@@ -42,7 +43,8 @@ function App() {
       {/* <Carousel /> */}
       {/* <InfinateScroll /> */}
       {/* <Spread /> */}
-      <VirtualList />
+      {/* <VirtualList /> */}
+      <TestEffect visible={false} />
     </div>
   );
 }
