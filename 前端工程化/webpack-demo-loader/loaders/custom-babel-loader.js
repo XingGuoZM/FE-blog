@@ -25,7 +25,7 @@ module.exports = require('babel-loader').custom(babel => {
       };
     },
     result(result) {
-      console.log(result.code)
+      // console.log(result.code)
       return {
         ...result,
         code: result.code + '\n//自定义loader生成'

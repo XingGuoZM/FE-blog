@@ -13,6 +13,10 @@ module.exports = {
       },
       {
         loader: path.join(__dirname, 'loaders/custom-babel-loader.js')
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
       }
     ]
   },
@@ -20,5 +24,5 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist')
   },
-  mode: 'development'
+  mode: 'production'
 }
