@@ -10,9 +10,15 @@ style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader�
 
 [webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)
 
+**webpack是如何管理loaders的？它们的执行顺序如何？**
+compose
+
 **plugin**
 上一节我们知道了webpack的plugin是tapable，本质上是一个订阅-发布模式,先把插件写好注册到webpack.config.js文件中，在编译源代码的时候再调用它。我们呢常用的plugin有如下几个：
 webpack-bundle-analyzer、CommonsChunkPlugin、DllPlugin、ExtractTextWebpackPlugin、HtmlWebpackPlugin、HotModuleReplacementPlugin等
 
 [webpack-demo-plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-plugin)
 
+
+## 参考
+- [webpack之loader执行顺序及原理](https://www.jianshu.com/p/eb268cb0f913)
