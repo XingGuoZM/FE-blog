@@ -5,13 +5,24 @@
 我们主要参照官网给出的一些[plugin](https://webpack.docschina.org/plugins/)和[loader](https://webpack.docschina.org/loaders/)来完成我们的例子。
 
 **loader**
-loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的工具就是loader。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
+loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的工具就是loader，我们可以理解为loader即文件的预处理。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
 style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader、url-loader等
 
 [webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)
 
 **webpack是如何管理loaders的？它们的执行顺序如何？**
-在看webpack如何管理loaders之前，我们还要解决一个问题，如何阅读webpack的源码，webpack是一个庞大的工程，怎么找到管理loaders的逻辑代码呢？可以看一下[webpack](https://github.com/webpack/webpack)目录。在众多目录下，我们该从何看起，源码一般存在于lib下，但是我们点开lib发现文件太多了，这么看也根本无从下手。之后我们又想到了一个办法，我们先看看如何使用loader，仓库也给出了很多example，我们先从examples目录下手，然后再一步一步往回推。
+在看webpack如何管理loaders之前，我们还要解决一个问题，如何阅读webpack的源码，webpack是一个庞大的工程，怎么找到管理loaders的逻辑代码呢？可以看一下[webpack](https://github.com/webpack/webpack)目录。在众多目录下，我们该从何看起，源码一般存在于lib下，但是我们点开lib发现文件太多了，这么看也根本无从下手。之后我们又想到了一个办法，我们先看看如何使用loader，仓库也给出了很多example，我们先从examples目录下手，然后再一步一步往回推。在loader目录下我们可以看到如下文件
+```
+build.js
+example.js
+file.js
+loader.js
+
+test.css
+
+webpack.config.js
+```
+build就是起构建作用，它只有一行代码，即require build-common文件。我们看下build-common
 
 lib/config/normalization文件专门解析webpack配置，
 
@@ -21,6 +32,10 @@ webpack-bundle-analyzer、CommonsChunkPlugin、DllPlugin、ExtractTextWebpackPlu
 
 [webpack-demo-plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-plugin)
 
+### 代码分割和按需加载
+
+
 
 ## 参考
 - [webpack之loader执行顺序及原理](https://www.jianshu.com/p/eb268cb0f913)
+- [webpack loader](https://webpack.docschina.org/concepts/loaders/#inline)

@@ -82,7 +82,7 @@ const indexOf = function (arr, value) {
 
 const lastIndexOf = function (arr, value) {
   let index = -1;
-  for (let i = arr.length - 1; i >=0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     if (value === arr[i]) {
       index = i;
       break;
@@ -101,23 +101,23 @@ const lastIndexOf = function (arr, value) {
 const reverse = function (arr) {
   let len = arr.length
   let tmp;
-  for(let i = 0; i < len/2; i++) {
+  for (let i = 0; i < len / 2; i++) {
     tmp = arr[i];
-    arr[i] = arr[len-i-1];
-    arr[len-i-1] = tmp;
+    arr[i] = arr[len - i - 1];
+    arr[len - i - 1] = tmp;
   }
   return arr;
 }
 
 
-const sort = function(arr,fn){
-  for(let i=0;i<arr.length;i++){
-    for(let j=i+1;j<arr.length;j++){
-      if((arr[i]>arr[j] && !fn) ||
-        (arr[i]>arr[j] && fn(arr[i],arr[j])) ){
-        let tpm=arr[i];
-        arr[i]=arr[j];
-        arr[j]=tpm;
+const sort = function (arr, fn) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if ((arr[i] > arr[j] && !fn) ||
+        (arr[i] > arr[j] && fn(arr[i], arr[j]))) {
+        let tpm = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tpm;
       }
     }
   }
@@ -129,10 +129,10 @@ const sort = function(arr,fn){
 
 
 /**
- * 
+ *
  * @param {*} arr
- * @param {*} str 
- * 
+ * @param {*} str
+ *
  */
 
 // const dismantleArray = function (arr,str){
