@@ -22,7 +22,7 @@ test.css
 
 webpack.config.js
 ```
-build就是起构建作用，它只有一行代码，即require build-common文件。我们看下build-common
+
 
 lib/config/normalization文件专门解析webpack配置，
 
