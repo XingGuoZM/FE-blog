@@ -23,7 +23,6 @@ test.css
 webpack.config.js
 ```
 
-
 lib/config/normalization文件专门解析webpack配置，
 
 **plugin**
