@@ -2,7 +2,7 @@
 弄清楚了tapable，我们基本上对webpack的plugin没有什么问题了，下面我们将webpack的plugin和loader组合起来看一下。首先我们要弄清楚loader是干什么的，有什么用？plugin是干什么的，有什么用？带着这些问题我们开始写一些demo,以此来熟悉这两个东西的作用。
 
 ## plugin和loader使用
-我们主要参照官网给出的一些[plugin](https://webpack.docschina.org/plugins/)和[loader](https://webpack.docschina.org/loaders/)来完成我们的例子。
+我们主要参照官网给出的一些[plugin](https://webpack.docschina.org/plugins/)和[loader](https://webpack.docschina.org/loaders/)来完成我们的例子。我也建了两个项目专门来研究webpack的plugin和loader。
 
 **loader**
 loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的工具就是loader，我们可以理解为loader即文件的预处理。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
@@ -38,3 +38,4 @@ webpack-bundle-analyzer、CommonsChunkPlugin、DllPlugin、ExtractTextWebpackPlu
 ## 参考
 - [webpack之loader执行顺序及原理](https://www.jianshu.com/p/eb268cb0f913)
 - [webpack loader](https://webpack.docschina.org/concepts/loaders/#inline)
+- [webpack loader 源码、原理、实践](https://juejin.cn/post/6998416819497205774)
