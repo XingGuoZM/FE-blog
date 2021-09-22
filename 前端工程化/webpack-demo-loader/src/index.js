@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './hello.jsx';
+// import Hello from './hello.jsx';
 
 ReactDOM.render(
-  <Hello />,
+  <div>123</div>,
   document.getElementById('root')
 );
