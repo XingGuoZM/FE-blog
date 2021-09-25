@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './hello.css';
 function Hello() {
   useEffect(() => {
     console.log('hello')
+    console.log(styles)
   }, [])
-  return <div className={styles.wrap}>hello</div>
+  return <div>hello</div>
 }
 export default Hello;

@@ -10,9 +10,9 @@ module.exports = {
         exclude: /node_modules/,
         use: { loader: 'babel-loader' }
       },
-      {
-        loader: path.join(__dirname, 'loaders/custom-babel-loader.js')
-      },
+      // {
+      //   loader: path.join(__dirname, 'loaders/custom-babel-loader.js')
+      // },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
