@@ -14,9 +14,22 @@ module.exports = {
       //   loader: path.join(__dirname, 'loaders/custom-babel-loader.js')
       // },
       {
+        test: /\.html$/,
+        exclude: [/node_modules/, require.resolve('./index.html')],
+        use: {
+          loader: 'file-loader',
+          query: {
+            name: '[name].[ext]'
+          },
+        },
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      }
+      },
+      {
+        loader: path.join(__dirname, 'loaders/A.js')
+      },
     ]
   },
   entry: './src/index.js',
