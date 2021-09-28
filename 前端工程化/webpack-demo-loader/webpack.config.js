@@ -8,27 +8,30 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: { loader: 'babel-loader' }
-      },
-      // {
-      //   loader: path.join(__dirname, 'loaders/custom-babel-loader.js')
-      // },
-      {
-        test: /\.html$/,
-        exclude: [/node_modules/, require.resolve('./index.html')],
-        use: {
-          loader: 'file-loader',
-          query: {
-            name: '[name].[ext]'
-          },
+        use: [{ loader: 'babel-loader' },
+        {
+          loader: path.join(__dirname, 'loaders/A.js'),
+          options: {
+            words: 'A'
+          }
         },
+        {
+          loader: path.join(__dirname, 'loaders/B.js'),
+          options: {
+            words: 'B'
+          }
+        },
+        {
+          loader: path.join(__dirname, 'loaders/C.js'),
+          options: {
+            words: 'C'
+          }
+        }
+        ],
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
-        loader: path.join(__dirname, 'loaders/A.js')
       },
     ]
   },
@@ -37,9 +40,6 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'hello page',
-    template: './dist/index.html'
-  })],
+  plugins: [new HtmlWebpackPlugin()],
   mode: 'development'
 }

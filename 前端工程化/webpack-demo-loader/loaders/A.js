@@ -1,4 +1,7 @@
+const { getOptions } = require('loader-utils');
+
 module.exports = function (source) {
-  const content = source.replace("world", "哈哈");
-  return content;
+  const options = getOptions(this); // getOptions用于获取配置
+  console.log(options.words);
+  return source;
 }
