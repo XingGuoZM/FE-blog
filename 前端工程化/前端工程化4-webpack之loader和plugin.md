@@ -1,5 +1,5 @@
 ## 写在前面
-弄清楚了tapable，我们基本上对webpack的plugin没有什么问题了，下面我们将webpack的plugin和loader组合起来看一下。首先我们要弄清楚loader是干什么的，有什么用？plugin是干什么的，有什么用？带着这些问题我们开始写一些demo,以此来熟悉这两个东西的作用。
+弄清楚了tapable，我们基本上对webpack的plugin没有什么问题了，下面我们将webpack的plugin和loader组合起来看一下。我们主要从以下几个方面来深入研究。照着网上的资料写几个例子（模仿），然后大致了解loader是什么（作用），它是怎么执行的（原理）以及找一个比较有代表性的loader来看看它的代码（源码），最后我们可以自己写一个自定义的loader（学以致用）。plugin也可以套用这样的模式来进行学习。
 
 ## plugin和loader使用
 我们主要参照官网给出的一些[plugin](https://webpack.docschina.org/plugins/)和[loader](https://webpack.docschina.org/loaders/)来完成我们的例子。我也建了两个项目专门来研究webpack的plugin和loader。

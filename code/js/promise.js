@@ -1,4 +1,4 @@
-const { resolve } = require("path")
+// const { resolve } = require("path")
 
 /**
  * promise三要素
@@ -6,16 +6,24 @@ const { resolve } = require("path")
  * 2. then链式调用
  * 3. 状态不可变
  */
-new Promise((resolve,reject)=>{
-  resolve();
-}).then((res)=>{
+// new Promise((resolve,reject)=>{
+//   resolve();
+// }).then((res)=>{
 
-},(err)=>{
+// },(err)=>{
 
-}).then((res)=>{
+// }).then((res)=>{
 
-},(err)=>{
+// },(err)=>{
 
-}).catch(err=>{
+// }).catch(err=>{
 
-})
+// })
+
+const myPromise = val => Promise.resolve(val);
+
+const delay = (duration) => {
+  return (val) => new Promise(resolve => setTimeout(() => resolve(val), duration));
+}
+
+myPromise('hello').then(delay(1000)).then(val => console.log(val));
