@@ -1,5 +1,4 @@
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -11,21 +10,12 @@ module.exports = {
         use: [{ loader: 'babel-loader' },
         {
           loader: path.join(__dirname, 'loaders/A.js'),
-          options: {
-            words: 'A'
-          }
         },
         {
           loader: path.join(__dirname, 'loaders/B.js'),
-          options: {
-            words: 'B'
-          }
         },
         {
           loader: path.join(__dirname, 'loaders/C.js'),
-          options: {
-            words: 'C'
-          }
         }
         ],
       },
@@ -40,6 +30,5 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
   },
-  plugins: [new HtmlWebpackPlugin()],
   mode: 'development'
 }
