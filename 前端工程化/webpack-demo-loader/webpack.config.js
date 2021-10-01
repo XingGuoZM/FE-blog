@@ -7,16 +7,17 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [{ loader: 'babel-loader' },
-        {
-          loader: path.join(__dirname, 'loaders/A.js'),
-        },
-        {
-          loader: path.join(__dirname, 'loaders/B.js'),
-        },
-        {
-          loader: path.join(__dirname, 'loaders/C.js'),
-        }
+        use: [
+          { loader: 'babel-loader' },
+          {
+            loader: path.join(__dirname, 'loaders/A.js'),
+          },
+          {
+            loader: path.join(__dirname, 'loaders/B.js'),
+          },
+          {
+            loader: path.join(__dirname, 'loaders/C.js'),
+          }
         ],
       },
       {
