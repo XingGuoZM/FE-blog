@@ -3,8 +3,7 @@ import styles from './hello.css';
 function Hello() {
   useEffect(() => {
     console.log('hello，world')
-    console.log(styles)
   }, [])
-  return <div>hello</div>
+  return <div className={styles.wrap}>hello</div>
 }
 export default Hello;
