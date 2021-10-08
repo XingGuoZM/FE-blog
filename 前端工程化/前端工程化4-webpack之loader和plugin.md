@@ -3,11 +3,13 @@
 ，我开了两个工程[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)和[webpack-demo-plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-plugin)来写一些示例来深入研究下webpack的loader和plugin
 
 ## loader
-loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的工具就是loader，我们可以理解为loader即文件的预处理。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
+loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的中间工具就是loader，我们可以理解为loader即文件的预处理。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
 style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader、url-loader等
 
 **loader执行原理**
 为了研究loader的执行原理，我们建了一个webpack应用实例来专门探索loader。[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)，通过上述的例子我们可以了解到如何在项目中配置使用loader。通过使用上述几个常用的loader我们可以大致窥探出webpack执行loader的执行原理，
+
+vue-loader是一个比较有代表性的loader，我们找到其源码来研究一下vue的模版语法
 
 **webpack是如何管理loaders的？它们的执行顺序如何？**
 在看webpack如何管理loaders之前，我们还要解决一个问题，如何阅读webpack的源码，webpack是一个庞大的工程，怎么找到管理loaders的逻辑代码呢？可以看一下[webpack](https://github.com/webpack/webpack)目录。在众多目录下，我们该从何看起，源码一般存在于lib下，但是我们点开lib发现文件太多了，这么看也根本无从下手。之后我们又想到了一个办法，我们先看看如何使用loader，仓库也给出了很多example，我们先从examples目录下手，然后再一步一步往回推。在loader目录下我们可以看到如下文件
