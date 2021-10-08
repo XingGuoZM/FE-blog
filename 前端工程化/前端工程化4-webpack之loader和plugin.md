@@ -9,7 +9,87 @@ style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader�
 **loader执行原理**
 为了研究loader的执行原理，我们建了一个webpack应用实例来专门探索loader。[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)，通过上述的例子我们可以了解到如何在项目中配置使用loader。通过使用上述几个常用的loader我们可以大致窥探出webpack执行loader的执行原理，
 
-vue-loader是一个比较有代表性的loader，我们找到其源码来研究一下vue的模版语法
+vue-loader是一个比较有代表性的loader，我们找到其源码来研究一下vue的模版语法。基本上就是基于webpack从0开始创建一个vue脚手架项目[webpack-demo-vueloader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-vueloader)
+创建该工程也比较简单，按照如下步骤即可
+- 创建目录并初始化
+```
+mkdir webpack-demo-vueloader && cd webpack-demo-vueloader
+
+npm init -y 
+```
+- 安装vue vue-loader vue-template-compiler
+- 安装 webpack webpack-cli webpack-dev-server(**这三个包版本会相互影响，所以固定版本了**)
+```
+npm install --save vue vue-loader vue-template-compiler
+
+npm install --save webpack webpack-cli webpack-dev-server@3.11.0
+```
+根目录新建webpack.config.js
+```js
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  mode: 'development',
+  output: {
+    filename: '[name].bundle.js',
+    path: __dirname + '/dist'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
+    ]
+  },
+  devServer: {
+    contentBase: __dirname + '/dist',
+    host: '127.0.0.1',
+    port: 8000
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
+}
+```
+- 新建src目录，创建index.js和app.vue
+```js
+import Vue from 'vue';
+import App from './app.vue';
+
+new Vue({
+  el: '#root',
+  render: h => h(App)
+});
+
+```
+```vue
+<template>
+  <div class="example">{{ msg }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: "Hello world!",
+    };
+  },
+  created: function () {
+    console.log("create");
+  },
+  mounted: function () {
+    console.log("mounted");
+  },
+};
+</script>
+```
+- 最后在package.json的script下添加执行命令就完成了一个最基本的vue脚手架
+```
+  "start": "webpack serve",
+  "build": "webpack",
+```
 
 **webpack是如何管理loaders的？它们的执行顺序如何？**
 在看webpack如何管理loaders之前，我们还要解决一个问题，如何阅读webpack的源码，webpack是一个庞大的工程，怎么找到管理loaders的逻辑代码呢？可以看一下[webpack](https://github.com/webpack/webpack)目录。在众多目录下，我们该从何看起，源码一般存在于lib下，但是我们点开lib发现文件太多了，这么看也根本无从下手。之后我们又想到了一个办法，我们先看看如何使用loader，仓库也给出了很多example，我们先从examples目录下手，然后再一步一步往回推。在loader目录下我们可以看到如下文件
