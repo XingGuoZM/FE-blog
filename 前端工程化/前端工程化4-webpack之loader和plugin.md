@@ -6,8 +6,11 @@
 loader即加载器，由于webpack只能打包js模块，如果要打包其他文件，如jsx、vue、css等文件，必须要将其转化成js模块形式。而这个转化的中间工具就是loader，我们可以理解为loader即文件的预处理。例如我们要打包css文件，我们就要使用css-loader和style-loader，要打包图片文件我们要使用file-loader或者url-loader。我们常用的loader有如下几个：
 style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader、url-loader等
 
+**loader使用**
+webpack.config.js文件中配置要用到的loader
+
 **loader执行原理**
-为了研究loader的执行原理，我们建了一个webpack应用实例来专门探索loader。[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)，通过上述的例子我们可以了解到如何在项目中配置使用loader。通过使用上述几个常用的loader我们可以大致窥探出webpack执行loader的执行原理，大概的执行过程就是先注册后执行的过程，可以理解成数据结构--栈。
+为了研究loader的执行原理，我们建了一个webpack应用实例来专门探索loader。[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)，通过上述的例子我们可以了解到如何在项目中配置使用loader。通过使用上述几个常用的loader我们可以大致窥探出webpack执行loader的工作的过程，大概的过程就是先注册，可以理解成数据结构--栈。
 
 **vue-loader研究**
 vue-loader是一个比较有代表性的loader，我们找到其源码来研究一下vue的模版语法。基本上就是基于webpack从0开始创建一个vue脚手架项目[webpack-demo-vueloader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-vueloader)
