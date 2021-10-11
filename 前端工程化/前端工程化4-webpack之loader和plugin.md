@@ -7,7 +7,7 @@ loader即加载器，由于webpack只能打包js模块，如果要打包其他�
 style-loader、css-loader、vue-loader、babel-loader、ts-loader、file-loader、url-loader等
 
 **loader使用**
-webpack.config.js文件中配置要用到的loader
+loader的使用方法大概就是在webpack.config.js配置文件中的module的rules中添加项。具体的使用方法在官网的文档[loader](https://webpack.docschina.org/api/loaders/)以及[Loader Interface](https://webpack.docschina.org/api/loaders/)写的非常清楚，照着写几遍大概就能熟练使用了。我们主要看下Loader Interface这节，这里解释了loader的原理，对我们理解loader以及后面写自定义loader有很重大的意义。loader 本质上是导出为函数的 JavaScript 模块。loader runner 会调用此函数，然后将上一个 loader 产生的结果或者资源文件传入进去。loader也给出了很多钩子，都存在上下文对象this上的，这个上下文对外开放了很多方法，我们能很轻松的操作源码字符串。
 
 **loader执行原理**
 为了研究loader的执行原理，我们建了一个webpack应用实例来专门探索loader。[webpack-demo-loader](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-loader)，通过上述的例子我们可以了解到如何在项目中配置使用loader。通过使用上述几个常用的loader我们可以大致窥探出webpack执行loader的工作的过程，大概的过程就是先注册，可以理解成数据结构--栈。
@@ -115,4 +115,6 @@ webpack-bundle-analyzer、CommonsChunkPlugin、DllPlugin、ExtractTextWebpackPlu
 ## 参考
 - [webpack之loader执行顺序及原理](https://www.jianshu.com/p/eb268cb0f913)
 - [webpack loader](https://webpack.docschina.org/concepts/loaders/#inline)
+- [webpack Loader Interface](https://webpack.docschina.org/api/loaders/)
 - [webpack loader 源码、原理、实践](https://juejin.cn/post/6998416819497205774)
+
