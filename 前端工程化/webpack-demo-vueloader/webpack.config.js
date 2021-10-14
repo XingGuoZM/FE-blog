@@ -1,4 +1,5 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,8 +12,16 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
-      }
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: path.join(__dirname, 'loaders/removeLog.js'),
+          },
+          {
+            loader: 'vue-loader'
+          },
+        ]
+      },
     ]
   },
   devServer: {

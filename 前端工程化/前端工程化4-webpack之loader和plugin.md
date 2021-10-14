@@ -94,10 +94,11 @@ export default {
   "start": "webpack serve",
   "build": "webpack",
 ```
-测试项目可以完全跑起来了，我们下一步来研究一下vue-loader是如何工作的，从上面创建的工程中package.json中依赖的包我们可以看到，要让vue项目完整的在webpack中跑起来，最少要依赖三个包，分别是vue、vue-loader和vue-template-compiler。我们知道[vue-loader](https://github.com/vuejs/vue-loader)和[vue-template-compiler](https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler#readme)是webpack和vue的中间连接接工具，查看源码我们得知，vue-template-compiler主要的作用是将vue的模版代码的字符串编译成ast和渲染函数的形式。vue-loader的作用在[官网](https://vue-loader.vuejs.org/zh/#vue-loader-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)解释的很清楚,总结起来就是一句话，vue-loader的作用就是能将.vue文件转化成渲染函数的形式，可以让webpack完成打包。webpack只能打包js模块，在单页应用中，一个js文件可以理解为一个js模块，vue-loader的作用就是能将.vue文件
+测试项目可以完全跑起来了，我们下一步来研究一下vue-loader是如何工作的，从上面创建的工程中package.json中依赖的包我们可以看到，要让vue项目完整的在webpack中跑起来，最少要依赖三个包，分别是vue、vue-loader和vue-template-compiler。我们知道[vue-loader](https://github.com/vuejs/vue-loader)和[vue-template-compiler](https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler#readme)是webpack和vue的中间连接接工具，查看源码我们得知，vue-template-compiler主要的作用是将vue的模版代码的字符串编译成ast和渲染函数的形式。vue-loader的作用在[官网](https://vue-loader.vuejs.org/zh/#vue-loader-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)解释的很清楚,总结起来就是一句话，vue-loader的作用就是能将.vue文件转化成渲染函数的形式，可以让webpack完成打包。webpack只能打包js模块，在单页应用中，一个js文件可以理解为一个js模块，vue-loader的作用就是能将.vue文件编译成webpack能够识别的模块形式.
 
 **写一个自定义的loader**
-我们知道，loader能对js模块字符串的形式进行操作
+我们知道，loader能对js模块字符串的形式进行操作,那我们就写一个能够帮助我们清除console.log的loader。
+
 
 ## plugin
 上一节我们知道了webpack的plugin是tapable，本质上是一个订阅-发布模式,先把插件写好注册到webpack.config.js文件中，在编译源代码的时候再调用它。我们呢常用的plugin有如下几个：
