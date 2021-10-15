@@ -1,4 +1,5 @@
 module.exports = function (source) {
-  // source = source.replace('console.log', '');
+  // 去除所有的log
+  source = source.replace(/console.log\([^\)]+\);/g, '');
   return source;
 }
