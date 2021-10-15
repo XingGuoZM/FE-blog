@@ -105,13 +105,10 @@ export default {
 webpack-bundle-analyzer、CommonsChunkPlugin、DllPlugin、ExtractTextWebpackPlugin、HtmlWebpackPlugin、HotModuleReplacementPlugin等
 
 **plugin使用**
-我们说loader就是一个js函数，可以操作js字符串形式的函数，那么plugin就是一个类，一个可以
-[webpack-demo-plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-plugin)
+我们说loader就是一个js函数，可以操作js字符串形式的函数，那么plugin就是一个类，一个可以[webpack-demo-plugin](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-demo-plugin)。plugin会深入到代码编译和构建的各个阶段，
 
 **plugin执行原理**
 plugin对外提供了两个主要的钩子，一个是[compiler](https://webpack.docschina.org/api/compiler-hooks/)，,另一个是[compilation](https://webpack.docschina.org/api/compilation-hooks/)。
-
-
 
 **VueLoaderPlugin研究**
 
