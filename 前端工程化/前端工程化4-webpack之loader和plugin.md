@@ -112,6 +112,10 @@ plugin对外提供了两个主要的钩子，一个是[compiler](https://webpack
 
 **VueLoaderPlugin研究**
 
+**写一个自定义plugin**
+
+
+
 ## 参考
 - [webpack之loader执行顺序及原理](https://www.jianshu.com/p/eb268cb0f913)
 - [webpack loader](https://webpack.docschina.org/concepts/loaders/#inline)
