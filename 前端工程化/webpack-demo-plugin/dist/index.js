@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\nconsole.log('plugin demo');\n\n//# sourceURL=webpack://webpack-demo-plugin/./src/index.js?");
+eval("const div = document.createElement(\"div\");\ndiv.innerHTML = 'hello world';\nconsole.log('hello');\ndocument.body.appendChild(div);\n\n//# sourceURL=webpack://webpack-demo-plugin/./src/index.js?");
 
 /***/ })
 
