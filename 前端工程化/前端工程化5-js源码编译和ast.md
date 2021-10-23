@@ -2,7 +2,7 @@
 前面几节大概了解了webpack的使用和执行过程，上一节我们知道了webpack的解析器是acorn，那今天我们就来研究一下js源码编译以及acorn这个库。
 
 ## ast
-抽象语法树，js代码词法树型结构的表示。
+抽象语法树，js代码词法树型结构的表示。js代码在编译的过程中会首先转化成抽象语法树的形式
 我们可以在[astexplorer](https://astexplorer.net/)网站上查看js代码的ast结构。
 
 ## acorn
