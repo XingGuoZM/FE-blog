@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>使用 JavaScript Proxy 实现简单的数据绑定</title>
+</head>
+
+<body>
+  <input id='input' type='text' />
+  <p id='p'></p>
+  <script>
+    const input = document.getElementById('input');
+    const p = document.getElementById('p');
+    const obj = {};
+    const newObj = new Proxy(obj, {
+      get: function (target, key, receiver) {
+        console.log(`getting ${key}!`);
+        return Reflect.get(target, key, receiver);
+      },
+      set: function (target, key, value, receiver) {
+        console.log('setting', target, key, value, receiver);
+        if (key === 'text') {
+          input.value = value;
+          p.innerHTML = value;
+        }
+        return Reflect.set(target, key, value, receiver);
+      }
+    })
+    input.addEventListener('keyup', (e) => {
+      newObj.text = e.target.value;
+    })
+  </script>
+</body>
+
+</html>
