@@ -9,7 +9,7 @@ function HorseLamp(props) {
   const [start] = useSlider(listRef.current, list, { duration: 1000, delay: 1000, direction: 'column' });
   useEffect(() => {
     start();
-  }, [])
+  }, []);
 
   return <div className='wrap'>
     <div className='list' ref={listRef}>
