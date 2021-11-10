@@ -1,6 +1,6 @@
 
 ### 函数合成  
-```
+```js
 function func1(){
   console.log(1)
 }
