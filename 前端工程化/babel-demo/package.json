@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.16.0"
+    "@babel/core": "^7.16.0",
+    "@babel/generator": "^7.16.0"
+  },
+  "dependencies": {
+    "@babel/traverse": "^7.16.3"
   }
 }

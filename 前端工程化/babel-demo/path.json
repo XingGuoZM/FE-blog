@@ -1,0 +1,174 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 17,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 1,
+      "column": 17
+    }
+  },
+  "errors": [],
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 17,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 1,
+        "column": 17
+      }
+    },
+    "sourceType": "script",
+    "interpreter": null,
+    "body": [
+      {
+        "type": "VariableDeclaration",
+        "start": 0,
+        "end": 17,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 17
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 6,
+            "end": 17,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 6
+              },
+              "end": {
+                "line": 1,
+                "column": 17
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 6,
+              "end": 8,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 6
+                },
+                "end": {
+                  "line": 1,
+                  "column": 8
+                },
+                "identifierName": "fn"
+              },
+              "name": "fn"
+            },
+            "init": {
+              "type": "ArrowFunctionExpression",
+              "start": 9,
+              "end": 17,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17
+                }
+              },
+              "id": null,
+              "generator": false,
+              "async": false,
+              "params": [
+                {
+                  "type": "Identifier",
+                  "start": 10,
+                  "end": 11,
+                  "loc": {
+                    "start": {
+                      "line": 1,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 11
+                    },
+                    "identifierName": "n"
+                  },
+                  "name": "n"
+                }
+              ],
+              "body": {
+                "type": "BinaryExpression",
+                "start": 14,
+                "end": 17,
+                "loc": {
+                  "start": {
+                    "line": 1,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 17
+                  }
+                },
+                "left": {
+                  "type": "Identifier",
+                  "start": 14,
+                  "end": 15,
+                  "loc": {
+                    "start": {
+                      "line": 1,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15
+                    },
+                    "identifierName": "n"
+                  },
+                  "name": "n"
+                },
+                "operator": "*",
+                "right": {
+                  "type": "Identifier",
+                  "start": 16,
+                  "end": 17,
+                  "loc": {
+                    "start": {
+                      "line": 1,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17
+                    },
+                    "identifierName": "n"
+                  },
+                  "name": "n"
+                }
+              }
+            }
+          }
+        ],
+        "kind": "const"
+      }
+    ],
+    "directives": []
+  },
+  "comments": []
+}
