@@ -4,14 +4,14 @@ const traverse = require("@babel/traverse");
 const fs = require('fs');
 // parser:解析
 // babelParser.parse("()=>{console.log(123)}", {});
-// tranform:转换
-// generate:生成
+// tranform:转换成ast
+// generate:生成js代码
+// traverse:遍历ast
 const code = 'const fn=(n)=>n*n';
 const ast = parse(code);
 fs.writeFileSync('./path.json', JSON.stringify(ast));
 traverse.default(ast, {
   enter(path) {
-    // console.log(path.isIdentifier({ name: "n" }));
     if (path.isIdentifier({ name: "n" })) {
       path.node.name = 'x';
     }

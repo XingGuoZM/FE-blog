@@ -6,7 +6,7 @@ import useCountdown from './hooks/useCountdown';
 // import ScrollAnimation from './pages/scrollAnimation';
 // import HorseLamp from './pages/HorseLamp';
 // import Carousel from './pages/Carousel';
-// import InfinateScroll from './pages/InfinateScroll';
+import InfinateScroll from './pages/InfinateScroll';
 // import Spread from './pages/Speard';
 import VirtualList from './pages/VirtualList';
 import MockPage from './pages/MockPage';
@@ -41,10 +41,10 @@ function App() {
       {/* <HorseLamp /> */}
       {/* <MockPage /> */}
       {/* <Carousel /> */}
-      {/* <InfinateScroll /> */}
+      <InfinateScroll />
       {/* <Spread /> */}
       {/* <VirtualList /> */}
-      <TestEffect visible={false} />
+      {/* <TestEffect visible={false} /> */}
     </div>
   );
 }

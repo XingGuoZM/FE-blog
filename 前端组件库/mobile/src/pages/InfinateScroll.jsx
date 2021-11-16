@@ -1,18 +1,46 @@
 import { useEffect, useState, useRef } from 'react';
-import useScroll from '../hooks/useScroll';
 import './infinateScroll.css';
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+const defaultPageSize = 10;
+let num = 1;
+const queryData = (pageNum = 1, pageSize = defaultPageSize) => {
+  const numbers = [];
+  if (pageNum < 5) {
+    for (let i = pageSize * (pageNum - 1); i < pageSize * pageNum; i++) {
+      numbers.push(i);
+    }
+  }
+  return new Promise(resolve => setTimeout(() => resolve(numbers), 1000));
+}
 
 function InfinateScroll() {
   const wrapRef = useRef();
   const listRef = useRef();
-  const [start] = useScroll(wrapRef.current, listRef.current);
+  const endItemRef = useRef();
+  const [list, setList] = useState([]);
+  const [isEnd, setIsEnd] = useState(false);
+  const getData = async (pageNum) => {
+    const res = await queryData(pageNum);
+    if (res.length < defaultPageSize) {
+      setIsEnd(true);
+    }
+    setList((value) => value.concat(res));
+  }
   useEffect(() => {
-    start();
+    getData();
+    wrapRef.current.addEventListener('scroll', () => {
+      const endRect = endItemRef.current.getBoundingClientRect();
+      const wrapRect = wrapRef.current.getBoundingClientRect();
+      if (endRect.top + endRect.height <= wrapRect.height) {
+        getData(++num);
+      }
+    });
   }, []);
+
   return <div className='wrap' ref={wrapRef}>
     <div className='list' ref={listRef}>
-      {numbers.map((item, index) => <div className='item' key={index}>{item}</div>)}
+      {list?.map((item, index) => <div className='item' key={index}>{item}</div>)}
+      <div className='endItem' ref={endItemRef}>{isEnd ? '到底了~' : '加载中...'}</div>
     </div>
   </div>
 }
