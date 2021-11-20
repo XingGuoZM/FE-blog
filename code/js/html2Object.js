@@ -48,10 +48,26 @@ const parseStartTag = () => {
     }
   }
 }
+while(htmlStr){
+  let text;
+  const endIndex = htmlStr.indexOf('<');
+  if(endIndex==0){
+    const startMatch = parseStartTag();
+    if(startMatch) continue;
+    const endMatch = htmlStr.match(endTag);
+    if(endMatch){
+      console.log(endMatch)
+      advance(endMatch[0].length);
+    }
+  }else if(endIndex>0){
+    text = htmlStr.substring(0,endIndex);
+    console.log(text);
+  }
+  if(text){
+    advance(text.length);
+  }
 
-parseStartTag();
-// console.log(htmlStr);
-const res = '</span>123'.match(endTag);
-console.log(res);
+}
+console.log(htmlStr);
 
 
