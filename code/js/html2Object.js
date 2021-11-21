@@ -34,7 +34,8 @@ const parseStartTag = () => {
   if (start) {
     const match = {
       tagName: start[1],
-      attrs: []
+      attrs: [],
+      inner:''
     };
     advance(start[0].length);
     let attr, end;
@@ -48,12 +49,17 @@ const parseStartTag = () => {
     }
   }
 }
+let res = [];
 while(htmlStr){
   let text;
   const endIndex = htmlStr.indexOf('<');
   if(endIndex==0){
     const startMatch = parseStartTag();
-    if(startMatch) continue;
+    // console.log(startMatch);
+    if(startMatch){
+      // res.push(startMatch);
+      continue;
+    }
     const endMatch = htmlStr.match(endTag);
     if(endMatch){
       console.log(endMatch)
@@ -61,13 +67,11 @@ while(htmlStr){
     }
   }else if(endIndex>0){
     text = htmlStr.substring(0,endIndex);
-    console.log(text);
+    // console.log(text);
   }
   if(text){
     advance(text.length);
   }
-
 }
-console.log(htmlStr);
 
 
