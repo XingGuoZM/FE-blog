@@ -25,7 +25,38 @@ const qnameCapture = `((?:${ncname}\\:)?${ncname})`
 const startTagOpen = new RegExp(`^<${qnameCapture}`)
 const startTagClose = /^\s*(\/?)>/
 const endTag = new RegExp(`^<\\/${qnameCapture}[^>]*>`)
-
+let stack = [];
+let root, currentParent;
+const createAstElement = (tag, attr) => {
+  return {
+    type: 1,
+    tag,
+    attr,
+    children: [],
+    parent: null,
+  }
+}
+const start = (tagName, attr) => {
+  const element = createAstElement(tagName, attr);
+  if (!root) root = element;
+  currentParent = element;
+  stack.push(element);
+}
+const end = (tagName) => {
+  const element = stack[stack.length - 1];
+  stack.length--;
+  currentParent = stack[stack.length - 1];
+  if (currentParent) {
+    element.parent = currentParent;
+    currentParent.children = element;
+  }
+}
+const chars = (text) => {
+  currentParent.children.push({
+    type: 3,
+    text,
+  })
+}
 const advance = (n) => {
   htmlStr = htmlStr.substring(n);
 }
@@ -35,7 +66,7 @@ const parseStartTag = () => {
     const match = {
       tagName: start[1],
       attrs: [],
-      inner:''
+      inner: ''
     };
     advance(start[0].length);
     let attr, end;
@@ -49,29 +80,29 @@ const parseStartTag = () => {
     }
   }
 }
-let res = [];
-while(htmlStr){
+while (htmlStr) {
   let text;
   const endIndex = htmlStr.indexOf('<');
-  if(endIndex==0){
+  if (endIndex == 0) {
     const startMatch = parseStartTag();
-    // console.log(startMatch);
-    if(startMatch){
-      // res.push(startMatch);
+    if (startMatch) {
+      start(startMatch.tagName, startMatch.attrs);
       continue;
     }
     const endMatch = htmlStr.match(endTag);
-    if(endMatch){
-      console.log(endMatch)
+    if (endMatch) {
       advance(endMatch[0].length);
+      end(endMatch[1]);
     }
-  }else if(endIndex>0){
-    text = htmlStr.substring(0,endIndex);
-    // console.log(text);
+  } else if (endIndex > 0) {
+    text = htmlStr.substring(0, endIndex);
+    chars(text);
   }
-  if(text){
+  if (text) {
     advance(text.length);
   }
 }
+
+console.log(root);
 
 
