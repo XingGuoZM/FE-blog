@@ -30,7 +30,123 @@
       ]
     }
 ```
-先来分析一下题目，题意即将html树转化成对象树的表示形式，主要难点就是需要正确匹配到标签并进行转化成对象的属性。下面我们来开始写代码
+先来分析一下题目，题意即将html树转化成对象树的表示形式，主要难点就是需要正确匹配到标签并进行转化成对象的属性。下面我们来开始写代码,首先我们要找到标签的匹配正则，我们参考[html-parser.js](https://github.com/vuejs/vue/blob/dev/src/compiler/parser/html-parser.js),然后循环切割html字符串，再通过类似递归（在开始标签的时候入栈，在闭合标签出栈并构建）的方式构建树，具体实现如下：
+
+参考代码
+```js
+/**
+ * 输入：'<div id="main" data-x="hello">Hello<span id="sub" /></div>'
+ * 输出：
+{
+  tag: "div",
+  selfClose: false,
+  attributes: {
+    "id": "main",
+    "data-x": "hello"
+  },
+  text: "Hello",
+  children: [
+    {
+      tag: "span",
+      selfClose: true,
+      attributes: {
+        "id": "sub"
+      }
+    }
+  ]
+}
+ * 
+ */
+/**
+ * 
+  伪代码
+    1. 通过正则匹配到开始标签，通过startTagOpen匹配，可以获取到开始标签tag,入栈
+    2. 切割html字符串
+    3. 匹配属性，通过attribute匹配，循环直至所有attribute都匹配完成，可以获取所有的attributes
+    4. 切割html字符串
+    5. 匹配开始标签的闭合, >或者/> ,通过startTagClose匹配,可以知道是否为自闭合selfClose
+    6. 切割html字符串
+    7. 匹配到子级标签的开始或者自己结束标签的第一个标示符, <, 可以获取到标签的内部文本text
+    8. 切割字符串
+    9. 如果是结束标签,出栈，构建对象树，可以获取到children，继续循环
+    10. 如果是新的开始标签，继续循环
+ */
+
+const html2Object = (htmlStr) => {
+  const attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/
+  const ncname = `[a-zA-Z_][\\-\\.0-9_a-zA-Z]*`
+  const qnameCapture = `((?:${ncname}\\:)?${ncname})`
+  const startTagOpen = new RegExp(`^<${qnameCapture}`)
+  const startTagClose = /^\s*(\/?)>/
+  const endTag = new RegExp(`^<\\/${qnameCapture}[^>]*>`);
+  let stack = [];
+  let root;
+  const matchTagStart = (element) => {
+    const tagStart = htmlStr.match(startTagOpen);
+    if (tagStart) {
+      element.tag = tagStart[1];
+      stack.push(element);
+      htmlStr = htmlStr.substring(tagStart[0].length);
+    }
+  }
+  const matchTagAttribute = (element) => {
+    while (htmlStr.match(attribute)) {
+      let attr = htmlStr.match(attribute);
+      element.attributes[attr[1]] = attr[3];
+      if (attr) htmlStr = htmlStr.substring(attr[0].length);
+    }
+  }
+  const matchTagClose = (element) => {
+    const tagClose = htmlStr.match(startTagClose);
+    if (tagClose) {
+      if (tagClose[0].trim() === '/>') {
+        element.selfClose = true;
+        const c = stack.pop();
+        const p = stack.pop();
+        if (p) {
+          p.children.push(c);
+          stack.push(p);
+        }
+      }
+      htmlStr = htmlStr.substring(tagClose[0].length);
+    }
+  }
+  const matchTagEnd = () => {
+    const et = htmlStr.match(endTag);
+    if (et) {
+      const c = stack.pop();
+      const p = stack.pop();
+      if (p) {
+        p.children.push(c);
+        stack.push(p);
+        root = JSON.parse(JSON.stringify(stack));
+      }
+      htmlStr = htmlStr.substring(et[0].length);
+    }
+  }
+  const matchTagText = (element) => {
+    const index = htmlStr.indexOf('<');
+    element.text = htmlStr.substring(0, index);
+    htmlStr = htmlStr.substring(index);
+  }
+  while (htmlStr) {
+    let element = {
+      tag: '',
+      text: '',
+      selfClose: false,
+      attributes: {},
+      children: [],
+    }
+    matchTagStart(element);
+    matchTagAttribute(element);
+    matchTagClose(element);
+    matchTagText(element);
+    matchTagEnd(element);
+  }
+  return root;
+}
+```
+以上我们已经实现了一个简易的html模版解析方法，相当于html模版的对象表示法。有了这个我们就会更好理解抽象语法树ast，ast即是对我们js代码的对象描述，和上面的例子是一个道理，有了这么一颗树我们会很容易对我们的代码进行静态操作。
 
 ## ast
 抽象语法树，js代码词法树型结构的表示。js代码在编译的过程中会首先转化成抽象语法树的形式。我们可以在[astexplorer](https://astexplorer.net/)网站上查看js代码的ast结构。
