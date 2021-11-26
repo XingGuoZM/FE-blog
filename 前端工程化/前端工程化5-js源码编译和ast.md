@@ -146,19 +146,17 @@ const html2Object = (htmlStr) => {
   return root;
 }
 ```
-以上我们已经实现了一个简易的html模版解析方法，相当于html模版的对象表示法。有了这个我们就会更好理解抽象语法树ast，ast即是对我们js代码的对象描述，和上面的例子是一个道理，有了这么一颗树我们会很容易对我们的代码进行静态操作。
+以上我们已经实现了一个简易的html模版解析方法，相当于html模版的对象表示法。当然也可以实现逆向，将html模版对象转化成dom树，这个相对比较简单。有了这个我们就会更好理解抽象语法树ast，ast即是对我们js代码的对象描述，和上面的例子是一个道理，有了这么一颗树我们会很容易对我们的代码进行静态操作。
 
 ## ast
-抽象语法树，js代码词法树型结构的表示。js代码在编译的过程中会首先转化成抽象语法树的形式。我们可以在[astexplorer](https://astexplorer.net/)网站上查看js代码的ast结构。
+抽象语法树，js代码词法树型结构的表示。js代码在编译的过程中会首先解析成抽象语法树的形式。我们可以在[astexplorer](https://astexplorer.net/)网站上查看js代码的ast结构。
 
-## babel
-
-- [babel-demo]()
-## acorn
-acorn是一个js解析库，能帮助我们将js代码解析成ast
-[acorn-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/acorn-demo)
-
-## acorn和recast
+## acorn与babel
+acorn是一个js解析库，能帮助我们将js解析成ast，如果想将jsx解析成ast则需要使用[acorn-jsx](https://github.com/acornjs/acorn-jsx)
+如果要将typescript解析成ast则需要用到babel或者typescript
+- [acorn-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/acorn-demo)
+- [babel-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/babel-demo)
+- [typescript-demo]()
 
 ## 参考
 - [vue html-parser](https://github.com/vuejs/vue/blob/dev/src/compiler/parser/html-parser.js)
