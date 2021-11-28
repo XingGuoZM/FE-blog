@@ -69,6 +69,12 @@
 5. useCallback和useMemo
 6. 自定义hook
 
+
+useCallback与useMemo
+useCallback是缓存一个函数，对子组件的优化，防止不必要的重复渲染，需要与React.memo配合使用。
+useMemo是缓存一个函数返回值，可以优化当前组件也可以优化子组件
+
+
 参考
 ---
 - [react官方文档 Hooks](https://reactjs.org/docs/hooks-intro.html)
