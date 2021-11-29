@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>微任务、宏任务与渲染的执行先后关系</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      new Promise(resolve=>{
+        resolve();
+      }).then(res=>{
+        console.log('微任务，done...');
+      });
+      setTimeout(()=>{
+        console.log('宏任务，done...');
+      })
+      const frg = document.createDocumentFragment();
+      const root = document.getElementById('root');
+
+      for(let i=0;i<10;i++){
+        const div = document.createElement('div');
+        div.innerHTML=i;
+        frg.appendChild(div);
+      }
+      root.appendChild(frg);
+
+    </script>
+  </body>
+</html>
