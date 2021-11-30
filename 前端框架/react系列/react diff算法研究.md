@@ -24,6 +24,17 @@ tree diff、component diff、element diff
 
 如果列表项目的顺序可能会变化，我们不建议使用索引来用作 key 值，因为这样做会导致性能变差，还可能引起组件状态的问题
 
+### react diff 和vue diff对比
+1. 对比次序
+  - react diff 从左往右依次对比
+  - vue diff 从两边向中间对比
+2. 更新真实dom的时机
+  - react 遍历时收集所有需要更新的节点，形成一个list，最后统一更新，即批量更新
+  - vue 遍历时就对比需要更新的节点，更新真实dom，即实时更新
+3. 更新真实dom的方式
+  - react 批量更新时先删除需要更新的节点，然后更新或者移动，最后插入
+  - vue 在遍历时检测到更新节点，先用insertBefore插入新节点，修改真实dom，最后做删除操作。
+
 参考
 ---
 - [react官方文档 Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
