@@ -260,7 +260,8 @@ print();
   "sourceType": "module"
 }
 ```
-我们发现转化之后的代码对象和数组的嵌套的树形结构，每个对象都最少有type、start、end三个属性，他们分别代表的是
+我们发现转化之后的代码对象和数组的嵌套的树形结构，每个对象都最少有type、start、end三个属性，他们分别代表的是类型，开始列，结束列
+
 ## acorn与babel
 acorn是一个js解析库，能帮助我们将js解析成ast，如果想将jsx解析成ast则需要使用[acorn-jsx](https://github.com/acornjs/acorn-jsx)
 如果要将typescript解析成ast则需要用到babel或者typescript
