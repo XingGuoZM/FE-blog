@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>请求锁</title>
+</head>
+
+<body>
+  <button onClick="handleClick()">点我</button>
+  <script>
+    let requestId = 0;
+    const requestMock = () => {
+      const randomDelay = Math.floor(Math.random() * 10) * 100;
+      // console.log('before', randomDelay);
+      return new Promise(resolve => setTimeout(() => resolve(randomDelay), randomDelay));
+    }
+    const handleClick = async () => {
+      let req = requestId;
+      req += 1;
+      console.log('before', req, requestId);
+      const res = await requestMock();
+      if (req === requestId + 1)
+        console.log('after', req, requestId);
+    }
+  </script>
+</body>
+
+</html>
