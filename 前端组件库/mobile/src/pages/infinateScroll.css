@@ -3,9 +3,11 @@
   height:5rem;
   background-color:#ccc;
   overflow:hidden;
+  position: relative;
 }
 .list{
-
+  position:absolute;
+  top:0;
 }
 .item{
   width:7.5rem;
