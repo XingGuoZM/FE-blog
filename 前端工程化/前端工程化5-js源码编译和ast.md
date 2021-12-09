@@ -1,5 +1,5 @@
 ## 写在前面
-前面几节大概了解了webpack的使用和执行过程，上一节我们知道了webpack的解析器是acorn，那今天我们就来研究一下js源码编译以及acorn这个库。我们先来看一个笔试题
+前面几节大概了解了webpack的使用和执行过程，上一节我们知道了webpack的源码解析的库是acorn，那今天我们就来研究一下js编译以及抽象语法树（ast）。我们先来看一个笔试题
 
 **问题**
 将一个 html 字符串变成树的形式
@@ -260,11 +260,11 @@ print();
   "sourceType": "module"
 }
 ```
-我们发现转化之后的代码对象和数组的嵌套的树形结构，每个对象都最少有type、start、end三个属性，他们分别代表的是类型，开始列，结束列
+我们发现转化之后的代码对象和数组的嵌套的树形结构，每个对象都最少有type、start、end三个属性，他们分别代表的是类型，开始列，结束列，通过对象的形式来描述源码。
 
 ## acorn与babel
-acorn是一个js解析库，能帮助我们将js解析成ast，如果想将jsx解析成ast则需要使用[acorn-jsx](https://github.com/acornjs/acorn-jsx)
-如果要将typescript解析成ast则需要用到babel或者typescript
+acorn是一个js解析库，能帮助我们将js解析成ast，如果想将jsx解析成ast则需要使用[acorn-jsx](https://github.com/acornjs/acorn-jsx)。如果要将typescript解析成ast则需要用到babel或者typescript。
+
 - [acorn-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/acorn-demo)
 - [babel-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/babel-demo)
 
