@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function HelloWorld() {
-  useEffect(() => {
-    console.log('hello')
-  }, [])
   return <div>hello world</div>
 }
