@@ -7,10 +7,11 @@ import useCountdown from './hooks/useCountdown';
 // import HorseLamp from './pages/HorseLamp';
 // import Carousel from './pages/Carousel';
 import InfinateScroll from './pages/InfinateScroll';
+import Marquee from './pages/Marquee';
 // import Spread from './pages/Speard';
 import VirtualList from './pages/VirtualList';
 import MockPage from './pages/MockPage';
-import { ModalManager, Tab, ScrollList, DragDemo, Marquee, CountDown } from './components';
+import { ModalManager, Tab, ScrollList, DragDemo, CountDown } from './components';
 import Modal1 from './pages/modal1';
 import TestEffect from './pages/TestEffect';
 import { tabProps } from './config';
@@ -35,13 +36,13 @@ function App() {
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
       {/* <button onClick={()=>openModal()}>open</button> */}
-      {/* <Marquee data={list} /> */}
+      <Marquee data={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
       {/* <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} /> */}
       {/* <ScrollAnimation /> */}
       {/* <HorseLamp /> */}
       {/* <MockPage /> */}
       {/* <Carousel /> */}
-      <InfinateScroll />
+      {/* <InfinateScroll /> */}
       {/* <Spread /> */}
       {/* <VirtualList /> */}
       {/* <TestEffect visible={false} /> */}
