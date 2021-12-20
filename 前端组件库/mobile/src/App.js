@@ -7,6 +7,7 @@ import useCountdown from './hooks/useCountdown';
 // import HorseLamp from './pages/HorseLamp';
 // import Carousel from './pages/Carousel';
 import InfinateScroll from './pages/InfinateScroll';
+import DebounceThrottle from './pages/debounce&throttle';
 import Marquee from './pages/Marquee';
 // import Spread from './pages/Speard';
 import VirtualList from './pages/VirtualList';
@@ -36,7 +37,7 @@ function App() {
       {/* <Tab {...tabProps} /> */}
       {/* <Modal/> */}
       {/* <button onClick={()=>openModal()}>open</button> */}
-      <Marquee data={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+      {/* <Marquee data={[1, 2, 3, 4, 5, 6, 7, 8, 9]} /> */}
       {/* <CountDown timeRemaining={10000} onComplete={() => { console.log('complete') }} /> */}
       {/* <ScrollAnimation /> */}
       {/* <HorseLamp /> */}
@@ -46,6 +47,7 @@ function App() {
       {/* <Spread /> */}
       {/* <VirtualList /> */}
       {/* <TestEffect visible={false} /> */}
+      <DebounceThrottle/>
     </div>
   );
 }
