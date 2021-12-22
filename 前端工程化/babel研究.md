@@ -12,9 +12,7 @@ javascript转译器，最简单的应用就是将es6的语法转成es5让浏览�
 - @babel/types通过该模块对具体的AST节点进行进行增、删、改、查
 
 ### 示例
-```
-
-```
+- [babel-demo](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/babel-demo)
 
 ## 参考
 - [babel中文网](https://www.babeljs.cn/)
