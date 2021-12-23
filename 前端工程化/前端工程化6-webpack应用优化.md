@@ -21,4 +21,6 @@ import()、require.ensure() + code split
 
 ## tree-shaking
 tree-shaking一句话概括就是摇掉没有用的代码，不将无用代码构建打包。
+UglifyJS 代码压缩
+babel编译
 
