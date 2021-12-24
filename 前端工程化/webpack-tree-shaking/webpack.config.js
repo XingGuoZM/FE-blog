@@ -6,7 +6,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: __dirname + '/dist',
   },
-  mode: 'production',
+  mode: 'development',
   // optimization: {
   //   usedExports: true,
   // },
