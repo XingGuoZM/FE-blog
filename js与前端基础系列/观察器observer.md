@@ -1,0 +1,4 @@
+- PerformanceObserver
+- mutationObserver
+- intersectionObserver
+- resizeObserver
