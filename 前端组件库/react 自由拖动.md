@@ -1,0 +1,3 @@
+touchStart、touchMove、touchEnd
+
+参考vconsole实现拖拽
