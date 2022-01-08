@@ -1,5 +1,10 @@
 ### 实现思路
-1. 通过touchstart、touchmove、touchend组合
+通过touchstart、touchmove、touchend组合,实现过程中需要注意以下几个问题
+1. touchmove、touchend事件需要绑定在window上，并且这两个事件需要包在touchstart中
+2. touchstart事件需要阻止冒泡和禁止默认事件，开始监听touchmove和touchmove。组件销毁前要记得移除事件监听
+3. touchend事件里要移除touchmove和touchend事件的监听
+4. touchmove计算位置值，弄清楚event.clientX和element.offsetTop等关系
+5. 定位不要使用position，应该使用transform的translate
 
 ### 在线预览
 [https://codesandbox.io/s/9gz0k](https://codesandbox.io/s/9gz0k)
