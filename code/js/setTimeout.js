@@ -14,6 +14,7 @@ function timeout(fn, delay) {
   window.requestAnimationFrame((ms) => loop(fn, delay, ms));
 }
 
+
 timeout(() => { console.log(123) }, 1000);
 
 
