@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/bar.js":
+/*!********************!*\
+  !*** ./src/bar.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"bar\": () => /* binding */ bar\n/* harmony export */ });\nfunction bar() {\n  console.log('module bar');\n}\n\n//# sourceURL=webpack://webpack-tree-shaking/./src/bar.js?");
+
+/***/ }),
+
 /***/ "./src/foo.js":
 /*!********************!*\
   !*** ./src/foo.js ***!
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"obj1\": () => /* binding */ obj1,\n/* harmony export */   \"obj2\": () => /* binding */ obj2\n/* harmony export */ });\nconst obj1 = {\n  a: 'zhangsan'\n}\nconst obj2 = {\n  b: 'lisi'\n}\n\n//# sourceURL=webpack://webpack-tree-shaking/./src/foo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"obj1\": () => /* binding */ obj1,\n/* harmony export */   \"obj2\": () => /* binding */ obj2\n/* harmony export */ });\n/* harmony import */ var _bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bar */ \"./src/bar.js\");\n\nconst obj1 = {\n  a: 'zhangsan',\n  bar: _bar__WEBPACK_IMPORTED_MODULE_0__.bar,\n}\nconst obj2 = {\n  b: 'lisi'\n}\n\n//# sourceURL=webpack://webpack-tree-shaking/./src/foo.js?");
 
 /***/ }),
 
