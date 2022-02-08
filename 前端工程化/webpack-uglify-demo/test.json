@@ -1,0 +1,1 @@
+{"code":"const add=(d,o)=>d+o;console.log(add(3,7));"}
