@@ -30,7 +30,7 @@ function traverse(root, res, count) {
 function levelTraverse1(root) {
   const res = [];
   function levelOrder(node, level) {
-    if (!node) return null;
+    if (!node) return;
     res[level] = res[level] || [];
     res[level].push(node.data);
     levelOrder(node.left, level + 1);
@@ -41,7 +41,7 @@ function levelTraverse1(root) {
 }
 // 层序遍历(队列)
 function levelTraverse2(root) {
-  if (!root) return [];
+  if (!root) return;
   const res = [];
   let level = 0;
   const queue = [root];
@@ -53,7 +53,6 @@ function levelTraverse2(root) {
       res[level].push(node.data);
       node.left && queue.push(node.left);
       node.right && queue.push(node.right);
-
     }
     ++level;
   }
