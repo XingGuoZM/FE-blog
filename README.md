@@ -44,17 +44,6 @@ js与前端基础系列
 1. [单例模式](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
 2. [观察者模式和发布订阅模式](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F.md)
 
-前端基建
----
-```
-  1. 前端安全
-  2. 版本管理
-  3. 编辑器
-  4. 业务埋点
-  5. 性能监控
-  6. 页面搭建
-  7. 异常上报
-```
 前端常用框架  
 ---
 1. [react diff算法](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/react%E7%B3%BB%E5%88%97/react%20diff%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6.md)
