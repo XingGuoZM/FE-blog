@@ -3,6 +3,7 @@
 
 js与前端基础系列
 ---
+
 ```
   1. js基础知识
   2. js常见问题及解决方案
@@ -15,50 +16,34 @@ js与前端基础系列
 
 前端数据结构与算法
 ---
-```
-  1. js实现链表
-  2. js实现栈
-  3. js实现队列
-  4. js实现二叉树
-  5. js实现图
-  6. js实现散列表
-  7. js实现数组系列方法
-  8. js实现最大堆
-  9. js与动态规划
-  10.js与分治算法
-  11.js与贪心算法
-  12.js与回溯算法
-  13.js与深度优先和广度优先遍历 
-```
+1. [js实现链表](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8.md)
+2. [js实现栈](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%A0%88.md)
+3. [js实现队列](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%98%9F%E5%88%97.md)
+4. [js实现二叉树](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91.md)
+5. [js实现图](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%9B%BE.md)
+6. [js实现散列表](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%95%A3%E5%88%97%E8%A1%A8.md)
+7. [js实现数组系列方法](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%95%B0%E7%BB%84.md)
+8. [js实现最大堆](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/JS%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%9C%80%E5%A4%A7%E5%A0%86.md)
+9. js与动态规划
+10. js与分治算法
+11. js与贪心算法
+12. js与回溯算法
+13. [js与深度优先和广度优先遍历](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E9%81%8D%E5%8E%86%EF%BC%88Traverse%EF%BC%89.md) 
 
 前端可视化
 ---
-```
-  1. canvas
-  2. svg
-  3. webGL
-```
+1. [webGL渲染与canvas](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E5%8F%AF%E8%A7%86%E5%8C%96/webGL%E4%B8%8Ecanvas.md)
 
 前端工程化
 ---
-```
-  1. webpack研究
-  2. rollup研究
-  3. gulp研究
-  4. babel研究
-  5. typescript研究
-  6. 微前端研究
-  7. 前端必备库汇总
-  8. 前端测试
-```
+1. [从0到1开发webpack+react+ts脚手架](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-react-ts)
+2. [从0到1开发webpack+vue脚手架](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack-vue)
 
 前端设计模式
 ---
-```
-  1. 单例模式
-  2. 工厂模式
-  3. 观察者模式和发布订阅模式
-```
+1. [单例模式](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
+2. [观察者模式和发布订阅模式](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F.md)
+
 前端基建
 ---
 ```
@@ -80,16 +65,12 @@ js与前端基础系列
 ```
 前端组件库
 ---
-移动端(h5)
-```
-  1. 手机适口适配viewport
-  2. 
-```
+[react h5移动端组件库](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E7%BB%84%E4%BB%B6%E5%BA%93/mobile)
+
 外文翻译   
 ---
-```
-  1. 英文文章翻译
-```
+[h5游戏](https://github.com/XingGuoZM/blog/tree/master/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/HTML5%20GAME%20TUTORIAL)
+
 职业   
 ---
 ```
@@ -115,6 +96,7 @@ code(实例源码)
   4. dumi研究
   5. docsify研究
 ```
+
 成长感悟
 ---
 ```
@@ -122,3 +104,5 @@ code(实例源码)
   2. 博客记录要与工作息息相关，写博客目的是把工作做好做完美。  
   3. 闭环思维，发散思维。工作上解决的问题发散或扩展周边，总结相似问题。做事有始有终，不管结果如何，及时反馈。    
 ```
+
+[个人简历](https://github.com/XingGuoZM/blog/blob/master/aboutMe.md)
