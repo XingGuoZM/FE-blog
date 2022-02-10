@@ -57,12 +57,10 @@ js与前端基础系列
 ```
 前端常用框架  
 ---
-```
-  1. node研究系列（包含koa、express、egg和nest）
-  2. react研究系列（包含antd、rax、redux、react-router）
-  3. vue研究系列（包含element、vuex、vue-router）
-  4. rax系列
-```
+1. [react diff算法](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/react%E7%B3%BB%E5%88%97/react%20diff%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6.md)
+2. [react hooks研究](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/react%E7%B3%BB%E5%88%97/react%20hooks%E7%A0%94%E7%A9%B6.md)
+3. [mixin、hoc和hook比较 ](https://github.com/XingGuoZM/blog/blob/master/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/react%E7%B3%BB%E5%88%97/mixin%E3%80%81hoc%E5%92%8Chook.md)
+
 前端组件库
 ---
 [react h5移动端组件库](https://github.com/XingGuoZM/blog/tree/master/%E5%89%8D%E7%AB%AF%E7%BB%84%E4%BB%B6%E5%BA%93/mobile)
@@ -73,29 +71,11 @@ js与前端基础系列
 
 职业   
 ---
-```
-  1. 笔试题    
-  2. 面试题  
-  3. 职业规划及未来发展  
-  4. 工作经验总结（那些年踩过的坑系列）  
-```
-code(实例源码)  
----
-```
-  1. html  
-  2. js
-  3. jq
-  4. webpack  
-```
-工具软件
----
-```
-  1. 技术网站汇总
-  2. 常用软件下载地址
-  3. 值得常去看看的github作者
-  4. dumi研究
-  5. docsify研究
-```
+- [2019年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
+- [2020年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2020%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
+- [2021年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
+- [笔试题汇总](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/%E7%AC%94%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.md)
+- [面试题汇总](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93.md)
 
 成长感悟
 ---
@@ -106,3 +86,4 @@ code(实例源码)
 ```
 
 [个人简历](https://github.com/XingGuoZM/blog/blob/master/aboutMe.md)
+
