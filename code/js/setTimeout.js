@@ -15,6 +15,6 @@ function timeout(fn, delay) {
 }
 
 
-timeout(() => { console.log(123) }, 1000);
+timeout(() => { console.log(1) }, 1000);
 
 
