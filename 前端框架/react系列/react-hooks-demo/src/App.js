@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {FunctionPage} from './pages/FunctionPage';
 import {ClassPage} from './pages/ClassPage';
 import Message from './pages/Message';
+import Search from './pages/search/Parent';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <ClassPage count={count}/>
         <FunctionPage count={count}/>
         <Message/>
+        <Search/>
     </div>
   );
 }
