@@ -9,7 +9,7 @@
 - 李志铭/男/1995/本科
 - 江西财经大学/软件工程/2014~2018
 - 工作地点及经验: 杭州/2017.6～至今(2017.6~2018.4实习)
-- 擅长领域: 工程化
+- 擅长领域: webpack、react
 - 技术博客: [https://www.cnblogs.com/xingguozhiming/](https://www.cnblogs.com/xingguozhiming/)
 - Github: [https://github.com/XingGuoZM](https://github.com/XingGuoZM)
 

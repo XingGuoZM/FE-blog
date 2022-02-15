@@ -3,7 +3,7 @@ __proto__是什么？
 instanceof和typeof有什么区别？instanceof实现原理？
 
 解释一下作用域和作用域链
-call、apply和bind的区别？实现原理
+[call、apply和bind的区别？](https://juejin.cn/post/6844903496253177863#heading-7)实现原理
 如何确定this指向？
 如何实现继承？如何实现重载？
 function是引用传递还是值传递？
@@ -18,6 +18,9 @@ lodash是怎么实现深克隆的
 [自己实现一个深克隆,考虑symbol和对象相互引用](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/148)
 
 说一下你对闭包的理解?闭包的应用场景有哪些？
+内存泄漏、浏览器垃圾回收机制
+
+Set、Map、WeakSet和WeakMap有什么区别
 
 构造函数new的过程？实现一个new
 0.1 + 0.2 是否等于 0.3？为什么？
@@ -36,4 +39,3 @@ setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时�
 
 节流和防抖有什么区别？手写一个防抖函数
 
-Set、Map、WeakSet和WeakMap有什么区别
