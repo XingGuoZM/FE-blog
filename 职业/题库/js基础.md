@@ -23,7 +23,7 @@ lodash是怎么实现深克隆的
 Set、Map、WeakSet和WeakMap有什么区别
 
 构造函数new的过程？实现一个new
-0.1 + 0.2 是否等于 0.3？为什么？
+0.1+0.2是否等于0.3？为什么？
 
 数组sort方法有什么问题？
 字符串反转？
@@ -35,7 +35,6 @@ promise...then方法里面的逻辑为什么会比setTimeout先执行？
 promise构造函数同步执行还是异步执行
 setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时？
 [setTimeout、Promise、Async/Await 的区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/33)
-
 
 节流和防抖有什么区别？手写一个防抖函数
 
