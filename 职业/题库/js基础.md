@@ -11,11 +11,12 @@ function是引用传递还是值传递？
 数据类型之间相互转换？
 深克隆和浅克隆的区别？
 如何实现深克隆？
+[自己实现一个深克隆,考虑symbol和对象相互引用](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/148)
 JSON.stringify方法处理深克隆会有什么问题？
 递归实现深克隆会有什么问题？如何解决？
 lodash是怎么实现深克隆的
 如何克隆一个function？需要考虑什么问题？
-[自己实现一个深克隆,考虑symbol和对象相互引用](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/148)
+
 
 说一下你对闭包的理解?闭包的应用场景有哪些？
 内存泄漏、浏览器垃圾回收机制
