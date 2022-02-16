@@ -4,9 +4,12 @@ instanceof和typeof有什么区别？instanceof实现原理？
 
 解释一下作用域和作用域链
 [call、apply和bind的区别？](https://juejin.cn/post/6844903496253177863#heading-7)实现原理
-如何确定this指向？
+如何确定/改变this指向？
+箭头函数特性（this、arguments）
 如何实现继承？如何实现重载？
 function是引用传递还是值传递？
+函数调用方式（普通函数、方法、构造函数、call/apply）
+
 说一下有几种数据类型？bigInt和symbol应用场景
 数据类型之间相互转换？
 深克隆和浅克隆的区别？
