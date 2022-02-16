@@ -3,7 +3,10 @@ __proto__是什么？
 instanceof和typeof有什么区别？instanceof实现原理？
 
 解释一下作用域和作用域链
-[call、apply和bind的区别？](https://juejin.cn/post/6844903496253177863#heading-7)实现原理
+[call、apply和bind的区别？](https://juejin.cn/post/6844903496253177863#heading-7)
+call、apply、bind应用场景
+call、apply、bind实现原理
+
 如何确定/改变this指向？
 箭头函数特性（this、arguments）
 如何实现继承？如何实现重载？
