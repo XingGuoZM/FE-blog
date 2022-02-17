@@ -68,4 +68,3 @@ setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时�
 
 JavaScript异常处理的方式，统一的异常处理方案
 
-如何将JavaScript代码解析成抽象语法树(AST)
