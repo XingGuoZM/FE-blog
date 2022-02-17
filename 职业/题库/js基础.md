@@ -10,11 +10,17 @@ call、apply、bind实现原理
 如何确定/改变this指向？
 箭头函数特性（this、arguments）
 如何实现继承？如何实现重载？
-function是引用传递还是值传递？
+
+
+function是引用传递还是值传递？**ECMAScript中所有的函数的参数都是按值传递的** [参考](https://juejin.cn/post/6844903854882947080#heading-7)
+
 函数调用方式（普通函数、方法、构造函数、call/apply）
 
 说一下有几种数据类型？bigInt和symbol应用场景
 数据类型之间相互转换？
+
+
+赋值与拷贝（克隆）的区别？
 深克隆和浅克隆的区别？
 如何实现深克隆？
 [自己实现一个深克隆,考虑symbol和对象相互引用](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/148)
@@ -36,6 +42,8 @@ Set、Map、WeakSet和WeakMap有什么区别
 [最简洁代码实现indexOf方法](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/321)
 [实现颜色转换 'rgb(255, 255, 255)' -> '#FFFFFF' 的多种思路](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/475)
 
+为何try里面放return，finally还会执行，理解其内部机制
+
 构造函数new的过程？实现一个new
 0.1+0.2是否等于0.3？为什么？
 
@@ -45,6 +53,7 @@ Set、Map、WeakSet和WeakMap有什么区别
 字符串大小写取反？
 
 说一说事件循环？
+Node与浏览器EventLoop的差异
 promise...then方法里面的逻辑为什么会比setTimeout先执行？
 说一说promise？实现promise.all/race?错误处理
 promise.all会有什么问题及错误处理
@@ -57,3 +66,6 @@ setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时�
 
 节流和防抖有什么区别？手写一个防抖函数
 
+JavaScript异常处理的方式，统一的异常处理方案
+
+如何将JavaScript代码解析成抽象语法树(AST)

@@ -1,4 +1,5 @@
 [react技术揭秘](https://react.iamkasong.com/)
+[ConardLi的blog](http://www.conardli.top/blog/)
 
 key的作用
 react优化方案
@@ -31,3 +32,5 @@ useCallback和useMemo本质区别
 
 什么是redux及工作原理
 什么是mobx及工作原理
+redux和mobx的比较
+vuex实现原理
