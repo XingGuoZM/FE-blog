@@ -31,6 +31,8 @@ lodash是怎么实现深克隆的
 
 
 说一下你对闭包的理解?闭包的应用场景有哪些？
+[对闭包的看法，为什么要用闭包？说一下闭包原理以及应用场景](https://github.com/lgwebdream/FE-Interview/issues/17)
+
 内存泄漏、浏览器垃圾回收机制
 sessionstorage、localstorage、cookie区别
 localstorage如何实现过期时间功能
@@ -57,6 +59,7 @@ Node与浏览器EventLoop的差异
 promise...then方法里面的逻辑为什么会比setTimeout先执行？
 说一说promise？实现promise.all/race?错误处理
 promise.all会有什么问题及错误处理
+[因为实现不了Promise.all，一场面试凉凉了](https://juejin.cn/post/7038371452084551694#heading-8)
 promise构造函数同步执行还是异步执行
 setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时？
 [用 setTimeout 实现 setInterval，阐述实现的效果与setInterval的差异](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/259)
