@@ -58,7 +58,7 @@ Set、Map、WeakSet和WeakMap有什么区别
 Node与浏览器EventLoop的差异
 promise...then方法里面的逻辑为什么会比setTimeout先执行？
 说一说promise？实现promise.all/race?错误处理
-promise.all会有什么问题及错误处理
+[有限状态机](http://www.ruanyifeng.com/blog/2013/09/finite-state_machine_for_javascript.html)
 [因为实现不了Promise.all，一场面试凉凉了](https://juejin.cn/post/7038371452084551694#heading-8)
 promise构造函数同步执行还是异步执行
 setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时？

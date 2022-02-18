@@ -6,6 +6,7 @@ react优化方案
 react组件生命周期
 ![生命周期](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/8/171f329e8aa7b556~tplv-t2oaga2asx-watermark.awebp)
 虚拟DOM及工作原理
+虚拟DOM的优缺点（跨平台、保证性能下限）
 setState同步还是异步
 React.createElement源码实现原理
 什么是jsx
