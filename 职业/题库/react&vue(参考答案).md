@@ -4,7 +4,6 @@ vue是通过v-model来实现双向绑定。v-model = v-bind + v-on
 数据绑定机制
 dep（消息中心）、watcher（订阅者）、Observer（发布者）+ Object.defineProperty
 
-
 ## Vue 的 computed 和 watch 的区别
 computed原理
 1. 初始化阶段：为computed属性创建lazy watcher (即双向绑定中的监听器)
@@ -21,3 +20,11 @@ watch本质上是为每个监听属性setter创建了一个watcher，当被监�
 computed：需要处理复杂逻辑的模板表达式
 watch：需要处理异步或开销较大的操作
 从表现上看，computed会创建新的属性，而watch可以将属性设置在data中，再监听依赖属性变化，调用handler方法更新属性的方式达到同样的效果。在具体的使用上还是优先考虑computed，因为相同的场景下，watch所需的代码量和性能开销一般来说会比computed大。
+
+## react hooks原理
+
+闭包+fiber+链表
+hooks主要利用闭包来保存状态，使用链表来保存一系列的hooks，将链表中的第一个hook与fiber关联。在fiber数更新时，就能从hooks中计算出最终输出的状态和执行相关的副作用，需要注意的是，不在条件、循环或嵌套函数中调用hooks；只在react 函数组件内调用hooks。
+
+## react fiber
+[说一下 react-fiber](https://github.com/lgwebdream/FE-Interview/issues/33)
