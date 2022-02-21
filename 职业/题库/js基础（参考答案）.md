@@ -15,3 +15,7 @@
 [面试题之如何实现一个深拷贝
 #](https://muyiy.cn/blog/4/4.3.html#%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D)
 考虑对象、数组、循环引用、引用丢失、symbol、递归爆栈（转为循环）
+
+## 原型、原型链、构造函数、constructor
+[重新认识构造函数、原型和原型链
+#](https://muyiy.cn/blog/5/5.1.html#%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE)
