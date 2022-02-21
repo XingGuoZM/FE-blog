@@ -1,4 +1,8 @@
 解释一下原型和原型链
+什么是构造函数？构造函数和普通函数的区别？
+Symbol是构造函数吗？
+constructor的值是只读的吗？null和undefined有constructor属性吗？
+
 __proto__是什么？
 instanceof和typeof有什么区别？instanceof实现原理？
 
