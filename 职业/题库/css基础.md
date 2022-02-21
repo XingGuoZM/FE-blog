@@ -8,7 +8,7 @@ flex
 position
 z-index
 transform、opacity、filter
-雪碧图实现原理
+雪碧图实现原理及优缺点？
 伪类伪元素有哪些，它们的区别和实际应用
 
 清除浮动
