@@ -34,4 +34,7 @@ useCallback和useMemo本质区别
 什么是redux及工作原理
 什么是mobx及工作原理
 redux和mobx的比较
+
+vue双向数据绑定
+[聊聊 Vue 的双向数据绑定，Model 如何改变 View，View 又是如何改变 Model 的](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/34)
 vuex实现原理
