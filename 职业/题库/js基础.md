@@ -21,6 +21,7 @@ function是引用传递还是值传递？**ECMAScript中所有的函数的参数
 函数调用方式（普通函数、方法、构造函数、call/apply）
 
 说一下有几种数据类型？bigInt和symbol应用场景
+如何判断symbol数据类型
 数据类型之间相互转换？
 
 

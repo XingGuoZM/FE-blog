@@ -13,11 +13,10 @@ React.createElement源码实现原理
 react事件机制
 react为什么要合成事件
 
-
 什么是纯函数
 什么是高阶函数（hoc）
 diff算法实现的思路
-什么是fiber及实现原理
+什么是react fiber及实现原理
 React.lazy+Suspense的实现原理
 
 什么是函数式编程
@@ -25,7 +24,6 @@ immutable
 什么是hook及实现原理
 hook怎么处理生命周期
 useCallback和useMemo本质区别
-
 
 如何提高性能(shouldComponentUpdate)
 如何在重新加载页面时保留数据(localstorage)
