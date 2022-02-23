@@ -10,7 +10,7 @@ react组件生命周期
 setState同步还是异步
 React.createElement源码实现原理
 什么是jsx
-react事件机制
+react事件机制、合成事件和原生事件、如何注册和触发、浏览器兼容
 react为什么要合成事件
 
 什么是纯函数
