@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>手势</title>
-    <style>
-      .box{
-        width:100px;
-        height:100px;
-        background-color:lightblue;
-        transform:translate(1px);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box" style="border-radius: 3px;"></div>
-    <script>
-      const box = document.querySelector('.box')
-      box.addEventListener('touchstart',(e)=>{
-        console.log('start');
-        //只能获取内联样式
-        // console.log(box.style)
-        //获取css样式
-        console.log(getComputedStyle(box).borderRadius);
-      });
 
-      box.addEventListener('touchmove',(e)=>{
+<head>
+  <meta charset="utf-8" />
+  <title>手势</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      transform: translate(1px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" style="border-radius: 3px;"></div>
+  <script>
+    const box = document.querySelector('.box')
+    box.addEventListener('touchstart', (e) => {
+      console.log('start');
+      //只能获取内联样式
+      // console.log(box.style)
+      //获取css样式
+      console.log(getComputedStyle(box).borderRadius);
+      box.addEventListener('touchmove', (e) => {
         // console.log(e.touches[0].clientX);
         // box.style
       });
+    });
+    window.addEventListener('touchend', (e) => {
+      console.log('end');
+    });
 
-      box.addEventListener('touchend',(e)=>{
-        console.log('end');
-      });
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

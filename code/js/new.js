@@ -1,14 +1,20 @@
 //手动实现一个简易new
 
-function myNew(func, ...args){
+// 方式一
+function myNew(func, ...args) {
 	let obj = {};
 	obj.__proto__ = func.prototype;
-	let ans = func.call(obj, ...args);
-	return typeof(result) === 'object' ? ans :obj;
+	let result = func.call(obj, ...args);
+	return typeof (result) === 'object' ? result : obj;
 }
-
-
-function A(a){
-	this.name='123'
+// 方式二
+function myNew2() {
+	const Constructor = [].shift.call(arguments);
+	const obj = Object.create(Constructor.prototype);
+	const ret = Constructor.apply(obj, arguments);
+	return (typeof ret === 'object' && ret !== null) ? ret : obj;
 }
-console.log(myNew(A,12)); 
+function A(a) {
+	this.name = '123'
+}
+console.log(myNew(A, 12)); 
