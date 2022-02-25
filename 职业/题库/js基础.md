@@ -21,6 +21,7 @@ function是引用传递还是值传递？**ECMAScript中所有的函数的参数
 函数调用方式（普通函数、方法、构造函数、call/apply）
 
 说一下有几种数据类型？bigInt和symbol应用场景
+symbol:对象的属性名、代替常量、定义类的私有属性和方法
 如何判断symbol数据类型
 数据类型之间相互转换？
 
@@ -44,6 +45,7 @@ localstorage如何实现过期时间功能
 
 var、let和const区别及实现原理
 Set、Map、WeakSet和WeakMap有什么区别
+[说下你对 Reflect 的理解？为什么会有 Reflect 的出现？Proxy 也简单的说一下？](https://github.com/lgwebdream/FE-Interview/issues/1203)
 [js proxy实现简单的数据绑定](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/123)
 [如何模拟实现 Array.prototype.splice](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/384)
 [最简洁代码实现indexOf方法](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/321)
@@ -77,3 +79,19 @@ setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时�
 
 JavaScript异常处理的方式，统一的异常处理方案
 
+
+```
+什么是值？什么是类型？什么是变量？它们之间的区别和联系
+基本类型和引用类型的区别是什么？null和undefined的区别是什么
+“一切皆对象”怎么理解？number也是对象吗？字符串也是对象么？
+基础类型放在栈上？引用类型存放在堆中，请问是为什么？字符串是存放在栈上吗？对象中有一个number属性，那么number属性是存放在堆上还是栈上
+==的逻辑是什么？
+作用域的本质，闭包和作用域的关系是什么
+var、let、const三者的本质不同是什么？为什么不使用var
+数组的本质是什么，运用了什么样的设计模式，数组和对象的关系
+原型链能够实现所谓的继承的本质原因是什么
+箭头函数是用来解决什么问题
+什么是高阶函数，用处和用法
+什么是异步编程，为什么说它对web开发很重要
+
+```
