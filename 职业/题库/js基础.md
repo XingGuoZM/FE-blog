@@ -1,5 +1,4 @@
 解释一下原型和原型链
-什么是构造函数？构造函数和普通函数的区别？
 Symbol是构造函数吗？
 constructor的值是只读的吗？null和undefined有constructor属性吗？
 
@@ -12,6 +11,15 @@ call、apply、bind应用场景
 call、apply、bind实现原理
 
 如何确定/改变this指向？
+
+## 
+作用域、作用域链
+原型、原型链
+
+
+## 函数
+构造函数、普通函数、箭头函数、方法
+new、__proto__、prototype、constructor
 箭头函数特性（this、arguments）
 如何实现继承？如何实现重载？
 
