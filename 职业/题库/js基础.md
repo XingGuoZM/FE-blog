@@ -16,7 +16,6 @@ call、apply、bind实现原理
 作用域、作用域链
 原型、原型链
 
-
 ## 函数
 构造函数、普通函数、箭头函数、方法
 new、__proto__、prototype、constructor
@@ -83,7 +82,7 @@ setTimeout能准确按时执行回调函数吗？为什么？怎么做到准时�
 [async/await是如何通过同步的方式实现异步的](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/156)
 [实现一个异步求和函数](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/484)
 
-节流和防抖有什么区别？手写一个防抖函数
+节流和防抖
 
 JavaScript异常处理的方式，统一的异常处理方案
 
