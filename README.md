@@ -63,8 +63,8 @@ js与前端基础系列
 - [2019年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
 - [2020年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2020%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
 - [2021年终总结](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md)
-- [笔试题汇总](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/%E7%AC%94%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.md)
-- [面试题汇总](https://github.com/XingGuoZM/blog/blob/master/%E8%81%8C%E4%B8%9A/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93.md)
+- [笔试题汇总](https://github.com/XingGuoZM/FE-blog/issues/19)
+- [面试题汇总](https://github.com/XingGuoZM/FE-blog/issues/18)
 
 成长感悟
 ---
