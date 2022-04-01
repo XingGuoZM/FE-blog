@@ -66,13 +66,5 @@ js与前端基础系列
 - [笔试题汇总](https://github.com/XingGuoZM/FE-blog/issues/19)
 - [面试题汇总](https://github.com/XingGuoZM/FE-blog/issues/18)
 
-成长感悟
----
-```
-  1. 列出了很多要解决的问题以及要学习的东西，能解决一个是一个，学习了一个东西就要搞懂搞透然后再下一个，千万别好高骛远。
-  2. 博客记录要与工作息息相关，写博客目的是把工作做好做完美。  
-  3. 闭环思维，发散思维。工作上解决的问题发散或扩展周边，总结相似问题。做事有始有终，不管结果如何，及时反馈。    
-```
-
 [个人简历](https://github.com/XingGuoZM/blog/blob/master/aboutMe.md)
 
