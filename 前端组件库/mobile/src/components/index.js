@@ -5,6 +5,8 @@ import ScrollList from './scroll';
 import DragDemo from './drag';
 import Marquee from './marquee';
 import CountDown from './countdown';
+import Progress from './progress';
+import CircleProgress from './progress/Circle';
 
 export {
   ModalManager,
@@ -12,5 +14,7 @@ export {
   ScrollList,
   DragDemo,
   Marquee,
-  CountDown
+  CountDown,
+  Progress,
+  CircleProgress,
 }

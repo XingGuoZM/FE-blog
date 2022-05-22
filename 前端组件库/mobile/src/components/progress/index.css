@@ -1,0 +1,14 @@
+.progress{
+  width:7.5rem;
+  height:0.2rem;
+  background-color:#ccc;
+  position:relative;
+  display:flex;
+  flex-direction: row;
+}
+.bar{
+  height:0.2rem;
+  background-color:#f2f;
+  /* position:absolute; */
+  transition:width 2s ease;
+}
