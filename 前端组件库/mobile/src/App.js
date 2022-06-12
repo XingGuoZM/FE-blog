@@ -16,6 +16,9 @@ import { ModalManager, Tab, ScrollList, DragDemo, CountDown,Progress } from './c
 import Modal1 from './pages/modal1';
 import TestEffect from './pages/TestEffect';
 import { tabProps } from './config';
+import BehaviorManager from './components/manager/List';
+
+
 const list = [
   { name: 'hello' },
   { name: 'bin' },
@@ -48,7 +51,8 @@ function App() {
       {/* <VirtualList /> */}
       {/* <TestEffect visible={false} /> */}
       {/* <DebounceThrottle/> */}
-      <Progress/>
+      {/* <Progress/> */}
+      <BehaviorManager/>
     </div>
   );
 }
