@@ -12,7 +12,7 @@ import Marquee from './pages/Marquee';
 // import Spread from './pages/Speard';
 import VirtualList from './pages/VirtualList';
 import MockPage from './pages/MockPage';
-import { ModalManager, Tab, ScrollList, DragDemo, CountDown,Progress } from './components';
+import { ModalManager, Tab, ScrollList, DragDemo, CountDown,Progress, Cube3d } from './components';
 import Modal1 from './pages/modal1';
 import TestEffect from './pages/TestEffect';
 import { tabProps } from './config';
@@ -52,7 +52,8 @@ function App() {
       {/* <TestEffect visible={false} /> */}
       {/* <DebounceThrottle/> */}
       {/* <Progress/> */}
-      <BehaviorManager/>
+      {/* <BehaviorManager/> */}
+      <Cube3d/>
     </div>
   );
 }

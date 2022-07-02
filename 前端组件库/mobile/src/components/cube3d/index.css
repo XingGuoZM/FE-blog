@@ -1,0 +1,68 @@
+.container {
+  height: 500px;
+  background: #eee;
+  perspective: 500px;   /* 设置透视距离 */
+}
+.box {
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(10deg) rotateX(-30deg);
+  /* border: 1px solid #000; */
+  transform-style: preserve-3d;
+  /* animation: run 5s linear; */
+  animation-iteration-count: infinite;
+}
+
+@keyframes run {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(10deg) rotateX(-30deg) rotateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateZ(10deg) rotateX(-30deg) rotateY(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(10deg) rotateX(-30deg) rotateY(360deg);
+  }
+}
+.box div {  
+  width: 200px;  
+  height: 200px;
+  position: absolute;
+  text-align: center;
+  line-height: 200px;
+  font-size: 30px;
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+}
+.t1{
+  width:20px;
+  height:20px;
+  background-color: black;
+  position:absolute;
+  transform: rotateZ(-45deg) rotateY(45deg) rotateX(45deg) translateZ(50px) translateY(50px) translateX(50px);
+}
+.a1 {
+  background: rgba(0, 0, 255, 0.5);
+  transform: translateZ(100px);
+}
+.a2 {
+  background: rgba(0, 0, 255, 0.5);
+  transform: translateZ(-100px) rotateY(180deg);
+}
+.b1 {
+  background: rgba(0, 255, 0, 0.5);
+  transform: translateX(-100px) rotateY(-90deg);
+}
+.b2 {
+  background: rgba(0, 255, 0, 0.5);
+  transform: translateX(100px) rotateY(90deg);
+}
+.c1 {
+  background: rgba(255, 0, 0, 0.5);
+  transform: translateY(-100px) rotateX(90deg);
+}
+.c2 {
+  background: rgba(255, 0, 0, 0.5);
+  transform: translateY(100px) rotateX(-90deg);
+}

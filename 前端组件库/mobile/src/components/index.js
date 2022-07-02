@@ -7,6 +7,7 @@ import Marquee from './marquee';
 import CountDown from './countdown';
 import Progress from './progress';
 import CircleProgress from './progress/Circle';
+import Cube3d from './cube3d'
 
 export {
   ModalManager,
@@ -17,4 +18,5 @@ export {
   CountDown,
   Progress,
   CircleProgress,
+  Cube3d
 }
