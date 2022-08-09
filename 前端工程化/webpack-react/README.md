@@ -14,7 +14,7 @@ npm install --save-dev -D style-loader css-loader babel-loader
 
 babel
 ```
-npm install --save-dev -D @babel-core @babel/preset-env @babel/plugin-transform-react-jsx
+npm install --save-dev -D @babel/core @babel/preset-env @babel/plugin-transform-react-jsx
 ```
 
 react
